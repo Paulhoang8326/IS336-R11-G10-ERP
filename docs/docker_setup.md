@@ -2,7 +2,7 @@
 
 ## Yêu cầu và phạm vi
 
-Cài Docker Desktop với Linux containers và Docker Engine đang chạy. Trong repository nhóm, kiểm tra `docker version` và `docker compose version`. Compose sử dụng official Odoo 19 Community image và PostgreSQL 15 image, hai service `odoo` và `db`. Không build từ source Odoo 18 tại `odoo-18/` local, cũng không cần clone source riêng để chạy Docker.
+Cài Docker Desktop với Linux containers và Docker Engine đang chạy. Trong repository nhóm, kiểm tra `docker version` và `docker compose version`. Compose sử dụng official Odoo 19 Community image và PostgreSQL 15 image, hai service `odoo` và `db`. Không cần source Odoo local hoặc build image riêng để chạy môi trường này.
 
 Ngày 2026-10-13, Docker Engine trên máy khởi tạo đã hoạt động khi chuyển sang Odoo 19. Kết quả kiểm thử runtime cho image mới được ghi ở cuối tài liệu; các máy khác cần tự kiểm tra lại.
 

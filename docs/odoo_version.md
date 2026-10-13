@@ -13,7 +13,9 @@ Tag/digest Odoo 19 được kiểm tra lại qua `docker buildx imagetools inspe
 
 Nguồn: [official Odoo image](https://hub.docker.com/_/odoo), [official PostgreSQL image](https://hub.docker.com/_/postgres), [Odoo Dockerfile 19.0](https://github.com/odoo/docker/tree/master/19.0), [Odoo 19 installation requirements](https://www.odoo.com/documentation/19.0/administration/on_premise/source.html). Giữ nguyên giấy phép và thông báo bản quyền của các image upstream.
 
-## Source Odoo 18 cũ trên máy khởi tạo
+## Lịch sử audit source Odoo 18 trước cleanup
+
+Thông tin dưới đây ghi lại checkout đã được audit trước khi dọn source ngày 2026-10-13. Các file source Odoo 18 local đã được xóa; bảng này không mô tả dependency hiện tại và không yêu cầu clone hoặc phục hồi source.
 
 | Thuộc tính | Giá trị |
 | --- | --- |
@@ -24,4 +26,4 @@ Nguồn: [official Odoo image](https://hub.docker.com/_/odoo), [official Postgre
 | HEAD SHA | `4ea65e6c252d1f10aa9df314b8225c623099cf92` |
 | Source local | `../odoo-18` so với repository nhóm |
 
-SHA này chỉ mô tả checkout Odoo 18 upstream riêng trên máy khởi tạo, **không phải source/runtime của Odoo 19 Docker image**. Source này không nằm trong Git repository nhóm. `odoo-18/` local trong repository nhóm cũng bị ignore. Không dùng source Odoo 18 làm căn cứ API cho module Odoo 19; không cần clone source để chạy Compose và không sửa Odoo core.
+SHA này chỉ ghi nhận checkout Odoo 18 upstream tại thời điểm audit, **không phải source/runtime của Odoo 19 Docker image**. Source đó không được Git repository nhóm theo dõi. Không dùng source Odoo 18 làm căn cứ API cho module Odoo 19; không cần clone source để chạy Compose và không sửa Odoo core.

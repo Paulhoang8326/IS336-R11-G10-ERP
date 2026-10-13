@@ -20,4 +20,4 @@ docker compose ps
 
 Truy cập http://localhost:8069/ khi Odoo sẵn sàng. HTTP chỉ bind localhost; PostgreSQL và dữ liệu Odoo ở named volumes. Không xóa volumes khi cần giữ dữ liệu. Chưa tạo database nghiệp vụ, tài khoản ứng dụng hoặc module.
 
-Máy khởi tạo vẫn có source Odoo 18 upstream `../odoo-18` riêng ngoài repository nhóm; Compose dùng image Odoo 19 và không build từ source đó. [odoo_version.md](odoo_version.md) phân biệt source local với image runtime.
+Các bản source Odoo 18 local trên máy khởi tạo đã được dọn bỏ. Setup hiện tại chỉ dùng official Odoo 19 image; không cần phục hồi hoặc clone source Odoo riêng. [odoo_version.md](odoo_version.md) ghi phiên bản image runtime và giữ thông tin audit source cũ để tham khảo lịch sử.

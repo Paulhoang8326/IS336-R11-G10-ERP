@@ -40,7 +40,7 @@ IS336-R11-G10-ERP/
 │   ├── setup.md
 │   ├── contributing.md
 │   └── odoo_version.md
-└── odoo-18/                     # source Odoo 18 local cũ nếu có, ignored; không dùng để build
+└── README.md
 ~~~
 
 Compose chỉ bind HTTP vào `127.0.0.1:8069` và dùng hai named volumes cho PostgreSQL và dữ liệu Odoo. `docker compose down` giữ volumes; không dùng `down -v` khi cần giữ dữ liệu. **Nếu đã có database Odoo 18 trong volumes, không khởi động Odoo 19 trên database đó trước khi sao lưu và thực hiện migration.** Phát triển module Odoo 19 trong `custom_addons/`, không sửa Odoo core. Xem [hướng dẫn Docker](docs/docker_setup.md), [quy tắc cộng tác](docs/contributing.md) và [phiên bản image/source](docs/odoo_version.md).
