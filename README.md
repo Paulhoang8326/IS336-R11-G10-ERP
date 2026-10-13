@@ -1,6 +1,6 @@
 # IS336-R11-G10-ERP
 
-Đồ án **IS336 – Hoạch định nguồn lực doanh nghiệp**, lớp **IS336.R11**, **nhóm 10**, UIT. Môi trường phát triển chạy **Odoo 18 Community official image** và **PostgreSQL 15** bằng Docker Compose. Repository: https://github.com/Paulhoang8326/IS336-R11-G10-ERP.
+Đồ án **IS336 – Hoạch định nguồn lực doanh nghiệp**, lớp **IS336.R11**, **nhóm 10**, UIT. Môi trường phát triển chạy **Odoo 19 Community official image** và **PostgreSQL 15** bằng Docker Compose. Repository: https://github.com/Paulhoang8326/IS336-R11-G10-ERP.
 
 ## Bắt đầu trên Windows
 
@@ -13,7 +13,7 @@ if (-not (Test-Path .env)) { Copy-Item .env.example .env }
 if (-not (Test-Path config/odoo.conf)) { Copy-Item config/odoo.example.conf config/odoo.conf }
 ~~~
 
-Đặt `POSTGRES_PASSWORD` mạnh trong `.env` và thay `REPLACE_WITH_LOCAL_MASTER_PASSWORD` bằng mật khẩu master mạnh trong `config/odoo.conf`. Hai file local bị Git ignore. Không commit hoặc chia sẻ mật khẩu. Trên máy khởi tạo, hai file đã được tạo với mật khẩu ngẫu nhiên riêng.
+Đặt `POSTGRES_PASSWORD` mạnh trong `.env` và thay `REPLACE_WITH_LOCAL_MASTER_PASSWORD` bằng mật khẩu master mạnh trong `config/odoo.conf`. Nếu `.env` đã tồn tại từ setup Odoo 18, cập nhật riêng `ODOO_IMAGE` theo `.env.example`; Git không tự cập nhật file local bị ignore. Hai file local bị Git ignore. Không commit hoặc chia sẻ mật khẩu. Trên máy khởi tạo, hai file đã được tạo với mật khẩu ngẫu nhiên riêng.
 
 ~~~powershell
 docker compose config --quiet
@@ -40,7 +40,7 @@ IS336-R11-G10-ERP/
 │   ├── setup.md
 │   ├── contributing.md
 │   └── odoo_version.md
-└── odoo-18/                     # source local nếu có, ignored; không dùng để build
+└── odoo-18/                     # source Odoo 18 local cũ nếu có, ignored; không dùng để build
 ~~~
 
-Compose chỉ bind HTTP vào `127.0.0.1:8069` và dùng hai named volumes cho PostgreSQL và dữ liệu Odoo. `docker compose down` giữ volumes; không dùng `down -v` khi cần giữ dữ liệu. Phát triển module trong `custom_addons/`, không sửa Odoo core. Xem [hướng dẫn Docker](docs/docker_setup.md), [quy tắc cộng tác](docs/contributing.md) và [phiên bản image/source](docs/odoo_version.md).
+Compose chỉ bind HTTP vào `127.0.0.1:8069` và dùng hai named volumes cho PostgreSQL và dữ liệu Odoo. `docker compose down` giữ volumes; không dùng `down -v` khi cần giữ dữ liệu. **Nếu đã có database Odoo 18 trong volumes, không khởi động Odoo 19 trên database đó trước khi sao lưu và thực hiện migration.** Phát triển module Odoo 19 trong `custom_addons/`, không sửa Odoo core. Xem [hướng dẫn Docker](docs/docker_setup.md), [quy tắc cộng tác](docs/contributing.md) và [phiên bản image/source](docs/odoo_version.md).

@@ -1,10 +1,10 @@
-# Chạy Odoo 18 bằng Docker Compose
+# Chạy Odoo 19 bằng Docker Compose
 
 ## Yêu cầu và phạm vi
 
-Cài Docker Desktop với Linux containers và Docker Engine đang chạy. Trong repository nhóm, kiểm tra `docker version` và `docker compose version`. Compose sử dụng official Odoo 18 Community image và PostgreSQL 15 image, hai service `odoo` và `db`. Không build từ source `odoo-18/` local, cũng không cần clone source này để chạy Docker.
+Cài Docker Desktop với Linux containers và Docker Engine đang chạy. Trong repository nhóm, kiểm tra `docker version` và `docker compose version`. Compose sử dụng official Odoo 19 Community image và PostgreSQL 15 image, hai service `odoo` và `db`. Không build từ source Odoo 18 tại `odoo-18/` local, cũng không cần clone source riêng để chạy Docker.
 
-Ngày 2026-10-13, Docker CLI và Compose có sẵn trên máy khởi tạo nhưng Engine chưa kết nối được. Pull, chạy service, HTTP, logs và kiểm tra mounts/volumes là **PENDING — Docker Engine unavailable** cho tới khi chạy kiểm thử runtime thực tế.
+Ngày 2026-10-13, Docker Engine trên máy khởi tạo đã hoạt động khi chuyển sang Odoo 19. Kết quả kiểm thử runtime cho image mới được ghi ở cuối tài liệu; các máy khác cần tự kiểm tra lại.
 
 ## Clone và tạo cấu hình local
 
@@ -15,9 +15,11 @@ if (-not (Test-Path .env)) { Copy-Item .env.example .env }
 if (-not (Test-Path config/odoo.conf)) { Copy-Item config/odoo.example.conf config/odoo.conf }
 ~~~
 
-Trong `.env`, đặt `POSTGRES_PASSWORD` mạnh và riêng cho máy. Trong `config/odoo.conf`, thay `REPLACE_WITH_LOCAL_MASTER_PASSWORD` bằng mật khẩu master mạnh. `admin_passwd` bảo vệ quản trị database Odoo, khác mật khẩu PostgreSQL. Không để placeholder khi chạy. Hai file local bị Git ignore; chỉ commit các mẫu không chứa secret. Không ghi đè file local đã tồn tại.
+Trong `.env`, đặt `POSTGRES_PASSWORD` mạnh và riêng cho máy. Nếu file này đã có từ setup Odoo 18, cập nhật riêng `ODOO_IMAGE` theo `.env.example`; file local bị ignore sẽ không tự đổi khi Git pull. Trong `config/odoo.conf`, thay `REPLACE_WITH_LOCAL_MASTER_PASSWORD` bằng mật khẩu master mạnh. `admin_passwd` bảo vệ quản trị database Odoo, khác mật khẩu PostgreSQL. Không để placeholder khi chạy. Hai file local bị Git ignore; chỉ commit các mẫu không chứa secret. Không ghi đè file local đã tồn tại.
 
 Nếu PostgreSQL volume đã được khởi tạo, đổi `POSTGRES_PASSWORD` trong `.env` không tự đổi mật khẩu role trong database. Giữ credential khớp với volume hiện có hoặc chủ động làm quy trình đổi mật khẩu PostgreSQL; không xóa volume khi chưa sao lưu.
+
+**Đổi image Odoo 18 sang 19 không nâng cấp database Odoo 18.** Nếu đã có dữ liệu Odoo 18, sao lưu cả database và filestore, rồi làm quy trình migration tương thích Odoo 19 trước khi cho image mới sử dụng volumes đó. Trên máy khởi tạo, trước khi đổi image không có container hoặc named volume của Compose project này. Xem [hướng dẫn nâng cấp Odoo](https://www.odoo.com/documentation/19.0/administration/upgrade.html).
 
 ## Validate và chạy
 
@@ -70,3 +72,14 @@ Tạo module trong `custom_addons/<module_name>/` với `__manifest__.py`. Mount
 - Đổi mật khẩu sau khi DB đã khởi tạo: xem lưu ý PostgreSQL volume ở trên; không in mật khẩu vào issue/chat.
 
 Xem [README](../README.md), [contributing](contributing.md), [odoo_version](odoo_version.md).
+
+## Kiểm chứng trên máy khởi tạo (2026-10-13)
+
+| Mục | Kết quả |
+| --- | --- |
+| Docker Engine và `docker compose config --quiet` với Odoo 19 | PASS |
+| Official `odoo:19.0-20260926` và OCI index digest trên registry | PASS |
+| Pull Odoo 19/PostgreSQL image | PENDING — lần pull đã bắt đầu nhưng chưa tải xong; đã dừng để hoàn tất thay đổi Git |
+| PostgreSQL healthy, Odoo running, HTTP localhost, logs và mounts/volumes runtime | PENDING — chưa chạy container |
+
+Sau lần pull chưa hoàn tất, không có image Odoo 19 hoàn chỉnh, container hoặc named volume của Compose project trên máy khởi tạo. Chạy lại `docker compose pull` khi có đủ thời gian/mạng, rồi tiếp tục các lệnh kiểm tra ở trên. Không báo PASS cho runtime khi chưa chạy.

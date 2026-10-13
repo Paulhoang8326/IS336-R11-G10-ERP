@@ -2,9 +2,9 @@
 
 ## Source và phát triển module
 
-Môi trường dùng official Odoo 18 Community image và PostgreSQL 15 qua [Docker Compose](docker_setup.md). Thành viên chỉ clone [repository nhóm](https://github.com/Paulhoang8326/IS336-R11-G10-ERP), không cần clone Odoo upstream. Đặt module trong `custom_addons/<module_name>/`; thư mục được bind mount read-only vào container tại `/mnt/extra-addons`. Sửa code trên host, kiểm tra manifest, rồi dùng `docker compose restart odoo` sau khi đổi Python code. Cài/upgrade module chỉ sau khi nhóm chủ động tạo database.
+Môi trường dùng official Odoo 19 Community image và PostgreSQL 15 qua [Docker Compose](docker_setup.md). Thành viên chỉ clone [repository nhóm](https://github.com/Paulhoang8326/IS336-R11-G10-ERP), không cần clone Odoo upstream. Đặt module trong `custom_addons/<module_name>/`; thư mục được bind mount read-only vào container tại `/mnt/extra-addons`. Phát triển module tương thích Odoo 19, sửa code trên host, kiểm tra manifest, rồi dùng `docker compose restart odoo` sau khi đổi Python code. Cài/upgrade module chỉ sau khi nhóm chủ động tạo database.
 
-Không sửa/commit Odoo core hoặc vendor source. `odoo-18/` nếu có trên máy chỉ là source tham chiếu local bị ignore; Compose không build từ đó. Nâng image/tag/digest hoặc đổi PostgreSQL cần PR và kiểm tra tương thích. Không commit `.env`, `config/odoo.conf`, secrets, dumps, logs hoặc runtime data.
+Không sửa/commit Odoo core hoặc vendor source. `odoo-18/` nếu có trên máy là source Odoo 18 cũ bị ignore, không đại diện cho runtime Odoo 19; Compose không build từ đó. Nâng image/tag/digest hoặc đổi PostgreSQL cần review và kiểm tra tương thích. Không commit `.env`, `config/odoo.conf`, secrets, dumps, logs hoặc runtime data.
 
 ## Git và Pull Request
 
