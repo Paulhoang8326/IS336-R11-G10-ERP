@@ -28,7 +28,7 @@ Khi `db` healthy và `odoo` running, truy cập http://localhost:8069/. Để xe
 
 ~~~text
 IS336-R11-G10-ERP/
-├── compose.yaml
+├── docker-compose.yml
 ├── .env.example
 ├── .env                         # local, ignored
 ├── config/
