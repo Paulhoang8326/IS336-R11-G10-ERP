@@ -1,6 +1,19 @@
-# Phiên bản Odoo upstream
+# Phiên bản Odoo và PostgreSQL
 
-Kiểm tra local ngày **2026-10-13**:
+## Runtime Docker Compose
+
+Compose dùng official images, không build từ source local. Image refs trong `.env.example`:
+
+| Thành phần | Tag | OCI index digest |
+| --- | --- | --- |
+| Odoo 18 Community | `odoo:18.0-20260926` | `sha256:60eb1b5006df85f900e300b6cc120d51ebd979379ee9588340adc2a84ffcd718` |
+| PostgreSQL 15 | `postgres:15.19-bookworm` | `sha256:d4a8e1f88f475ee3e0137fa89d21ebc59f6c6ab16bf369ee92907607cc3455ae` |
+
+Tag/digest được kiểm tra qua metadata registry trong Environment Audit. **Pull/runtime trên máy khởi tạo chưa được xác minh vì Docker Engine chưa khả dụng ngày 2026-10-13.** Khi Engine chạy, `docker compose pull` phải xác minh image thực nhận. Digest là OCI index; Docker chọn manifest theo kiến trúc máy. Nếu không có manifest phù hợp, dừng để kiểm tra trước khi thay image.
+
+Nguồn: [official Odoo image](https://hub.docker.com/_/odoo), [official PostgreSQL image](https://hub.docker.com/_/postgres), [Odoo Dockerfile 18.0](https://github.com/odoo/docker/tree/master/18.0). Giữ nguyên giấy phép và thông báo bản quyền của các image upstream.
+
+## Source upstream tham chiếu trên máy khởi tạo
 
 | Thuộc tính | Giá trị |
 | --- | --- |
@@ -9,21 +22,6 @@ Kiểm tra local ngày **2026-10-13**:
 | Remote `origin` | https://github.com/odoo/odoo.git |
 | Branch local | `18.0` |
 | HEAD SHA | `4ea65e6c252d1f10aa9df314b8225c623099cf92` |
-| Commit subject | `[FIX] website: force padding on popup inside containers` |
-| Working tree khi khảo sát | Sạch |
-| Source local | `D:/UIT/HocTrenTruong/HK5/IS336_Hoach_Dinh_Nguon_Luc_Doanh_Nghiep/odoo-18` |
+| Source local | `../odoo-18` so với repository nhóm |
 
-Đây là phiên bản đã kiểm tra trên máy, không phải tuyên bố về commit mới nhất của upstream. Repository nhóm không theo dõi source Odoo hoặc lịch sử Git upstream.
-
-## Tái lập trên máy mới
-
-Từ thư mục project nhóm, khi `odoo-18` chưa tồn tại:
-
-```powershell
-git clone --branch 18.0 --single-branch https://github.com/odoo/odoo.git odoo-18
-git -C odoo-18 checkout --detach 4ea65e6c252d1f10aa9df314b8225c623099cf92
-git -C odoo-18 rev-parse HEAD
-git -C odoo-18 status --short
-```
-
-Detached HEAD ở SHA trên là chủ ý để ghim phiên bản. Không dùng `git pull` tự động cho source đã ghim. Khi cần nâng cấp, thống nhất trong nhóm, kiểm tra tương thích rồi cập nhật SHA trong tài liệu qua Pull Request. Nếu source đã tồn tại, chỉ kiểm tra trạng thái và SHA trước; không checkout, di chuyển hoặc ghi đè khi có thay đổi chưa commit.
+SHA này chỉ mô tả checkout upstream riêng trên máy khởi tạo, **không phải commit của Docker image**. Source này không nằm trong Git repository nhóm. `odoo-18/` local trong repository nhóm cũng bị ignore. Không cần clone source để chạy Compose hoặc phát triển custom addons; không sửa Odoo core.

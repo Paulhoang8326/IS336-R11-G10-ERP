@@ -1,0 +1,52 @@
+name: is336-r11-g10
+
+services:
+  db:
+    image: ${POSTGRES_IMAGE:?Set POSTGRES_IMAGE}
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: ${POSTGRES_USER:-odoo}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+
+  odoo:
+    image: ${ODOO_IMAGE:?Set ODOO_IMAGE}
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${ODOO_HTTP_PORT:-8069}:8069"
+    environment:
+      HOST: db
+      PORT: "5432"
+      USER: ${POSTGRES_USER:-odoo}
+      PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
+    volumes:
+      - type: volume
+        source: odoo_data
+        target: /var/lib/odoo
+      - type: bind
+        source: ./custom_addons
+        target: /mnt/extra-addons
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./config/odoo.conf
+        target: /etc/odoo/odoo.conf
+        read_only: true
+        bind:
+          create_host_path: false
+
+volumes:
+  db_data:
+  odoo_data:

@@ -1,71 +1,34 @@
 # Quy tắc cộng tác nhóm 10
 
-## Branch và Pull Request
+## Source và phát triển module
 
-- `main`: trạng thái ổn định, ưu tiên cập nhật bằng Pull Request đã review.
-- `feature/*`: tính năng; `fix/*`: sửa lỗi; `docs/*`: tài liệu.
-- Mỗi thành viên tạo branch riêng, ví dụ `feature/nguyen-sale-report`.
-- Module nhóm nằm trong `custom_addons/`; không sửa hoặc commit Odoo core.
-- Trước commit, xem `git diff` và `git diff --cached`; stage đường dẫn cụ thể để tránh đưa secret/runtime vào Git.
-- PR mô tả thay đổi, cách kiểm tra và giới hạn chưa xác minh. Yêu cầu ít nhất một thành viên review trước merge. Đây là quy ước nhóm, chưa được cưỡng chế bằng branch protection.
+Môi trường dùng official Odoo 18 Community image và PostgreSQL 15 qua [Docker Compose](docker_setup.md). Thành viên chỉ clone [repository nhóm](https://github.com/Paulhoang8326/IS336-R11-G10-ERP), không cần clone Odoo upstream. Đặt module trong `custom_addons/<module_name>/`; thư mục được bind mount read-only vào container tại `/mnt/extra-addons`. Sửa code trên host, kiểm tra manifest, rồi dùng `docker compose restart odoo` sau khi đổi Python code. Cài/upgrade module chỉ sau khi nhóm chủ động tạo database.
 
-## Clone và commit đầu tiên
+Không sửa/commit Odoo core hoặc vendor source. `odoo-18/` nếu có trên máy chỉ là source tham chiếu local bị ignore; Compose không build từ đó. Nâng image/tag/digest hoặc đổi PostgreSQL cần PR và kiểm tra tương thích. Không commit `.env`, `config/odoo.conf`, secrets, dumps, logs hoặc runtime data.
 
-Sau khi có URL GitHub thật và quyền truy cập:
+## Git và Pull Request
 
-```powershell
-git clone https://github.com/YOUR_GITHUB_ACCOUNT/IS336-R11-G10-ERP.git
-cd IS336-R11-G10-ERP
+- `main`: trạng thái ổn định, ưu tiên PR đã review.
+- `feature/*`, `fix/*`, `docs/*`: công việc từng thành viên.
+- Trước commit: xem `git status`, `git diff` và `git diff --cached`; stage đúng đường dẫn thuộc phạm vi thay đổi.
+- PR mô tả hành vi, cách kiểm tra và kiểm thử chưa chạy. Thành viên khác review trước merge. Branch protection chưa được xác minh.
+
+Ví dụ sau khi module thật đã tồn tại:
+
+~~~powershell
 git switch main
 git pull --ff-only origin main
-git switch -c docs/ten-thanh-vien-setup
-# Chỉnh sửa tài liệu thật trước khi commit
-git diff
-git add docs/setup.md
-git diff --cached
-git commit -m "docs: clarify local setup"
-git push -u origin docs/ten-thanh-vien-setup
-```
-
-Tạo Pull Request trên GitHub từ branch vừa push vào `main`. Không push trực tiếp vào `main` cho công việc thường ngày.
-
-## Đồng bộ branch đang làm
-
-Commit hoặc stash công việc local trước khi đồng bộ:
-
-```powershell
+git switch -c feature/ten-thanh-vien-ten-tinh-nang
 git status
-git fetch origin
-git merge origin/main
-# Kiểm tra thay đổi và chạy kiểm tra phù hợp với phần đã sửa
-git push
-```
-
-Với branch dùng chung, khi cần lấy commit của người khác: `git pull --ff-only`. Nếu không thể fast-forward, xem `git log --oneline --graph --all` rồi thống nhất merge; không force push hoặc reset để loại bỏ công việc của người khác.
-
-Sau khi PR đã merge:
-
-```powershell
-git switch main
-git pull --ff-only origin main
-```
-
-## Conflict cơ bản
-
-1. Chạy `git status` để biết file xung đột.
-2. Mở từng file, đọc hai phía quanh `<<<<<<<`, `=======`, `>>>>>>>`. Trao đổi với tác giả nếu logic không rõ.
-3. Giữ nội dung đúng đã thống nhất, xóa marker, kiểm tra diff và chạy kiểm tra phù hợp.
-4. Stage từng file đã giải quyết, rồi hoàn tất merge:
-
-```powershell
-git add docs/setup.md
+git diff
+git add custom_addons/ten_module/__manifest__.py
 git diff --cached
-git merge --continue
-git push
-```
+git commit -m "feat: describe the implemented change"
+git push -u origin feature/ten-thanh-vien-ten-tinh-nang
+~~~
 
-Đường dẫn trong ví dụ phải thay bằng file conflict thực tế. Nếu chưa muốn tiếp tục merge, `git merge --abort` quay về trước merge; nên bắt đầu merge từ working tree sạch. Không dùng `reset --hard` hoặc force push để giải quyết conflict.
+Khi đồng bộ branch đang làm, bảo toàn thay đổi local trước; dùng `git fetch origin` và merge `origin/main` sau khi review. Nếu có conflict, thống nhất nội dung từng file, stage từng file đã xử lý và `git merge --continue`. Không reset cứng hoặc force push để xử lý conflict.
 
-## Cấu hình và phiên bản
+## Cấu hình local
 
-Copy `.env.example` thành `.env` nếu file chưa tồn tại, điền giá trị riêng của máy. Không commit credentials. Clone upstream và ghim SHA theo [odoo_version.md](odoo_version.md); nâng phiên bản phải qua PR có kiểm tra tương thích. Chưa có module hoặc bộ kiểm thử nghiệp vụ trong scaffold này.
+Chỉ commit `.env.example` và `config/odoo.example.conf` không chứa secrets. Bản `.env` và `config/odoo.conf` mỗi máy nằm ngoài Git. Xem [docker_setup.md](docker_setup.md) để cấu hình và quản lý volumes. Chưa có module nghiệp vụ hoặc bộ kiểm thử nghiệp vụ trong repository.
