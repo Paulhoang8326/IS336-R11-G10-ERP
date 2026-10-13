@@ -1,6 +1,6 @@
 # IS336-R11-G10-ERP
 
-Đồ án **IS336 – Hoạch định nguồn lực doanh nghiệp**, lớp **IS336.R11**, **nhóm 10**, UIT. Môi trường phát triển chạy **Odoo 18 Community official image** và **PostgreSQL 15** bằng Docker Compose. Repository: https://github.com/Paulhoang8326/IS336-R11-G10-ERP.
+Đồ án **IS336 – Hoạch định nguồn lực doanh nghiệp**, lớp **IS336.R11**, **nhóm 10**, UIT. Môi trường phát triển chạy **Odoo 19 Community official image** và **PostgreSQL 15** bằng Docker Compose. Repository: https://github.com/Paulhoang8326/IS336-R11-G10-ERP.
 
 ## Bắt đầu trên Windows
 
@@ -40,7 +40,7 @@ IS336-R11-G10-ERP/
 │   ├── setup.md
 │   ├── contributing.md
 │   └── odoo_version.md
-└── odoo-18/                     # source local nếu có, ignored; không dùng để build
+└── odoo-19/                     # source local nếu có, ignored; không dùng để build
 ~~~
 
 Compose chỉ bind HTTP vào `127.0.0.1:8069` và dùng hai named volumes cho PostgreSQL và dữ liệu Odoo. `docker compose down` giữ volumes; không dùng `down -v` khi cần giữ dữ liệu. Phát triển module trong `custom_addons/`, không sửa Odoo core. Xem [hướng dẫn Docker](docs/docker_setup.md), [quy tắc cộng tác](docs/contributing.md) và [phiên bản image/source](docs/odoo_version.md).

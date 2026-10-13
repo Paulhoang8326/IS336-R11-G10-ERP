@@ -1,8 +1,8 @@
-# Chạy Odoo 18 bằng Docker Compose
+# Chạy Odoo 19 bằng Docker Compose
 
 ## Yêu cầu và phạm vi
 
-Cài Docker Desktop với Linux containers và Docker Engine đang chạy. Trong repository nhóm, kiểm tra `docker version` và `docker compose version`. Compose sử dụng official Odoo 18 Community image và PostgreSQL 15 image, hai service `odoo` và `db`. Không build từ source `odoo-18/` local, cũng không cần clone source này để chạy Docker.
+Cài Docker Desktop với Linux containers và Docker Engine đang chạy. Trong repository nhóm, kiểm tra `docker version` và `docker compose version`. Compose sử dụng official Odoo 19 Community image và PostgreSQL 15 image, hai service `odoo` và `db`. Không build từ source `odoo-19/` local, cũng không cần clone source này để chạy Docker.
 
 Ngày 2026-10-13, Docker CLI và Compose có sẵn trên máy khởi tạo nhưng Engine chưa kết nối được. Pull, chạy service, HTTP, logs và kiểm tra mounts/volumes là **PENDING — Docker Engine unavailable** cho tới khi chạy kiểm thử runtime thực tế.
 
