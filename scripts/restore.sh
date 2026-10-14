@@ -22,9 +22,9 @@ done
 
 cd "$(dirname "$0")/.."
 
-names=$(docker compose exec -T db sh -c 'psql -U "$POSTGRES_USER" -d postgres -tAc "SELECT datname FROM pg_database"')
+names=$(docker compose exec -T db sh -c 'psql -U "$POSTGRES_USER" -d postgres -tAc "SELECT datname FROM pg_database"' </dev/null)
 if grep -Fxq "$target" <<<"$names"; then
-  read -r -p "Database '$target' already exists. Overwrite it and its filestore? [y/N] " answer
+  read -r -p "Database '$target' already exists. Overwrite it and its filestore? [y/N] " answer || answer=
   case $answer in
     y | Y | yes | YES) ;;
     *)
@@ -32,10 +32,10 @@ if grep -Fxq "$target" <<<"$names"; then
       exit 1
       ;;
   esac
-  docker compose exec -T db sh -c 'dropdb -U "$POSTGRES_USER" --force "$1"' _ "$target"
+  docker compose exec -T db sh -c 'dropdb -U "$POSTGRES_USER" --force "$1"' _ "$target" </dev/null
 fi
 
-docker compose exec -T db sh -c 'createdb -U "$POSTGRES_USER" "$1"' _ "$target"
+docker compose exec -T db sh -c 'createdb -U "$POSTGRES_USER" "$1"' _ "$target" </dev/null
 docker compose exec -T db sh -c 'pg_restore -U "$POSTGRES_USER" --no-owner --exit-on-error -d "$1"' _ "$target" <"$src/db.dump"
 
 # The archive holds one top-level folder named after the source database; rename it to the target.

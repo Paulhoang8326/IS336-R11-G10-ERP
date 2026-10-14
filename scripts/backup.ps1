@@ -30,8 +30,10 @@ function Invoke-Compose {
     $psi.Arguments = ((@('compose') + $Arguments) | ForEach-Object { ConvertTo-ProcessArgument $_ }) -join ' '
     $psi.WorkingDirectory = $RepoRoot
     $psi.UseShellExecute = $false
+    $psi.RedirectStandardInput = $true
     $psi.RedirectStandardOutput = [bool]$OutFile -or $Capture
     $process = [System.Diagnostics.Process]::Start($psi)
+    $process.StandardInput.Close()
     $text = $null
     if ($OutFile) {
         $out = [System.IO.File]::Create($OutFile)

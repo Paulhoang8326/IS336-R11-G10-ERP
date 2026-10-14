@@ -34,14 +34,16 @@ function Invoke-Compose {
     $psi.Arguments = ((@('compose') + $Arguments) | ForEach-Object { ConvertTo-ProcessArgument $_ }) -join ' '
     $psi.WorkingDirectory = $RepoRoot
     $psi.UseShellExecute = $false
-    $psi.RedirectStandardInput = [bool]$InFile
+    # Always redirect stdin so docker never reads the console that Read-Host uses.
+    $psi.RedirectStandardInput = $true
     $psi.RedirectStandardOutput = [bool]$Capture
     $process = [System.Diagnostics.Process]::Start($psi)
     $text = $null
     if ($InFile) {
         $in = [System.IO.File]::OpenRead($InFile)
-        try { $in.CopyTo($process.StandardInput.BaseStream) } finally { $in.Dispose(); $process.StandardInput.Close() }
+        try { $in.CopyTo($process.StandardInput.BaseStream) } finally { $in.Dispose() }
     }
+    $process.StandardInput.Close()
     if ($Capture) { $text = $process.StandardOutput.ReadToEnd() }
     $process.WaitForExit()
     if ($process.ExitCode -ne 0) { throw "docker compose exited with code $($process.ExitCode)" }

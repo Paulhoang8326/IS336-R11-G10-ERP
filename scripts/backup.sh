@@ -15,12 +15,12 @@ fi
 
 cd "$(dirname "$0")/.."
 
-names=$(docker compose exec -T db sh -c 'psql -U "$POSTGRES_USER" -d postgres -tAc "SELECT datname FROM pg_database"')
+names=$(docker compose exec -T db sh -c 'psql -U "$POSTGRES_USER" -d postgres -tAc "SELECT datname FROM pg_database"' </dev/null)
 if ! grep -Fxq "$db" <<<"$names"; then
   echo "Database not found: $db" >&2
   exit 1
 fi
-if ! docker compose exec -T odoo test -d "/var/lib/odoo/filestore/$db"; then
+if ! docker compose exec -T odoo test -d "/var/lib/odoo/filestore/$db" </dev/null; then
   echo "Filestore not found: /var/lib/odoo/filestore/$db" >&2
   exit 1
 fi
@@ -29,8 +29,8 @@ dest="backups/${db}_$(date +%Y%m%d_%H%M%S)"
 mkdir -p "$dest"
 trap 'echo "Backup failed, removing $dest" >&2; rm -rf "$dest"' ERR
 
-docker compose exec -T db sh -c 'pg_dump -U "$POSTGRES_USER" -Fc "$1"' _ "$db" >"$dest/db.dump"
-docker compose exec -T odoo tar -C /var/lib/odoo/filestore -cf - "$db" >"$dest/filestore.tar"
+docker compose exec -T db sh -c 'pg_dump -U "$POSTGRES_USER" -Fc "$1"' _ "$db" </dev/null >"$dest/db.dump"
+docker compose exec -T odoo tar -C /var/lib/odoo/filestore -cf - "$db" </dev/null >"$dest/filestore.tar"
 
 trap - ERR
 echo "Backup written to $dest"
