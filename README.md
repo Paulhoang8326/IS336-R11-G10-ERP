@@ -13,7 +13,7 @@ if (-not (Test-Path .env)) { Copy-Item .env.example .env }
 if (-not (Test-Path config/odoo.conf)) { Copy-Item config/odoo.example.conf config/odoo.conf }
 ~~~
 
-Đặt `POSTGRES_PASSWORD` mạnh trong `.env` và thay `REPLACE_WITH_LOCAL_MASTER_PASSWORD` bằng mật khẩu master mạnh trong `config/odoo.conf`. Hai file local bị Git ignore. Không commit hoặc chia sẻ mật khẩu. Trên máy khởi tạo, hai file đã được tạo với mật khẩu ngẫu nhiên riêng.
+Đặt `POSTGRES_PASSWORD` mạnh trong `.env` và thay `REPLACE_WITH_LOCAL_MASTER_PASSWORD` bằng mật khẩu master mạnh trong `config/odoo.conf`. Hai file local bị Git ignore và không tự cập nhật khi pull; nếu đã tạo từ trước, xem [setup.md](docs/setup.md) để sửa hai dòng image và dòng `addons_path`. Không commit hoặc chia sẻ mật khẩu. Trên máy khởi tạo, hai file đã được tạo với mật khẩu ngẫu nhiên riêng.
 
 ~~~powershell
 docker compose config --quiet
@@ -53,7 +53,7 @@ IS336-R11-G10-ERP/
 │   ├── setup.md
 │   ├── contributing.md
 │   └── odoo_version.md
-└── odoo-19/                     # source local nếu có, ignored; không dùng để build
+└── README.md
 ~~~
 
-Compose chỉ bind HTTP vào `127.0.0.1:8069` và dùng hai named volumes cho PostgreSQL và dữ liệu Odoo. `docker compose down` giữ volumes; không dùng `down -v` khi cần giữ dữ liệu. Phát triển module trong `custom_addons/`, không sửa Odoo core hay code trong `oca/`. Sao lưu database kèm filestore bằng `scripts/backup.sh <db>`, khôi phục bằng `scripts/restore.sh <thư mục backup> <db đích>`; trên Windows dùng bản `.ps1` cùng tham số. Xem [hướng dẫn Docker](docs/docker_setup.md), [quy tắc cộng tác](docs/contributing.md) và [phiên bản image và OCA](docs/odoo_version.md).
+Compose chỉ bind HTTP vào `127.0.0.1:8069` và dùng hai named volumes cho PostgreSQL và dữ liệu Odoo. `docker compose down` giữ volumes; không dùng `down -v` khi cần giữ dữ liệu. **Nếu đã có database Odoo 18 trong volumes, không khởi động Odoo 19 trên database đó trước khi sao lưu và thực hiện migration.** Phát triển module Odoo 19 trong `custom_addons/`, không sửa Odoo core hay code trong `oca/`. Sao lưu database kèm filestore bằng `scripts/backup.sh <db>`, khôi phục bằng `scripts/restore.sh <thư mục backup> <db đích>`; trên Windows dùng bản `.ps1` cùng tham số. Xem [hướng dẫn Docker](docs/docker_setup.md), [quy tắc cộng tác](docs/contributing.md) và [phiên bản image và OCA](docs/odoo_version.md).

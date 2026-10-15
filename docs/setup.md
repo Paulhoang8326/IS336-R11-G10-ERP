@@ -1,6 +1,6 @@
 # Thiết lập môi trường local
 
-Repository nhóm: https://github.com/Paulhoang8326/IS336-R11-G10-ERP. Thành viên chỉ cần clone repository này kèm submodule OCA và dùng Docker Desktop; không cần clone source Odoo. Hướng dẫn đầy đủ, lệnh Compose, volumes và troubleshooting: [docker_setup.md](docker_setup.md).
+Repository nhóm: https://github.com/Paulhoang8326/IS336-R11-G10-ERP. Thành viên chỉ cần clone repository này kèm submodule OCA và dùng Docker Desktop để chạy Odoo 19; không cần clone source Odoo. Hướng dẫn đầy đủ, lệnh Compose, volumes và troubleshooting: [docker_setup.md](docker_setup.md).
 
 ~~~powershell
 git clone --recurse-submodules https://github.com/Paulhoang8326/IS336-R11-G10-ERP.git
@@ -37,4 +37,4 @@ Git không cập nhật `.env` và `config/odoo.conf`. Ai đã tạo hai file n�
 
 Sau đó chạy `docker compose pull` và `docker compose up -d`. Odoo 19 không mở được database tạo bằng Odoo 18; nếu máy đã có database Odoo 18 cần giữ, báo nhóm trước, không tự xóa volume.
 
-Compose dùng image chính thức, không build từ source Odoo local. Môi trường đã chạy thử thành công ngày 2026-10-15; chi tiết trong [odoo_version.md](odoo_version.md).
+Các bản source Odoo 18 local trên máy khởi tạo đã được dọn bỏ. Compose chỉ dùng official Odoo 19 image, không build từ source Odoo local. Môi trường đã chạy thử thành công ngày 2026-10-15; chi tiết trong [odoo_version.md](odoo_version.md).
