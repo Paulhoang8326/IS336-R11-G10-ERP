@@ -7,13 +7,13 @@
 Cài Docker Desktop và bật Linux Docker Engine. Chỉ cần clone repository nhóm; không cần clone source Odoo riêng để chạy Docker.
 
 ~~~powershell
-git clone https://github.com/Paulhoang8326/IS336-R11-G10-ERP.git
+git clone --recurse-submodules https://github.com/Paulhoang8326/IS336-R11-G10-ERP.git
 cd IS336-R11-G10-ERP
 if (-not (Test-Path .env)) { Copy-Item .env.example .env }
 if (-not (Test-Path config/odoo.conf)) { Copy-Item config/odoo.example.conf config/odoo.conf }
 ~~~
 
-Đặt `POSTGRES_PASSWORD` mạnh trong `.env` và thay `REPLACE_WITH_LOCAL_MASTER_PASSWORD` bằng mật khẩu master mạnh trong `config/odoo.conf`. Nếu `.env` đã tồn tại từ setup Odoo 18, cập nhật riêng `ODOO_IMAGE` theo `.env.example`; Git không tự cập nhật file local bị ignore. Hai file local bị Git ignore. Không commit hoặc chia sẻ mật khẩu. Trên máy khởi tạo, hai file đã được tạo với mật khẩu ngẫu nhiên riêng.
+Đặt `POSTGRES_PASSWORD` mạnh trong `.env` và thay `REPLACE_WITH_LOCAL_MASTER_PASSWORD` bằng mật khẩu master mạnh trong `config/odoo.conf`. Hai file local bị Git ignore và không tự cập nhật khi pull; nếu đã tạo từ trước, xem [setup.md](docs/setup.md) để sửa hai dòng image và dòng `addons_path`. Không commit hoặc chia sẻ mật khẩu. Trên máy khởi tạo, hai file đã được tạo với mật khẩu ngẫu nhiên riêng.
 
 ~~~powershell
 docker compose config --quiet
@@ -28,13 +28,26 @@ Khi `db` healthy và `odoo` running, truy cập http://localhost:8069/. Để xe
 
 ~~~text
 IS336-R11-G10-ERP/
-├── compose.yaml
+├── docker-compose.yml
 ├── .env.example
 ├── .env                         # local, ignored
+├── .gitmodules                  # khai báo 4 submodule OCA
 ├── config/
 │   ├── odoo.example.conf
 │   └── odoo.conf                # local, ignored
 ├── custom_addons/               # module nhóm, bind mount read-only
+│   └── pl_base/                 # module nền Phan Lam Base
+├── oca/                         # submodule OCA nhánh 19.0, bind mount read-only
+│   ├── account-financial-reporting/
+│   ├── reporting-engine/
+│   ├── server-tools/
+│   └── server-ux/
+├── scripts/                     # backup/restore database kèm filestore
+│   ├── backup.sh
+│   ├── backup.ps1
+│   ├── restore.sh
+│   └── restore.ps1
+├── backups/                     # tạo khi chạy backup, ignored
 ├── docs/
 │   ├── docker_setup.md
 │   ├── setup.md
@@ -43,4 +56,4 @@ IS336-R11-G10-ERP/
 └── README.md
 ~~~
 
-Compose chỉ bind HTTP vào `127.0.0.1:8069` và dùng hai named volumes cho PostgreSQL và dữ liệu Odoo. `docker compose down` giữ volumes; không dùng `down -v` khi cần giữ dữ liệu. **Nếu đã có database Odoo 18 trong volumes, không khởi động Odoo 19 trên database đó trước khi sao lưu và thực hiện migration.** Phát triển module Odoo 19 trong `custom_addons/`, không sửa Odoo core. Xem [hướng dẫn Docker](docs/docker_setup.md), [quy tắc cộng tác](docs/contributing.md) và [phiên bản image/source](docs/odoo_version.md).
+Compose chỉ bind HTTP vào `127.0.0.1:8069` và dùng hai named volumes cho PostgreSQL và dữ liệu Odoo. `docker compose down` giữ volumes; không dùng `down -v` khi cần giữ dữ liệu. **Nếu đã có database Odoo 18 trong volumes, không khởi động Odoo 19 trên database đó trước khi sao lưu và thực hiện migration.** Phát triển module Odoo 19 trong `custom_addons/`, không sửa Odoo core hay code trong `oca/`. Sao lưu database kèm filestore bằng `scripts/backup.sh <db>`, khôi phục bằng `scripts/restore.sh <thư mục backup> <db đích>`; trên Windows dùng bản `.ps1` cùng tham số. Xem [hướng dẫn Docker](docs/docker_setup.md), [quy tắc cộng tác](docs/contributing.md) và [phiên bản image và OCA](docs/odoo_version.md).

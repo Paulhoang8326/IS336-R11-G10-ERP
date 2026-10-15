@@ -41,6 +41,12 @@ services:
         bind:
           create_host_path: false
       - type: bind
+        source: ./oca
+        target: /mnt/oca
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
         source: ./config/odoo.conf
         target: /etc/odoo/odoo.conf
         read_only: true

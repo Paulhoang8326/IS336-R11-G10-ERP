@@ -1,5 +1,5 @@
 # Upstream Odoo: local only, never vendor into the group repository
-/odoo-18/
+/odoo-19/
 
 # Environment and credentials
 .env
