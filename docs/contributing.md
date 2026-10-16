@@ -2,15 +2,15 @@
 
 ## Source và phát triển module
 
-Môi trường dùng official Odoo 19 Community image và PostgreSQL 15 qua [Docker Compose](docker_setup.md). Thành viên chỉ clone [repository nhóm](https://github.com/Paulhoang8326/IS336-R11-G10-ERP), không cần clone Odoo upstream. Đặt module trong `custom_addons/<module_name>/`; thư mục được bind mount read-only vào container tại `/mnt/extra-addons`, còn `oca/` tại `/mnt/oca`. Phát triển module tương thích Odoo 19, sửa code trên host, kiểm tra manifest, rồi dùng `docker compose restart odoo` sau khi đổi Python code. Cài/upgrade module chỉ sau khi nhóm chủ động tạo database.
+Môi trường dùng official Odoo 18 Community image và PostgreSQL 15 qua [Docker Compose](docker_setup.md). Thành viên chỉ clone [repository nhóm](https://github.com/Paulhoang8326/IS336-R11-G10-ERP), không cần clone Odoo upstream. Đặt module trong `custom_addons/<module_name>/`; thư mục được bind mount read-only vào container tại `/mnt/extra-addons`, còn `oca/` tại `/mnt/oca`. Phát triển module tương thích Odoo 18, sửa code trên host, kiểm tra manifest, rồi dùng `docker compose restart odoo` sau khi đổi Python code. Cài/upgrade module chỉ sau khi nhóm chủ động tạo database.
 
-Không sửa/commit Odoo core hoặc vendor source. Core được cung cấp bởi official Odoo 19 image; module nhóm phải tương thích với Odoo 19. Không cần clone source Odoo riêng. Nâng image/tag/digest hoặc đổi PostgreSQL cần PR và kiểm tra tương thích. Không commit `.env`, `config/odoo.conf`, secrets, dumps, logs hoặc runtime data.
+Không sửa/commit Odoo core hoặc vendor source. Core được cung cấp bởi official Odoo 18 image; module nhóm phải tương thích với Odoo 18. Không cần clone source Odoo riêng. Nâng image/tag/digest hoặc đổi PostgreSQL cần PR và kiểm tra tương thích. Không commit `.env`, `config/odoo.conf`, secrets, dumps, logs hoặc runtime data.
 
 ## Module OCA
 
-`oca/` chứa 4 repository OCA nhánh 19.0 dưới dạng git submodule. Không sửa code trong `oca/`: thay đổi sẽ mất khi cập nhật submodule và không thể commit vào repository nhóm. Cần đổi hành vi một module OCA thì viết module kế thừa trong `custom_addons/`.
+`oca/` chứa 7 repository OCA nhánh 18.0 dưới dạng git submodule. Không sửa code trong `oca/`: thay đổi sẽ mất khi cập nhật submodule và không thể commit vào repository nhóm. Cần đổi hành vi một module OCA thì viết module kế thừa trong `custom_addons/`.
 
-Cập nhật một repository OCA lên commit mới nhất của nhánh 19.0, làm trên branch riêng:
+Cập nhật một repository OCA lên commit mới nhất của nhánh 18.0, làm trên branch riêng:
 
 ~~~powershell
 git submodule update --remote oca/<repo>
