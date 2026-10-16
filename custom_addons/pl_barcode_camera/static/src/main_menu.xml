@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-inherit="stock_barcodes.MainMenu" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_stock_barcode_description')]" position="after">
+            <button
+                type="button"
+                class="btn o_pl_camera_scan_area"
+                title="Scan with camera"
+                t-on-click="openCameraScanner"
+            >
+                <span class="o_pl_camera_scan_image">
+                    <img src="/barcodes/static/img/barcode.png" alt="Barcode" />
+                    <span class="o_pl_camera_laser" />
+                </span>
+                <span class="o_pl_camera_scan_label">
+                    <i class="fa fa-camera me-1" />Scan or tap
+                </span>
+            </button>
+        </xpath>
+    </t>
+</templates>
