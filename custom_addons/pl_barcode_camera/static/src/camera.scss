@@ -1,0 +1,56 @@
+.o_pl_camera_dialog {
+    .o_pl_camera_preview {
+        height: 60vh;
+        background-color: $black;
+        color: $gray-300;
+
+        .text-muted {
+            color: $gray-500 !important;
+        }
+
+        video {
+            object-fit: cover;
+        }
+    }
+}
+
+.o_pl_camera_button {
+    padding: 0 0.75rem;
+}
+
+div.stock-barcodes-main-menu {
+    .o_pl_camera_scan_area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 1rem 0;
+        border: 0;
+    }
+
+    .o_pl_camera_scan_image {
+        position: relative;
+        display: inline-block;
+
+        img {
+            width: 230px;
+            height: 120px !important;
+        }
+    }
+
+    .o_pl_camera_laser {
+        position: absolute;
+        top: 50%;
+        left: -20px;
+        right: -20px;
+        height: 4px;
+        background: rgba(red, 0.6);
+        box-shadow: 0 1px 10px 1px rgba(red, 0.8);
+        animation: o_barcode_scanner_intro 1s cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.4s;
+    }
+
+    .o_pl_camera_scan_label {
+        color: $o-brand-primary;
+        font-size: 1.1rem;
+    }
+}

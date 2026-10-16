@@ -36,7 +36,9 @@ IS336-R11-G10-ERP/
 │   ├── odoo.example.conf
 │   └── odoo.conf                # local, ignored
 ├── custom_addons/               # module nhóm, bind mount read-only
-│   └── pl_base/                 # module nền Phan Lam Base
+│   ├── pl_base/                 # module nền Phan Lam Base
+│   ├── pl_barcode_camera/       # quét mã vạch bằng camera trong app Barcodes
+│   └── pl_product_barcode/      # nút Generate Barcode sinh EAN-13 nội bộ
 ├── oca/                         # submodule OCA nhánh 18.0, bind mount read-only
 │   ├── account-financial-reporting/
 │   ├── reporting-engine/
@@ -55,8 +57,9 @@ IS336-R11-G10-ERP/
 │   ├── docker_setup.md
 │   ├── setup.md
 │   ├── contributing.md
-│   └── odoo_version.md
+│   ├── odoo_version.md
+│   └── barcode.md
 └── README.md
 ~~~
 
-Compose chỉ bind HTTP vào `127.0.0.1:8069` và dùng hai named volumes cho PostgreSQL và dữ liệu Odoo. `docker compose down` giữ volumes; không dùng `down -v` khi cần giữ dữ liệu. **Database tạo bằng Odoo 19 không mở được bằng Odoo 18, vì Odoo không hạ cấp database.** Ai đã tạo database thử bằng 19 thì xóa đi; nếu có dữ liệu cần giữ thì báo nhóm trước. Phát triển module Odoo 18 trong `custom_addons/`, không sửa Odoo core hay code trong `oca/`. Sao lưu database kèm filestore bằng `scripts/backup.sh <db>`, khôi phục bằng `scripts/restore.sh <thư mục backup> <db đích>`; trên Windows dùng bản `.ps1` cùng tham số. Xem [hướng dẫn Docker](docs/docker_setup.md), [quy tắc cộng tác](docs/contributing.md) và [phiên bản image và OCA](docs/odoo_version.md).
+Compose chỉ bind HTTP vào `127.0.0.1:8069` và dùng hai named volumes cho PostgreSQL và dữ liệu Odoo. `docker compose down` giữ volumes; không dùng `down -v` khi cần giữ dữ liệu. **Database tạo bằng Odoo 19 không mở được bằng Odoo 18, vì Odoo không hạ cấp database.** Ai đã tạo database thử bằng 19 thì xóa đi; nếu có dữ liệu cần giữ thì báo nhóm trước. Phát triển module Odoo 18 trong `custom_addons/`, không sửa Odoo core hay code trong `oca/`. Sao lưu database kèm filestore bằng `scripts/backup.sh <db>`, khôi phục bằng `scripts/restore.sh <thư mục backup> <db đích>`; trên Windows dùng bản `.ps1` cùng tham số. Xem [hướng dẫn Docker](docs/docker_setup.md), [quy tắc cộng tác](docs/contributing.md), [phiên bản image và OCA](docs/odoo_version.md) và [quét mã vạch](docs/barcode.md).

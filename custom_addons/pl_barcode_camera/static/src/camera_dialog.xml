@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="pl_barcode_camera.CameraScanDialog">
+        <Dialog
+            title.translate="Barcode Scanner"
+            size="'lg'"
+            contentClass="'o_pl_camera_dialog'"
+        >
+            <div class="o_pl_camera_preview">
+                <BarcodeVideoScanner
+                    t-if="state.supported"
+                    facingMode="'environment'"
+                    onResult.bind="onResult"
+                    onError.bind="onError"
+                />
+                <div
+                    t-else=""
+                    class="h-100 d-flex flex-column justify-content-center align-items-center gap-1"
+                >
+                    <i class="fa fa-2x fa-camera text-muted" />
+                    <strong>Unable to access camera</strong>
+                    <span class="text-muted" t-out="state.errorMessage" />
+                </div>
+            </div>
+            <t t-set-slot="footer">
+                <div class="input-group">
+                    <input
+                        type="text"
+                        class="form-control o_pl_camera_manual_input"
+                        placeholder="Enter a barcode..."
+                        t-model="state.manualBarcode"
+                        t-on-keydown="onManualKeydown"
+                    />
+                    <button
+                        class="btn btn-secondary o_pl_camera_apply"
+                        t-on-click="applyManual"
+                    >Apply</button>
+                </div>
+            </t>
+        </Dialog>
+    </t>
+</templates>
