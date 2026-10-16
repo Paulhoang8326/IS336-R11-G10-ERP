@@ -1,10 +1,10 @@
-# Chạy Odoo 19 bằng Docker Compose
+# Chạy Odoo 18 bằng Docker Compose
 
 ## Yêu cầu và phạm vi
 
-Cài Docker Desktop với Linux containers và Docker Engine đang chạy. Trong repository nhóm, kiểm tra `docker version` và `docker compose version`. Compose sử dụng official Odoo 19 Community image và PostgreSQL 15 image, hai service `odoo` và `db`. Không cần source Odoo local hoặc build image riêng để chạy môi trường này.
+Cài Docker Desktop với Linux containers và Docker Engine đang chạy. Trong repository nhóm, kiểm tra `docker version` và `docker compose version`. Compose sử dụng official Odoo 18 Community image và PostgreSQL 15 image, hai service `odoo` và `db`. Không cần source Odoo local hoặc build image riêng để chạy môi trường này.
 
-Môi trường đã chạy thử đầy đủ ngày 2026-10-15; kết quả ở cuối tài liệu. Các máy khác cần tự kiểm tra lại.
+Môi trường đã chạy thử đầy đủ ngày 2026-10-16; kết quả ở cuối tài liệu. Các máy khác cần tự kiểm tra lại.
 
 ## Clone và tạo cấu hình local
 
@@ -15,13 +15,13 @@ if (-not (Test-Path .env)) { Copy-Item .env.example .env }
 if (-not (Test-Path config/odoo.conf)) { Copy-Item config/odoo.example.conf config/odoo.conf }
 ~~~
 
-Đã clone mà thiếu submodule thì chạy `git submodule update --init`; nếu không, các thư mục trong `oca/` rỗng.
+Đã clone mà thiếu submodule thì chạy `git submodule update --init`; nếu không, các thư mục trong `oca/` rỗng. Máy đã clone từ hồi repository dùng Odoo 19 thì làm theo mục cập nhật trong [setup.md](setup.md#cập-nhật-file-local-đã-tạo-từ-trước).
 
-Trong `.env`, đặt `POSTGRES_PASSWORD` mạnh và riêng cho máy. Nếu `.env` và `config/odoo.conf` đã có từ trước, chép lại hai dòng `ODOO_IMAGE`, `POSTGRES_IMAGE` từ `.env.example` và dòng `addons_path` từ `config/odoo.example.conf`; file local bị ignore sẽ không tự đổi khi Git pull. Trong `config/odoo.conf`, thay `REPLACE_WITH_LOCAL_MASTER_PASSWORD` bằng mật khẩu master mạnh. `admin_passwd` bảo vệ quản trị database Odoo, khác mật khẩu PostgreSQL. Không để placeholder khi chạy. Hai file local bị Git ignore; chỉ commit các mẫu không chứa secret. Không ghi đè file local đã tồn tại.
+Trong `.env`, đặt `POSTGRES_PASSWORD` mạnh và riêng cho máy. Nếu `.env` và `config/odoo.conf` đã có từ trước, chép lại dòng `ODOO_IMAGE` từ `.env.example` và dòng `addons_path` từ `config/odoo.example.conf`; file local bị ignore sẽ không tự đổi khi Git pull. Trong `config/odoo.conf`, thay `REPLACE_WITH_LOCAL_MASTER_PASSWORD` bằng mật khẩu master mạnh. `admin_passwd` bảo vệ quản trị database Odoo, khác mật khẩu PostgreSQL. Không để placeholder khi chạy. Hai file local bị Git ignore; chỉ commit các mẫu không chứa secret. Không ghi đè file local đã tồn tại.
 
 Nếu PostgreSQL volume đã được khởi tạo, đổi `POSTGRES_PASSWORD` trong `.env` không tự đổi mật khẩu role trong database. Giữ credential khớp với volume hiện có hoặc chủ động làm quy trình đổi mật khẩu PostgreSQL; không xóa volume khi chưa sao lưu.
 
-**Đổi image Odoo 18 sang 19 không nâng cấp database Odoo 18.** Nếu đã có dữ liệu Odoo 18, sao lưu cả database và filestore, rồi làm quy trình migration tương thích Odoo 19 trước khi cho image mới sử dụng volumes đó. Xem [hướng dẫn nâng cấp Odoo](https://www.odoo.com/documentation/19.0/administration/upgrade.html).
+**Database tạo bằng Odoo 19 không mở được bằng Odoo 18, vì Odoo không hạ cấp database.** Ai đã tạo database thử bằng 19 thì xóa đi; nếu có dữ liệu cần giữ thì báo nhóm trước.
 
 ## Validate và chạy
 
@@ -75,14 +75,14 @@ Tạo module trong `custom_addons/<module_name>/` với `__manifest__.py`. Mount
 
 Xem [README](../README.md), [contributing](contributing.md), [odoo_version](odoo_version.md).
 
-## Kiểm chứng trên máy khởi tạo (2026-10-15)
+## Kiểm chứng trên máy khởi tạo (2026-10-16)
 
 | Mục | Kết quả |
 | --- | --- |
 | `docker compose config --quiet`, `pull`, `up -d` | PASS |
 | PostgreSQL healthy, Odoo running, HTTP localhost | PASS |
-| `odoo --version` | PASS: `Odoo Server 19.0-20260926` |
-| Cài `auditlog`, `account_financial_report`, `pl_base` | PASS |
+| `odoo --version` | PASS: `Odoo Server 18.0-20260926` |
+| Cài `auditlog`, `account_financial_report`, `stock_barcodes`, `pl_base` | PASS |
 | Backup và restore bằng `scripts/*.sh` | PASS |
 | `scripts/*.ps1` trên Windows | Chưa chạy |
 
