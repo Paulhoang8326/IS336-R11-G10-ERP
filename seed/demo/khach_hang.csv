@@ -1,0 +1,301 @@
+ma_kh,ten,nhom_khach,dia_chi,phuong,thanh_pho,vi_do,kinh_do,han_thanh_toan_ngay,han_muc_no,han_dung_toi_thieu_pct
+KH0001,Quán hủ tiếu Thanh Bình (giả lập),Quán ăn,156/31 3 Tháng 2 (giả lập),Phường Bình Thủy,Cần Thơ,10.049743,105.748595,0,,
+KH0002,Quán cơm tấm Chị Bảy (giả lập),Quán ăn,334 Trần Phú (giả lập),Phường Cái Khế,Cần Thơ,10.018988,105.767216,7,8000000,
+KH0003,Tạp hóa Thím Út (giả lập),Tạp hóa,182 Trần Văn Khéo (giả lập),Phường Cái Khế,Cần Thơ,10.054111,105.781221,7,16000000,
+KH0004,Tạp hóa Dì Mười (giả lập),Tạp hóa,321 Nguyễn Việt Hồng (giả lập),Phường An Bình,Cần Thơ,10.037545,105.779241,7,13000000,
+KH0005,Tiệm tạp hóa Anh Năm (giả lập),Tạp hóa,143 Hùng Vương (giả lập),Phường An Bình,Cần Thơ,10.042320,105.758697,0,,
+KH0006,Căn tin Công ty Thức ăn chăn nuôi Thanh Hương (giả lập),Căn tin KCN,123 Hùng Vương (giả lập),Phường Bình Thủy,Cần Thơ,10.050842,105.750545,30,179000000,60
+KH0007,Tạp hóa Dượng Hai (giả lập),Tạp hóa,312 Nguyễn Văn Linh (giả lập),Phường An Bình,Cần Thơ,10.050456,105.753537,0,,
+KH0008,Tạp hóa Phú Quý (giả lập),Tạp hóa,381 Trần Ngọc Quế (giả lập),Phường Bình Thủy,Cần Thơ,10.054349,105.771379,7,10000000,
+KH0009,Tiệm tạp hóa Chú Hai (giả lập),Tạp hóa,128 Trần Ngọc Quế (giả lập),Phường Bình Thủy,Cần Thơ,10.020923,105.757691,7,16000000,
+KH0010,Tiệm tạp hóa Hồng Nhung (giả lập),Tạp hóa,189 Phan Đình Phùng (giả lập),Phường Cái Khế,Cần Thơ,10.034138,105.768419,7,13000000,
+KH0011,Tạp hóa Thím Chín (giả lập),Tạp hóa,27/53 Phan Đình Phùng (giả lập),Phường Hưng Phú,Cần Thơ,10.046356,105.753355,7,11000000,
+KH0012,Tiệm tạp hóa Dượng Ba (giả lập),Tạp hóa,186/7 Cách Mạng Tháng 8 (giả lập),Phường Bình Thủy,Cần Thơ,10.048825,105.758956,0,,
+KH0013,Tiệm tạp hóa Thím Bảy (giả lập),Tạp hóa,315 Trần Quang Diệu (giả lập),Phường Hưng Phú,Cần Thơ,10.027916,105.768645,7,5000000,
+KH0014,Tiệm tạp hóa Chị Út (giả lập),Tạp hóa,347/9 Lê Hồng Phong (giả lập),Phường Ninh Kiều,Cần Thơ,10.041737,105.776550,7,20000000,
+KH0015,Tạp hóa Bà Út (giả lập),Tạp hóa,172 Hùng Vương (giả lập),Phường Cái Khế,Cần Thơ,10.034046,105.771390,7,16000000,
+KH0016,Siêu thị mini Hoàng Long (giả lập),Minimart,77/23 Hòa Bình (giả lập),Phường Tân An,Cần Thơ,10.036521,105.751382,15,52000000,50
+KH0017,Tạp hóa Chú Ba (giả lập),Tạp hóa,126/44 Võ Văn Kiệt (giả lập),Phường Cái Khế,Cần Thơ,10.018591,105.756583,0,,
+KH0018,Minimart Hồng Phúc (giả lập),Minimart,78/57 3 Tháng 2 (giả lập),Phường Tân An,Cần Thơ,10.030694,105.770835,15,49000000,50
+KH0019,Tiệm tạp hóa Tú Anh (giả lập),Tạp hóa,395 30 Tháng 4 (giả lập),Phường Cái Khế,Cần Thơ,10.020784,105.751106,7,20000000,
+KH0020,Tiệm tạp hóa Hồng Phúc (giả lập),Tạp hóa,25 Hùng Vương (giả lập),Phường An Bình,Cần Thơ,10.043376,105.780244,7,6000000,
+KH0021,Tạp hóa Bình An (giả lập),Tạp hóa,349/17 Nguyễn Văn Linh (giả lập),Phường An Bình,Cần Thơ,10.024697,105.778257,0,,
+KH0022,Tiệm tạp hóa Kim Cúc (giả lập),Tạp hóa,213 Lý Tự Trọng (giả lập),Phường An Bình,Cần Thơ,10.015414,105.761572,0,,
+KH0023,Tiệm tạp hóa Chú Sáu (giả lập),Tạp hóa,18/27 Nguyễn Văn Linh (giả lập),Phường An Bình,Cần Thơ,10.025423,105.756955,0,,
+KH0024,Tạp hóa Vạn Phát (giả lập),Tạp hóa,315 Trần Văn Khéo (giả lập),Phường Tân An,Cần Thơ,10.047292,105.775621,0,,
+KH0025,Tiệm tạp hóa Như Ý (giả lập),Tạp hóa,253 3 Tháng 2 (giả lập),Phường An Bình,Cần Thơ,10.026256,105.762363,0,,
+KH0026,Minimart Thanh Tâm (giả lập),Minimart,167 Hùng Vương (giả lập),Phường An Bình,Cần Thơ,10.041554,105.751957,15,77000000,50
+KH0027,Tiệm tạp hóa Chú Mười (giả lập),Tạp hóa,253 Mậu Thân (giả lập),Phường Bình Thủy,Cần Thơ,10.024715,105.749634,0,,
+KH0028,Tạp hóa Bảo Trân (giả lập),Tạp hóa,88 Trần Văn Khéo (giả lập),Phường Tân An,Cần Thơ,10.038541,105.764902,0,,
+KH0029,Cửa hàng tiện lợi Tài Lộc (giả lập),Minimart,99 Lý Tự Trọng (giả lập),Phường Ninh Kiều,Cần Thơ,10.043167,105.758094,15,70000000,50
+KH0030,Tạp hóa Anh Năm (giả lập),Tạp hóa,267/5 Hùng Vương (giả lập),Phường An Bình,Cần Thơ,10.047737,105.781644,7,9000000,
+KH0031,Tiệm tạp hóa Dì Hai (giả lập),Tạp hóa,381 Hai Bà Trưng (giả lập),Phường Tân An,Cần Thơ,10.028534,105.764300,0,,
+KH0032,Quán bánh canh Dì Mười (giả lập),Quán ăn,345 Hùng Vương (giả lập),Phường Tân An,Cần Thơ,10.041264,105.762895,7,9000000,
+KH0033,Tiệm tạp hóa Thiên Phúc (giả lập),Tạp hóa,399/6 Mậu Thân (giả lập),Phường Cái Khế,Cần Thơ,10.034689,105.759255,0,,
+KH0034,Tiệm tạp hóa Mai Lan (giả lập),Tạp hóa,274 Nguyễn Văn Linh (giả lập),Phường Hưng Phú,Cần Thơ,10.024965,105.764715,0,,
+KH0035,Tiệm tạp hóa Tài Lộc (giả lập),Tạp hóa,50 Trần Quang Diệu (giả lập),Phường Ninh Kiều,Cần Thơ,10.052989,105.771463,7,16000000,
+KH0036,Quán cơm Cô Hai (giả lập),Quán ăn,288 Trần Quang Diệu (giả lập),Phường Cái Khế,Cần Thơ,10.045046,105.768555,7,10000000,
+KH0037,Quán bánh canh Chị Ba (giả lập),Quán ăn,170 Lê Hồng Phong (giả lập),Phường Cái Khế,Cần Thơ,10.039996,105.768273,7,5000000,
+KH0038,Quán cơm tấm Hồng Phúc (giả lập),Quán ăn,261/32 30 Tháng 4 (giả lập),Phường Tân An,Cần Thơ,10.029322,105.781823,0,,
+KH0039,Tiệm tạp hóa Chú Bảy (giả lập),Tạp hóa,330 Đề Thám (giả lập),Phường Ninh Kiều,Cần Thơ,10.040326,105.749204,7,6000000,
+KH0040,Căn tin Công ty Chế biến gạo Thanh Tâm (giả lập),Căn tin KCN,60/6 Phan Đình Phùng (giả lập),Phường Tân An,Cần Thơ,10.052552,105.746892,30,167000000,60
+KH0041,Tiệm tạp hóa Bảo Trân (giả lập),Tạp hóa,175 Lê Lợi (giả lập),Phường An Bình,Cần Thơ,10.041984,105.770992,7,15000000,
+KH0042,Tạp hóa Bà Hai (giả lập),Tạp hóa,351 Mậu Thân (giả lập),Phường Ninh Kiều,Cần Thơ,10.016820,105.752674,0,,
+KH0043,Tạp hóa Như Ý (giả lập),Tạp hóa,116 Mậu Thân (giả lập),Phường Ninh Kiều,Cần Thơ,10.048410,105.766896,0,,
+KH0044,Cửa hàng tiện lợi Ngọc Hân (giả lập),Minimart,245 Trần Hưng Đạo (giả lập),Phường Hưng Phú,Cần Thơ,10.023530,105.771854,15,40000000,50
+KH0045,Quán nướng Dượng Tư (giả lập),Quán ăn,34/2 Hùng Vương (giả lập),Phường Hưng Phú,Cần Thơ,10.051414,105.746702,0,,
+KH0046,Tạp hóa Minh Châu (giả lập),Tạp hóa,52 Mậu Thân (giả lập),Phường Ninh Kiều,Cần Thơ,10.016741,105.761252,7,10000000,
+KH0047,Tạp hóa Hồng Nhung (giả lập),Tạp hóa,153 Đề Thám (giả lập),Phường Cái Khế,Cần Thơ,10.031164,105.779293,7,12000000,
+KH0048,Căn tin Công ty Giày da Phước Lộc (giả lập),Căn tin KCN,326/54 Nguyễn Văn Cừ (giả lập),Phường Bình Thủy,Cần Thơ,10.051173,105.772054,30,181000000,60
+KH0049,Quán bún Bích Ngọc (giả lập),Quán ăn,380 Võ Văn Kiệt (giả lập),Phường An Bình,Cần Thơ,10.038977,105.750389,7,7000000,
+KH0050,Tiệm tạp hóa Thím Sáu (giả lập),Tạp hóa,153 Trần Văn Khéo (giả lập),Phường Ninh Kiều,Cần Thơ,10.050898,105.745585,7,19000000,
+KH0051,Cửa hàng tiện lợi Bích Ngọc (giả lập),Minimart,205 Lý Tự Trọng (giả lập),Phường An Bình,Cần Thơ,10.035793,105.764944,15,31000000,50
+KH0052,Tạp hóa Đại Lợi (giả lập),Tạp hóa,359 Nguyễn Văn Linh (giả lập),Phường Ninh Kiều,Cần Thơ,10.031100,105.763358,7,20000000,
+KH0053,Minimart Phương Thảo (giả lập),Minimart,163 Trần Phú (giả lập),Phường Bình Thủy,Cần Thơ,10.026176,105.766141,15,32000000,50
+KH0054,Tiệm tạp hóa Phú Quý (giả lập),Tạp hóa,234 Nguyễn Văn Cừ (giả lập),Phường Tân An,Cần Thơ,10.031052,105.748025,0,,
+KH0055,Siêu thị mini Kim Ngân (giả lập),Minimart,273 Phan Đình Phùng (giả lập),Phường Cái Khế,Cần Thơ,10.027753,105.765104,15,49000000,50
+KH0056,Tiệm tạp hóa Chị Chín (giả lập),Tạp hóa,259/12 Phan Đình Phùng (giả lập),Phường Cái Khế,Cần Thơ,10.038265,105.770419,7,6000000,
+KH0057,Quán lẩu Thím Hai (giả lập),Quán ăn,148/3 Phan Đình Phùng (giả lập),Phường Ninh Kiều,Cần Thơ,10.032466,105.770336,0,,
+KH0058,Tạp hóa Phước Lộc (giả lập),Tạp hóa,302 Trần Hưng Đạo (giả lập),Phường Hưng Phú,Cần Thơ,10.050513,105.769030,7,6000000,
+KH0059,Tiệm tạp hóa Quốc Bảo (giả lập),Tạp hóa,102 Lê Hồng Phong (giả lập),Phường An Bình,Cần Thơ,10.039127,105.768022,7,8000000,
+KH0060,Quán cơm tấm Phước Lộc (giả lập),Quán ăn,324 Hai Bà Trưng (giả lập),Phường Cái Khế,Cần Thơ,10.046325,105.763781,0,,
+KH0061,Cửa hàng tiện lợi Tú Anh (giả lập),Minimart,190 Trần Hưng Đạo (giả lập),Phường Bình Thủy,Cần Thơ,10.045844,105.781644,15,64000000,50
+KH0062,Quán cơm Thanh Bình (giả lập),Quán ăn,171/1 Trần Hưng Đạo (giả lập),Phường Tân An,Cần Thơ,10.054214,105.781562,0,,
+KH0063,Tạp hóa Bích Ngọc (giả lập),Tạp hóa,344/48 Phan Đình Phùng (giả lập),Phường Bình Thủy,Cần Thơ,10.018467,105.773342,7,14000000,
+KH0064,Tiệm tạp hóa Bình An (giả lập),Tạp hóa,123 Đề Thám (giả lập),Phường An Bình,Cần Thơ,10.049447,105.763073,7,18000000,
+KH0065,Minimart Hồng Nhung (giả lập),Minimart,216/33 Phan Đình Phùng (giả lập),Phường Ninh Kiều,Cần Thơ,10.018709,105.778882,15,67000000,50
+KH0066,Quán bánh canh Chú Bảy (giả lập),Quán ăn,264 Nguyễn Văn Cừ (giả lập),Phường Ninh Kiều,Cần Thơ,10.053374,105.754792,0,,
+KH0067,Tạp hóa Song Hỷ (giả lập),Tạp hóa,321/2 Nguyễn Văn Cừ (giả lập),Phường Cái Khế,Cần Thơ,10.042365,105.764738,7,5000000,
+KH0068,Tiệm tạp hóa Minh Châu (giả lập),Tạp hóa,270 Nguyễn Văn Linh (giả lập),Phường Cái Khế,Cần Thơ,10.031335,105.768751,0,,
+KH0069,Tạp hóa Cô Tư (giả lập),Tạp hóa,125 Hùng Vương (giả lập),Phường An Bình,Cần Thơ,10.052629,105.756476,7,9000000,
+KH0070,Khách sạn Đại Lợi (giả lập),Khách sạn,368/49 Nguyễn Việt Hồng (giả lập),Phường An Bình,Cần Thơ,10.020574,105.767792,30,136000000,60
+KH0071,Căn tin Công ty Giày da Bích Ngọc (giả lập),Căn tin KCN,179 Trần Phú (giả lập),Phường Cái Khế,Cần Thơ,10.044258,105.750928,30,198000000,60
+KH0072,Tiệm tạp hóa Thím Năm (giả lập),Tạp hóa,313 Cách Mạng Tháng 8 (giả lập),Phường An Bình,Cần Thơ,10.025790,105.760362,0,,
+KH0073,Tạp hóa Thím Tư (giả lập),Tạp hóa,285 Phan Đình Phùng (giả lập),Phường Hưng Phú,Cần Thơ,10.042854,105.756315,7,13000000,
+KH0074,Tiệm tạp hóa Bà Bảy (giả lập),Tạp hóa,365 Lê Hồng Phong (giả lập),Phường Cái Khế,Cần Thơ,10.047409,105.763460,0,,
+KH0075,Minimart Thành Đạt (giả lập),Minimart,206 Lê Hồng Phong (giả lập),Phường Tân An,Cần Thơ,10.018282,105.760493,15,60000000,50
+KH0076,Khách sạn Kim Phượng (giả lập),Khách sạn,51 Hai Bà Trưng (giả lập),Phường Cái Khế,Cần Thơ,10.046542,105.768217,30,104000000,60
+KH0077,Quán cơm tấm Cô Hai (giả lập),Quán ăn,11 Phan Đình Phùng (giả lập),Phường Tân An,Cần Thơ,10.052453,105.769355,7,5000000,
+KH0078,Quán bún Thu Hà (giả lập),Quán ăn,55 Trần Hưng Đạo (giả lập),Phường Ninh Kiều,Cần Thơ,10.025496,105.777283,0,,
+KH0079,Tiệm tạp hóa Chị Năm (giả lập),Tạp hóa,356 Mậu Thân (giả lập),Phường Hưng Phú,Cần Thơ,10.028528,105.780211,0,,
+KH0080,Tiệm tạp hóa Dì Bảy (giả lập),Tạp hóa,192/27 Hùng Vương (giả lập),Phường Cái Khế,Cần Thơ,10.053150,105.775729,7,10000000,
+KH0081,Tiệm tạp hóa Trung Kiên (giả lập),Tạp hóa,398/44 Nguyễn Việt Hồng (giả lập),Phường Cái Khế,Cần Thơ,10.023140,105.771795,7,20000000,
+KH0082,Cửa hàng tiện lợi Thành Đạt (giả lập),Minimart,125/49 Nguyễn Văn Cừ (giả lập),Phường Hưng Phú,Cần Thơ,10.017198,105.753267,15,48000000,50
+KH0083,Căn tin Công ty Thủy sản Thanh Hương (giả lập),Căn tin KCN,359 Trần Hưng Đạo (giả lập),Phường Hưng Phú,Cần Thơ,10.027370,105.745112,30,82000000,60
+KH0084,Tiệm tạp hóa Anh Sáu (giả lập),Tạp hóa,19 Trần Ngọc Quế (giả lập),Phường An Bình,Cần Thơ,10.024093,105.745389,0,,
+KH0085,Tạp hóa Thím Tám (giả lập),Tạp hóa,183 Trần Hưng Đạo (giả lập),Phường Tân An,Cần Thơ,10.021256,105.776839,7,11000000,
+KH0086,Khách sạn Thanh Hương (giả lập),Khách sạn,303 Cách Mạng Tháng 8 (giả lập),Phường Bình Thủy,Cần Thơ,10.043788,105.745459,30,142000000,60
+KH0087,Tạp hóa Cô Hai (giả lập),Tạp hóa,388 Đề Thám (giả lập),Phường An Bình,Cần Thơ,10.029608,105.757422,0,,
+KH0088,Siêu thị mini Minh Châu (giả lập),Minimart,244 Trần Quang Diệu (giả lập),Phường Cái Khế,Cần Thơ,10.054372,105.765436,15,64000000,50
+KH0089,Tạp hóa Mai Lan (giả lập),Tạp hóa,199 Mậu Thân (giả lập),Phường An Bình,Cần Thơ,10.047678,105.765488,7,12000000,
+KH0090,Tạp hóa Phương Thảo (giả lập),Tạp hóa,232 Phan Đình Phùng (giả lập),Phường Cái Khế,Cần Thơ,10.050222,105.747226,7,16000000,
+KH0091,Siêu thị mini Đại Lợi (giả lập),Minimart,240 Nguyễn Văn Linh (giả lập),Phường Tân An,Cần Thơ,10.053740,105.771294,15,52000000,50
+KH0092,Tiệm tạp hóa Cô Mười (giả lập),Tạp hóa,52 Trần Quang Diệu (giả lập),Phường Cái Khế,Cần Thơ,10.016514,105.753068,0,,
+KH0093,Căn tin Công ty Giày da Diễm My (giả lập),Căn tin KCN,54 Hòa Bình (giả lập),Phường Hưng Phú,Cần Thơ,10.019328,105.748841,30,143000000,60
+KH0094,Tạp hóa Dượng Ba (giả lập),Tạp hóa,275 Nguyễn Văn Linh (giả lập),Phường An Bình,Cần Thơ,10.028762,105.751579,0,,
+KH0095,Tiệm tạp hóa Thành Đạt (giả lập),Tạp hóa,53 Hùng Vương (giả lập),Phường An Bình,Cần Thơ,10.016722,105.767060,0,,
+KH0096,Tiệm tạp hóa Dượng Mười (giả lập),Tạp hóa,1 Nguyễn Trãi (giả lập),Phường Bình Thủy,Cần Thơ,10.054916,105.770170,7,20000000,
+KH0097,Quán hủ tiếu Mai Lan (giả lập),Quán ăn,132 Nguyễn Việt Hồng (giả lập),Phường Ninh Kiều,Cần Thơ,10.047799,105.773688,0,,
+KH0098,Tạp hóa Thanh Tâm (giả lập),Tạp hóa,297/40 Nguyễn Văn Cừ (giả lập),Phường Cái Khế,Cần Thơ,10.023340,105.779341,0,,
+KH0099,Quán lẩu Mỹ Linh (giả lập),Quán ăn,89 Lý Tự Trọng (giả lập),Phường Cái Khế,Cần Thơ,10.016467,105.765514,7,15000000,
+KH0100,Siêu thị mini Bình An (giả lập),Minimart,34 Trần Hưng Đạo (giả lập),Phường Ninh Kiều,Cần Thơ,10.043580,105.781821,15,51000000,50
+KH0101,Tiệm tạp hóa Khánh Vy (giả lập),Tạp hóa,196/4 Trần Văn Khéo (giả lập),Phường Cái Khế,Cần Thơ,10.039364,105.747108,7,18000000,
+KH0102,Siêu thị mini An Khang (giả lập),Minimart,181 Nguyễn Văn Cừ (giả lập),Phường Hưng Phú,Cần Thơ,10.015629,105.766618,15,30000000,50
+KH0103,Siêu thị mini Tấn Phát (giả lập),Minimart,196 Đề Thám (giả lập),Phường Tân An,Cần Thơ,10.017354,105.762991,15,47000000,50
+KH0104,Tạp hóa Trung Kiên (giả lập),Tạp hóa,192/19 Lê Hồng Phong (giả lập),Phường Bình Thủy,Cần Thơ,10.032028,105.757323,0,,
+KH0105,Siêu thị mini Hồng Phúc (giả lập),Minimart,197 Trần Hưng Đạo (giả lập),Phường Tân An,Cần Thơ,10.042099,105.769759,15,70000000,50
+KH0106,Tiệm tạp hóa Ngọc Hân (giả lập),Tạp hóa,237 Cách Mạng Tháng 8 (giả lập),Phường An Bình,Cần Thơ,10.022283,105.749827,7,12000000,
+KH0107,Minimart Thanh Hương (giả lập),Minimart,259 Nguyễn Văn Linh (giả lập),Phường Bình Thủy,Cần Thơ,10.015638,105.781041,15,66000000,50
+KH0108,Khách sạn Kim Cúc (giả lập),Khách sạn,342 Nguyễn Văn Cừ (giả lập),Phường Ninh Kiều,Cần Thơ,10.025482,105.759830,30,145000000,60
+KH0109,Tiệm tạp hóa Thím Mười (giả lập),Tạp hóa,13 Lý Tự Trọng (giả lập),Phường Bình Thủy,Cần Thơ,10.026893,105.777243,0,,
+KH0110,Tạp hóa Dì Hai (giả lập),Tạp hóa,120 Cách Mạng Tháng 8 (giả lập),Phường Tân An,Cần Thơ,10.017229,105.758263,7,18000000,
+KH0111,Tiệm tạp hóa Diễm My (giả lập),Tạp hóa,76 Nguyễn Việt Hồng (giả lập),Phường Ninh Kiều,Cần Thơ,10.024034,105.749362,7,13000000,
+KH0112,Minimart Bảo Trân (giả lập),Minimart,373/41 Lê Hồng Phong (giả lập),Phường Hưng Phú,Cần Thơ,10.038065,105.780441,15,43000000,50
+KH0113,Quán nướng Anh Tám (giả lập),Quán ăn,274 Trần Hưng Đạo (giả lập),Phường Bình Thủy,Cần Thơ,10.047481,105.772242,7,6000000,
+KH0114,Căn tin Công ty May mặc Ngọc Hân (giả lập),Căn tin KCN,278/40 Cách Mạng Tháng 8 (giả lập),Phường An Bình,Cần Thơ,10.047455,105.771633,30,102000000,60
+KH0115,Minimart Song Hỷ (giả lập),Minimart,40 Nguyễn Văn Cừ (giả lập),Phường Hưng Phú,Cần Thơ,10.022657,105.745491,15,49000000,50
+KH0116,Cửa hàng tiện lợi Tấn Phát (giả lập),Minimart,254/4 Nguyễn Văn Linh (giả lập),Phường Hưng Phú,Cần Thơ,10.031722,105.747670,15,56000000,50
+KH0117,Tiệm tạp hóa Chị Bảy (giả lập),Tạp hóa,252/56 Mậu Thân (giả lập),Phường Ninh Kiều,Cần Thơ,10.047413,105.781859,0,,
+KH0118,Minimart Ngọc Ánh (giả lập),Minimart,119 Nguyễn Trãi (giả lập),Phường Cái Khế,Cần Thơ,10.029720,105.757025,15,62000000,50
+KH0119,Tạp hóa Ngọc Ánh (giả lập),Tạp hóa,39 Lê Lợi (giả lập),Phường Bình Thủy,Cần Thơ,10.024586,105.772216,7,14000000,
+KH0120,Quán hủ tiếu Chú Mười (giả lập),Quán ăn,177 3 Tháng 2 (giả lập),Phường Ninh Kiều,Cần Thơ,10.033756,105.773158,0,,
+KH0121,Khách sạn Minh Tâm (giả lập),Khách sạn,251/15 Đề Thám (giả lập),Phường Ninh Kiều,Cần Thơ,10.036865,105.779756,30,80000000,60
+KH0122,Tạp hóa Dì Chín (giả lập),Tạp hóa,320 Trần Văn Khéo (giả lập),Phường Ninh Kiều,Cần Thơ,10.042693,105.753459,0,,
+KH0123,Tạp hóa Chị Chín (giả lập),Tạp hóa,126/59 Nguyễn Trãi (giả lập),Phường Hưng Phú,Cần Thơ,10.026704,105.770568,0,,
+KH0124,Tạp hóa Bà Mười (giả lập),Tạp hóa,292/16 Phan Đình Phùng (giả lập),Phường Tân An,Cần Thơ,10.050028,105.754463,0,,
+KH0125,Quán hủ tiếu Cô Chín (giả lập),Quán ăn,6 Cách Mạng Tháng 8 (giả lập),Phường Hưng Phú,Cần Thơ,10.019166,105.780989,0,,
+KH0126,Quán nướng Cô Hai (giả lập),Quán ăn,112 Trần Ngọc Quế (giả lập),Phường Ninh Kiều,Cần Thơ,10.036078,105.779457,0,,
+KH0127,Tiệm tạp hóa Cô Chín (giả lập),Tạp hóa,324/49 Trần Hưng Đạo (giả lập),Phường Hưng Phú,Cần Thơ,10.022139,105.750486,7,12000000,
+KH0128,Tiệm tạp hóa Dượng Tư (giả lập),Tạp hóa,123/44 Cách Mạng Tháng 8 (giả lập),Phường An Bình,Cần Thơ,10.038747,105.745442,0,,
+KH0129,Tạp hóa Kim Ngân (giả lập),Tạp hóa,351 Lê Hồng Phong (giả lập),Phường An Bình,Cần Thơ,10.051231,105.778801,0,,
+KH0130,Tiệm tạp hóa Hoàng Long (giả lập),Tạp hóa,363/53 Trần Phú (giả lập),Phường Bình Thủy,Cần Thơ,10.044626,105.755569,7,14000000,
+KH0131,Siêu thị mini Thanh Tâm (giả lập),Minimart,109 Trần Phú (giả lập),Phường Hưng Phú,Cần Thơ,10.026798,105.779282,15,63000000,50
+KH0132,Cửa hàng tiện lợi Phước Lộc (giả lập),Minimart,76/46 Trần Văn Khéo (giả lập),Phường Bình Thủy,Cần Thơ,10.025298,105.769815,15,69000000,50
+KH0133,Tiệm tạp hóa Phước Lộc (giả lập),Tạp hóa,328 Trần Hưng Đạo (giả lập),Phường Cái Khế,Cần Thơ,10.030211,105.759253,7,18000000,
+KH0134,Tạp hóa Minh Tâm (giả lập),Tạp hóa,125 Lê Hồng Phong (giả lập),Phường An Bình,Cần Thơ,10.051250,105.776918,0,,
+KH0135,Khách sạn Tấn Phát (giả lập),Khách sạn,327 Nguyễn Trãi (giả lập),Phường Cái Khế,Cần Thơ,10.051897,105.759309,30,69000000,60
+KH0136,Cửa hàng tiện lợi Thu Hà (giả lập),Minimart,323 Đề Thám (giả lập),Phường Cái Khế,Cần Thơ,10.048803,105.777994,15,41000000,50
+KH0137,Tạp hóa Ngọc Hân (giả lập),Tạp hóa,352 Võ Văn Kiệt (giả lập),Phường Cái Khế,Cần Thơ,10.045594,105.780515,7,13000000,
+KH0138,Tiệm tạp hóa Vạn Phát (giả lập),Tạp hóa,36 Đề Thám (giả lập),Phường An Bình,Cần Thơ,10.023617,105.766387,7,10000000,
+KH0139,Tiệm tạp hóa Anh Tám (giả lập),Tạp hóa,278 Trần Hưng Đạo (giả lập),Phường An Bình,Cần Thơ,10.045201,105.772822,7,5000000,
+KH0140,Tiệm tạp hóa Bích Ngọc (giả lập),Tạp hóa,8/3 Nguyễn Việt Hồng (giả lập),Phường Ninh Kiều,Cần Thơ,10.026563,105.780275,7,9000000,
+KH0141,Cửa hàng tiện lợi Thiên Phúc (giả lập),Minimart,272 Hùng Vương (giả lập),Phường An Bình,Cần Thơ,10.034939,105.774162,15,73000000,50
+KH0142,Tạp hóa Mỹ Linh (giả lập),Tạp hóa,382 Hai Bà Trưng (giả lập),Phường Bình Thủy,Cần Thơ,10.054756,105.752791,0,,
+KH0143,Tiệm tạp hóa Kim Ngân (giả lập),Tạp hóa,159 Lê Hồng Phong (giả lập),Phường Hưng Phú,Cần Thơ,10.031481,105.761832,7,9000000,
+KH0144,Tạp hóa An Khang (giả lập),Tạp hóa,260 Lý Tự Trọng (giả lập),Phường Tân An,Cần Thơ,10.033443,105.770649,0,,
+KH0145,Tiệm tạp hóa Hữu Nghĩa (giả lập),Tạp hóa,243 Nguyễn Văn Linh (giả lập),Phường Cái Khế,Cần Thơ,10.050811,105.770407,7,5000000,
+KH0146,Tạp hóa Khánh Vy (giả lập),Tạp hóa,133 Hùng Vương (giả lập),Phường Ninh Kiều,Cần Thơ,10.041820,105.780792,0,,
+KH0147,Căn tin Công ty May mặc Thiên Phúc (giả lập),Căn tin KCN,135/48 Nguyễn Văn Linh (giả lập),Phường Tân An,Cần Thơ,10.044258,105.747000,30,114000000,60
+KH0148,Căn tin Công ty Bao bì Vạn Phát (giả lập),Căn tin KCN,15 Mậu Thân (giả lập),Phường Hưng Phú,Cần Thơ,10.037136,105.759675,30,105000000,60
+KH0149,Căn tin Công ty May mặc Thu Hà (giả lập),Căn tin KCN,121 Trần Phú (giả lập),Phường An Bình,Cần Thơ,10.039410,105.756117,30,79000000,60
+KH0150,Cửa hàng tiện lợi Kim Phượng (giả lập),Minimart,218 30 Tháng 4 (giả lập),Phường Ninh Kiều,Cần Thơ,10.038289,105.762583,15,41000000,50
+KH0151,Tạp hóa Anh Tư (giả lập),Tạp hóa,340 Phan Đình Phùng (giả lập),Phường Hưng Phú,Cần Thơ,10.015963,105.749079,7,11000000,
+KH0152,Khách sạn Hữu Nghĩa (giả lập),Khách sạn,77/6 Nguyễn Văn Cừ (giả lập),Phường Hưng Phú,Cần Thơ,10.046119,105.769326,30,88000000,60
+KH0153,Siêu thị mini Kim Cúc (giả lập),Minimart,321 3 Tháng 2 (giả lập),Phường Hưng Phú,Cần Thơ,10.037673,105.764493,15,50000000,50
+KH0154,Tạp hóa Dượng Út (giả lập),Tạp hóa,21/44 Phan Đình Phùng (giả lập),Phường Hưng Phú,Cần Thơ,10.037711,105.763516,7,16000000,
+KH0155,Khách sạn Phước Lộc (giả lập),Khách sạn,279 Lê Lợi (giả lập),Phường Bình Thủy,Cần Thơ,10.027511,105.759706,30,96000000,60
+KH0156,Khách sạn Minh Châu (giả lập),Khách sạn,193 Trần Ngọc Quế (giả lập),Phường Ninh Kiều,Cần Thơ,10.016549,105.750197,30,103000000,60
+KH0157,Tạp hóa Quốc Bảo (giả lập),Tạp hóa,84/42 Mậu Thân (giả lập),Phường Ninh Kiều,Cần Thơ,10.026752,105.759186,0,,
+KH0158,Tiệm tạp hóa Cô Ba (giả lập),Tạp hóa,239 Lê Hồng Phong (giả lập),Phường Ninh Kiều,Cần Thơ,10.029675,105.755912,7,17000000,
+KH0159,Cửa hàng tiện lợi Gia Huy (giả lập),Minimart,143/36 Nguyễn Trãi (giả lập),Phường Hưng Phú,Cần Thơ,10.016490,105.762115,15,40000000,50
+KH0160,Tiệm tạp hóa Dượng Sáu (giả lập),Tạp hóa,26 Lê Hồng Phong (giả lập),Phường Ninh Kiều,Cần Thơ,10.049867,105.777961,0,,
+KH0161,Minimart Bình An (giả lập),Minimart,224/57 Nguyễn Văn Linh (giả lập),Phường Ninh Kiều,Cần Thơ,10.019675,105.770344,15,80000000,50
+KH0162,Tạp hóa Thu Hà (giả lập),Tạp hóa,285 30 Tháng 4 (giả lập),Phường Ninh Kiều,Cần Thơ,10.029459,105.777189,0,,
+KH0163,Tạp hóa Bà Năm (giả lập),Tạp hóa,294/9 Nguyễn Văn Linh (giả lập),Phường Cái Khế,Cần Thơ,10.049751,105.772180,7,10000000,
+KH0164,Siêu thị mini Mỹ Linh (giả lập),Minimart,235 Trần Ngọc Quế (giả lập),Phường Cái Khế,Cần Thơ,10.039245,105.780105,15,36000000,50
+KH0165,Tiệm tạp hóa Bà Chín (giả lập),Tạp hóa,351/49 Hai Bà Trưng (giả lập),Phường An Bình,Cần Thơ,10.030755,105.752792,0,,
+KH0166,Siêu thị mini Bảo Trân (giả lập),Minimart,43 Nguyễn Văn Linh (giả lập),Phường Cái Khế,Cần Thơ,10.018809,105.780266,15,57000000,50
+KH0167,Quán phở Chú Út (giả lập),Quán ăn,44 Hòa Bình (giả lập),Phường Bình Thủy,Cần Thơ,10.032239,105.749568,0,,
+KH0168,Căn tin Công ty Nhựa Kim Cúc (giả lập),Căn tin KCN,219 Cách Mạng Tháng 8 (giả lập),Phường Cái Khế,Cần Thơ,10.052917,105.745962,30,169000000,60
+KH0169,Tiệm tạp hóa Cô Sáu (giả lập),Tạp hóa,178/38 Nguyễn Việt Hồng (giả lập),Phường Bình Thủy,Cần Thơ,10.038551,105.746792,0,,
+KH0170,Tiệm tạp hóa Chú Ba (giả lập),Tạp hóa,188 Võ Văn Kiệt (giả lập),Phường Bình Thủy,Cần Thơ,10.039050,105.776957,0,,
+KH0171,Tạp hóa Chú Năm (giả lập),Tạp hóa,295 3 Tháng 2 (giả lập),Phường Bình Thủy,Cần Thơ,10.051527,105.761301,0,,
+KH0172,Cửa hàng tiện lợi Vạn Phát (giả lập),Minimart,132 Hòa Bình (giả lập),Phường An Bình,Cần Thơ,10.054668,105.772772,15,75000000,50
+KH0173,Tiệm tạp hóa Đại Lợi (giả lập),Tạp hóa,377 Đề Thám (giả lập),Phường Bình Thủy,Cần Thơ,10.017598,105.767007,0,,
+KH0174,Tạp hóa Hoàng Long (giả lập),Tạp hóa,306 Phan Đình Phùng (giả lập),Phường An Bình,Cần Thơ,10.019177,105.770575,7,13000000,
+KH0175,Tạp hóa Thím Ba (giả lập),Tạp hóa,391/34 Trần Ngọc Quế (giả lập),Phường Hưng Phú,Cần Thơ,10.024717,105.771171,0,,
+KH0176,Tiệm tạp hóa Mỹ Linh (giả lập),Tạp hóa,101 Nguyễn Việt Hồng (giả lập),Phường Hưng Phú,Cần Thơ,10.030217,105.772647,7,7000000,
+KH0177,Siêu thị mini Diễm My (giả lập),Minimart,287 Nguyễn Văn Linh (giả lập),Phường Ninh Kiều,Cần Thơ,10.016747,105.747760,15,57000000,50
+KH0178,Tạp hóa Chị Bảy (giả lập),Tạp hóa,23 Trần Phú (giả lập),Phường Ninh Kiều,Cần Thơ,10.045054,105.746138,7,19000000,
+KH0179,Tạp hóa Cô Bảy (giả lập),Tạp hóa,331 Trần Phú (giả lập),Phường Hưng Phú,Cần Thơ,10.051908,105.761525,7,17000000,
+KH0180,Tiệm tạp hóa Chị Tám (giả lập),Tạp hóa,133/49 Lê Lợi (giả lập),Phường Tân An,Cần Thơ,10.028675,105.772892,7,18000000,
+KH0181,Tạp hóa Dượng Chín (giả lập),Tạp hóa,154/16 Hòa Bình (giả lập),Phường Hưng Phú,Cần Thơ,10.047409,105.771452,0,,
+KH0182,Quán cơm Thím Út (giả lập),Quán ăn,278 30 Tháng 4 (giả lập),Phường Bình Thủy,Cần Thơ,10.026795,105.751966,7,11000000,
+KH0183,Căn tin Công ty Chế biến gạo Hồng Phúc (giả lập),Căn tin KCN,269 Trần Phú (giả lập),Phường Hưng Phú,Cần Thơ,10.029645,105.776997,30,114000000,60
+KH0184,Tạp hóa Thím Mười (giả lập),Tạp hóa,243/45 Nguyễn Văn Linh (giả lập),Phường Hưng Phú,Cần Thơ,10.020321,105.747916,7,12000000,
+KH0185,Cửa hàng tiện lợi Hòa Bình (giả lập),Minimart,60 Trần Quang Diệu (giả lập),Phường Hưng Phú,Cần Thơ,10.015135,105.779785,15,37000000,50
+KH0186,Tiệm tạp hóa Anh Ba (giả lập),Tạp hóa,30 Hai Bà Trưng (giả lập),Phường Hưng Phú,Cần Thơ,10.035914,105.781429,0,,
+KH0187,Tiệm tạp hóa Dì Ba (giả lập),Tạp hóa,199 Lý Tự Trọng (giả lập),Phường Hưng Phú,Cần Thơ,10.024201,105.759163,0,,
+KH0188,Tiệm tạp hóa Bà Ba (giả lập),Tạp hóa,183/18 Hùng Vương (giả lập),Phường Tân An,Cần Thơ,10.034972,105.779615,7,6000000,
+KH0189,Tiệm tạp hóa Thanh Bình (giả lập),Tạp hóa,145/41 Trần Văn Khéo (giả lập),Phường An Bình,Cần Thơ,10.040946,105.776832,7,8000000,
+KH0190,Tiệm tạp hóa Thím Tám (giả lập),Tạp hóa,353 Trần Văn Khéo (giả lập),Phường An Bình,Cần Thơ,10.020473,105.770470,0,,
+KH0191,Siêu thị mini Hồng Nhung (giả lập),Minimart,66 Võ Văn Kiệt (giả lập),Phường Cái Khế,Cần Thơ,10.049981,105.750530,15,70000000,50
+KH0192,Tiệm tạp hóa Kim Phượng (giả lập),Tạp hóa,318 Lê Lợi (giả lập),Phường Bình Thủy,Cần Thơ,10.044854,105.775424,7,15000000,
+KH0193,Tiệm tạp hóa Bà Tám (giả lập),Tạp hóa,177 Trần Quang Diệu (giả lập),Phường An Bình,Cần Thơ,10.049978,105.777872,0,,
+KH0194,Quán bún Khánh Vy (giả lập),Quán ăn,388/18 Lê Hồng Phong (giả lập),Phường Bình Thủy,Cần Thơ,10.054166,105.770093,0,,
+KH0195,Tạp hóa Diễm My (giả lập),Tạp hóa,376 Hòa Bình (giả lập),Phường An Bình,Cần Thơ,10.049574,105.776115,0,,
+KH0196,Tiệm tạp hóa Hòa Bình (giả lập),Tạp hóa,383/58 Nguyễn Văn Cừ (giả lập),Phường Hưng Phú,Cần Thơ,10.048454,105.761238,7,20000000,
+KH0197,Minimart Hữu Nghĩa (giả lập),Minimart,96/51 Hai Bà Trưng (giả lập),Phường Tân An,Cần Thơ,10.045105,105.769376,15,47000000,50
+KH0198,Tiệm tạp hóa Chị Hai (giả lập),Tạp hóa,150 Lê Lợi (giả lập),Phường Ninh Kiều,Cần Thơ,10.038970,105.780817,7,10000000,
+KH0199,Tạp hóa Thanh Hương (giả lập),Tạp hóa,295 Lê Lợi (giả lập),Phường An Bình,Cần Thơ,10.015684,105.755372,0,,
+KH0200,Tạp hóa Thành Đạt (giả lập),Tạp hóa,197 Nguyễn Việt Hồng (giả lập),Phường Cái Khế,Cần Thơ,10.033701,105.754696,7,13000000,
+KH0201,Khách sạn Ngọc Ánh (giả lập),Khách sạn,100 30 Tháng 4 (giả lập),Phường Tân An,Cần Thơ,10.042404,105.756311,30,68000000,60
+KH0202,Tạp hóa Chú Sáu (giả lập),Tạp hóa,111 Đề Thám (giả lập),Phường An Bình,Cần Thơ,10.053718,105.752534,0,,
+KH0203,Tiệm tạp hóa Cô Hai (giả lập),Tạp hóa,48 Trần Quang Diệu (giả lập),Phường Tân An,Cần Thơ,10.023116,105.775387,7,14000000,
+KH0204,Tạp hóa Dì Út (giả lập),Tạp hóa,320 Hai Bà Trưng (giả lập),Phường Cái Khế,Cần Thơ,10.046282,105.774183,7,8000000,
+KH0205,Cửa hàng tiện lợi Thanh Tâm (giả lập),Minimart,43/9 Cách Mạng Tháng 8 (giả lập),Phường An Bình,Cần Thơ,10.041926,105.777253,15,66000000,50
+KH0206,Tiệm tạp hóa Tấn Phát (giả lập),Tạp hóa,56 Lê Hồng Phong (giả lập),Phường Ninh Kiều,Cần Thơ,10.051920,105.752811,7,11000000,
+KH0207,Quán bánh canh Tấn Phát (giả lập),Quán ăn,176 Nguyễn Trãi (giả lập),Phường Cái Khế,Cần Thơ,10.022021,105.753772,7,6000000,
+KH0208,Siêu thị mini Hiệp Thành (giả lập),Minimart,5 Trần Ngọc Quế (giả lập),Phường Cái Khế,Cần Thơ,10.038825,105.745612,15,44000000,50
+KH0209,Tạp hóa Hữu Nghĩa (giả lập),Tạp hóa,75 3 Tháng 2 (giả lập),Phường Bình Thủy,Cần Thơ,10.039006,105.765495,7,15000000,
+KH0210,Tiệm tạp hóa Cô Út (giả lập),Tạp hóa,251 Trần Phú (giả lập),Phường Tân An,Cần Thơ,10.021561,105.773567,7,7000000,
+KH0211,Tạp hóa Anh Sáu (giả lập),Tạp hóa,44 Lý Tự Trọng (giả lập),Phường Tân An,Cần Thơ,10.045006,105.749514,7,11000000,
+KH0212,Tạp hóa Dượng Tư (giả lập),Tạp hóa,181/48 Trần Hưng Đạo (giả lập),Phường Ninh Kiều,Cần Thơ,10.038205,105.750992,7,10000000,
+KH0213,Quán bún Thím Chín (giả lập),Quán ăn,345 Trần Hưng Đạo (giả lập),Phường Bình Thủy,Cần Thơ,10.023113,105.781584,0,,
+KH0214,Căn tin Công ty May mặc Phương Thảo (giả lập),Căn tin KCN,268 Trần Phú (giả lập),Phường An Bình,Cần Thơ,10.051721,105.750948,30,165000000,60
+KH0215,Tạp hóa Thím Năm (giả lập),Tạp hóa,206 Phan Đình Phùng (giả lập),Phường Bình Thủy,Cần Thơ,10.039186,105.780256,0,,
+KH0216,Tạp hóa Kim Cúc (giả lập),Tạp hóa,100 Lý Tự Trọng (giả lập),Phường Cái Khế,Cần Thơ,10.054156,105.762383,0,,
+KH0217,Tiệm tạp hóa Anh Chín (giả lập),Tạp hóa,202 Trần Quang Diệu (giả lập),Phường Ninh Kiều,Cần Thơ,10.040275,105.751779,7,18000000,
+KH0218,Tiệm tạp hóa Gia Huy (giả lập),Tạp hóa,253 Đề Thám (giả lập),Phường Hưng Phú,Cần Thơ,10.029305,105.774404,0,,
+KH0219,Cửa hàng tiện lợi Ngọc Ánh (giả lập),Minimart,100 Nguyễn Văn Cừ (giả lập),Phường Bình Thủy,Cần Thơ,10.030445,105.745686,15,63000000,50
+KH0220,Minimart Ngọc Hân (giả lập),Minimart,39 Nguyễn Văn Cừ (giả lập),Phường Tân An,Cần Thơ,10.051140,105.756036,15,45000000,50
+KH0221,Tạp hóa Anh Chín (giả lập),Tạp hóa,371 Cách Mạng Tháng 8 (giả lập),Phường Hưng Phú,Cần Thơ,10.042832,105.752237,0,,
+KH0222,Tiệm tạp hóa Dượng Út (giả lập),Tạp hóa,134 Phan Đình Phùng (giả lập),Phường Cái Khế,Cần Thơ,10.017259,105.754807,0,,
+KH0223,Tạp hóa Tú Anh (giả lập),Tạp hóa,359/2 Phan Đình Phùng (giả lập),Phường Hưng Phú,Cần Thơ,10.047428,105.763537,0,,
+KH0224,Quán phở Bà Ba (giả lập),Quán ăn,116/24 Mậu Thân (giả lập),Phường Cái Khế,Cần Thơ,10.022848,105.780843,0,,
+KH0225,Tạp hóa Dượng Tám (giả lập),Tạp hóa,331 Mậu Thân (giả lập),Phường An Bình,Cần Thơ,10.020369,105.756173,0,,
+KH0226,Tạp hóa Gia Huy (giả lập),Tạp hóa,220 Phan Đình Phùng (giả lập),Phường Ninh Kiều,Cần Thơ,10.048123,105.755655,0,,
+KH0227,Tiệm tạp hóa Dì Năm (giả lập),Tạp hóa,110 3 Tháng 2 (giả lập),Phường Ninh Kiều,Cần Thơ,10.033694,105.752562,0,,
+KH0228,Tiệm tạp hóa Chị Mười (giả lập),Tạp hóa,344 Phan Đình Phùng (giả lập),Phường An Bình,Cần Thơ,10.049273,105.781714,7,17000000,
+KH0229,Cửa hàng tiện lợi Hồng Phúc (giả lập),Minimart,68 Nguyễn Việt Hồng (giả lập),Phường Cái Khế,Cần Thơ,10.044499,105.754384,15,53000000,50
+KH0230,Tạp hóa Chú Tám (giả lập),Tạp hóa,166 Trần Ngọc Quế (giả lập),Phường An Bình,Cần Thơ,10.024455,105.752330,0,,
+KH0231,Cửa hàng tiện lợi Bảo Trân (giả lập),Minimart,322/45 Nguyễn Trãi (giả lập),Phường An Bình,Cần Thơ,10.022064,105.768608,15,78000000,50
+KH0232,Tạp hóa Cô Tám (giả lập),Tạp hóa,116 Hai Bà Trưng (giả lập),Phường Ninh Kiều,Cần Thơ,10.044877,105.745106,7,15000000,
+KH0233,Cửa hàng tiện lợi Thanh Bình (giả lập),Minimart,305/60 Cách Mạng Tháng 8 (giả lập),Phường Hưng Phú,Cần Thơ,10.053531,105.776970,15,64000000,50
+KH0234,Tiệm tạp hóa Dì Sáu (giả lập),Tạp hóa,82/14 Trần Phú (giả lập),Phường Hưng Phú,Cần Thơ,10.047112,105.765665,0,,
+KH0235,Tạp hóa Bà Tám (giả lập),Tạp hóa,353 Trần Phú (giả lập),Phường Bình Thủy,Cần Thơ,10.039974,105.767026,7,18000000,
+KH0236,Tiệm tạp hóa Cô Năm (giả lập),Tạp hóa,398/8 Trần Văn Khéo (giả lập),Phường Ninh Kiều,Cần Thơ,10.043949,105.745132,7,7000000,
+KH0237,Siêu thị mini Quốc Bảo (giả lập),Minimart,149 3 Tháng 2 (giả lập),Phường Bình Thủy,Cần Thơ,10.044843,105.777298,15,58000000,50
+KH0238,Tạp hóa Kim Phượng (giả lập),Tạp hóa,364 Lê Lợi (giả lập),Phường Cái Khế,Cần Thơ,10.017343,105.754060,7,17000000,
+KH0239,Siêu thị mini Ngọc Hân (giả lập),Minimart,340 Nguyễn Văn Cừ (giả lập),Phường Hưng Phú,Cần Thơ,10.026517,105.758348,15,67000000,50
+KH0240,Tiệm tạp hóa Thím Hai (giả lập),Tạp hóa,187/10 Nguyễn Việt Hồng (giả lập),Phường Ninh Kiều,Cần Thơ,10.049167,105.774150,7,14000000,
+KH0241,Tiệm tạp hóa Phương Thảo (giả lập),Tạp hóa,364/51 Trần Văn Khéo (giả lập),Phường Tân An,Cần Thơ,10.022139,105.745527,0,,
+KH0242,Tạp hóa Dì Tám (giả lập),Tạp hóa,258/31 Hai Bà Trưng (giả lập),Phường An Bình,Cần Thơ,10.025813,105.758403,0,,
+KH0243,Cửa hàng tiện lợi Minh Tâm (giả lập),Minimart,299/26 Hòa Bình (giả lập),Phường Ninh Kiều,Cần Thơ,10.054633,105.752364,15,51000000,50
+KH0244,Tiệm tạp hóa Dì Út (giả lập),Tạp hóa,233 Lê Lợi (giả lập),Phường Hưng Phú,Cần Thơ,10.034072,105.778681,7,6000000,
+KH0245,Tạp hóa Chú Út (giả lập),Tạp hóa,367 Lý Tự Trọng (giả lập),Phường Bình Thủy,Cần Thơ,10.016256,105.745143,0,,
+KH0246,Tạp hóa Chú Bảy (giả lập),Tạp hóa,280 Trần Văn Khéo (giả lập),Phường Hưng Phú,Cần Thơ,10.051025,105.766440,0,,
+KH0247,Tiệm tạp hóa Hiệp Thành (giả lập),Tạp hóa,348 Hòa Bình (giả lập),Phường Bình Thủy,Cần Thơ,10.040453,105.773398,7,11000000,
+KH0248,Tiệm tạp hóa Anh Bảy (giả lập),Tạp hóa,82 Cách Mạng Tháng 8 (giả lập),Phường Ninh Kiều,Cần Thơ,10.050445,105.778642,0,,
+KH0249,Căn tin Công ty Nhựa Vạn Phát (giả lập),Căn tin KCN,30/43 Lê Lợi (giả lập),Phường Tân An,Cần Thơ,10.018664,105.775485,30,88000000,60
+KH0250,Khách sạn Ngọc Hân (giả lập),Khách sạn,31 Lê Lợi (giả lập),Phường Bình Thủy,Cần Thơ,10.016858,105.771134,30,144000000,60
+KH0251,Cửa hàng tiện lợi Diễm My (giả lập),Minimart,249 Cách Mạng Tháng 8 (giả lập),Phường Tân An,Cần Thơ,10.035178,105.772543,15,57000000,50
+KH0252,Tạp hóa Anh Út (giả lập),Tạp hóa,358 Đề Thám (giả lập),Phường An Bình,Cần Thơ,10.040477,105.779019,7,19000000,
+KH0253,Tạp hóa Anh Hai (giả lập),Tạp hóa,76 Hòa Bình (giả lập),Phường Bình Thủy,Cần Thơ,10.032654,105.770014,0,,
+KH0254,Minimart An Khang (giả lập),Minimart,240 Mậu Thân (giả lập),Phường Hưng Phú,Cần Thơ,10.039615,105.780942,15,42000000,50
+KH0255,Siêu thị mini Thiên Phúc (giả lập),Minimart,25 Võ Văn Kiệt (giả lập),Phường Cái Khế,Cần Thơ,10.038080,105.772408,15,71000000,50
+KH0256,Minimart Thiên Phúc (giả lập),Minimart,129 Lý Tự Trọng (giả lập),Phường Tân An,Cần Thơ,10.016818,105.778683,15,34000000,50
+KH0257,Tiệm tạp hóa Chú Út (giả lập),Tạp hóa,257/45 Nguyễn Trãi (giả lập),Phường Hưng Phú,Cần Thơ,10.051111,105.769049,0,,
+KH0258,Tạp hóa Chú Hai (giả lập),Tạp hóa,343/10 Lý Tự Trọng (giả lập),Phường Hưng Phú,Cần Thơ,10.032919,105.748868,7,6000000,
+KH0259,Quán bánh canh Thím Tám (giả lập),Quán ăn,187/27 Mậu Thân (giả lập),Phường Hưng Phú,Cần Thơ,10.028654,105.756587,7,5000000,
+KH0260,Siêu thị mini Phước Lộc (giả lập),Minimart,63 Hòa Bình (giả lập),Phường Tân An,Cần Thơ,10.039200,105.769152,15,56000000,50
+KH0261,Minimart Gia Huy (giả lập),Minimart,56 Hai Bà Trưng (giả lập),Phường Ninh Kiều,Cần Thơ,10.035539,105.771370,15,71000000,50
+KH0262,Minimart Bích Ngọc (giả lập),Minimart,164 Hòa Bình (giả lập),Phường An Bình,Cần Thơ,10.030197,105.746720,15,45000000,50
+KH0263,Khách sạn Thanh Tâm (giả lập),Khách sạn,333 Hòa Bình (giả lập),Phường Cái Khế,Cần Thơ,10.032597,105.780691,30,53000000,60
+KH0264,Tạp hóa Anh Bảy (giả lập),Tạp hóa,355/6 Cách Mạng Tháng 8 (giả lập),Phường Hưng Phú,Cần Thơ,10.027196,105.769785,0,,
+KH0265,Quán nướng Dượng Út (giả lập),Quán ăn,120 Phan Đình Phùng (giả lập),Phường Hưng Phú,Cần Thơ,10.018907,105.749587,0,,
+KH0266,Siêu thị mini Trung Kiên (giả lập),Minimart,388 Trần Hưng Đạo (giả lập),Phường Bình Thủy,Cần Thơ,10.023893,105.750346,15,79000000,50
+KH0267,Tiệm tạp hóa Chú Tám (giả lập),Tạp hóa,322/51 Phan Đình Phùng (giả lập),Phường Bình Thủy,Cần Thơ,10.053272,105.769484,7,12000000,
+KH0268,Tạp hóa Thím Bảy (giả lập),Tạp hóa,237 Lê Hồng Phong (giả lập),Phường An Bình,Cần Thơ,10.054078,105.764511,0,,
+KH0269,Khách sạn Trung Kiên (giả lập),Khách sạn,351/15 Phan Đình Phùng (giả lập),Phường Tân An,Cần Thơ,10.024920,105.757994,30,61000000,60
+KH0270,Tạp hóa Hồng Phúc (giả lập),Tạp hóa,246 Hòa Bình (giả lập),Phường Cái Khế,Cần Thơ,10.036610,105.774414,7,16000000,
+KH0271,Tạp hóa Thím Sáu (giả lập),Tạp hóa,331 Mậu Thân (giả lập),Phường Ninh Kiều,Cần Thơ,10.030778,105.775057,0,,
+KH0272,Tiệm tạp hóa Thím Út (giả lập),Tạp hóa,319/16 Mậu Thân (giả lập),Phường Hưng Phú,Cần Thơ,10.035647,105.771210,7,11000000,
+KH0273,Tiệm tạp hóa Dượng Tám (giả lập),Tạp hóa,172 Trần Phú (giả lập),Phường Bình Thủy,Cần Thơ,10.022822,105.750960,7,5000000,
+KH0274,Quán lẩu Dì Tám (giả lập),Quán ăn,18 Đề Thám (giả lập),Phường Tân An,Cần Thơ,10.044375,105.748991,7,5000000,
+KH0275,Tiệm tạp hóa Dượng Hai (giả lập),Tạp hóa,232 Mậu Thân (giả lập),Phường Tân An,Cần Thơ,10.044244,105.745604,0,,
+KH0276,Tạp hóa Tài Lộc (giả lập),Tạp hóa,351 Lê Hồng Phong (giả lập),Phường Cái Khế,Cần Thơ,10.024728,105.778466,0,,
+KH0277,Minimart Mai Lan (giả lập),Minimart,46/47 3 Tháng 2 (giả lập),Phường Tân An,Cần Thơ,10.051832,105.748767,15,74000000,50
+KH0278,Căn tin Công ty Cơ khí Như Ý (giả lập),Căn tin KCN,383 Phan Đình Phùng (giả lập),Phường An Bình,Cần Thơ,10.017265,105.778065,30,52000000,60
+KH0279,Tạp hóa Chị Tư (giả lập),Tạp hóa,37/55 Trần Văn Khéo (giả lập),Phường Hưng Phú,Cần Thơ,10.049947,105.773826,0,,
+KH0280,Tạp hóa Tấn Phát (giả lập),Tạp hóa,317 Trần Ngọc Quế (giả lập),Phường Tân An,Cần Thơ,10.018889,105.766132,7,11000000,
+KH0281,Tạp hóa Cô Út (giả lập),Tạp hóa,41 Nguyễn Trãi (giả lập),Phường Bình Thủy,Cần Thơ,10.050096,105.749682,7,5000000,
+KH0282,Tiệm tạp hóa Cô Bảy (giả lập),Tạp hóa,117 Trần Văn Khéo (giả lập),Phường An Bình,Cần Thơ,10.035358,105.773431,0,,
+KH0283,Tạp hóa Dì Tư (giả lập),Tạp hóa,218/54 Trần Hưng Đạo (giả lập),Phường Tân An,Cần Thơ,10.015289,105.761808,7,8000000,
+KH0284,Siêu thị mini Thanh Bình (giả lập),Minimart,69 Trần Văn Khéo (giả lập),Phường Ninh Kiều,Cần Thơ,10.029277,105.745753,15,31000000,50
+KH0285,Tạp hóa Cô Mười (giả lập),Tạp hóa,202/41 Trần Hưng Đạo (giả lập),Phường An Bình,Cần Thơ,10.051034,105.755721,7,17000000,
+KH0286,Tiệm tạp hóa Thím Chín (giả lập),Tạp hóa,28 Trần Ngọc Quế (giả lập),Phường Bình Thủy,Cần Thơ,10.043085,105.759277,0,,
+KH0287,Quán cơm tấm Dì Mười (giả lập),Quán ăn,54/47 Đề Thám (giả lập),Phường Cái Khế,Cần Thơ,10.029972,105.778548,7,7000000,
+KH0288,Tiệm tạp hóa Thanh Hương (giả lập),Tạp hóa,381 Nguyễn Trãi (giả lập),Phường Tân An,Cần Thơ,10.036565,105.754019,0,,
+KH0289,Khách sạn Hoàng Long (giả lập),Khách sạn,216 Trần Văn Khéo (giả lập),Phường Tân An,Cần Thơ,10.050141,105.745190,30,64000000,60
+KH0290,Tạp hóa Chú Mười (giả lập),Tạp hóa,217 Trần Ngọc Quế (giả lập),Phường Tân An,Cần Thơ,10.024044,105.764440,7,15000000,
+KH0291,Tạp hóa Bà Sáu (giả lập),Tạp hóa,11 Trần Hưng Đạo (giả lập),Phường Cái Khế,Cần Thơ,10.049490,105.758995,0,,
+KH0292,Tiệm tạp hóa Bà Mười (giả lập),Tạp hóa,297 Nguyễn Văn Cừ (giả lập),Phường Cái Khế,Cần Thơ,10.029672,105.749136,0,,
+KH0293,Tiệm tạp hóa Chị Tư (giả lập),Tạp hóa,264 Đề Thám (giả lập),Phường Ninh Kiều,Cần Thơ,10.034059,105.756577,0,,
+KH0294,Cửa hàng tiện lợi Hoàng Long (giả lập),Minimart,101/18 Cách Mạng Tháng 8 (giả lập),Phường Ninh Kiều,Cần Thơ,10.025738,105.776143,15,45000000,50
+KH0295,Siêu thị mini Như Ý (giả lập),Minimart,343/7 Phan Đình Phùng (giả lập),Phường Hưng Phú,Cần Thơ,10.015453,105.767740,15,74000000,50
+KH0296,Tiệm tạp hóa Dượng Năm (giả lập),Tạp hóa,353 Hòa Bình (giả lập),Phường Bình Thủy,Cần Thơ,10.020333,105.761797,7,13000000,
+KH0297,Khách sạn Phương Thảo (giả lập),Khách sạn,262 Võ Văn Kiệt (giả lập),Phường Ninh Kiều,Cần Thơ,10.016235,105.753840,30,117000000,60
+KH0298,Tiệm tạp hóa Song Hỷ (giả lập),Tạp hóa,363 Trần Quang Diệu (giả lập),Phường Bình Thủy,Cần Thơ,10.020278,105.753414,7,19000000,
+KH0299,Tạp hóa Thím Hai (giả lập),Tạp hóa,203/10 Nguyễn Văn Cừ (giả lập),Phường Bình Thủy,Cần Thơ,10.052361,105.753289,7,17000000,
+KH0300,Tiệm tạp hóa Thím Tư (giả lập),Tạp hóa,146 3 Tháng 2 (giả lập),Phường Tân An,Cần Thơ,10.053333,105.765271,0,,

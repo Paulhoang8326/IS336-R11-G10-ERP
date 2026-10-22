@@ -47,19 +47,26 @@ IS336-R11-G10-ERP/
 │   ├── stock-logistics-barcode/
 │   ├── stock-logistics-workflow/
 │   └── web/
-├── scripts/                     # backup/restore database kèm filestore
-│   ├── backup.sh
+├── scripts/
+│   ├── backup.sh                # backup/restore database kèm filestore
 │   ├── backup.ps1
 │   ├── restore.sh
-│   └── restore.ps1
+│   ├── restore.ps1
+│   ├── gen_seed.py              # sinh bộ dữ liệu demo từ seed/danh_muc/
+│   └── seed_import.py           # nạp bộ demo vào Odoo qua XML-RPC
+├── seed/
+│   ├── danh_muc/                # danh mục sản phẩm, nhà cung cấp (đầu vào)
+│   └── demo/                    # bộ demo do gen_seed.py sinh
 ├── backups/                     # tạo khi chạy backup, ignored
 ├── docs/
 │   ├── docker_setup.md
 │   ├── setup.md
 │   ├── contributing.md
 │   ├── odoo_version.md
-│   └── barcode.md
+│   ├── barcode.md
+│   ├── seed.md                  # cách nạp dữ liệu demo vào Odoo
+│   └── seed_data.md             # bộ dữ liệu demo gồm gì, các file CSV
 └── README.md
 ~~~
 
-Compose chỉ bind HTTP vào `127.0.0.1:8069` và dùng hai named volumes cho PostgreSQL và dữ liệu Odoo. `docker compose down` giữ volumes; không dùng `down -v` khi cần giữ dữ liệu. **Database tạo bằng Odoo 19 không mở được bằng Odoo 18, vì Odoo không hạ cấp database.** Ai đã tạo database thử bằng 19 thì xóa đi; nếu có dữ liệu cần giữ thì báo nhóm trước. Phát triển module Odoo 18 trong `custom_addons/`, không sửa Odoo core hay code trong `oca/`. Sao lưu database kèm filestore bằng `scripts/backup.sh <db>`, khôi phục bằng `scripts/restore.sh <thư mục backup> <db đích>`; trên Windows dùng bản `.ps1` cùng tham số. Xem [hướng dẫn Docker](docs/docker_setup.md), [quy tắc cộng tác](docs/contributing.md), [phiên bản image và OCA](docs/odoo_version.md) và [quét mã vạch](docs/barcode.md).
+Compose chỉ bind HTTP vào `127.0.0.1:8069` và dùng hai named volumes cho PostgreSQL và dữ liệu Odoo. `docker compose down` giữ volumes; không dùng `down -v` khi cần giữ dữ liệu. **Database tạo bằng Odoo 19 không mở được bằng Odoo 18, vì Odoo không hạ cấp database.** Ai đã tạo database thử bằng 19 thì xóa đi; nếu có dữ liệu cần giữ thì báo nhóm trước. Phát triển module Odoo 18 trong `custom_addons/`, không sửa Odoo core hay code trong `oca/`. Sao lưu database kèm filestore bằng `scripts/backup.sh <db>`, khôi phục bằng `scripts/restore.sh <thư mục backup> <db đích>`; trên Windows dùng bản `.ps1` cùng tham số. Xem [hướng dẫn Docker](docs/docker_setup.md), [quy tắc cộng tác](docs/contributing.md), [phiên bản image và OCA](docs/odoo_version.md), [quét mã vạch](docs/barcode.md), [nạp dữ liệu demo](docs/seed.md) và [bộ dữ liệu demo](docs/seed_data.md).
