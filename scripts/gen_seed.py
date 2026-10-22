@@ -81,7 +81,6 @@ DUONG = ["3 Tháng 2", "30 Tháng 4", "Cách Mạng Tháng 8", "Đề Thám", "H
          "Trần Ngọc Quế", "Trần Phú", "Trần Quang Diệu", "Trần Văn Khéo", "Võ Văn Kiệt"]
 PHUONG = ["Phường An Bình", "Phường Bình Thủy", "Phường Cái Khế", "Phường Hưng Phú", "Phường Ninh Kiều",
           "Phường Tân An"]
-GIA_LAP = "(giả lập)"
 
 
 def so(text, nguyen=False):
@@ -226,9 +225,9 @@ def sinh_khach_hang(so_khach, thong_so, khung, rng):
             han_muc = rng.randint(lo // 1_000_000, hi // 1_000_000) * 1_000_000
         khach.append(dict(
             ma_kh=f"KH{i:04d}",
-            ten=f"{ten} {GIA_LAP}",
+            ten=ten,
             nhom_khach=nhom,
-            dia_chi=f"{so_nha} {rng.choice(DUONG)} {GIA_LAP}",
+            dia_chi=f"{so_nha} {rng.choice(DUONG)}",
             phuong=rng.choice(PHUONG),
             thanh_pho="Cần Thơ",
             vi_do=f"{rng.uniform(lat_min, lat_max):.6f}",

@@ -41,7 +41,7 @@ Khách trả ngay thì không có hạn mức nợ. Nhóm không có giá riêng
 ## Số tự đặt
 
 - Xe 1,5 và 2,5 tấn: nhóm tự đặt, chưa có số liệu thật.
-- Tên và địa chỉ khách là giả, có chữ "(giả lập)". Tọa độ là điểm ngẫu nhiên quanh trung tâm Cần Thơ, không khớp với địa chỉ.
+- Tên và địa chỉ khách là giả lập; trong dữ liệu không gắn nhãn nào để phân biệt. Tọa độ là điểm ngẫu nhiên quanh trung tâm Cần Thơ, không khớp với địa chỉ.
 - Giá nhập, giá bán trong danh mục phần lớn là ước lượng; mức giảm giá theo nhóm khách là tự đặt.
 - 150 mã được chọn theo tỉ lệ số mã của từng nhà cung cấp (NCC01 40, NCC02 15, NCC03 6, NCC04 58, NCC05 22, NCC06 9), ưu tiên mã có số chai/gói mỗi thùng là số thật.
 - Hạn dùng trong Odoo = số tháng hạn dùng × 30 ngày.

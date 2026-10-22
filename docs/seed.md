@@ -93,6 +93,10 @@ env.cr.commit()
 | `CẢNH BÁO: không có thuế bán ...` | Database không dùng bộ thuế Việt Nam. Tạo database mới theo Bước 1 rồi nạp lại |
 | `Thiếu seed/demo/....csv` | Chưa có bộ dữ liệu: chạy `python scripts/gen_seed.py` |
 
+## Quy ước dữ liệu
+
+Không ghi chú kiểu (giả lập), (demo), (test) vào giá trị dữ liệu. Phần nào là giả lập hay ước lượng thì ghi trong [seed_data.md](seed_data.md) hoặc cột `uoc_luong`.
+
 ## Đã kiểm tra
 
 Ngày 20/10/2026 trên macOS, Odoo 18.0-20260926: làm đúng 3 bước trên với database mới, lần nạp đầu mất 3,5 giây, lần nạp thứ hai không tạo thêm bản ghi nào. Trong Odoo có đủ K1, K2, 150 sản phẩm đều có thuế 8%, 81 báo giá đúng kho và đúng giá theo nhóm khách. Lệnh PowerShell chưa chạy thử trên Windows.
