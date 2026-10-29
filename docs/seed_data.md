@@ -41,14 +41,14 @@ Mỗi dãy chia thành các ô, tổng cộng 240 ô. Mã ô là `dãy-kệ-tầ
 
 ## Tồn kho
 
-Tồn đầu ngày 20/10/2026, theo lô và hạn dùng, nằm trong ô của dãy đúng nhãn; không có tồn ở cấp dãy hay `PL/Stock`. Hạn dùng còn lại tính theo ngày 20/10/2026 của bộ đơn.
+Tồn đầu ngày mốc, theo lô và hạn dùng, nằm trong ô của dãy đúng nhãn; không có tồn ở cấp dãy hay `PL/Stock`. Ngày sản xuất và hạn dùng tính lùi, tiến từ ngày mốc (`--ngay-moc`, xem [seed.md](seed.md)), nên đổi ngày mốc thì mọi khoảng cách dưới đây giữ nguyên. Ngày sản xuất của mọi lô đều trước ngày mốc, và hạn dùng trừ ngày sản xuất đúng bằng hạn dùng của mã (số tháng × 30 ngày).
 
 - Mỗi mã có 2 hoặc 3 lô thường, hạn dùng khác nhau. Hai lô: lô cũ còn 30–60% hạn dùng, lô mới còn 70–95%. Ba lô: còn 25–45%, 50–70%, 75–95%. Lô cũ có thể dưới mức hạn dùng tối thiểu của minimart (50%) hay khách sạn, căn tin (60%), để thử chọn lô khi giao.
 - Riêng các lô thường đã đủ hàng cho mọi đơn trong ngày (kể cả đơn quá tải), dư thêm 3–12 thùng mỗi mã.
 - Thêm 5 lô cận date (còn 5–30 ngày tới hạn) và 2 lô đã hết hạn 3–30 ngày, mỗi lô 1–3 thùng, ở 7 mã khác nhau. Mã có lô thêm thì chỉ có 2 lô thường, nên vẫn tối đa 3 lô.
-- Aquafina 1500 ml (`NCC02-0002`, mã PepsiCo hạn dùng dài nhất, 18 tháng) có đúng 3 lô, hết hạn 15/03/2027, 15/02/2028 và 15/01/2029. Lô 2029 không khớp hạn dùng 18 tháng: nếu tính đúng thì ngày sản xuất rơi vào năm 2027, sau ngày đơn, nên ghi ngày sản xuất là 19/10/2026.
+- Aquafina 1500 ml (`NCC02-0002`, mã PepsiCo hạn dùng dài nhất, 18 tháng) có đúng 3 lô, hết hạn sau ngày mốc 5, 11 và 17 tháng (150, 330, 510 ngày), tức còn khoảng 28%, 61% và 94% hạn dùng. Với ngày mốc 29/10/2026 là các hạn 28/03/2027, 24/09/2027 và 22/03/2028. Kịch bản demo: khách minimart cần hàng còn ít nhất 50% hạn dùng, nên lô hết hạn gần nhất không đạt và phải lấy lô thứ hai.
 - Số lô là `L` + ngày sản xuất dạng `yymmdd`. Cột `ngay_sx` trong `ton_kho.csv` chưa nạp vào Odoo vì Odoo chưa có trường ngày sản xuất; sẽ nạp khi có module `pl_stock_lot`.
-- Kho xuất theo FEFO: lô hết hạn sớm nhất được lấy trước. Odoo chuẩn (`product_expiry`) không giữ lô có hạn dùng trước ngày của phiếu xuất. Ngày đó là lúc xác nhận đơn, không phải ngày 20/10/2026 của bộ đơn, nên lô cận date ở trên sẽ thành lô hết hạn khi chạy thử sau ngày hết hạn của nó. Giữ hạn dùng tối thiểu theo nhóm khách là việc của module `pl_fefo_pick`.
+- Kho xuất theo FEFO: lô hết hạn sớm nhất được lấy trước. Odoo chuẩn (`product_expiry`) không giữ lô có hạn dùng trước ngày của phiếu xuất. Ngày đó là lúc xác nhận đơn, không phải ngày mốc, nên muốn lô cận date và lô hết hạn đúng như trên thì ngày mốc phải là ngày demo. Giữ hạn dùng tối thiểu theo nhóm khách là việc của module `pl_fefo_pick`.
 
 ## Khách hàng
 
@@ -64,10 +64,10 @@ Khách trả ngay thì không có hạn mức nợ. Nhóm không có giá riêng
 
 ## Đơn hàng
 
-- 80 đơn ngày 20/10/2026, đều xuất từ Kho Phan Lâm. Một đơn có thể có hàng của nhiều nhãn (75 trên 81 đơn như vậy). Mỗi khách có tối đa 1 đơn.
+- 80 đơn vào ngày mốc, đều xuất từ Kho Phan Lâm. Số đơn là `DB` + ngày mốc + số thứ tự, vd `DB20261029-001`. Một đơn có thể có hàng của nhiều nhãn (75 trên 81 đơn như vậy). Mỗi khách có tối đa 1 đơn.
 - Tạp hóa, quán ăn đặt ít mặt hàng, khoảng 1/4 số dòng là mua lẻ (vài chai, vài gói). Minimart và căn tin KCN đặt nhiều. Quán ăn và căn tin không mua đồ dùng cá nhân (dầu gội, khử mùi, pin...).
 - Tổng hàng nặng 70–85% sức chở của 4 xe: khoảng 5,9 tấn (74%) so với 8 tấn.
-- Đơn thứ 81, `DB20261020-081`, cố ý nặng khoảng 3 tấn, hơn xe lớn nhất 2,5 tấn, để thử trường hợp không xếp được lên xe.
+- Đơn thứ 81 (`DB<ngày mốc>-081`) cố ý nặng khoảng 3 tấn, hơn xe lớn nhất 2,5 tấn, để thử trường hợp không xếp được lên xe.
 
 ## Số tự đặt
 
@@ -111,21 +111,21 @@ File CSV mã UTF-8, dòng đầu là tên cột. Sửa bằng Excel thì lưu d�
 
 ## Đổi số liệu
 
-Bộ hiện tại tạo bằng lệnh mặc định `python scripts/gen_seed.py`; chạy lại lệnh này vẫn ra đúng các file cũ. Muốn đổi số liệu thì thêm tham số, rồi commit `seed/demo/` để cả nhóm dùng chung. Ví dụ đổi ngày đơn và thêm một xe 2,5 tấn:
+Bộ hiện tại tạo bằng lệnh `python scripts/gen_seed.py --ngay-moc 2026-10-29`; chạy lại lệnh này vẫn ra đúng các file cũ. Muốn đổi số liệu thì thêm tham số, rồi commit `seed/demo/` để cả nhóm dùng chung. Ví dụ đổi ngày mốc và thêm một xe 2,5 tấn:
 
 ~~~bash
-python3 scripts/gen_seed.py --ngay 2026-11-02 --xe 1500,1500,2500,2500,2500
+python3 scripts/gen_seed.py --ngay-moc 2026-11-02 --xe 1500,1500,2500,2500,2500
 ~~~
 
 ~~~powershell
-python scripts/gen_seed.py --ngay 2026-11-02 --xe 1500,1500,2500,2500,2500
+python scripts/gen_seed.py --ngay-moc 2026-11-02 --xe 1500,1500,2500,2500,2500
 ~~~
 
-Cùng tham số thì máy nào chạy cũng ra file giống hệt. Cuối lệnh script in tóm tắt để kiểm tra: số mã và dãy kệ của mỗi nhà cung cấp, số khách mỗi nhóm, số đơn và tổng tải, cân nặng đơn quá tải, số lô tồn kho, và tồn có đủ cho mọi đơn không.
+Cùng ngày mốc và cùng tham số thì máy nào chạy cũng ra file giống hệt. Đổi ngày mốc thì chỉ các ngày (và số đơn, số lô vốn ghép từ ngày) dời theo; khách, mặt hàng, số lượng và vị trí giữ nguyên. Cuối lệnh script in tóm tắt để kiểm tra: số mã và dãy kệ của mỗi nhà cung cấp, số khách mỗi nhóm, số đơn và tổng tải, cân nặng đơn quá tải, số lô tồn kho, lô cận date và hết hạn, 3 lô Aquafina, và tồn có đủ cho mọi đơn không.
 
 | Tham số | Mặc định | Ý nghĩa |
 | --- | --- | --- |
-| `--ngay` | `2026-10-20` | Ngày đơn hàng, cũng là ngày tính hạn dùng còn lại của lô |
+| `--ngay-moc` | hôm nay | Ngày đơn hàng; ngày sản xuất và hạn dùng của lô tính theo ngày này |
 | `--so-ma`, `--so-khach`, `--so-don` | `150`, `300`, `80` | Số mã hàng, số khách, số đơn |
 | `--xe` | `1500,1500,2500,2500` | Tải trọng từng xe (kg), mọi xe xuất phát từ Kho Phan Lâm |
 | `--tai-min`, `--tai-max` | `70`, `85` | Tổng tải các đơn, % sức chở của tất cả xe |

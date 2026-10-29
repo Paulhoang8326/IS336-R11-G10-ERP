@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Sinh bộ dữ liệu demo từ danh mục sản phẩm có sẵn.
 
-Đọc seed/danh_muc/, ghi seed/demo/. Cùng --seed (và cùng tham số) thì ra các
-file giống hệt nhau trên mọi máy. Xem docs/seed.md.
+Đọc seed/danh_muc/, ghi seed/demo/. Mọi ngày (ngày đơn, ngày sản xuất, hạn dùng)
+tính theo --ngay-moc, mặc định là hôm nay. Cùng --seed, cùng --ngay-moc (và cùng
+tham số) thì ra các file giống hệt nhau trên mọi máy. Xem docs/seed.md.
 
     python scripts/gen_seed.py
-    python scripts/gen_seed.py --seed 7 --ngay 2026-11-02 --so-don 100
+    python scripts/gen_seed.py --ngay-moc 2026-11-02
+    python scripts/gen_seed.py --seed 7 --ngay-moc 2026-11-02 --so-don 100
     python scripts/gen_seed.py --nhom "Minimart.giam=4" --xe 1500,1500,2500,2500,2500
 """
 
@@ -75,9 +77,11 @@ SO_LO_CAN_DATE = 5
 SO_LO_HET_HAN = 2
 CAN_DATE_NGAY = 30
 THUNG_LO_THEM = (1, 3)
-# Một mã của nhãn này (mã có hạn dùng dài nhất) có đúng 3 lô, hết hạn ở 3 năm khác nhau.
-NCC_3_NAM = "NCC02"
-HAN_3_NAM = (dt.date(2027, 3, 15), dt.date(2028, 2, 15), dt.date(2029, 1, 15))
+# Một mã của nhãn này (mã có hạn dùng dài nhất) có đúng 3 lô, hết hạn sau ngày mốc 5, 11 và 17 tháng
+# (tháng = 30 ngày). Với hạn dùng 18 tháng, lô gần nhất còn dưới 50% hạn dùng: khách cần còn ≥ 50%
+# (minimart) phải lấy lô thứ hai.
+NCC_3_LO = "NCC02"
+THANG_3_LO = (5, 11, 17)
 
 TEN_RIENG = ["An Khang", "Bảo Trân", "Bích Ngọc", "Bình An", "Diễm My", "Đại Lợi", "Gia Huy", "Hiệp Thành",
              "Hòa Bình", "Hoàng Long", "Hồng Nhung", "Hồng Phúc", "Hữu Nghĩa", "Khánh Vy", "Kim Cúc",
@@ -369,7 +373,7 @@ def sinh_don_ban(khach, san_pham, xe, thong_so, args, rng):
                  dvt="thung") for sp in chon]
     don.append(dict(kh=kh, dong=dong))
 
-    ngay = args.ngay.strftime("%Y%m%d")
+    ngay = args.ngay_moc.strftime("%Y%m%d")
     for i, d in enumerate(don, 1):
         d["so_don"] = f"DB{ngay}-{i:03d}"
     return don
@@ -421,9 +425,12 @@ def sinh_ton_kho(san_pham, don, o_cua_sp, ngay, rng):
     def ngay_han(sp):
         return (so(sp["han_dung_thang"], nguyen=True) or 0) * 30
 
-    sp_3_nam = max((sp for sp in san_pham if sp["ma_ncc"] == NCC_3_NAM and ngay_han(sp)),
-                   key=lambda sp: (ngay_han(sp), sp["ma_sp"]), default=None)
-    co_han = [sp for sp in san_pham if ngay_han(sp) and sp is not sp_3_nam]
+    sp_3_lo = max((sp for sp in san_pham if sp["ma_ncc"] == NCC_3_LO and ngay_han(sp)),
+                  key=lambda sp: (ngay_han(sp), sp["ma_sp"]), default=None)
+    if sp_3_lo and max(THANG_3_LO) * 30 >= ngay_han(sp_3_lo):
+        sys.exit(f"{sp_3_lo['ma_sp']}: hạn dùng {sp_3_lo['han_dung_thang']} tháng, không đủ cho lô hết hạn sau "
+                 f"{max(THANG_3_LO)} tháng mà ngày sản xuất vẫn trước ngày mốc")
+    co_han = [sp for sp in san_pham if ngay_han(sp) and sp is not sp_3_lo]
     if len(co_han) < SO_LO_CAN_DATE + SO_LO_HET_HAN:
         sys.exit("Không đủ mã có hạn dùng để tạo lô cận date và lô hết hạn")
     them = rng.sample(co_han, SO_LO_CAN_DATE + SO_LO_HET_HAN)
@@ -439,10 +446,9 @@ def sinh_ton_kho(san_pham, don, o_cua_sp, ngay, rng):
         if not han_sp:
             lo.append((ngay - dt.timedelta(days=rng.randint(5, 60)), None, so_thung))
         else:
-            if sp is sp_3_nam:
-                # Lô hết hạn xa có thể cần ngày sản xuất sau ngày đơn; khi đó lấy ngày trước ngày đơn.
-                ds_han = list(HAN_3_NAM)
-                ds_nsx = [min(han - dt.timedelta(days=han_sp), ngay - dt.timedelta(days=1)) for han in ds_han]
+            if sp is sp_3_lo:
+                ds_han = [ngay + dt.timedelta(days=thang * 30) for thang in THANG_3_LO]
+                ds_nsx = [han - dt.timedelta(days=han_sp) for han in ds_han]
             else:
                 so_lo = 2 if sp["ma_sp"] in lo_them else rng.choice((2, 3))
                 ds_nsx = [ngay - dt.timedelta(days=round(han_sp * (1 - rng.uniform(*con))))
@@ -491,8 +497,9 @@ def main():
     p.add_argument("--danh-muc", type=Path, default=ROOT / "seed" / "danh_muc", help="thư mục danh mục đầu vào")
     p.add_argument("--out", type=Path, default=ROOT / "seed" / "demo", help="thư mục ghi bộ demo")
     p.add_argument("--seed", type=int, default=336, help="hạt giống ngẫu nhiên (mặc định 336)")
-    p.add_argument("--ngay", type=dt.date.fromisoformat, default=dt.date(2026, 10, 20),
-                   help="ngày của đơn bán, YYYY-MM-DD (mặc định 2026-10-20)")
+    p.add_argument("--ngay-moc", type=dt.date.fromisoformat, default=dt.date.today(),
+                   help="ngày mốc YYYY-MM-DD: ngày đơn bán, ngày sản xuất và hạn dùng của lô tính theo ngày này "
+                        "(mặc định hôm nay)")
     p.add_argument("--so-ma", type=int, default=150, help="số mã hàng (mặc định 150)")
     p.add_argument("--so-khach", type=int, default=300, help="số khách (mặc định 300)")
     p.add_argument("--so-don", type=int, default=80, help="số đơn trong ngày, chưa tính đơn vượt tải (mặc định 80)")
@@ -529,7 +536,7 @@ def main():
     bang_gia = sinh_bang_gia(san_pham, thong_so)
     don = sinh_don_ban(khach, san_pham, xe, thong_so, args, rng)
     vi_tri, o_cua_sp = sinh_vi_tri(ncc, san_pham)
-    ton_kho = sinh_ton_kho(san_pham, don, o_cua_sp, args.ngay, rng)
+    ton_kho = sinh_ton_kho(san_pham, don, o_cua_sp, args.ngay_moc, rng)
 
     args.out.mkdir(parents=True, exist_ok=True)
     ghi_csv(args.out / "san_pham.csv", cot_sp, san_pham)
@@ -546,7 +553,7 @@ def main():
             [dict(ma_xe=f"XE{i:02d}", loai_xe=f"Xe tải {tai / 1000:g} tấn".replace(".", ","),
                   tai_trong_kg=tai, ma_kho=KHO["ma_kho"]) for i, tai in enumerate(xe, 1)])
     ghi_csv(args.out / "don_ban.csv", ["so_don", "ngay", "ma_kh", "ma_sp", "so_luong", "dvt"],
-            [dict(so_don=d["so_don"], ngay=args.ngay.isoformat(), ma_kh=d["kh"]["ma_kh"], ma_sp=x["sp"]["ma_sp"],
+            [dict(so_don=d["so_don"], ngay=args.ngay_moc.isoformat(), ma_kh=d["kh"]["ma_kh"], ma_sp=x["sp"]["ma_sp"],
                   so_luong=x["so_luong"], dvt=x["dvt"])
              for d in don for x in d["dong"]])
 
@@ -558,7 +565,7 @@ def in_tom_tat(args, ncc, san_pham, khach, bang_gia, don, vi_tri, ton_kho, xe):
     day_cua_ncc = {r["ma_ncc"]: r["ma_vi_tri"] for r in vi_tri if not r["ma_cha"]}
     o = [r for r in vi_tri if r["ma_cha"]]
     so_o = Counter(r["ma_ncc"] for r in o)
-    print(f"Đã ghi 9 file vào {args.out} (seed={args.seed}, ngày {args.ngay.isoformat()})")
+    print(f"Đã ghi 9 file vào {args.out} (seed={args.seed}, ngày mốc {args.ngay_moc.isoformat()})")
     print(f"\n{KHO['ten']} ({KHO['ma_kho']}), {KHO['dia_chi']}, {KHO['thanh_pho']}: "
           f"{len(day_cua_ncc)} dãy kệ, {len(o)} ô, {len(xe)} xe " + ", ".join(f"{t:,} kg" for t in xe))
     dem_ncc = Counter(sp["ma_ncc"] for sp in san_pham)
@@ -583,21 +590,28 @@ def in_tom_tat(args, ncc, san_pham, khach, bang_gia, don, vi_tri, ton_kho, xe):
     print(f"  Đơn vượt tải {vuot['so_don']} ({vuot['kh']['ma_kh']} {vuot['kh']['nhom_khach']}): "
           f"{tai_don(vuot):,.1f} kg, xe lớn nhất {max(xe):,} kg")
 
-    ngay = args.ngay.isoformat()
+    moc = args.ngay_moc
+    ngay = moc.isoformat()
     con_han = [r for r in ton_kho if not r["han_dung"] or r["han_dung"] >= ngay]
     het_han = [r for r in ton_kho if r["han_dung"] and r["han_dung"] < ngay]
-    gioi_han = (args.ngay + dt.timedelta(days=CAN_DATE_NGAY)).isoformat()
+    gioi_han = (moc + dt.timedelta(days=CAN_DATE_NGAY)).isoformat()
     can_date = [r for r in con_han if r["han_dung"] and r["han_dung"] <= gioi_han]
     so_lo = Counter(r["ma_sp"] for r in ton_kho)
     print(f"\nTồn kho: {len(ton_kho)} lô, {len(so_lo)} mã, mỗi mã {min(so_lo.values())}-{max(so_lo.values())} lô; "
           f"cận date (còn ≤ {CAN_DATE_NGAY} ngày) {len(can_date)}, hết hạn {len(het_han)}")
     for r in can_date + het_han:
         print(f"  {r['ma_sp']} {r['so_lo']} hạn {r['han_dung']} tại {r['ma_vi_tri']}")
-    for m, k in sorted(so_lo.items()):
-        hans = sorted(r["han_dung"][:4] for r in ton_kho if r["ma_sp"] == m)
-        if m.startswith(NCC_3_NAM) and hans == [str(h.year) for h in HAN_3_NAM]:
-            print(f"  Mã 3 lô 3 năm: {m} " + ", ".join(
-                f"{r['so_lo']} NSX {r['ngay_sx']} hạn {r['han_dung']}" for r in ton_kho if r["ma_sp"] == m))
+    def ngay_(s):
+        return dt.date.fromisoformat(s)
+
+    lech = [t * 30 for t in THANG_3_LO]
+    for m in sorted(so_lo):
+        ds = [r for r in ton_kho if r["ma_sp"] == m]
+        if m.startswith(NCC_3_LO) and sorted((ngay_(r["han_dung"]) - moc).days for r in ds) == lech:
+            print(f"  Mã 3 lô: {m}")
+            for r in ds:
+                nsx, han = ngay_(r["ngay_sx"]), ngay_(r["han_dung"])
+                print(f"    {r['so_lo']} NSX {nsx} hạn {han}, còn {(han - moc).days / (han - nsx).days:.1%} hạn dùng")
     tang_cua_o = {r["ma_vi_tri"]: r["tang"] for r in o}
     o_cua_sp = {r["ma_sp"]: r["ma_vi_tri"] for r in ton_kho}
     nang = [sp["ma_sp"] for sp in san_pham if sp["nhom_hang"] in HANG_NANG]
@@ -615,11 +629,17 @@ def in_tom_tat(args, ncc, san_pham, khach, bang_gia, don, vi_tri, ton_kho, xe):
     ncc_cua_sp = {sp["ma_sp"]: sp["ma_ncc"] for sp in san_pham}
     dung_day = all(ncc_cua_o.get(r["ma_vi_tri"]) == ncc_cua_sp[r["ma_sp"]] for r in ton_kho)
     lo_trung = len({(r["ma_sp"], r["so_lo"]) for r in ton_kho}) != len(ton_kho)
+    nsx_sau_moc = [r for r in ton_kho if ngay_(r["ngay_sx"]) > moc]
+    thang_cua_sp = {sp["ma_sp"]: so(sp["han_dung_thang"], nguyen=True) or 0 for sp in san_pham}
+    qua_han_dung = [r for r in ton_kho if r["han_dung"] and
+                    (ngay_(r["han_dung"]) - ngay_(r["ngay_sx"])).days > thang_cua_sp[r["ma_sp"]] * 30]
     so_don_kh = Counter(d["kh"]["ma_kh"] for d in don)
     print(f"\nKiểm tra: mỗi khách tối đa 1 đơn {'OK' if max(so_don_kh.values()) == 1 else 'LỖI'}; "
           f"tồn còn hạn đủ cho mọi đơn {'OK' if du_hang else 'LỖI'}; "
           f"tồn nằm trong ô của dãy đúng nhãn {'OK' if dung_day else 'LỖI'}; "
-          f"số lô không trùng {'LỖI' if lo_trung else 'OK'}")
+          f"số lô không trùng {'LỖI' if lo_trung else 'OK'}; "
+          f"NSX không sau ngày mốc {'LỖI' if nsx_sau_moc else 'OK'}; "
+          f"hạn dùng - NSX không vượt hạn dùng của mã {'LỖI' if qua_han_dung else 'OK'}")
 
 
 if __name__ == "__main__":

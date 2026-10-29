@@ -4,6 +4,20 @@ Cả nhóm dùng chung một bộ dữ liệu demo, có sẵn trong `seed/demo/`
 
 Cần Odoo đang chạy bằng Docker ([docker_setup.md](docker_setup.md)) và Python 3.
 
+## Trước buổi demo
+
+Mọi ngày trong bộ dữ liệu (ngày đơn, ngày sản xuất, hạn dùng của lô) tính theo một ngày mốc. Bộ trong `seed/demo/` đang dùng ngày mốc 29/10/2026. Odoo xét lô hết hạn theo ngày thật, nên để lô cận date và lô hết hạn đúng như thiết kế, trước buổi demo chạy lại `gen_seed.py` với `--ngay-moc` là ngày demo, rồi nạp vào **database mới** theo 3 bước dưới đây:
+
+~~~bash
+python3 scripts/gen_seed.py --ngay-moc 2026-11-05
+~~~
+
+~~~powershell
+python scripts/gen_seed.py --ngay-moc 2026-11-05
+~~~
+
+Bỏ `--ngay-moc` thì ngày mốc là hôm nay. Không nạp bộ ngày mốc mới vào database cũ: số đơn và số lô đổi theo ngày mốc, nên database sẽ có thêm 81 báo giá và các lô mới bên cạnh dữ liệu cũ.
+
 ## Bước 1. Tạo database
 
 Công ty phải được đặt ở Việt Nam, tiền VND **trước khi** cài Sales và Purchase, vì Odoo chọn bộ thuế theo nước của công ty lúc cài kế toán. Làm sai thứ tự thì sản phẩm không có thuế 5%, 8%, 10%.
@@ -57,7 +71,7 @@ Chạy lại bao nhiêu lần cũng được: thứ đã có thì không tạo t
 | Sales > Products > Products | 150 sản phẩm, mã dạng `NCC01-0005` |
 | Sales > Orders > Customers | 300 khách, gắn nhãn theo nhóm (Tạp hóa, Minimart...) |
 | Sales > Products > Pricelists | 5 bảng giá "Giá sỉ - ..." |
-| Sales > Orders > Quotations | 81 báo giá ngày 20/10/2026 |
+| Sales > Orders > Quotations | 81 báo giá ngày mốc, số đơn dạng `DB20261029-001` |
 
 Thử nhanh: tạo báo giá cho một khách nhãn Minimart, thêm sản phẩm bất kỳ, giá sẽ thấp hơn giá bán 3%. Thêm cả hàng Wilmar lẫn nhãn khác rồi xác nhận: chỉ ra một phiếu xuất `PL/OUT/...` ở trạng thái Ready.
 
