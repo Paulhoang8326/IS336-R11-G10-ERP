@@ -220,13 +220,55 @@ def nap_han_thanh_toan(od, tk, ds_ngay):
     return {n: ids[ten_han_tt(n)] for n in ds_ngay}
 
 
-def nap_kho(od, tk, kho):
+def cong_ty(od):
+    return od("res.users", "read", [od.uid], fields=["company_id"])[0]["company_id"][0]
+
+
+def nap_kho(od, tk, kho, vi_tri):
+    """Một kho duy nhất. Database mới đã có kho mặc định (WH): đổi tên và mã kho đó thay vì tạo kho thứ hai.
+
+    Trả về (id kho, {mã dãy kệ: id vị trí}).
+    """
     print("Kho")
-    muc_tieu = {r["ma_kho"]: {"name": r["ten"], "code": r["ma_kho"]} for r in kho}
-    ids = dong_bo(od, tk, "Kho", "stock.warehouse", muc_tieu, [("code", "in", list(muc_tieu))],
-                  lambda r: r["code"], cap_nhat=False)
-    print("  Tọa độ kho chưa nạp; nhập/xuất 2 bước và ô kệ làm ở STT 16-17")
-    return ids
+    if len(kho) != 1:
+        sys.exit(f"kho.csv phải có đúng 1 kho, đang có {len(kho)}")
+    r = kho[0]
+    vn = od.search_read("res.country", [("code", "=", "VN")], ["id"])
+    dia_chi = dong_bo(od, tk, "Địa chỉ kho", "res.partner", {r["ma_kho"]: {
+        "name": r["ten"],
+        "ref": r["ma_kho"],
+        "street": r["dia_chi"],
+        "city": r["thanh_pho"],
+        "country_id": vn[0]["id"] if vn else False,
+        "partner_latitude": so(r["vi_do"]) or 0,
+        "partner_longitude": so(r["kinh_do"]) or 0,
+    }}, [("ref", "=", r["ma_kho"]), ("parent_id", "=", False)], lambda x: x["ref"])[r["ma_kho"]]
+
+    ct = cong_ty(od)
+    ds_kho = od.search_read("stock.warehouse", [("company_id", "=", ct)], ["code", "name", "partner_id"], order="id")
+    wh = next((w for w in ds_kho if w["code"] == r["ma_kho"]), None) or (ds_kho[0] if ds_kho else None)
+    vals = {"name": r["ten"], "code": r["ma_kho"], "partner_id": dia_chi}
+    if wh is None:
+        wh_id = od("stock.warehouse", "create", vals)
+        tk.them("Kho", 1, 0)
+    else:
+        wh_id = wh["id"]
+        doi = {f: v for f, v in vals.items() if khac(wh.get(f), v, "many2one" if f == "partner_id" else "char", f)}
+        if doi:
+            od("stock.warehouse", "write", [wh_id], doi)
+        tk.them("Kho", 0, int(bool(doi)))
+    khac_kho = [f"{w['code']} {w['name']}" for w in ds_kho if w["id"] != wh_id]
+    if khac_kho:
+        tk.bao(f"database còn kho khác ngoài {r['ma_kho']}: {', '.join(khac_kho)}. Nên tạo database mới")
+
+    print("Dãy kệ")
+    ton = od("stock.warehouse", "read", [wh_id], fields=["lot_stock_id"])[0]["lot_stock_id"][0]
+    muc_tieu = {x["ma_vi_tri"]: {"name": x["ten"], "barcode": x["ma_vi_tri"], "location_id": ton, "usage": "internal"}
+                for x in vi_tri}
+    day = dong_bo(od, tk, "Dãy kệ", "stock.location", muc_tieu,
+                  [("barcode", "in", list(muc_tieu)), ("company_id", "in", [ct, False])], lambda x: x["barcode"])
+    print("  Nhập/xuất 2 bước và ô kệ trong từng dãy làm ở STT 16-17")
+    return wh_id, day
 
 
 def nap_nha_cung_cap(od, tk, ncc, han_tt):
@@ -243,11 +285,10 @@ def nap_nha_cung_cap(od, tk, ncc, han_tt):
 
 
 def tim_thue(od):
-    cong_ty = od("res.users", "read", [od.uid], fields=["company_id"])[0]["company_id"][0]
     thue = {}
     for t in od.search_read("account.tax", [("type_tax_use", "in", ["sale", "purchase"]),
                                             ("amount_type", "=", "percent"),
-                                            ("company_id", "=", cong_ty), ("active", "=", True)],
+                                            ("company_id", "=", cong_ty(od)), ("active", "=", True)],
                             ["type_tax_use", "amount"], order="sequence, id"):
         thue.setdefault((t["type_tax_use"], round(t["amount"], 4)), t["id"])
     return thue
@@ -396,7 +437,37 @@ def nap_khach_hang(od, tk, khach, han_tt, bang_gia_ids):
                    [("ref", "in", list(muc_tieu)), ("parent_id", "=", False)], lambda r: r["ref"])
 
 
-def nap_don_ban(od, tk, don_ban, kh_ids, kho_ids, sp):
+def nap_ton_kho(od, tk, ton_kho, day, sp):
+    """Tạo lô và tồn đầu kỳ. Chỉ nhập tồn cho lô mới tạo, lô đã có thì để nguyên số lượng
+    (tồn đã xuất bán không bị cộng lại khi chạy lại script)."""
+    print("Tồn kho theo lô")
+    muc_tieu, dong_lo = {}, {}
+    for r in ton_kho:
+        if r["ma_sp"] not in sp or r["ma_vi_tri"] not in day:
+            tk.bao(f"ton_kho.csv: không có sản phẩm {r['ma_sp']} hoặc dãy {r['ma_vi_tri']}, bỏ qua",
+                   ("tk", r["ma_sp"], r["ma_vi_tri"]))
+            continue
+        k = (sp[r["ma_sp"]]["id"], r["so_lo"])
+        vals = {"name": r["so_lo"], "product_id": k[0]}
+        if r["han_dung"]:
+            han = dt.datetime.combine(dt.date.fromisoformat(r["han_dung"]), dt.time())
+            vals["expiration_date"] = (han - dt.timedelta(hours=GIO_VN)).strftime("%Y-%m-%d %H:%M:%S")
+        muc_tieu[k] = vals
+        dong_lo[k] = r
+    chi_giu_truong_co(od, tk, "stock.lot", muc_tieu.values())
+    domain = [("product_id", "in", sorted({k[0] for k in muc_tieu}))]
+    da_co = {(r["product_id"][0], r["name"]) for r in od.search_read("stock.lot", domain, ["product_id", "name"])}
+    lo = dong_bo(od, tk, "Lô", "stock.lot", muc_tieu, domain, lambda r: (r["product_id"][0], r["name"]),
+                 cap_nhat=False)
+    moi = [{"product_id": k[0], "lot_id": lo[k], "location_id": day[dong_lo[k]["ma_vi_tri"]],
+            "inventory_quantity_auto_apply": so(dong_lo[k]["so_luong"], True) or 0}
+           for k in muc_tieu if k not in da_co]
+    if moi:
+        od("stock.quant", "create", moi, context={"inventory_mode": True})
+    tk.them("Tồn đầu kỳ", len(moi), 0)
+
+
+def nap_don_ban(od, tk, don_ban, kh_ids, kho_id, sp):
     print("Đơn bán (báo giá)")
     theo_so = {}
     for r in don_ban:
@@ -408,8 +479,8 @@ def nap_don_ban(od, tk, don_ban, kh_ids, kho_ids, sp):
         if so_don in da_co:
             continue
         dau = dong[0]
-        if dau["ma_kh"] not in kh_ids or dau["ma_kho"] not in kho_ids:
-            tk.bao(f"{so_don}: không có khách {dau['ma_kh']} hoặc kho {dau['ma_kho']}, bỏ qua")
+        if dau["ma_kh"] not in kh_ids:
+            tk.bao(f"{so_don}: không có khách {dau['ma_kh']}, bỏ qua")
             continue
         thieu = [r["ma_sp"] for r in dong if r["ma_sp"] not in sp]
         if thieu:
@@ -430,7 +501,7 @@ def nap_don_ban(od, tk, don_ban, kh_ids, kho_ids, sp):
             "partner_id": kh_ids[dau["ma_kh"]],
             "client_order_ref": so_don,
             "date_order": (ngay - dt.timedelta(hours=GIO_VN)).strftime("%Y-%m-%d %H:%M:%S"),
-            "warehouse_id": kho_ids[dau["ma_kho"]],
+            "warehouse_id": kho_id,
             "order_line": lines,
         })
     if moi:
@@ -452,7 +523,7 @@ def main():
     args = p.parse_args()
 
     du_lieu = {}
-    for ten in ["kho", "nha_cung_cap", "san_pham", "bang_gia", "khach_hang", "xe"] + (
+    for ten in ["kho", "vi_tri", "nha_cung_cap", "san_pham", "ton_kho", "bang_gia", "khach_hang", "xe"] + (
             ["don_ban"] if args.orders else []):
         path = args.dir / f"{ten}.csv"
         if not path.exists():
@@ -465,17 +536,18 @@ def main():
     tk = ThongKe()
 
     digits_kg = bat_cai_dat(od, tk)
-    kho_ids = nap_kho(od, tk, du_lieu["kho"])
+    kho_id, day = nap_kho(od, tk, du_lieu["kho"], du_lieu["vi_tri"])
     han_tt = nap_han_thanh_toan(od, tk, {so(r["han_thanh_toan_ngay"], True) or 0
                                          for r in du_lieu["nha_cung_cap"] + du_lieu["khach_hang"]})
     ncc_ids = nap_nha_cung_cap(od, tk, du_lieu["nha_cung_cap"], han_tt)
     sp = nap_san_pham(od, tk, du_lieu["san_pham"], ncc_ids, digits_kg)
+    nap_ton_kho(od, tk, du_lieu["ton_kho"], day, sp)
     ds_nhom = list(dict.fromkeys([r["nhom_khach"] for r in du_lieu["khach_hang"]] +
                                  [r["nhom_khach"] for r in du_lieu["bang_gia"]]))
     bang_gia_ids = nap_bang_gia(od, tk, du_lieu["bang_gia"], ds_nhom, sp)
     kh_ids = nap_khach_hang(od, tk, du_lieu["khach_hang"], han_tt, bang_gia_ids)
     if args.orders:
-        nap_don_ban(od, tk, du_lieu["don_ban"], kh_ids, kho_ids, sp)
+        nap_don_ban(od, tk, du_lieu["don_ban"], kh_ids, kho_id, sp)
     print(f"Bỏ qua xe.csv ({len(du_lieu['xe'])} xe): chờ module giao hàng")
 
     print(f"\n{'Loại':<20} {'Tạo mới':>8} {'Cập nhật':>9}")

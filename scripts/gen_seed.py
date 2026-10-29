@@ -6,7 +6,7 @@ file giống hệt nhau trên mọi máy. Xem docs/seed.md.
 
     python scripts/gen_seed.py
     python scripts/gen_seed.py --seed 7 --ngay 2026-11-02 --so-don 100
-    python scripts/gen_seed.py --nhom "Minimart.giam=4" --xe K1=1500,2500,2500
+    python scripts/gen_seed.py --nhom "Minimart.giam=4" --xe 1500,1500,2500,2500,2500
 """
 
 import argparse
@@ -56,12 +56,15 @@ HANG_CA_NHAN = ("Bao cao su", "Chăm sóc da", "Chăm sóc răng miệng", "Dao 
                 "Khử mùi, tạo kiểu tóc", "Pin", "Xịt phòng, sáp thơm")
 KHONG_MUA = {"Quán ăn": HANG_CA_NHAN, "Căn tin KCN": HANG_CA_NHAN}
 
-KHO = [
-    dict(ma_kho="K1", ten="Kho Wilmar - Võ Văn Kiệt", vi_do="10.0519744", kinh_do="105.7524569",
-         nha_cung_cap="NCC01"),
-    dict(ma_kho="K2", ten="Kho tổng - Nguyễn Văn Cừ nối dài", vi_do="10.0274244", kinh_do="105.7466991",
-         nha_cung_cap="NCC02 NCC03 NCC04 NCC05 NCC06"),
-]
+# Một kho duy nhất, cũng là điểm xuất phát của mọi xe. Mỗi nhãn một dãy kệ trong kho.
+KHO = dict(ma_kho="PL", ten="Kho Phan Lâm", dia_chi="Nguyễn Văn Cừ nối dài", thanh_pho="Cần Thơ",
+           vi_do="10.0274244", kinh_do="105.7466991")
+
+# Tồn đầu ngày: đủ cho mọi đơn, dư thêm vài thùng mỗi mã. Hàng có hạn dùng chia 2 lô:
+# lô cũ còn 30-60% hạn dùng, lô mới còn 70-95%.
+DU_TON_THUNG = (3, 12)
+CON_HAN_LO_CU = (0.30, 0.60)
+CON_HAN_LO_MOI = (0.70, 0.95)
 
 TEN_RIENG = ["An Khang", "Bảo Trân", "Bích Ngọc", "Bình An", "Diễm My", "Đại Lợi", "Gia Huy", "Hiệp Thành",
              "Hòa Bình", "Hoàng Long", "Hồng Nhung", "Hồng Phúc", "Hữu Nghĩa", "Khánh Vy", "Kim Cúc",
@@ -78,7 +81,7 @@ NGANH_KCN = ["Bao bì", "Cơ khí", "Chế biến gạo", "Giày da", "May mặc
 DUONG = ["3 Tháng 2", "30 Tháng 4", "Cách Mạng Tháng 8", "Đề Thám", "Hai Bà Trưng", "Hòa Bình",
          "Hùng Vương", "Lê Hồng Phong", "Lê Lợi", "Lý Tự Trọng", "Mậu Thân", "Nguyễn Trãi",
          "Nguyễn Văn Cừ", "Nguyễn Văn Linh", "Nguyễn Việt Hồng", "Phan Đình Phùng", "Trần Hưng Đạo",
-         "Trần Ngọc Quế", "Trần Phú", "Trần Quang Diệu", "Trần Văn Khéo", "Võ Văn Kiệt"]
+         "Trần Ngọc Quế", "Trần Phú", "Trần Quang Diệu", "Trần Văn Khéo", "Xô Viết Nghệ Tĩnh"]
 PHUONG = ["Phường An Bình", "Phường Bình Thủy", "Phường Cái Khế", "Phường Hưng Phú", "Phường Ninh Kiều",
           "Phường Tân An"]
 
@@ -262,8 +265,8 @@ def sinh_bang_gia(san_pham, thong_so):
     return rows
 
 
-def sinh_dong(sp_kho, nhom, ts, rng):
-    pool = [sp for sp in sp_kho if sp["nhom_hang"] not in KHONG_MUA.get(nhom, ())] or sp_kho
+def sinh_dong(san_pham, nhom, ts, rng):
+    pool = [sp for sp in san_pham if sp["nhom_hang"] not in KHONG_MUA.get(nhom, ())] or san_pham
     k = min(len(pool), rng.randint(*ts["so_dong"]))
     dong = []
     for sp in sorted(rng.sample(pool, k), key=lambda s: s["ma_sp"]):
@@ -279,19 +282,19 @@ def tai_don(don):
     return sum(kg_dong(d["sp"], d["so_luong"], d["dvt"]) for d in don["dong"])
 
 
-def can_tai(don_kho, lo, hi, rng):
+def can_tai(ds_don, lo, hi, rng):
     """Chỉnh số thùng cho tới khi tổng tải các đơn nằm trong [lo, hi] kg."""
     def tong():
-        return sum(tai_don(d) for d in don_kho)
+        return sum(tai_don(d) for d in ds_don)
 
     def dong_thung():
-        return [d for don in don_kho for d in don["dong"] if d["dvt"] == "thung"]
+        return [d for don in ds_don for d in don["dong"] if d["dvt"] == "thung"]
 
     t = tong()
     if not lo <= t <= hi:
         # Co giãn đều số thùng về giữa khoảng, giữ chênh lệch giữa các nhóm khách.
         tai_le = sum(kg_dong(d["sp"], d["so_luong"], d["dvt"])
-                     for don in don_kho for d in don["dong"] if d["dvt"] == "le")
+                     for don in ds_don for d in don["dong"] if d["dvt"] == "le")
         he_so = ((lo + hi) / 2 - tai_le) / max(t - tai_le, 1e-9)
         for d in dong_thung():
             d["so_luong"] = max(1, int(d["so_luong"] * he_so + 0.5))
@@ -309,7 +312,7 @@ def can_tai(don_kho, lo, hi, rng):
             elif t <= hi:
                 return
             else:
-                bo_duoc = [don for don in don_kho if len(don["dong"]) > 1]
+                bo_duoc = [don for don in ds_don if len(don["dong"]) > 1]
                 if not bo_duoc:
                     sys.exit("Không thể giảm tải xuống dưới mức tối đa: thêm xe hoặc giảm --so-don")
                 don = rng.choice(bo_duoc)
@@ -326,50 +329,73 @@ def can_tai(don_kho, lo, hi, rng):
         sys.exit("Không cân được tải đơn hàng")
 
 
-def sinh_don_ban(khach, san_pham, kho_cua_ncc, xe, thong_so, args, rng):
-    sp_theo_kho = defaultdict(list)
-    for sp in san_pham:
-        sp_theo_kho[kho_cua_ncc[sp["ma_ncc"]]].append(sp)
-    ma_kho = [k["ma_kho"] for k in KHO]
-    so_don_kho = chia_ty_le({ma_kho[0]: args.ty_le_k1, ma_kho[1]: 100 - args.ty_le_k1}, args.so_don)
+def sinh_don_ban(khach, san_pham, xe, thong_so, args, rng):
+    """Đơn trong ngày, mọi đơn xuất từ cùng một kho; một đơn có thể có hàng của nhiều nhãn."""
+    if args.so_don >= len(khach):
+        sys.exit("Số đơn phải nhỏ hơn số khách: mỗi khách tối đa một đơn mỗi ngày, cộng một đơn vượt tải")
     don = []
-    for kho in ma_kho:
-        if so_don_kho[kho] > len(khach):
-            sys.exit(f"Số đơn của {kho} vượt số khách: mỗi khách tối đa một đơn mỗi kho")
-        if so_don_kho[kho] and not sp_theo_kho[kho]:
-            sys.exit(f"Kho {kho} không có sản phẩm nào trong bộ demo")
-        for kh in rng.sample(khach, so_don_kho[kho]):
-            nhom = kh["nhom_khach"]
-            don.append(dict(kho=kho, kh=kh, dong=sinh_dong(sp_theo_kho[kho], nhom, thong_so[nhom], rng)))
-    for kho in ma_kho:
-        suc_chua = sum(xe[kho])
-        can_tai([d for d in don if d["kho"] == kho],
-                suc_chua * args.tai_min / 100, suc_chua * args.tai_max / 100, rng)
+    for kh in rng.sample(khach, args.so_don):
+        nhom = kh["nhom_khach"]
+        don.append(dict(kh=kh, dong=sinh_dong(san_pham, nhom, thong_so[nhom], rng)))
+    suc_chua = sum(xe)
+    can_tai(don, suc_chua * args.tai_min / 100, suc_chua * args.tai_max / 100, rng)
     rng.shuffle(don)
 
-    # Đơn vượt tải: ở kho cuối (K2), khách chưa có đơn ở kho đó, nặng hơn xe lớn nhất.
-    kho_vuot = ma_kho[-1]
-    da_co = {d["kh"]["ma_kh"] for d in don if d["kho"] == kho_vuot}
+    # Đơn vượt tải: khách chưa có đơn trong ngày, nặng hơn xe lớn nhất.
+    da_co = {d["kh"]["ma_kh"] for d in don}
     con_lai = [kh for kh in khach if kh["ma_kh"] not in da_co]
-    if not con_lai:
-        sys.exit("Không còn khách nào chưa có đơn ở kho cuối để làm đơn vượt tải")
     ung_vien = [kh for kh in con_lai if kh["nhom_khach"] == "Căn tin KCN"] or con_lai
     kh = rng.choice(ung_vien)
     nhom = kh["nhom_khach"]
-    pool = [sp for sp in sp_theo_kho[kho_vuot] if sp["nhom_hang"] not in KHONG_MUA.get(nhom, ())] \
-        or sp_theo_kho[kho_vuot]
-    muc = max(xe[kho_vuot]) * args.vuot_tai / 100
+    pool = [sp for sp in san_pham if sp["nhom_hang"] not in KHONG_MUA.get(nhom, ())] or san_pham
+    muc = max(xe) * args.vuot_tai / 100
     # Lấy hàng nặng để số thùng hợp lý (vài chục thùng mỗi dòng).
     nang = sorted(pool, key=lambda s: (-(so(s["kg_moi_thung"]) or 0), s["ma_sp"]))[:10]
     chon = sorted(rng.sample(nang, min(4, len(nang))), key=lambda s: s["ma_sp"])
     dong = [dict(sp=sp, so_luong=math.ceil(muc / len(chon) / max(so(sp["kg_moi_thung"]) or 0.01, 0.01)),
                  dvt="thung") for sp in chon]
-    don.append(dict(kho=kho_vuot, kh=kh, dong=dong))
+    don.append(dict(kh=kh, dong=dong))
 
     ngay = args.ngay.strftime("%Y%m%d")
     for i, d in enumerate(don, 1):
         d["so_don"] = f"DB{ngay}-{i:03d}"
     return don
+
+
+def sinh_vi_tri(ncc):
+    """Mỗi nhãn một dãy kệ A, B, C... theo thứ tự mã nhà cung cấp."""
+    if len(ncc) > 26:
+        sys.exit("Quá 26 nhà cung cấp, không đủ chữ cái đặt tên dãy kệ")
+    return [dict(ma_vi_tri=f"{KHO['ma_kho']}-{chr(65 + i)}", ten=f"Dãy {chr(65 + i)} - {r['ten']}",
+                 ma_ncc=r["ma_ncc"]) for i, r in enumerate(sorted(ncc, key=lambda r: r["ma_ncc"]))]
+
+
+def sinh_ton_kho(san_pham, don, vi_tri, ngay, rng):
+    can = Counter()
+    for d in don:
+        for x in d["dong"]:
+            can[x["sp"]["ma_sp"]] += x["so_luong"] * (so_dvt(x["sp"]) if x["dvt"] == "thung" else 1)
+    day_cua_ncc = {r["ma_ncc"]: r["ma_vi_tri"] for r in vi_tri}
+    rows = []
+    for sp in san_pham:
+        n = so_dvt(sp)
+        so_thung = math.ceil(can[sp["ma_sp"]] / n) + rng.randint(*DU_TON_THUNG)
+        thang = so(sp["han_dung_thang"], nguyen=True)
+        if not thang:
+            nhap = ngay - dt.timedelta(days=rng.randint(5, 60))
+            lo = [(nhap, None, so_thung)]
+        else:
+            ngay_han = thang * 30
+            lo = []
+            thung_cu = rng.randint(1, so_thung // 3) if so_thung >= 3 else 0
+            for con_han, thung in ((CON_HAN_LO_CU, thung_cu), (CON_HAN_LO_MOI, so_thung - thung_cu)):
+                if thung:
+                    nsx = ngay - dt.timedelta(days=round(ngay_han * (1 - rng.uniform(*con_han))))
+                    lo.append((nsx, nsx + dt.timedelta(days=ngay_han), thung))
+        for nsx, han, thung in lo:
+            rows.append(dict(ma_sp=sp["ma_sp"], ma_vi_tri=day_cua_ncc[sp["ma_ncc"]], so_lo=f"L{nsx:%y%m%d}",
+                             han_dung=han.isoformat() if han else "", so_luong=thung * n))
+    return rows
 
 
 def doc_nhom(gia_tri, thong_so):
@@ -384,17 +410,10 @@ def doc_nhom(gia_tri, thong_so):
     thong_so[nhom][khoa] = tuple(so_hang)
 
 
-def doc_xe(ds):
-    xe = {}
-    for muc in ds:
-        m = re.fullmatch(r"(\w+)=([\d,]+)", muc)
-        if not m:
-            sys.exit(f"--xe không hợp lệ: {muc!r}. Dạng: K1=1500,2500")
-        xe[m.group(1)] = [int(x) for x in m.group(2).split(",") if x]
-    for k in KHO:
-        if not xe.get(k["ma_kho"]):
-            sys.exit(f"Thiếu xe cho kho {k['ma_kho']}")
-    return xe
+def doc_xe(gia_tri):
+    if not re.fullmatch(r"\d+(,\d+)*", gia_tri):
+        sys.exit(f"--xe không hợp lệ: {gia_tri!r}. Dạng: 1500,1500,2500,2500")
+    return [int(x) for x in gia_tri.split(",")]
 
 
 def main():
@@ -409,20 +428,19 @@ def main():
     p.add_argument("--so-ma", type=int, default=150, help="số mã hàng (mặc định 150)")
     p.add_argument("--so-khach", type=int, default=300, help="số khách (mặc định 300)")
     p.add_argument("--so-don", type=int, default=80, help="số đơn trong ngày, chưa tính đơn vượt tải (mặc định 80)")
-    p.add_argument("--ty-le-k1", type=int, default=50, help="%% số đơn thuộc K1 (mặc định 50)")
-    p.add_argument("--tai-min", type=float, default=70, help="tải tối thiểu, %% tải xe của kho (mặc định 70)")
-    p.add_argument("--tai-max", type=float, default=85, help="tải tối đa, %% tải xe của kho (mặc định 85)")
+    p.add_argument("--tai-min", type=float, default=70, help="tải tối thiểu, %% tổng tải các xe (mặc định 70)")
+    p.add_argument("--tai-max", type=float, default=85, help="tải tối đa, %% tổng tải các xe (mặc định 85)")
     p.add_argument("--vuot-tai", type=float, default=120,
-                   help="tải đơn vượt tải, %% xe lớn nhất của K2 (mặc định 120)")
-    p.add_argument("--xe", nargs="+", default=["K1=1500,2500", "K2=1500,2500"], metavar="KHO=KG,KG",
-                   help="tải trọng xe theo kho (mặc định K1=1500,2500 K2=1500,2500)")
+                   help="tải đơn vượt tải, %% xe lớn nhất (mặc định 120)")
+    p.add_argument("--xe", default="1500,1500,2500,2500", metavar="KG,KG,...",
+                   help="tải trọng từng xe, mọi xe xuất phát từ kho (mặc định 1500,1500,2500,2500)")
     p.add_argument("--khung", nargs=4, type=float, default=[10.015, 10.055, 105.745, 105.782],
                    metavar=("VD_MIN", "VD_MAX", "KD_MIN", "KD_MAX"), help="khung tọa độ khách")
     p.add_argument("--nhom", action="append", default=[], metavar="NHÓM.KHÓA=GIÁ_TRỊ",
                    help="đổi thông số nhóm khách, ví dụ \"Tạp hóa.han_tt=0|7\" hoặc \"Minimart.so_thung=2-6\"")
     args = p.parse_args()
-    if not 0 <= args.ty_le_k1 <= 100 or not 0 < args.tai_min <= args.tai_max:
-        sys.exit("--ty-le-k1 phải trong 0-100 và 0 < --tai-min <= --tai-max")
+    if not 0 < args.tai_min <= args.tai_max:
+        sys.exit("Cần 0 < --tai-min <= --tai-max")
     if args.vuot_tai <= 100:
         sys.exit("--vuot-tai phải lớn hơn 100")
 
@@ -434,15 +452,16 @@ def main():
 
     cot_sp, danh_muc = doc_csv(args.danh_muc / "san_pham.csv")
     cot_ncc, ncc = doc_csv(args.danh_muc / "nha_cung_cap.csv")
-    kho_cua_ncc = {m: k["ma_kho"] for k in KHO for m in k["nha_cung_cap"].split()}
-    thieu = sorted({r["ma_ncc"] for r in danh_muc} - set(kho_cua_ncc))
+    vi_tri = sinh_vi_tri(ncc)
+    thieu = sorted({r["ma_ncc"] for r in danh_muc} - {r["ma_ncc"] for r in vi_tri})
     if thieu:
-        sys.exit(f"Nhà cung cấp chưa gán kho: {thieu}")
+        sys.exit(f"Sản phẩm có nhà cung cấp không nằm trong nha_cung_cap.csv: {thieu}")
 
     san_pham = chon_san_pham(danh_muc, args.so_ma, rng)
     khach = sinh_khach_hang(args.so_khach, thong_so, args.khung, rng)
     bang_gia = sinh_bang_gia(san_pham, thong_so)
-    don = sinh_don_ban(khach, san_pham, kho_cua_ncc, xe, thong_so, args, rng)
+    don = sinh_don_ban(khach, san_pham, xe, thong_so, args, rng)
+    ton_kho = sinh_ton_kho(san_pham, don, vi_tri, args.ngay, rng)
 
     args.out.mkdir(parents=True, exist_ok=True)
     ghi_csv(args.out / "san_pham.csv", cot_sp, san_pham)
@@ -451,29 +470,30 @@ def main():
             ["ma_kh", "ten", "nhom_khach", "dia_chi", "phuong", "thanh_pho", "vi_do", "kinh_do",
              "han_thanh_toan_ngay", "han_muc_no", "han_dung_toi_thieu_pct"], khach)
     ghi_csv(args.out / "bang_gia.csv", ["nhom_khach", "ma_sp", "gia_ban", "so_luong_toi_thieu"], bang_gia)
-    ghi_csv(args.out / "kho.csv", ["ma_kho", "ten", "vi_do", "kinh_do", "nha_cung_cap"], KHO)
-    xe_rows = []
-    for k in KHO:
-        for tai in xe[k["ma_kho"]]:
-            xe_rows.append(dict(ma_xe=f"XE{len(xe_rows) + 1:02d}",
-                                loai_xe=f"Xe tải {tai / 1000:g} tấn".replace(".", ","),
-                                tai_trong_kg=tai, ma_kho=k["ma_kho"]))
-    ghi_csv(args.out / "xe.csv", ["ma_xe", "loai_xe", "tai_trong_kg", "ma_kho"], xe_rows)
-    ghi_csv(args.out / "don_ban.csv", ["so_don", "ngay", "ma_kh", "ma_sp", "so_luong", "dvt", "ma_kho"],
+    ghi_csv(args.out / "kho.csv", ["ma_kho", "ten", "dia_chi", "thanh_pho", "vi_do", "kinh_do"], [KHO])
+    ghi_csv(args.out / "vi_tri.csv", ["ma_vi_tri", "ten", "ma_ncc"], vi_tri)
+    ghi_csv(args.out / "ton_kho.csv", ["ma_sp", "ma_vi_tri", "so_lo", "han_dung", "so_luong"], ton_kho)
+    ghi_csv(args.out / "xe.csv", ["ma_xe", "loai_xe", "tai_trong_kg", "ma_kho"],
+            [dict(ma_xe=f"XE{i:02d}", loai_xe=f"Xe tải {tai / 1000:g} tấn".replace(".", ","),
+                  tai_trong_kg=tai, ma_kho=KHO["ma_kho"]) for i, tai in enumerate(xe, 1)])
+    ghi_csv(args.out / "don_ban.csv", ["so_don", "ngay", "ma_kh", "ma_sp", "so_luong", "dvt"],
             [dict(so_don=d["so_don"], ngay=args.ngay.isoformat(), ma_kh=d["kh"]["ma_kh"], ma_sp=x["sp"]["ma_sp"],
-                  so_luong=x["so_luong"], dvt=x["dvt"], ma_kho=d["kho"])
+                  so_luong=x["so_luong"], dvt=x["dvt"])
              for d in don for x in d["dong"]])
 
-    in_tom_tat(args, ncc, san_pham, khach, bang_gia, don, kho_cua_ncc, xe)
+    in_tom_tat(args, ncc, san_pham, khach, bang_gia, don, vi_tri, ton_kho, xe)
 
 
-def in_tom_tat(args, ncc, san_pham, khach, bang_gia, don, kho_cua_ncc, xe):
+def in_tom_tat(args, ncc, san_pham, khach, bang_gia, don, vi_tri, ton_kho, xe):
     ten_ncc = {r["ma_ncc"]: r["ten"] for r in ncc}
-    print(f"Đã ghi 7 file vào {args.out} (seed={args.seed}, ngày {args.ngay.isoformat()})")
+    day_cua_ncc = {r["ma_ncc"]: r["ma_vi_tri"] for r in vi_tri}
+    print(f"Đã ghi 9 file vào {args.out} (seed={args.seed}, ngày {args.ngay.isoformat()})")
+    print(f"\n{KHO['ten']} ({KHO['ma_kho']}), {KHO['dia_chi']}, {KHO['thanh_pho']}: "
+          f"{len(vi_tri)} dãy kệ, {len(xe)} xe " + ", ".join(f"{t:,} kg" for t in xe))
     dem_ncc = Counter(sp["ma_ncc"] for sp in san_pham)
     print(f"\nSản phẩm: {len(san_pham)} mã, {len(dem_ncc)} nhãn")
     for m in sorted(dem_ncc):
-        print(f"  {m} {ten_ncc.get(m, ''):<18} {dem_ncc[m]:>4}  -> {kho_cua_ncc[m]}")
+        print(f"  {m} {ten_ncc.get(m, ''):<18} {dem_ncc[m]:>4}  -> {day_cua_ncc[m]}")
     dem_nhom = Counter(kh["nhom_khach"] for kh in khach)
     print(f"\nKhách hàng: {len(khach)}")
     for n in NHOM_KHACH:
@@ -482,24 +502,33 @@ def in_tom_tat(args, ncc, san_pham, khach, bang_gia, don, kho_cua_ncc, xe):
           ", ".join(f"{n} {c}" for n, c in Counter(r['nhom_khach'] for r in bang_gia).items()))
 
     don_thuong, vuot = don[:-1], don[-1]
+    tai = sum(tai_don(d) for d in don_thuong)
+    suc_chua = sum(xe)
     print(f"\nĐơn bán: {len(don_thuong)} đơn + 1 đơn vượt tải")
-    for k in KHO:
-        kho = k["ma_kho"]
-        ds = [d for d in don_thuong if d["kho"] == kho]
-        tai = sum(tai_don(d) for d in ds)
-        suc_chua = sum(xe[kho])
-        print(f"  {kho}: {len(ds):>3} đơn, {sum(len(d['dong']) for d in ds):>4} dòng, "
-              f"{tai:,.1f} kg / {suc_chua:,} kg xe = {tai / suc_chua:.1%} "
-              f"(yêu cầu {args.tai_min:g}-{args.tai_max:g}%)")
+    print(f"  {sum(len(d['dong']) for d in don_thuong)} dòng, {tai:,.1f} kg / {suc_chua:,} kg xe = "
+          f"{tai / suc_chua:.1%} (yêu cầu {args.tai_min:g}-{args.tai_max:g}%)")
+    print(f"  Đơn có hàng của nhiều nhãn: {sum(len({x['sp']['ma_ncc'] for x in d['dong']}) > 1 for d in don)}")
     print(f"  Dòng mua lẻ: {sum(x['dvt'] == 'le' for d in don_thuong for x in d['dong'])}")
-    kg_vuot = tai_don(vuot)
-    print(f"  Đơn vượt tải {vuot['so_don']} ({vuot['kho']}, {vuot['kh']['ma_kh']} {vuot['kh']['nhom_khach']}): "
-          f"{kg_vuot:,.1f} kg, xe lớn nhất của {vuot['kho']} {max(xe[vuot['kho']]):,} kg")
+    print(f"  Đơn vượt tải {vuot['so_don']} ({vuot['kh']['ma_kh']} {vuot['kh']['nhom_khach']}): "
+          f"{tai_don(vuot):,.1f} kg, xe lớn nhất {max(xe):,} kg")
 
-    mot_kho = all(len({kho_cua_ncc[x["sp"]["ma_ncc"]] for x in d["dong"]} | {d["kho"]}) == 1 for d in don)
-    so_don_kh = Counter((d["kh"]["ma_kh"], d["kho"]) for d in don)
-    print(f"\nKiểm tra: mỗi đơn một kho {'OK' if mot_kho else 'LỖI'}; "
-          f"mỗi khách tối đa 1 đơn mỗi kho {'OK' if max(so_don_kh.values()) == 1 else 'LỖI'}")
+    ton = Counter()
+    for r in ton_kho:
+        ton[r["ma_sp"]] += r["so_luong"]
+    print(f"\nTồn kho: {len(ton_kho)} lô, {len(ton)} mã, "
+          f"{sum(1 for r in ton_kho if r['han_dung'])} lô có hạn dùng")
+
+    can = Counter()
+    for d in don:
+        for x in d["dong"]:
+            can[x["sp"]["ma_sp"]] += x["so_luong"] * (so_dvt(x["sp"]) if x["dvt"] == "thung" else 1)
+    du_hang = all(ton[m] >= q for m, q in can.items())
+    dung_day = all(r["ma_vi_tri"] == day_cua_ncc[sp["ma_ncc"]]
+                   for sp in san_pham for r in ton_kho if r["ma_sp"] == sp["ma_sp"])
+    so_don_kh = Counter(d["kh"]["ma_kh"] for d in don)
+    print(f"\nKiểm tra: mỗi khách tối đa 1 đơn {'OK' if max(so_don_kh.values()) == 1 else 'LỖI'}; "
+          f"tồn đủ cho mọi đơn {'OK' if du_hang else 'LỖI'}; "
+          f"tồn nằm đúng dãy của nhãn {'OK' if dung_day else 'LỖI'}")
 
 
 if __name__ == "__main__":

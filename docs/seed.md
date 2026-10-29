@@ -1,6 +1,6 @@
 # Nạp dữ liệu demo vào Odoo
 
-Cả nhóm dùng chung một bộ dữ liệu demo, có sẵn trong `seed/demo/`. Làm 3 bước dưới đây là database có đủ sản phẩm, khách hàng và báo giá. Muốn biết bộ dữ liệu gồm những gì thì đọc [seed_data.md](seed_data.md).
+Cả nhóm dùng chung một bộ dữ liệu demo, có sẵn trong `seed/demo/`. Làm 3 bước dưới đây là database có đủ kho, tồn kho theo lô, sản phẩm, khách hàng và báo giá. Muốn biết bộ dữ liệu gồm những gì thì đọc [seed_data.md](seed_data.md).
 
 Cần Odoo đang chạy bằng Docker ([docker_setup.md](docker_setup.md)) và Python 3.
 
@@ -50,13 +50,15 @@ Chạy lại bao nhiêu lần cũng được: thứ đã có thì không tạo t
 
 | Menu | Thấy gì |
 | --- | --- |
-| Inventory > Configuration > Warehouses | Kho K1 và K2 |
+| Inventory > Configuration > Warehouses | Một kho duy nhất: Kho Phan Lâm (mã `PL`) |
+| Inventory > Configuration > Locations | 6 dãy kệ `PL/Stock/Dãy A - Wilmar` đến `Dãy F`, mỗi nhãn một dãy |
+| Inventory > Reporting > Stock | 150 mã, 300 lô có hạn dùng, nằm ở dãy của nhãn |
 | Sales > Products > Products | 150 sản phẩm, mã dạng `NCC01-0005` |
 | Sales > Orders > Customers | 300 khách, gắn nhãn theo nhóm (Tạp hóa, Minimart...) |
 | Sales > Products > Pricelists | 5 bảng giá "Giá sỉ - ..." |
 | Sales > Orders > Quotations | 81 báo giá ngày 20/10/2026 |
 
-Thử nhanh: tạo báo giá cho một khách nhãn Minimart, thêm sản phẩm bất kỳ, giá sẽ thấp hơn giá bán 3%.
+Thử nhanh: tạo báo giá cho một khách nhãn Minimart, thêm sản phẩm bất kỳ, giá sẽ thấp hơn giá bán 3%. Thêm cả hàng Wilmar lẫn nhãn khác rồi xác nhận: chỉ ra một phiếu xuất `PL/OUT/...` ở trạng thái Ready.
 
 ## Database tạo từ trước
 
@@ -99,4 +101,4 @@ Không ghi chú kiểu (giả lập), (demo), (test) vào giá trị dữ liệu
 
 ## Đã kiểm tra
 
-Ngày 20/10/2026 trên macOS, Odoo 18.0-20260926: làm đúng 3 bước trên với database mới, lần nạp đầu mất 3,5 giây, lần nạp thứ hai không tạo thêm bản ghi nào. Trong Odoo có đủ K1, K2, 150 sản phẩm đều có thuế 8%, 81 báo giá đúng kho và đúng giá theo nhóm khách. Lệnh PowerShell chưa chạy thử trên Windows.
+Ngày 29/10/2026 trên macOS, Odoo 18.0-20260926: làm đúng 3 bước trên với database mới, lần nạp đầu mất 6 giây, lần nạp thứ hai không tạo thêm bản ghi nào. Trong Odoo chỉ có 1 kho `PL`, 6 dãy kệ, 300 lô có hạn dùng đều nằm đúng dãy của nhãn, 300 khách, 81 báo giá. Xác nhận cả 81 báo giá thì ra 81 phiếu xuất, đều Ready, đều từ `PL/Stock`. Lệnh PowerShell chưa chạy thử trên Windows.
