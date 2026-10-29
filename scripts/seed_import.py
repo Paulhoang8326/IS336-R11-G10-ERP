@@ -227,7 +227,7 @@ def cong_ty(od):
 def nap_kho(od, tk, kho, vi_tri):
     """Một kho duy nhất. Database mới đã có kho mặc định (WH): đổi tên và mã kho đó thay vì tạo kho thứ hai.
 
-    Trả về (id kho, {mã dãy kệ: id vị trí}).
+    Trả về (id kho, id vị trí tồn PL/Stock, {mã dãy kệ hoặc ô: id vị trí}).
     """
     print("Kho")
     if len(kho) != 1:
@@ -261,14 +261,53 @@ def nap_kho(od, tk, kho, vi_tri):
     if khac_kho:
         tk.bao(f"database còn kho khác ngoài {r['ma_kho']}: {', '.join(khac_kho)}. Nên tạo database mới")
 
-    print("Dãy kệ")
     ton = od("stock.warehouse", "read", [wh_id], fields=["lot_stock_id"])[0]["lot_stock_id"][0]
-    muc_tieu = {x["ma_vi_tri"]: {"name": x["ten"], "barcode": x["ma_vi_tri"], "location_id": ton, "usage": "internal"}
-                for x in vi_tri}
-    day = dong_bo(od, tk, "Dãy kệ", "stock.location", muc_tieu,
-                  [("barcode", "in", list(muc_tieu)), ("company_id", "in", [ct, False])], lambda x: x["barcode"])
-    print("  Nhập/xuất 2 bước và ô kệ trong từng dãy làm ở STT 16-17")
-    return wh_id, day
+    vi_tri_ids = {}
+    # Dãy (không có ma_cha) nằm dưới PL/Stock, ô nằm dưới dãy. posx/posy/posz = dãy/kệ/tầng.
+    for loai, cap in (("Dãy kệ", False), ("Ô kệ", True)):
+        print(loai)
+        muc_tieu = {x["ma_vi_tri"]: {
+            "name": x["ten"],
+            "barcode": x["ma_vi_tri"],
+            "location_id": vi_tri_ids[x["ma_cha"]] if cap else ton,
+            "usage": "internal",
+            "posx": so(x["day"], True) or 0,
+            "posy": so(x["ke"], True) or 0,
+            "posz": so(x["tang"], True) or 0,
+        } for x in vi_tri if bool(x["ma_cha"]) == cap}
+        vi_tri_ids.update(dong_bo(od, tk, loai, "stock.location", muc_tieu,
+                                  [("barcode", "in", list(muc_tieu)), ("company_id", "in", [ct, False])],
+                                  lambda x: x["barcode"]))
+    print("  Nhập/xuất 2 bước làm ở STT 16")
+    return wh_id, ton, vi_tri_ids
+
+
+def nap_chien_luoc_kho(od, tk, ton, vi_tri, san_pham, sp, vi_tri_ids):
+    """FEFO cho PL/Stock và các vị trí con; putaway: hàng của nhà cung cấp nào gợi ý vào dãy của nhà cung cấp đó."""
+    print("Chiến lược kho")
+    fefo = od.search_read("product.removal", [("method", "=", "fefo")], ["id"])
+    if not fefo:
+        tk.bao("không có chiến lược xuất FEFO (thiếu module product_expiry), bỏ qua")
+    else:
+        hien_tai = od("stock.location", "read", [ton], fields=["removal_strategy_id"])[0]["removal_strategy_id"]
+        doi = khac(hien_tai, fefo[0]["id"], "many2one", "removal_strategy_id")
+        if doi:
+            od("stock.location", "write", [ton], {"removal_strategy_id": fefo[0]["id"]})
+        tk.them("Xuất FEFO", 0, int(doi))
+
+    # Putaway rule chỉ lọc theo sản phẩm hoặc nhóm hàng, nên mỗi sản phẩm một quy tắc. last_used: đưa
+    # vào ô của dãy mà sản phẩm được nhập lần gần nhất, chưa có thì vào dãy.
+    day_cua_ncc = {x["ma_ncc"]: vi_tri_ids[x["ma_vi_tri"]] for x in vi_tri if not x["ma_cha"]}
+    muc_tieu = {}
+    for r in san_pham:
+        if r["ma_ncc"] not in day_cua_ncc:
+            tk.bao(f"{r['ma_sp']}: nhà cung cấp {r['ma_ncc']} chưa có dãy kệ, không tạo quy tắc cất hàng")
+            continue
+        pid = sp[r["ma_sp"]]["id"]
+        muc_tieu[pid] = {"product_id": pid, "location_in_id": ton, "location_out_id": day_cua_ncc[r["ma_ncc"]],
+                         "sublocation": "last_used"}
+    dong_bo(od, tk, "Quy tắc cất hàng", "stock.putaway.rule", muc_tieu,
+            [("location_in_id", "=", ton), ("product_id", "in", list(muc_tieu))], lambda r: r["product_id"][0])
 
 
 def nap_nha_cung_cap(od, tk, ncc, han_tt):
@@ -437,14 +476,15 @@ def nap_khach_hang(od, tk, khach, han_tt, bang_gia_ids):
                    [("ref", "in", list(muc_tieu)), ("parent_id", "=", False)], lambda r: r["ref"])
 
 
-def nap_ton_kho(od, tk, ton_kho, day, sp):
+def nap_ton_kho(od, tk, ton_kho, vi_tri_ids, sp):
     """Tạo lô và tồn đầu kỳ. Chỉ nhập tồn cho lô mới tạo, lô đã có thì để nguyên số lượng
-    (tồn đã xuất bán không bị cộng lại khi chạy lại script)."""
+    (tồn đã xuất bán không bị cộng lại khi chạy lại script). Cột ngay_sx chưa nạp: Odoo chưa có
+    trường ngày sản xuất, chờ module pl_stock_lot."""
     print("Tồn kho theo lô")
     muc_tieu, dong_lo = {}, {}
     for r in ton_kho:
-        if r["ma_sp"] not in sp or r["ma_vi_tri"] not in day:
-            tk.bao(f"ton_kho.csv: không có sản phẩm {r['ma_sp']} hoặc dãy {r['ma_vi_tri']}, bỏ qua",
+        if r["ma_sp"] not in sp or r["ma_vi_tri"] not in vi_tri_ids:
+            tk.bao(f"ton_kho.csv: không có sản phẩm {r['ma_sp']} hoặc vị trí {r['ma_vi_tri']}, bỏ qua",
                    ("tk", r["ma_sp"], r["ma_vi_tri"]))
             continue
         k = (sp[r["ma_sp"]]["id"], r["so_lo"])
@@ -459,7 +499,7 @@ def nap_ton_kho(od, tk, ton_kho, day, sp):
     da_co = {(r["product_id"][0], r["name"]) for r in od.search_read("stock.lot", domain, ["product_id", "name"])}
     lo = dong_bo(od, tk, "Lô", "stock.lot", muc_tieu, domain, lambda r: (r["product_id"][0], r["name"]),
                  cap_nhat=False)
-    moi = [{"product_id": k[0], "lot_id": lo[k], "location_id": day[dong_lo[k]["ma_vi_tri"]],
+    moi = [{"product_id": k[0], "lot_id": lo[k], "location_id": vi_tri_ids[dong_lo[k]["ma_vi_tri"]],
             "inventory_quantity_auto_apply": so(dong_lo[k]["so_luong"], True) or 0}
            for k in muc_tieu if k not in da_co]
     if moi:
@@ -536,12 +576,13 @@ def main():
     tk = ThongKe()
 
     digits_kg = bat_cai_dat(od, tk)
-    kho_id, day = nap_kho(od, tk, du_lieu["kho"], du_lieu["vi_tri"])
+    kho_id, ton, vi_tri_ids = nap_kho(od, tk, du_lieu["kho"], du_lieu["vi_tri"])
     han_tt = nap_han_thanh_toan(od, tk, {so(r["han_thanh_toan_ngay"], True) or 0
                                          for r in du_lieu["nha_cung_cap"] + du_lieu["khach_hang"]})
     ncc_ids = nap_nha_cung_cap(od, tk, du_lieu["nha_cung_cap"], han_tt)
     sp = nap_san_pham(od, tk, du_lieu["san_pham"], ncc_ids, digits_kg)
-    nap_ton_kho(od, tk, du_lieu["ton_kho"], day, sp)
+    nap_chien_luoc_kho(od, tk, ton, du_lieu["vi_tri"], du_lieu["san_pham"], sp, vi_tri_ids)
+    nap_ton_kho(od, tk, du_lieu["ton_kho"], vi_tri_ids, sp)
     ds_nhom = list(dict.fromkeys([r["nhom_khach"] for r in du_lieu["khach_hang"]] +
                                  [r["nhom_khach"] for r in du_lieu["bang_gia"]]))
     bang_gia_ids = nap_bang_gia(od, tk, du_lieu["bang_gia"], ds_nhom, sp)

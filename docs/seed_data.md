@@ -22,20 +22,33 @@ Thực tế công ty có 2 điểm kho; đồ án gộp thành 1 kho để đơn
 
 Đây là điểm xuất phát duy nhất của mọi chuyến giao hàng: cả 4 xe cùng xuất phát từ kho này. Hàng mọi nhãn nằm chung kho, mỗi nhãn một dãy kệ:
 
-| Dãy | Mã vị trí | Hàng của |
-| --- | --- | --- |
-| Dãy A - Wilmar | `PL-A` | NCC01 |
-| Dãy B - PepsiCo | `PL-B` | NCC02 |
-| Dãy C - Ajinomoto | `PL-C` | NCC03 |
-| Dãy D - DKSH | `PL-D` | NCC04 |
-| Dãy E - Marico | `PL-E` | NCC05 |
-| Dãy F - Energizer (pin) | `PL-F` | NCC06 |
+| Dãy | Mã vị trí | Hàng của | Kệ × tầng | Số ô |
+| --- | --- | --- | --- | --- |
+| Dãy A - Wilmar | `PL-A` | NCC01 | 16 × 4 | 64 |
+| Dãy B - PepsiCo | `PL-B` | NCC02 | 6 × 4 | 24 |
+| Dãy C - Ajinomoto | `PL-C` | NCC03 | 2 × 4 | 8 |
+| Dãy D - DKSH | `PL-D` | NCC04 | 23 × 4 | 92 |
+| Dãy E - Marico | `PL-E` | NCC05 | 9 × 4 | 36 |
+| Dãy F - Energizer (pin) | `PL-F` | NCC06 | 4 × 4 | 16 |
 
-Chưa chia ô kệ trong từng dãy.
+### Mã ô kệ
+
+Mỗi dãy chia thành các ô, tổng cộng 240 ô. Mã ô là `dãy-kệ-tầng`: `A-01-1` là dãy A, kệ 01, tầng 1 (tầng sát sàn). Kệ ghi 2 chữ số, tầng ghi 1 chữ số. 60 kệ chia cho các dãy theo số mã hàng của nhãn, mỗi kệ 4 tầng.
+
+- Đường đi lấy hàng hình chữ S: vào dãy A từ đầu dãy, đi hết dãy, sang dãy B từ cuối dãy, đi ngược về đầu, rồi sang dãy C... Kệ được đánh số theo đúng chiều đi, nên dãy A, C, E có kệ 01 ở đầu dãy, còn dãy B, D, F có kệ 01 ở cuối dãy. Nhờ vậy sắp ô theo tên (Odoo sắp vị trí theo tên đầy đủ, vd `PL/Stock/Dãy A - Wilmar/A-01-1`) là đúng thứ tự đi lấy hàng.
+- Trong Odoo, ô cũng ghi dãy/kệ/tầng ở các ô *Corridor (X)*, *Shelves (Y)*, *Height (Z)*; ô *Barcode* là mã ô.
+- Mỗi mã hàng nằm ở một ô. Hàng nặng (dầu ăn, nước giải khát, nước suối) luôn ở tầng 1; dãy B có 13 mã nặng mà chỉ 6 ô tầng 1 nên vài ô dùng chung 2–3 mã. Hàng nhẹ xếp từ tầng 2 trở lên trước. Ô chưa có hàng để dành cho hàng nhập sau.
 
 ## Tồn kho
 
-Tồn đầu ngày 20/10/2026, theo lô và hạn dùng, nằm ở dãy kệ của nhãn. Mỗi mã có đủ hàng cho mọi đơn trong ngày (kể cả đơn quá tải), dư thêm 3–12 thùng. Mỗi mã có 2 lô: lô cũ còn 30–60% hạn dùng, lô mới còn 70–95%. Lô cũ có thể dưới mức hạn dùng tối thiểu của minimart (50%) hay khách sạn, căn tin (60%), để thử chọn lô khi giao. Số lô là `L` + ngày sản xuất dạng `yymmdd`.
+Tồn đầu ngày 20/10/2026, theo lô và hạn dùng, nằm trong ô của dãy đúng nhãn; không có tồn ở cấp dãy hay `PL/Stock`. Hạn dùng còn lại tính theo ngày 20/10/2026 của bộ đơn.
+
+- Mỗi mã có 2 hoặc 3 lô thường, hạn dùng khác nhau. Hai lô: lô cũ còn 30–60% hạn dùng, lô mới còn 70–95%. Ba lô: còn 25–45%, 50–70%, 75–95%. Lô cũ có thể dưới mức hạn dùng tối thiểu của minimart (50%) hay khách sạn, căn tin (60%), để thử chọn lô khi giao.
+- Riêng các lô thường đã đủ hàng cho mọi đơn trong ngày (kể cả đơn quá tải), dư thêm 3–12 thùng mỗi mã.
+- Thêm 5 lô cận date (còn 5–30 ngày tới hạn) và 2 lô đã hết hạn 3–30 ngày, mỗi lô 1–3 thùng, ở 7 mã khác nhau. Mã có lô thêm thì chỉ có 2 lô thường, nên vẫn tối đa 3 lô.
+- Aquafina 1500 ml (`NCC02-0002`, mã PepsiCo hạn dùng dài nhất, 18 tháng) có đúng 3 lô, hết hạn 15/03/2027, 15/02/2028 và 15/01/2029. Lô 2029 không khớp hạn dùng 18 tháng: nếu tính đúng thì ngày sản xuất rơi vào năm 2027, sau ngày đơn, nên ghi ngày sản xuất là 19/10/2026.
+- Số lô là `L` + ngày sản xuất dạng `yymmdd`. Cột `ngay_sx` trong `ton_kho.csv` chưa nạp vào Odoo vì Odoo chưa có trường ngày sản xuất; sẽ nạp khi có module `pl_stock_lot`.
+- Kho xuất theo FEFO: lô hết hạn sớm nhất được lấy trước. Odoo chuẩn (`product_expiry`) không giữ lô có hạn dùng trước ngày của phiếu xuất. Ngày đó là lúc xác nhận đơn, không phải ngày 20/10/2026 của bộ đơn, nên lô cận date ở trên sẽ thành lô hết hạn khi chạy thử sau ngày hết hạn của nó. Giữ hạn dùng tối thiểu theo nhóm khách là việc của module `pl_fefo_pick`.
 
 ## Khách hàng
 
@@ -59,7 +72,7 @@ Khách trả ngay thì không có hạn mức nợ. Nhóm không có giá riêng
 ## Số tự đặt
 
 - Xe 1,5 và 2,5 tấn: nhóm tự đặt, chưa có số liệu thật.
-- Cách chia dãy kệ, số lượng tồn, số lô và ngày sản xuất là tự đặt.
+- Cách chia dãy, số kệ, số tầng, vị trí từng mã, số lượng tồn, số lô và ngày sản xuất là tự đặt.
 - Tên và địa chỉ khách là giả lập; trong dữ liệu không gắn nhãn nào để phân biệt. Tọa độ là điểm ngẫu nhiên quanh trung tâm Cần Thơ, không khớp với địa chỉ.
 - Giá nhập, giá bán trong danh mục phần lớn là ước lượng; mức giảm giá theo nhóm khách là tự đặt.
 - 150 mã được chọn theo tỉ lệ số mã của từng nhà cung cấp (NCC01 40, NCC02 15, NCC03 6, NCC04 58, NCC05 22, NCC06 9), ưu tiên mã có số chai/gói mỗi thùng là số thật.
@@ -91,8 +104,8 @@ File CSV mã UTF-8, dòng đầu là tên cột. Sửa bằng Excel thì lưu d�
 | `khach_hang.csv` | `ma_kh`, `ten`, `nhom_khach`, `dia_chi`, `phuong`, `thanh_pho`, `vi_do`, `kinh_do`, `han_thanh_toan_ngay`, `han_muc_no`, `han_dung_toi_thieu_pct` | Hạn thanh toán 0 là trả ngay. Ô trống nghĩa là không có hạn mức nợ, không yêu cầu hạn dùng |
 | `bang_gia.csv` | `nhom_khach`, `ma_sp`, `gia_ban`, `so_luong_toi_thieu` | Số lượng tính bằng đơn vị lẻ: thùng 12 chai, mua từ 1 thùng thì ghi 12 |
 | `kho.csv` | `ma_kho`, `ten`, `dia_chi`, `thanh_pho`, `vi_do`, `kinh_do` | Đúng một dòng |
-| `vi_tri.csv` | `ma_vi_tri`, `ten`, `ma_ncc` | Mỗi nhãn một dãy kệ |
-| `ton_kho.csv` | `ma_sp`, `ma_vi_tri`, `so_lo`, `han_dung`, `so_luong` | Mỗi dòng là một lô. `so_luong` tính bằng đơn vị lẻ, luôn là số thùng chẵn. `han_dung` dạng `YYYY-MM-DD` |
+| `vi_tri.csv` | `ma_vi_tri`, `ten`, `ma_cha`, `ma_ncc`, `day`, `ke`, `tang` | Dòng dãy có `ma_cha` trống; dòng ô có `ma_cha` là mã dãy. `day`, `ke`, `tang` là số thứ tự |
+| `ton_kho.csv` | `ma_sp`, `ma_vi_tri`, `so_lo`, `ngay_sx`, `han_dung`, `so_luong` | Mỗi dòng là một lô, `ma_vi_tri` là mã ô. `so_luong` tính bằng đơn vị lẻ, luôn là số thùng chẵn. Ngày dạng `YYYY-MM-DD`. `ngay_sx` chưa nạp vào Odoo |
 | `xe.csv` | `ma_xe`, `loai_xe`, `tai_trong_kg`, `ma_kho` | `ma_kho` là kho xe xuất phát |
 | `don_ban.csv` | `so_don`, `ngay`, `ma_kh`, `ma_sp`, `so_luong`, `dvt` | Mỗi dòng là một mặt hàng của một đơn. `dvt` là `thung` hoặc `le` |
 
@@ -128,8 +141,9 @@ Dành cho ai sửa `scripts/seed_import.py` hoặc viết module dùng dữ li�
 | File | Trong Odoo |
 | --- | --- |
 | `kho.csv` | Kho `stock.warehouse` duy nhất. Database mới có sẵn kho mặc định `WH`: script đổi tên và mã kho đó thành `PL` chứ không tạo kho thứ hai. Địa chỉ và tọa độ nằm ở đối tác `res.partner` "Kho Phan Lâm" (*Reference* `PL`), là địa chỉ của kho |
-| `vi_tri.csv` | Vị trí `stock.location` con của `PL/Stock`, ô *Barcode* là mã vị trí |
-| `ton_kho.csv` | Lô `stock.lot` có hạn dùng, cùng tồn đầu kỳ (`stock.quant`) ở dãy kệ. Chỉ nhập tồn cho lô mới tạo: chạy lại script không cộng thêm tồn cho lô đã có |
+| `vi_tri.csv` | Vị trí `stock.location`: dãy là con của `PL/Stock`, ô là con của dãy. Ô *Barcode* là mã vị trí |
+| `ton_kho.csv` | Lô `stock.lot` có hạn dùng, cùng tồn đầu kỳ (`stock.quant`) ở ô kệ. Chỉ nhập tồn cho lô mới tạo: chạy lại script không cộng thêm tồn cho lô đã có. Chưa nạp `ngay_sx` |
+| (cấu hình kho) | `PL/Stock` xuất theo FEFO (*Removal Strategy*), áp dụng cho mọi ô bên dưới. Mỗi sản phẩm một quy tắc cất hàng (`stock.putaway.rule`): nhập vào `PL/Stock` thì gợi ý dãy của nhà cung cấp, cụ thể là ô nhập gần nhất của mã đó trong dãy (*Last Used*) |
 | `nha_cung_cap.csv` | Đối tác `res.partner`, ô *Reference* là mã NCC, kèm hạn thanh toán |
 | `san_pham.csv` | Sản phẩm `product.template` theo dõi theo lô và hạn dùng, có thuế theo `vat_pct`, cân nặng một đơn vị lẻ. Thêm quy cách "Thùng N" (`product.packaging`) và giá nhập theo nhà cung cấp (`product.supplierinfo`) |
 | `bang_gia.csv` | Bảng giá `product.pricelist` "Giá sỉ - <nhóm>", mỗi dòng CSV là một dòng giá cố định |

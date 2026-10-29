@@ -51,8 +51,9 @@ Chạy lại bao nhiêu lần cũng được: thứ đã có thì không tạo t
 | Menu | Thấy gì |
 | --- | --- |
 | Inventory > Configuration > Warehouses | Một kho duy nhất: Kho Phan Lâm (mã `PL`) |
-| Inventory > Configuration > Locations | 6 dãy kệ `PL/Stock/Dãy A - Wilmar` đến `Dãy F`, mỗi nhãn một dãy |
-| Inventory > Reporting > Stock | 150 mã, 300 lô có hạn dùng, nằm ở dãy của nhãn |
+| Inventory > Configuration > Locations | 6 dãy kệ `PL/Stock/Dãy A - Wilmar` đến `Dãy F`, mỗi nhãn một dãy; 240 ô `A-01-1`... trong các dãy. `PL/Stock` có *Removal Strategy* FEFO |
+| Inventory > Configuration > Putaway Rules | 150 quy tắc, mỗi sản phẩm vào dãy của nhà cung cấp |
+| Inventory > Reporting > Stock | 150 mã, 377 lô có hạn dùng, nằm trong ô của dãy đúng nhãn |
 | Sales > Products > Products | 150 sản phẩm, mã dạng `NCC01-0005` |
 | Sales > Orders > Customers | 300 khách, gắn nhãn theo nhóm (Tạp hóa, Minimart...) |
 | Sales > Products > Pricelists | 5 bảng giá "Giá sỉ - ..." |
@@ -101,4 +102,4 @@ Không ghi chú kiểu (giả lập), (demo), (test) vào giá trị dữ liệu
 
 ## Đã kiểm tra
 
-Ngày 29/10/2026 trên macOS, Odoo 18.0-20260926: làm đúng 3 bước trên với database mới, lần nạp đầu mất 6 giây, lần nạp thứ hai không tạo thêm bản ghi nào. Trong Odoo chỉ có 1 kho `PL`, 6 dãy kệ, 300 lô có hạn dùng đều nằm đúng dãy của nhãn, 300 khách, 81 báo giá. Xác nhận cả 81 báo giá thì ra 81 phiếu xuất, đều Ready, đều từ `PL/Stock`. Lệnh PowerShell chưa chạy thử trên Windows.
+Ngày 29/10/2026 trên macOS, Odoo 18.0-20260926: làm đúng 3 bước trên với database mới, lần nạp đầu mất 7 giây, lần nạp thứ hai không tạo thêm bản ghi nào. Trong Odoo chỉ có 1 kho `PL`, 6 dãy, 240 ô; 377 lô có hạn dùng đều nằm trong ô của dãy đúng nhãn, không lô nào ở cấp dãy hay `PL/Stock`; 300 khách, 81 báo giá. Xác nhận cả 81 báo giá thì ra 81 phiếu xuất, đều Ready, lô được giữ theo đúng thứ tự FEFO và không giữ lô hết hạn. Đơn mua 1 mã Wilmar khi nhận hàng được gợi ý vào ô của mã đó trong dãy Wilmar. Lệnh PowerShell chưa chạy thử trên Windows.
