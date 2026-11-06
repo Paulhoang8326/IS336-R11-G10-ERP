@@ -175,13 +175,13 @@ def chi_giu_truong_co(od, tk, model, vals_list):
             del vals[f]
 
 
-def bat_cai_dat(od, tk):
-    print("Cài đặt")
+def bat_tuy_chon(od, tk, ds):
+    """Bật các trường boolean của res.config.settings đang tắt."""
     co = od.fields("res.config.settings")
-    for f in CAI_DAT:
+    for f in ds:
         if f not in co:
             print(f"  Bỏ qua {f}: không có trường này")
-    can = [f for f in CAI_DAT if f in co]
+    can = [f for f in ds if f in co]
     # default_get bỏ sót trường related (account_use_credit_limit): đọc từ bản ghi tạm.
     sid = od("res.config.settings", "create", {})
     hien_tai = od("res.config.settings", "read", [sid], fields=can)[0]
@@ -195,6 +195,11 @@ def bat_cai_dat(od, tk):
                 raise
         print(f"  Đã bật: {', '.join(thieu)}")
     tk.them("Cài đặt", 0, len(thieu))
+
+
+def bat_cai_dat(od, tk):
+    print("Cài đặt")
+    bat_tuy_chon(od, tk, CAI_DAT)
 
     # Khối lượng mỗi đơn vị lẻ rất nhỏ (vd 0,0567 kg); 2 chữ số mặc định làm sai tải xe.
     dp = od.search_read("decimal.precision", [("name", "=", "Stock Weight")], ["digits"])

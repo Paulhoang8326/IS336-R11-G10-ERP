@@ -1,6 +1,6 @@
 # Nạp dữ liệu demo vào Odoo
 
-Cả nhóm dùng chung một bộ dữ liệu demo, có sẵn trong `seed/demo/`. Làm 3 bước dưới đây là database có đủ kho, tồn kho theo lô, sản phẩm, khách hàng và báo giá. Muốn biết bộ dữ liệu gồm những gì thì đọc [seed_data.md](seed_data.md).
+Cả nhóm dùng chung một bộ dữ liệu demo, có sẵn trong `seed/demo/`. Làm 3 bước đầu dưới đây là database có đủ kho, tồn kho theo lô, sản phẩm, khách hàng và báo giá. Muốn biết bộ dữ liệu gồm những gì thì đọc [seed_data.md](seed_data.md).
 
 Cần Odoo đang chạy bằng Docker ([docker_setup.md](docker_setup.md)) và Python 3.
 
@@ -74,6 +74,27 @@ Chạy lại bao nhiêu lần cũng được: thứ đã có thì không tạo t
 | Sales > Orders > Quotations | 81 báo giá ngày mốc, số đơn dạng `DB20261029-001` |
 
 Thử nhanh: tạo báo giá cho một khách nhãn Minimart, thêm sản phẩm bất kỳ, giá sẽ thấp hơn giá bán 3%. Thêm cả hàng Wilmar lẫn nhãn khác rồi xác nhận: chỉ ra một phiếu xuất `PL/OUT/...` ở trạng thái Ready.
+
+## Bước 4. Cấu hình kho
+
+Chạy sau khi nạp dữ liệu, chạy lại bao nhiêu lần cũng được:
+
+~~~bash
+python3 scripts/setup_warehouse.py --db demo
+~~~
+
+~~~powershell
+python scripts/setup_warehouse.py --db demo
+~~~
+
+Script bật Storage Locations, Multi-Step Routes, Lots & Serial Numbers, Expiration Dates, Packages; giữ nguyên số bước nhập, xuất của kho. Cả 22 nhóm hàng chuyển sang xuất FEFO, giá vốn FIFO, định giá Automated. Tài khoản kho và tài khoản kiểm kê xem ở [scripts/seminar3/README.md](../scripts/seminar3/README.md#tài-khoản-kế-toán-đã-dùng).
+
+| Menu | Thấy gì |
+| --- | --- |
+| Inventory > Configuration > Putaway Rules | Thêm 22 quy tắc theo nhóm hàng cho sản phẩm thêm sau. 150 quy tắc theo sản phẩm vẫn được xét trước. Nhóm Dầu ăn vào ô `A-01-1`, nhóm khác vào dãy của nhà cung cấp nhiều mã nhất trong nhóm |
+| Inventory > Configuration > Products > Product Categories | Từng nhóm có Force Removal Strategy FEFO, Costing Method FIFO, Inventory Valuation Automated |
+
+Lần đầu chạy, Odoo xuất rồi nhập lại tồn hiện có để đổi định giá nên sinh mỗi sản phẩm một bút toán tồn đầu kỳ (bộ 150 mã: Nợ 1560 / Có 1510, tổng 1.833.616.300 đ, tổng giá trị tồn không đổi).
 
 ## Database tạo từ trước
 

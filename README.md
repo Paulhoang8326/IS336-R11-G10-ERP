@@ -53,7 +53,9 @@ IS336-R11-G10-ERP/
 │   ├── restore.sh
 │   ├── restore.ps1
 │   ├── gen_seed.py              # sinh bộ dữ liệu demo từ seed/danh_muc/
-│   └── seed_import.py           # nạp bộ demo vào Odoo qua XML-RPC
+│   ├── seed_import.py           # nạp bộ demo vào Odoo qua XML-RPC
+│   ├── setup_warehouse.py       # cấu hình kho, chạy sau seed_import.py
+│   └── seminar3/                # database và kịch bản kiểm tra cho seminar 03
 ├── seed/
 │   ├── danh_muc/                # danh mục sản phẩm, nhà cung cấp (đầu vào)
 │   └── demo/                    # bộ demo do gen_seed.py sinh
