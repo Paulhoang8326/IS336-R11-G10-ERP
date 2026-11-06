@@ -144,6 +144,17 @@ def nap_san_pham(od, tk, nhom_ids):
     tk.them("Sản phẩm", 0, len(can))
 
 
+def cho_xem_ke_toan(od, tk):
+    """Menu Journal Entries cần group_account_readonly; admin mặc định chỉ có Billing Administrator."""
+    print("Quyền xem bút toán")
+    g = od.search_read("ir.model.data", [("module", "=", "account"), ("name", "=", "group_account_user")],
+                       ["res_id"])[0]["res_id"]
+    co = g in od("res.users", "read", [od.uid], fields=["groups_id"])[0]["groups_id"]
+    if not co:
+        od("res.users", "write", [od.uid], {"groups_id": [(4, g)]})
+    tk.them("Quyền kế toán", 0, int(not co))
+
+
 def main():
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
@@ -182,6 +193,7 @@ def main():
     nap_kiem_ke(od, tk, tai_khoan)
     nap_quy_tac_nhom(od, tk, ton, nhom_ids, san_pham, vi_tri)
     nap_san_pham(od, tk, nhom_ids)
+    cho_xem_ke_toan(od, tk)
 
     print(f"\nKho {kho[0]['code']} giữ nguyên: nhập {kho[0]['reception_steps']}, xuất {kho[0]['delivery_steps']}")
     print(f"{'Loại':<20} {'Tạo mới':>8} {'Cập nhật':>9}")

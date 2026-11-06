@@ -87,7 +87,7 @@ python3 scripts/setup_warehouse.py --db demo
 python scripts/setup_warehouse.py --db demo
 ~~~
 
-Script bật Storage Locations, Multi-Step Routes, Lots & Serial Numbers, Expiration Dates, Packages; giữ nguyên số bước nhập, xuất của kho. Cả 22 nhóm hàng chuyển sang xuất FEFO, giá vốn FIFO, định giá Automated. Tài khoản kho và tài khoản kiểm kê xem ở [scripts/seminar3/README.md](../scripts/seminar3/README.md#tài-khoản-kế-toán-đã-dùng).
+Script bật Storage Locations, Multi-Step Routes, Lots & Serial Numbers, Expiration Dates, Packages; giữ nguyên số bước nhập, xuất của kho. Cả 22 nhóm hàng chuyển sang xuất FEFO, giá vốn FIFO, định giá Automated. Tài khoản kho và tài khoản kiểm kê xem ở [scripts/seminar3/README.md](../scripts/seminar3/README.md#tài-khoản-kế-toán-đã-dùng). Tài khoản chạy script được bật *Show Full Accounting Features* để thấy menu Invoicing > Accounting > Journal Entries.
 
 | Menu | Thấy gì |
 | --- | --- |

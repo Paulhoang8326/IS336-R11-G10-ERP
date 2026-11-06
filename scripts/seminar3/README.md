@@ -75,4 +75,4 @@ Tồn đầu kỳ của seed nằm sẵn trong 150 bút toán `STJ/2026/11/0001`
 
 ## Quyền xem bút toán
 
-Trên Odoo 18 Community, admin có sẵn *Administrator* của kế toán nhưng không thấy menu **Invoicing > Accounting**, vì menu cần `account.group_account_readonly`. Bật `account.group_account_user` (*Show Full Accounting Features*) là thấy. `make_seminar_db.py` chỉ bật cho admin trên `phanlam_seminar3`, `pl_moc` chưa bật. Muốn bật tay: bật Developer Mode, Settings > Users > admin, tick *Show Full Accounting Features*.
+Trên Odoo 18 Community, admin có sẵn *Administrator* của kế toán nhưng không thấy menu **Invoicing > Accounting**, vì menu cần `account.group_account_readonly`. Bật `account.group_account_user` (*Show Full Accounting Features*) là thấy. `scripts/setup_warehouse.py` bật cho tài khoản chạy script (admin) trên database chính, `make_seminar_db.py` bật lại trên bản seminar. Muốn bật tay: bật Developer Mode, Settings > Users > admin, tick *Show Full Accounting Features*.
