@@ -149,6 +149,6 @@ Dành cho ai sửa `scripts/seed_import.py` hoặc viết module dùng dữ li�
 | `bang_gia.csv` | Bảng giá `product.pricelist` "Giá sỉ - <nhóm>", mỗi dòng CSV là một dòng giá cố định |
 | `khach_hang.csv` | Đối tác `res.partner`, ô *Reference* là mã KH, nhãn theo nhóm, hạn thanh toán, bảng giá, hạn mức nợ. Hạn dùng tối thiểu chờ module có trường `pl_min_shelf_life_pct` |
 | `don_ban.csv` | Báo giá `sale.order` chưa xác nhận, xuất từ Kho Phan Lâm, ô *Customer Reference* là số đơn. Dòng mua theo thùng đổi ra số đơn vị lẻ và gắn quy cách thùng |
-| `xe.csv` | Chưa nạp, chờ module giao hàng |
+| `xe.csv` | Xe giao hàng `pl.vehicle`, mã xe là `ma_xe`, kho xuất phát theo `ma_kho`. Chỉ nạp khi đã cài module `pl_delivery_route` ([delivery_route.md](delivery_route.md)), chưa cài thì bỏ qua |
 
 Script nhận ra bản ghi đã có qua mã (*Reference*, *Internal Reference*, mã kho, *Barcode* vị trí, số lô, *Customer Reference*), chỉ sửa trường khác với CSV và không xóa gì. Ngoài ra script bật các cài đặt lô hàng, quy cách đóng gói, bảng giá, nhiều vị trí kho, hạn mức nợ, và tăng số chữ số thập phân của cân nặng từ 2 lên 4 để tổng cân nặng đơn trong Odoo khớp với file.
