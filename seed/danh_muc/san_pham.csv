@@ -1,0 +1,796 @@
+ma_sp,ten,ma_ncc,nhom_hang,dvt,so_dvt_moi_thung,kg_moi_thung,ma_vach_le,ma_vach_thung,gia_nhap,gia_ban,vat_pct,han_dung_thang,uoc_luong
+NCC01-0001,Dầu bơ thay thế Satellite 18kg,NCC01,Dầu ăn,Xô,1,18.0,2990000000019,,752400,864700,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0002,Dầu bơ thay thế Meizan (nhãn vàng) xô nhựa 18 kg,NCC01,Dầu ăn,Thùng,4,18.0,2990000000026,2980000000027,836500,938200,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0003,Dầu Bơ Thay Thế Nhãn Hiệu Meizan (Nâu) 20KG,NCC01,Dầu ăn,Thùng,1,20.0,2990000000033,,817000,957300,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0004,Dầu Thực Vật Hảo Hạng Cái Lân Đóng Can 25Kg,NCC01,Dầu ăn,Chai,4,25.0,2990000000040,2980000000041,1158400,1326300,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0005,Dầu Thực Vật Hảo Hạng Cái Lân 1L,NCC01,Dầu ăn,Chai,12,10.91,2990000000057,2980000000058,47900,54900,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0006,Dầu Thực Vật Hảo Hạng Cái Lân 2L,NCC01,Dầu ăn,Chai,6,10.92,2990000000064,2980000000065,96400,108800,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0007,Dầu Thực Vật Hảo Hạng Cái Lân 5L,NCC01,Dầu ăn,Chai,4,18.2,2990000000071,2980000000072,239000,273100,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0008,Dầu Thực Vật Hảo Hạng Cái Lân 400ML,NCC01,Dầu ăn,Chai,24,8.74,2990000000088,2980000000089,17300,19700,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0009,Dầu Ô-liu dinh dưỡng cho trẻ em Kiddy 250ML,NCC01,Dầu ăn,Chai,48,2.73,2990000000095,2980000000096,10700,12000,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0010,Bơ Thực Vật Nhãn Hiệu Meizan 80g (60),NCC01,Dầu ăn,Hộp,60,4.8,2990000000101,2980000000102,3600,4100,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0011,Bơ Thực Vật Nhãn Hiệu Meizan 200g (36),NCC01,Dầu ăn,Hộp,36,7.2,2990000000118,2980000000119,9500,10800,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0012,Bơ Thực Vật Nhãn Hiệu Meizan 800g (12),NCC01,Dầu ăn,Hộp,12,9.6,2990000000125,2980000000126,33500,39200,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0013,Dầu ăn cao cấp Meizan Gold 1L,NCC01,Dầu ăn,Chai,12,10.92,2990000000132,2980000000133,51100,57000,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0014,Dầu ăn cao cấp Meizan Gold 2L,NCC01,Dầu ăn,Chai,6,10.92,2990000000149,2980000000140,99300,110300,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0015,Dầu ăn cao cấp Meizan Gold 5L,NCC01,Dầu ăn,Chai,4,18.2,2990000000156,2980000000157,220200,260700,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0016,Dầu ăn cao cấp Meizan Gold 400ML (24),NCC01,Dầu ăn,Chai,24,8.64,2990000000163,2980000000164,17600,20100,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0017,Dầu đậu nành Meizan 1L,NCC01,Dầu ăn,Chai,12,10.92,2990000000170,2980000000171,43200,49800,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0018,Dầu đậu nành Meizan 2L,NCC01,Dầu ăn,Chai,6,10.92,2990000000187,2980000000188,98600,111800,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0019,Dầu đậu nành Meizan 5L,NCC01,Dầu ăn,Chai,4,18.2,2990000000194,2980000000195,222200,264000,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0020,Dầu mè thơm hảo hạng Meizan 250ML,NCC01,Dầu ăn,Chai,48,2.79,2990000000200,2980000000201,11600,13500,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0021,Dầu mè thơm Meizan 100ML (24),NCC01,Dầu ăn,Chai,24,2.18,2990000000217,2980000000218,4400,5100,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0022,Dầu ăn thượng hạng Neptune Light 1L,NCC01,Dầu ăn,Chai,12,10.92,2990000000224,2980000000225,46000,52900,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0023,Dầu ăn thượng hạng Neptune Light 2L,NCC01,Dầu ăn,Chai,6,10.92,2990000000231,2980000000232,83600,96000,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0024,Dầu ăn thượng hạng Neptune Light 5L,NCC01,Dầu ăn,Chai,4,18.2,2990000000248,2980000000249,239200,273000,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0025,Dầu Ô-liu Extra virgin Olivoilà 250ML,NCC01,Dầu ăn,Chai,48,2.78,2990000000255,2980000000256,11600,13000,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0026,Dầu Ô-liu Extra virgin Olivoilà 750ML,NCC01,Dầu ăn,Chai,24,4.25,2990000000262,2980000000263,32100,37100,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0027,Dầu Ô-liu Pomace Olivoilà 750ML (6),NCC01,Dầu ăn,Chai,6,4.09,2990000000279,2980000000270,36700,42300,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0028,Dầu Ô-liu Pomace Olivoilà 5L (3),NCC01,Dầu ăn,Chai,3,13.7,2990000000286,2980000000287,219600,260900,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0029,Dầu Thực Vật Hảo Hạng Orchid 0.88L,NCC01,Dầu ăn,Chai,24,9.65,2990000000293,2980000000294,36600,43200,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0030,Dầu Thực Vật Hảo Hạng Orchid 1L,NCC01,Dầu ăn,Chai,12,10.92,2990000000309,2980000000300,41700,47300,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0031,Dầu Thực Vật Hảo Hạng Orchid 2L,NCC01,Dầu ăn,Chai,6,10.92,2990000000316,2980000000317,94800,112000,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0032,Dầu Thực Vật Hảo Hạng Orchid 5L,NCC01,Dầu ăn,Chai,4,18.2,2990000000323,2980000000324,231300,266400,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0033,Dầu Thực Vật Hảo Hạng Orchid 4.5L,NCC01,Dầu ăn,Chai,4,16.38,2990000000330,2980000000331,199100,233200,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0034,Dầu Thực Vật Hảo Hạng Orchid Can 25kg,NCC01,Dầu ăn,Can,1,25.0,2990000000347,,1228900,1400300,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0035,Bơ thơm Satellite 20kg,NCC01,"Tương, xốt, sa tế",Thùng,1,20.0,2990000000354,,1549200,1784400,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0036,Dầu hạt cải Simply 1L,NCC01,Dầu ăn,Chai,12,10.92,2990000000361,2980000000362,50800,56500,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0037,Dầu đậu nành Simply 1L,NCC01,Dầu ăn,Chai,12,10.92,2990000000378,2980000000379,45900,52500,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0038,Dầu đậu nành Simply 2L,NCC01,Dầu ăn,Chai,6,10.92,2990000000385,2980000000386,92300,107500,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0039,Dầu đậu nành Simply 5L,NCC01,Dầu ăn,Chai,4,18.2,2990000000392,2980000000393,239800,275600,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0040,Dầu đậu nành Simply 400ML (24 chai),NCC01,Dầu ăn,Chai,24,8.64,2990000000408,2980000000409,18500,20700,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0041,Dầu hướng dương Simply 1L,NCC01,Dầu ăn,Chai,12,10.92,2990000000415,2980000000416,44000,51300,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0042,Dầu gạo lứt Simply 1L,NCC01,Dầu ăn,Chai,12,10.92,2990000000422,2980000000423,41800,49600,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0043,Dầu gạo lứt Simply 2L,NCC01,Dầu ăn,Chai,6,10.92,2990000000439,2980000000430,93900,107200,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0044,Shortening Satellite (nhãn đỏ) 25 kg,NCC01,Dầu ăn,Thùng,1,25.0,2990000000446,,1123300,1289100,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0045,Dầu thực vật cho đầu bếp chuyên nghiệp Satellite can 25kg,NCC01,Dầu ăn,Can,1,25.0,2990000000453,,1161500,1297300,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0046,Nước Mắm Nhỉ Cá Cơm 25° Đạm 2L (6),NCC01,"Nước mắm, mắm nêm",Chai,6,14.58,2990000000460,2980000000461,107600,123800,8,24,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0047,Nước Mắm Cá Cơm 12° Đạm 5L (4),NCC01,"Nước mắm, mắm nêm",Chai,4,23.52,2990000000477,2980000000478,289700,325700,8,24,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0048,Nước Mắm Nhỉ Cá Cơm 25° Đạm 1L (12),NCC01,"Nước mắm, mắm nêm",Chai,12,14.43,2990000000484,2980000000485,60300,69000,8,24,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0049,Nước Mắm Cá Cơm 12° Đạm 1L (12),NCC01,"Nước mắm, mắm nêm",Chai,12,14.18,2990000000491,2980000000492,62600,70300,8,24,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0050,Nước Mắm Nhỉ Cá Cơm 30° Đạm 500ML (6),NCC01,"Nước mắm, mắm nêm",Chai,6,3.67,2990000000507,2980000000508,28000,31300,8,24,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0051,Nước Mắm Cá Cơm 15° Đạm 500ML (20),NCC01,"Nước mắm, mắm nêm",Chai,20,11.98,2990000000514,2980000000515,26400,29900,8,24,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0052,Nước Mắm Nhỉ Cá Cơm 40° Đạm Hiệu 584 Nha Trang Chai Thủy Tinh 500ml (12),NCC01,"Nước mắm, mắm nêm",Chai,12,7.44,2990000000521,2980000000522,30000,34400,8,24,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0053,Nước Mắm Nhỉ Cá Cơm 25° Đạm Hiệu 584 Nha Trang Chai Thủy Tinh 500ml (15),NCC01,"Nước mắm, mắm nêm",Chai,15,9.0,2990000000538,2980000000539,28900,32200,8,24,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0054,Nước Mắm Nhỉ Cá Cơm 25° Đạm Chai Pet 500ml (6),NCC01,"Nước mắm, mắm nêm",Chai,6,3.6,2990000000545,2980000000546,31600,35500,8,24,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0055,Nước Mắm Vị Ngon Chai Pet 500ml (6),NCC01,"Nước mắm, mắm nêm",Chai,6,3.6,2990000000552,2980000000553,27300,32400,8,24,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0056,Nui La Bàn Đỏ - Ống Dài 10KG,NCC01,"Mì, nui, bánh tráng",Gói,1,10.0,2990000000569,,497600,572000,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0057,"Nui La Bàn Đỏ - Chữ ""C"" 10kg",NCC01,"Mì, nui, bánh tráng",Túi,4,10.0,2990000000576,2980000000577,488100,551600,8,12,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0058,Bột chiên giòn Meizan 150gr (60),NCC01,Bột,Bao,60,9.0,2990000000583,2980000000584,4100,4700,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0059,Bột chiên giòn Meizan 1kg,NCC01,Bột,Bao,12,10.02,2990000000590,2980000000591,24300,28900,8,12,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0060,Bột chiên giòn La Bàn 1kg (10),NCC01,Bột,Bao,10,10.0,2990000000606,2980000000607,29100,32500,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0061,Bột Chiên Giòn Meizan Đã Nêm Sẵn Gia Vị 150g (60),NCC01,"Hạt nêm, gia vị",Bao,60,9.0,2990000000613,2980000000614,11600,13100,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0062,Bột Bánh Xèo Meizan 400G (12),NCC01,Bánh kẹo,Bao,12,4.8,2990000000620,2980000000621,73300,83600,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0063,Bột Gạo Meizan 400G (12),NCC01,"Gạo, nếp",Bao,12,4.8,2990000000637,2980000000638,9100,10100,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0064,Bột Nếp Meizan 400G (12),NCC01,"Gạo, nếp",Bao,12,4.8,2990000000644,2980000000645,8700,9900,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0065,Mì chay cao cấp Meizan 250g,NCC01,"Mì, nui, bánh tráng",Bao,48,3.02,2990000000651,2980000000652,12000,14000,8,12,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0066,"Nui gạo cao cấp Meizan - Chữ ""C"" 200g (24)",NCC01,"Gạo, nếp",Bao,24,4.8,2990000000668,2980000000669,4300,4900,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0067,Mì trứng cao cấp Meizan 500g (12),NCC01,"Mì, nui, bánh tráng",Bao,12,6.0,2990000000675,2980000000676,28400,32700,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0068,Nui cao cấp Meizan 400g (12),NCC01,"Mì, nui, bánh tráng",Bao,12,4.8,2990000000682,2980000000683,21300,25100,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0069,Nui cao cấp Meizan 200g (24),NCC01,"Mì, nui, bánh tráng",Bao,24,4.8,2990000000699,2980000000690,9900,11300,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0070,"Nui cao cấp Meizan - Chữ ""C"" 200g (24)",NCC01,"Mì, nui, bánh tráng",Bao,24,4.8,2990000000705,2980000000706,11700,13100,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0071,Nui cao cấp Meizan - Hình Xoắn 300g (12),NCC01,"Mì, nui, bánh tráng",Bao,12,3.6,2990000000712,2980000000713,15200,18000,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0072,"Nui cao cấp Meizan - Chữ ""C"" 400g (12)",NCC01,"Mì, nui, bánh tráng",Bao,12,4.8,2990000000729,2980000000720,22200,24800,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0073,Nui Cao Cấp Meizan - Hình Sao 200g (24),NCC01,"Mì, nui, bánh tráng",Bao,24,4.8,2990000000736,2980000000737,11400,12700,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0074,Nui Gạo Cao Cấp Meizan - Ống Dài 400g (12),NCC01,"Gạo, nếp",Bao,12,4.8,2990000000743,2980000000744,8000,9200,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0075,Mì Trứng Cao Cấp Meizan - Sợi Nhỏ 500g (12),NCC01,"Mì, nui, bánh tráng",Bao,12,6.0,2990000000750,2980000000751,27700,31800,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0076,"Nui Rau Củ Cao Cấp Meizan - Chữ ""C"" 200G (24)",NCC01,"Mì, nui, bánh tráng",Bao,24,4.8,2990000000767,2980000000768,9500,11300,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0077,Mì Spaghetti Olivoilà N.5 500G (24),NCC01,Dầu ăn,Bao,24,12.0,2990000000774,2980000000775,21400,24000,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0078,Mì Spaghetti Olivoilà N.5 500g (18 hộp),NCC01,Dầu ăn,Hộp,24,9.01,2990000000781,2980000000782,20400,23700,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0079,Bột bắp Meizan 1kg,NCC01,Bột,Bao,12,10.01,2990000000798,2980000000799,27600,31100,8,12,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0080,Bột bắp Meizan 150g,NCC01,Bột,Bao,48,3.52,2990000000804,2980000000805,3700,4300,8,12,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0081,Bột năng đa dụng Meizan 400g (12),NCC01,Bột,Bao,12,4.8,2990000000811,2980000000812,10600,12400,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0082,Bột năng đa dụng Meizan 1kg (10),NCC01,Bột,Bao,10,10.0,2990000000828,2980000000829,26200,30900,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0083,Bột năng đa dụng Meizan 10KG,NCC01,Bột,Túi,4,10.0,2990000000835,2980000000836,304900,348700,8,12,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0084,Bún Tươi Meizan 300G (24),NCC01,"Mì, nui, bánh tráng",Bao,24,7.2,2990000000842,2980000000843,16200,19100,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0085,Bánh Tráng Meizan 120G (40),NCC01,"Mì, nui, bánh tráng",Bao,40,4.8,2990000000859,2980000000850,6200,7200,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0086,Bánh Tráng Meizan 450g (20),NCC01,"Mì, nui, bánh tráng",Bao,20,9.0,2990000000866,2980000000867,22900,26100,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0087,Bánh Phồng Tôm Meizan 100g (50),NCC01,Bánh kẹo,Bao,50,5.0,2990000000873,2980000000874,19200,22800,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0088,"Nui Gạo Cái Lân - Chữ ""C"" 10kg",NCC01,"Gạo, nếp",Bao,1,10.0,2990000000880,,200300,235200,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0089,Nui Gạo Cái Lân - Ống Dài 10kg,NCC01,"Gạo, nếp",Bao,1,10.0,2990000000897,,219300,260200,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0090,Xốt Gia Vị Hoàn Chỉnh Nướng Thịt Gói Nhãn Hiệu DHFOODS 80g (120),NCC01,"Tương, xốt, sa tế",Gói,120,9.6,2990000000903,2980000000904,6500,7300,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0091,Xốt Gia Vị Hoàn Chỉnh Kho Thịt Cá Nhãn Hiệu DHFOODS 80g (120),NCC01,"Tương, xốt, sa tế",Gói,120,9.6,2990000000910,2980000000911,6300,7100,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0092,Xốt Phô Mai Nhãn Hiệu DHFOODS 100g (24),NCC01,"Tương, xốt, sa tế",Chai,24,2.4,2990000000927,2980000000928,7400,8400,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0093,Muối Ớt Chanh Nha Trang 200G (24),NCC01,"Hạt nêm, gia vị",Chai,24,4.8,2990000000934,2980000000935,17300,20400,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0094,Muối Ớt Chanh 100G (48),NCC01,"Hạt nêm, gia vị",Chai,48,4.8,2990000000941,2980000000942,8500,9600,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0095,Muối Tôm Tây Ninh 110G (24),NCC01,"Hạt nêm, gia vị",Chai,24,2.64,2990000000958,2980000000959,9400,10500,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0096,Muối Tôm Tây Ninh 60G (48),NCC01,"Hạt nêm, gia vị",Chai,48,2.88,2990000000965,2980000000966,4700,5300,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0097,Muối Chấm Hoa Quả 50G (48),NCC01,"Hạt nêm, gia vị",Chai,48,2.47,2990000000972,2980000000973,4000,4600,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0098,Mayonnaise Simply for Professional Chefs 1kg (12 hộp),NCC01,"Tương, xốt, sa tế",Hộp,12,12.0,2990000000989,2980000000980,74800,88500,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0099,Mayonnaise Simply 3KG (4),NCC01,"Tương, xốt, sa tế",Hộp,4,12.0,2990000000996,2980000000997,223300,259500,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0100,Tương cà Nam Dương 500g (12 chai),NCC01,"Tương, xốt, sa tế",Chai,12,6.0,2990000001009,2980000001000,37300,42900,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0101,Tương cà Nam Dương 255g (24),NCC01,"Tương, xốt, sa tế",Chai,24,6.12,2990000001016,2980000001017,20900,24200,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0102,Tương cà Nam Dương 2.2kg (6),NCC01,"Tương, xốt, sa tế",Chai,6,13.2,2990000001023,2980000001024,169100,196700,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0103,Tương Cà 10G (800),NCC01,"Tương, xốt, sa tế",Gói,48,5.18,2990000001030,2980000001031,1700,2000,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0104,Tương đen Nam Dương 500g (12 chai),NCC01,"Tương, xốt, sa tế",Chai,12,6.0,2990000001047,2980000001048,42300,47700,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0105,Tương Đen 255G (24),NCC01,"Tương, xốt, sa tế",Chai,24,6.11,2990000001054,2980000001055,21700,24400,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0106,Nước tương Nam Dương Tỏi Ớt Tươi 310g (24 chai),NCC01,"Nước tương, nước chấm, giấm",Chai,24,7.44,2990000001061,2980000001062,9200,10300,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0107,Nước tương Nam Dương Đậu Nành Lên Men Tự Nhiên 500ml (24 chai),NCC01,"Nước tương, nước chấm, giấm",Chai,24,13.54,2990000001078,2980000001079,16500,18800,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0108,Nước chấm đậu nành Nam Dương Hàng Việt 500ml (24 chai),NCC01,"Nước tương, nước chấm, giấm",Chai,24,13.06,2990000001085,2980000001086,15300,17200,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0109,Nước Chấm Đậu Nành Hàng Việt Thanh Vị 500ML (24),NCC01,"Nước tương, nước chấm, giấm",Chai,24,13.1,2990000001092,2980000001093,16500,18700,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0110,Nước Tương Thượng Hạng 500ML (24),NCC01,"Nước tương, nước chấm, giấm",Chai,24,13.39,2990000001108,2980000001109,16400,19100,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0111,Nước Chấm Đậu Nành Hàng Việt Horeca 4L (4),NCC01,"Nước tương, nước chấm, giấm",Chai,4,16.0,2990000001115,2980000001116,113900,130400,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0112,Nước tương Đậm Đặc Nam Dương 280ml (24 chai),NCC01,"Nước tương, nước chấm, giấm",Chai,24,7.46,2990000001122,2980000001123,8600,9900,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0113,Nước tương Đậm Đặc Nam Dương 500ml (24 chai),NCC01,"Nước tương, nước chấm, giấm",Chai,24,13.32,2990000001139,2980000001130,14200,16100,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0114,Nước Tương Thượng Hạng 210ml (24 Chai),NCC01,"Nước tương, nước chấm, giấm",Chai,24,5.79,2990000001146,2980000001147,6500,7400,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0115,Tương ớt Nam Dương 470g (12 chai),NCC01,"Tương, xốt, sa tế",Chai,12,5.64,2990000001153,2980000001154,34200,39900,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0116,Tương Ớt Nam Dương Cay Vừa 255G (24),NCC01,"Tương, xốt, sa tế",Chai,24,6.12,2990000001160,2980000001161,19100,21900,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0117,Tương Ớt Nam Dương Cay Vừa 10G (800),NCC01,"Tương, xốt, sa tế",Bao,48,7.29,2990000001177,2980000001178,1700,2000,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0118,Tương Ớt Hàng Việt Horeca 2.1KG (6),NCC01,"Tương, xốt, sa tế",Chai,6,12.6,2990000001184,2980000001185,175300,206200,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0119,Tương Ớt Hàng Việt Horeca 4.2KG (4),NCC01,"Tương, xốt, sa tế",Chai,4,16.8,2990000001191,2980000001192,347100,392000,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0120,Tương Ớt Nam Dương Cay Vừa 2.1kg (6),NCC01,"Tương, xốt, sa tế",Chai,6,12.6,2990000001207,2980000001208,168000,197400,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0121,Tương Ớt Đặc Biệt Cay 255G (24),NCC01,"Tương, xốt, sa tế",Chai,24,6.12,2990000001214,2980000001215,20500,23500,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0122,Tương Ớt Hàng Việt 800g (12 chai),NCC01,"Tương, xốt, sa tế",Chai,12,9.6,2990000001221,2980000001222,61200,68800,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0123,Dầu Hào Nam Dương 2.25kg (6),NCC01,"Tương, xốt, sa tế",Chai,6,13.5,2990000001238,2980000001239,166600,194000,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0124,Dầu Hào Nam Dương 320g (24),NCC01,"Tương, xốt, sa tế",Chai,24,7.68,2990000001245,2980000001246,23100,27400,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0125,Dầu Hào Nam Dương 810g (12),NCC01,"Tương, xốt, sa tế",Chai,12,9.72,2990000001252,2980000001253,64000,71600,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0126,Sốt dầu dấm trộn salad Nam Dương 250g,NCC01,"Tương, xốt, sa tế",Chai,48,6.02,2990000001269,2980000001260,20500,23700,8,18,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0127,Bột Ngọt Meizan 400g (30),NCC01,Bột ngọt,Túi,30,12.0,2990000001276,2980000001277,22000,26000,8,24,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0128,Bột ngọt Meizan 1kg (12),NCC01,Bột ngọt,Túi,12,12.0,2990000001283,2980000001284,55200,65100,8,24,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0129,Bột Ngọt 25Kg (S),NCC01,Bột ngọt,Gói,1,25.0,2990000001290,,1632800,1866900,8,24,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0130,Bột Ngọt Meizan (Cánh Vừa) 2kg (6),NCC01,Bột ngọt,Túi,6,12.0,2990000001306,2980000001307,134800,156600,8,24,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0131,Bột Ngọt Meizan (Cánh Vừa) 5kg (3),NCC01,Bột ngọt,Túi,3,15.0,2990000001313,2980000001314,333100,380100,8,24,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0132,Bột Ngọt Meizan (Cánh Vừa) 1kg (12),NCC01,Bột ngọt,Túi,12,12.0,2990000001320,2980000001321,65100,74200,8,24,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0133,Bột Ngọt Meizan (Cánh Vừa) 400g (30),NCC01,Bột ngọt,Túi,30,12.0,2990000001337,2980000001338,26800,31200,8,24,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0134,Hạt nêm Neptune Tam Bảo Vị nấm 380g (20),NCC01,"Hạt nêm, gia vị",Bao,20,7.6,2990000001344,2980000001345,29500,34000,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0135,Hạt nêm Neptune 4 trong 1 Vị Heo 2kg (6),NCC01,"Hạt nêm, gia vị",Bao,6,12.0,2990000001351,2980000001352,185900,208200,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0136,Hạt nêm Meizan - Vị Heo 1kg (10),NCC01,"Hạt nêm, gia vị",Bao,10,10.0,2990000001368,2980000001369,87800,98500,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0137,Hạt nêm Meizan - Vị Heo 400g (24),NCC01,"Hạt nêm, gia vị",Bao,24,9.6,2990000001375,2980000001376,35300,39400,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0138,Hạt nêm Meizan - Vị Heo 1.8KG (6),NCC01,"Hạt nêm, gia vị",Bao,6,10.8,2990000001382,2980000001383,149900,167200,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0139,"Hạt nêm Orchid Thịt, Xương Ống Và Tủy 5KG (3)",NCC01,"Hạt nêm, gia vị",Bao,3,15.0,2990000001399,2980000001390,407900,461400,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0140,"Hạt nêm Orchid Thịt, Xương Ống Và Tủy 10KG (2)",NCC01,"Hạt nêm, gia vị",Bao,1,19.91,2990000001405,,789300,938000,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0141,"Bột mì đa dụng hiệu La Bàn 0,5kg (20)",NCC01,"Mì, nui, bánh tráng",Bao,20,10.0,2990000001412,2980000001413,26800,31200,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0142,Bột mì đa dụng hiệu La Bàn 1kg (10),NCC01,"Mì, nui, bánh tráng",Bao,10,10.0,2990000001429,2980000001420,58200,65500,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0143,Bột Mì Hiệu Meizan Bánh Mì 1Kg(10),NCC01,"Mì, nui, bánh tráng",Bao,10,10.0,2990000001436,2980000001437,49200,55500,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0144,Bột Mì Hiệu Meizan Bánh Bông Lan 1Kg (10),NCC01,"Mì, nui, bánh tráng",Bao,10,10.0,2990000001443,2980000001444,51700,57800,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0145,Bột mì đa dụng cao cấp hiệu Meizan 1kg (10),NCC01,"Mì, nui, bánh tráng",Bao,10,10.0,2990000001450,2980000001451,52100,60500,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0146,Bột mì đa dụng cao cấp hiệu Meizan 500G (20),NCC01,"Mì, nui, bánh tráng",Bao,20,10.0,2990000001467,2980000001468,26900,30400,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0147,Bột Mì Số 8 Meizan Gold 500g (20),NCC01,"Mì, nui, bánh tráng",Bao,20,10.0,2990000001474,2980000001475,24300,27700,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0148,Bột Mì Đa Dụng Cao Cấp Hiệu Meizan 10kg,NCC01,"Mì, nui, bánh tráng",Bao,1,10.0,2990000001481,,469700,554200,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0149,GĂNG TAY CHỐNG NẮNG,NCC01,Chăm sóc da,Đôi,1,0.46,2990000001498,,81000,92200,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach vat_pct
+NCC01-0150,Cái Lân Gạo Trắng 5kg,NCC01,"Gạo, nếp",Gói,4,24.89,2990000001504,2980000001505,104100,123700,8,12,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0151,Gạo Ngon Hảo Hạng Nàng Thơm Meizan Gold 5KG (5),NCC01,"Gạo, nếp",Gói,5,25.0,2990000001511,2980000001512,105000,121900,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0152,Gạo Thiên Kim 1 loại 25kg,NCC01,"Gạo, nếp",Gói,4,25.0,2990000001528,2980000001529,500700,586100,8,12,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0153,Gạo thơm Thượng hạng Neptune Nhãn Vàng 5kg (5),NCC01,"Gạo, nếp",Gói,5,25.0,2990000001535,2980000001536,100800,118100,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0154,Neptune gạo thơm dẻo - Đặc biệt ST25 Plus 5kg (5),NCC01,"Gạo, nếp",Gói,5,25.0,2990000001542,2980000001543,96900,111000,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0155,Gạo Thơm Thượng Hạng Neptune ST25 5kg (4),NCC01,"Gạo, nếp",Gói,4,20.0,2990000001559,2980000001550,111000,123900,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0156,Gạo Thơm Thượng Hạng ST25 Lúa Tôm 3kg (6),NCC01,"Gạo, nếp",Gói,6,18.0,2990000001566,2980000001567,64400,74600,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0157,Gạo Thiên Xuân 5KG (5),NCC01,"Gạo, nếp",Gói,5,25.0,2990000001573,2980000001574,96900,114100,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0158,Nếp Sáp Meizan 1kg (10),NCC01,"Gạo, nếp",Gói,10,10.0,2990000001580,2980000001581,18600,21700,8,12,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0159,Nước tẩy bồn cầu và nhà tắm POWER100 - Hương bạc hà 900ml (12 chai),NCC01,"Tẩy rửa, giặt xả",Chai,12,11.55,2990000001597,2980000001598,29200,34100,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0160,Nước rửa chén POWER100 Tiết kiệm - Hương chanh 400g (24 chai),NCC01,"Tẩy rửa, giặt xả",Chai,24,9.6,2990000001603,2980000001604,13100,14600,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0161,Nước rửa chén POWER100 Tiết kiệm - Hương chanh 750g (16 chai),NCC01,"Tẩy rửa, giặt xả",Chai,16,12.0,2990000001610,2980000001611,25800,29000,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0162,Nước rửa chén POWER100 Tiết kiệm - Hương chanh 9KG,NCC01,"Tẩy rửa, giặt xả",Chai,1,9.0,2990000001627,,303800,345600,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0163,"Nước rửa chén POWER100 - Trà xanh 1,4kg (8)",NCC01,"Tẩy rửa, giặt xả",Chai,8,11.2,2990000001634,2980000001635,50600,58100,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0164,Nước rửa chén POWER100 Tiết kiệm - Hương chanh 1.4KG(8),NCC01,"Tẩy rửa, giặt xả",Chai,8,11.2,2990000001641,2980000001642,44500,50700,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0165,Nước Rửa Chén Power100 Tinh Dầu Chanh 1.4kg (8),NCC01,"Tẩy rửa, giặt xả",Chai,8,11.2,2990000001658,2980000001659,48000,55900,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0166,Nước Rửa Chén Power100 Tinh Dầu Chanh 3.5kg (4),NCC01,"Tẩy rửa, giặt xả",Chai,4,14.0,2990000001665,2980000001666,115300,137200,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0167,Nước Rửa Chén Power100 Tinh Dầu Chanh 400g (24),NCC01,"Tẩy rửa, giặt xả",Chai,24,9.6,2990000001672,2980000001673,14500,16700,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0168,Nước Rửa Chén Power100 Tinh Dầu Chanh 750g (16),NCC01,"Tẩy rửa, giặt xả",Chai,16,12.0,2990000001689,2980000001680,27500,31200,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0169,Nước rửa chén POWER100 Tiết kiệm - Hương chanh 750g (12),NCC01,"Tẩy rửa, giặt xả",Chai,12,9.0,2990000001696,2980000001697,27400,30600,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0170,Nước Rửa Chén POWER100 Tinh Dầu Quế 3.5KG(4),NCC01,"Tẩy rửa, giặt xả",Chai,4,14.0,2990000001702,2980000001703,124200,143800,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0171,Nước Rửa Chén Power100 Tiết Kiệm Hương Trà Xanh Lô Hội 1.4Kg (8),NCC01,"Tẩy rửa, giặt xả",Chai,8,11.2,2990000001719,2980000001710,52300,58300,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0172,Nước Rửa Chén Power100 Tiết Kiệm Hương Trà Xanh Lô Hội 3.5KG (4),NCC01,"Tẩy rửa, giặt xả",Chai,4,14.0,2990000001726,2980000001727,112000,125900,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0173,Nước Rửa Chén Power100 Tiết Kiệm Hương Trà Xanh Lô Hội 3.2kg (4),NCC01,"Tẩy rửa, giặt xả",Túi,4,12.8,2990000001733,2980000001734,100400,117800,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0174,Nước Rửa Chén Power100 Natural Tinh Chất Lô Hội 750g (16),NCC01,"Tẩy rửa, giặt xả",Chai,16,12.0,2990000001740,2980000001741,24300,27700,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0175,Nước Rửa Chén Power100 Natural Tinh Dầu Bưởi Tây 750g (16),NCC01,"Tẩy rửa, giặt xả",Chai,16,12.01,2990000001757,2980000001758,25000,28800,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0176,Nước Rửa Chén Power100 Tiết Kiệm Hương Chanh 3.2kg (4),NCC01,"Tẩy rửa, giặt xả",Túi,4,12.8,2990000001764,2980000001765,112500,128600,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0177,Nước Rửa Chén Power100 Super Saving Hương Chanh 3.3kg (4),NCC01,"Tẩy rửa, giặt xả",Chai,4,13.2,2990000001771,2980000001772,103200,117600,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0178,Nước Lau Sàn Power100 Tinh Dầu Chanh Sả 3.5kg (4),NCC01,"Tẩy rửa, giặt xả",Chai,4,14.0,2990000001788,2980000001789,110600,123800,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0179,Nước Lau Sàn Power100 Tinh Dầu Chanh Sả 990g (12),NCC01,"Tẩy rửa, giặt xả",Chai,12,11.88,2990000001795,2980000001796,36400,41000,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0180,Nước Lau Sàn Power100 Tinh Dầu Hoa Thiên Nhiên 3.5kg (4),NCC01,"Tẩy rửa, giặt xả",Chai,4,14.0,2990000001801,2980000001802,125200,141900,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0181,Nước Lau Sàn Power100 Tinh Dầu Hoa Thiên Nhiên 990g (12),NCC01,"Tẩy rửa, giặt xả",Chai,12,11.88,2990000001818,2980000001819,35000,39800,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0182,Nước Lau Sàn Power100 Tinh Dầu Chanh Sả 3.2kg (4),NCC01,"Tẩy rửa, giặt xả",Túi,4,12.8,2990000001825,2980000001826,96200,111500,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0183,Nước Lau Kính Power100 Hương Bạc Hà 500ml (24),NCC01,"Tẩy rửa, giặt xả",Chai,24,11.9,2990000001832,2980000001833,16900,19900,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0184,Nước Giặt Xả Power100 Hương Nước Hoa Pháp Quyến Rũ 9KG (2),NCC01,"Tẩy rửa, giặt xả",Chai,2,18.0,2990000001849,2980000001840,322500,358400,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0185,Nước Giặt Xả Power100 Hương Nước Hoa Pháp Đam Mê 3.4Kg (4),NCC01,"Tẩy rửa, giặt xả",Chai,4,13.6,2990000001856,2980000001857,99600,116800,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0186,Nước Giặt Xả Power100 Hương Nước Hoa Pháp Đam Mê 9Kg (2),NCC01,"Tẩy rửa, giặt xả",Chai,2,18.0,2990000001863,2980000001864,320100,365900,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0187,Nước Giặt Power100 8 Trong 1 Hương Thuần Khiết 2.5kg (4),NCC01,"Tẩy rửa, giặt xả",Túi,4,10.0,2990000001870,2980000001871,86500,96400,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0188,Nước Giặt Power100 8 Trong 1 Hương Thanh Lịch 2.5kg (4),NCC01,"Tẩy rửa, giặt xả",Túi,4,10.0,2990000001887,2980000001888,83200,92700,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0189,Nước Giặt Xả Power100 Hương Nước Hoa Pháp Quyến Rũ 3.0kg (4),NCC01,"Tẩy rửa, giặt xả",Chai,4,12.0,2990000001894,2980000001895,100500,114400,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0190,Nước Giặt Xả Power100 Hương Nước Hoa Pháp Đam Mê 3.0kg Túi (4),NCC01,"Tẩy rửa, giặt xả",Túi,4,12.0,2990000001900,2980000001901,92400,106200,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0191,Nước Giặt Xả Power100 Hương Nước Hoa Pháp Quyến Rũ 3.0kg Túi (4),NCC01,"Tẩy rửa, giặt xả",Túi,4,12.0,2990000001917,2980000001918,92500,104600,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0192,Bột Giặt Power100 Hương Nước Hoa Pháp Quyến Rũ 700G (20),NCC01,"Tẩy rửa, giặt xả",Túi,20,14.0,2990000001924,2980000001925,22000,25700,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0193,Bột Giặt Power100 Hương Nước Hoa Pháp Quyến Rũ 2.6Kg (5),NCC01,"Tẩy rửa, giặt xả",Túi,5,13.0,2990000001931,2980000001932,78500,89700,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0194,Bột Giặt Power100 Hương Nước Hoa Pháp Quyến Rũ 5.3Kg (3),NCC01,"Tẩy rửa, giặt xả",Túi,3,15.9,2990000001948,2980000001949,181000,213000,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0195,Bột Giặt Power100 Saving 3 Trong 1 350g (36),NCC01,"Tẩy rửa, giặt xả",Túi,36,12.6,2990000001955,2980000001956,11100,12700,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0196,Bột Giặt Power100 Saving 3 Trong 1 5.1kg (3),NCC01,"Tẩy rửa, giặt xả",Túi,3,15.3,2990000001962,2980000001963,169200,188300,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0197,Viên Giặt Tiện Lợi Power100 3 Trong 1 Hương Tươi Mát 15g*34 (10),NCC01,"Tẩy rửa, giặt xả",Túi,10,5.12,2990000001979,2980000001970,1800,2000,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0198,Viên Giặt Tiện Lợi Power100 3 Trong 1 Hương Tinh Tế 15g*34 (10),NCC01,"Tẩy rửa, giặt xả",Túi,10,5.07,2990000001986,2980000001987,1800,2000,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0199,Nước Xả Vải Power100 Perfumery Peony Blossom 20ml (360),NCC01,"Tẩy rửa, giặt xả",Gói,48,4.75,2990000001993,2980000001994,1700,2000,8,36,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0200,Nước Xả Vải Power100 Perfumery Peony Blossom 2L (6),NCC01,"Tẩy rửa, giặt xả",Túi,6,12.25,2990000002006,2980000002007,72200,80700,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0201,Nước Xả Vải Power100 Extra Milky 20ml (360),NCC01,"Tẩy rửa, giặt xả",Gói,48,5.59,2990000002013,2980000002014,1800,2000,8,36,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0202,Nước Xả Vải Power100 Extra Milky 2L (6),NCC01,"Tẩy rửa, giặt xả",Túi,6,12.24,2990000002020,2980000002021,61800,71000,8,36,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0203,Sữa Tươi Tiệt Trùng Nguyên Kem Nhãn Hiệu Meadow Fresh 1L (12 Hộp) - New Zealand,NCC01,"Sữa, thức uống cacao",Hộp,12,12.0,2990000002037,2980000002038,36700,42100,8,9,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0204,Sữa Tiệt Trùng Giàu Canxi Ít Béo Nhãn Hiệu Meadow Fresh 1LX12 - New Zealand,NCC01,"Sữa, thức uống cacao",Hộp,24,13.33,2990000002044,2980000002045,37500,42000,8,9,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0205,Sữa Tươi Tiệt Trùng Nguyên Kem Không Nắp Nhãn Hiệu Meadow Fresh 1L (12),NCC01,"Sữa, thức uống cacao",Hộp,12,12.0,2990000002051,2980000002052,40300,45100,8,9,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0206,Sữa Tươi Tiệt Trùng Nguyên Kem Nhãn Hiệu Meadow Fresh 200ml (24) - New Zealand,NCC01,"Sữa, thức uống cacao",Hộp,48,5.11,2990000002068,2980000002069,7800,9300,8,9,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0207,Sữa Tiệt Trùng Giàu Canxi Ít Béo Nhãn Hiệu Meadow Fresh 200ml (24) - New Zealand,NCC01,"Sữa, thức uống cacao",Hộp,48,5.84,2990000002075,2980000002076,7600,8800,8,9,gia_ban gia_nhap han_dung_thang ma_vach so_dvt_moi_thung vat_pct
+NCC01-0208,Sữa Tiệt Trùng Nguyên Kem Nhãn Hiệu Meadow Fresh 1L Xuất Xứ New Zealand (12),NCC01,"Sữa, thức uống cacao",Hộp,12,12.36,2990000002082,2980000002083,36000,42400,8,9,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0209,Xốt Gia Vị Hoàn Chỉnh Nướng Ngũ Vị Nhãn Hiệu DHFOODS 80g (120),NCC01,"Tương, xốt, sa tế",Gói,120,9.62,2990000002099,2980000002090,6300,7400,8,18,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC01-0210,Sữa Tiệt Trùng Nguyên Kem Nhãn Hiệu Meadow Fresh 200ml Xuất Xứ New Zealand (24),NCC01,"Sữa, thức uống cacao",Hộp,24,5.04,2990000002105,2980000002106,8600,9900,8,9,gia_ban gia_nhap han_dung_thang ma_vach vat_pct
+NCC02-0001,Mirinda Soda kem Chai nhựa 390x24 Lốc 6,NCC02,Nước giải khát,Chai,24,10.71,2990000002112,2980000002113,10300,11700,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0002,Aquafina Chai nhựa 1500x12,NCC02,Nước suối,Chai,12,20.32,2990000002129,2980000002120,11600,13200,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0003,Aquafina Chai nhựa 5000x4,NCC02,Nước suối,Chai,4,22.55,2990000002136,2980000002137,39900,46300,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0004,Pepsi Chai nhựa 390x24 Lốc 6,NCC02,Nước giải khát,Chai,24,10.71,2990000002143,2980000002144,10000,11800,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0005,7up Chai nhựa 390x24 Lốc 6,NCC02,Nước giải khát,Chai,24,10.71,2990000002150,2980000002151,9800,11000,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0006,Mirinda Cam Chai nhựa 390x24 Lốc 6,NCC02,Nước giải khát,Chai,24,10.71,2990000002167,2980000002168,9800,11300,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0007,Mirinda Cam chai nhựa 1500 - 12 chai,NCC02,Nước giải khát,Chai,6,10.31,2990000002174,2980000002175,36100,42700,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC02-0008,Mirinda Xá xị Chai nhựa 390x24 Lốc 6,NCC02,Nước giải khát,Chai,24,10.71,2990000002181,2980000002182,9700,11500,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0009,Twister Cam Lon 320x24 Lốc 6,NCC02,Nước giải khát,Lon,24,8.84,2990000002198,2980000002199,7700,9000,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0010,Twister Cam Chai nhựa 1000x12 Lốc 6,NCC02,Nước giải khát,Chai,12,13.65,2990000002204,2980000002205,25100,29400,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0011,Tea+ Trà Ô Long Chai nhựa 1000x12 Lốc 6,NCC02,Nước giải khát,Chai,12,13.65,2990000002211,2980000002212,23500,27000,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0012,Aquafina Chai nhựa 355x24,NCC02,Nước suối,Chai,24,9.78,2990000002228,2980000002229,2800,3100,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0013,7up Lon 320x24 Tray Lốc 6,NCC02,Nước giải khát,Lon,24,8.84,2990000002235,2980000002236,8400,9400,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0014,Pepsi Lon 320x24 Tray Lốc 6,NCC02,Nước giải khát,Lon,24,8.84,2990000002242,2980000002243,7500,8800,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0015,Mirinda Cam Lon 320x24 Tray Lốc 6,NCC02,Nước giải khát,Lon,24,8.84,2990000002259,2980000002250,8100,9500,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0016,Mirinda Xá xị Lon 320x24 Lốc 6,NCC02,Nước giải khát,Lon,24,8.84,2990000002266,2980000002267,8000,9300,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0017,Mirinda Soda kem Lon 320x24 Lốc 6,NCC02,Nước giải khát,Lon,24,8.84,2990000002273,2980000002274,8200,9500,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0018,Pepsi Black Chanh Lon 320x24 Lốc 6,NCC02,Nước giải khát,Lon,24,8.84,2990000002280,2980000002281,8200,9500,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0019,Nước uống có ga Aquafina soda lon 320x24 Lốc 6,NCC02,Nước suối,Lon,24,8.84,2990000002297,2980000002298,2400,2700,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0020,Pepsi Black Lon 320x24 TRAY Lốc 6,NCC02,Nước giải khát,Lon,24,8.84,2990000002303,2980000002304,7800,9200,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0021,Tea+ Trà Ô Long Chai nhựa 450x24 Lốc 6,NCC02,Nước giải khát,Chai,24,12.31,2990000002310,2980000002311,10700,12000,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0022,Twister Cam Chai nhựa 320x24 Lốc 6,NCC02,Nước giải khát,Chai,24,8.84,2990000002327,2980000002328,7700,8600,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0023,Twister Cam Chai nhựa 450x24 Lốc 6,NCC02,Nước giải khát,Chai,24,12.31,2990000002334,2980000002335,10600,12500,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0024,Tea+ Trà Ô Long Chai nhựa 320x24 Lốc 6,NCC02,Nước giải khát,Chai,24,8.84,2990000002341,2980000002342,7900,9200,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0025,Pepsi Black Lime Chai nhựa 390x24 Lốc 6,NCC02,Nước giải khát,Chai,24,10.71,2990000002358,2980000002359,10500,12000,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0026,Juicy milk Cam Chai nhựa 320x24 Lốc 6,NCC02,"Sữa, thức uống cacao",Chai,24,8.84,2990000002365,2980000002366,11400,13300,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0027,Juicy milk Dâu Chai nhựa 320x24 Lốc 6,NCC02,"Sữa, thức uống cacao",Chai,24,8.84,2990000002372,2980000002373,12400,14300,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0028,Sting Dâu tây đỏ Lon 320x24 Khay Lốc 6 - Mới,NCC02,Nước giải khát,Lon,24,8.84,2990000002389,2980000002380,7200,8100,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0029,TEA+ Trà Ô Long Xanh Chai Nhựa 450x24 Lốc 6,NCC02,Nước giải khát,Chai,24,12.31,2990000002396,2980000002397,11200,13000,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0030,Pepsi Regular Chai nhựa 600x24 Lốc 6 Chai Xoắn,NCC02,Nước giải khát,Chai,24,16.32,2990000002402,2980000002403,15600,17400,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0031,Nước tăng lực Rockstar Lon 250x24 lốc 6,NCC02,Nước giải khát,Lon,24,6.97,2990000002419,2980000002410,6800,7600,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0032,Sting Dâu tây đỏ Chai nhựa 330x24 Lốc 6 Tray Bao bì mới,NCC02,Nước giải khát,Chai,24,9.11,2990000002426,2980000002427,8900,10100,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0033,Pepsi Lon 320x24 Thùng Carton Rời,NCC02,Nước giải khát,Lon,24,8.84,2990000002433,2980000002434,7700,9000,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0034,TEA+ Trà Ô Long Đào Nhiệt Đới Chai Nhựa 450x24 Lốc 6,NCC02,Nước giải khát,Chai,24,12.31,2990000002440,2980000002441,10500,12200,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0035,7Up Soda Chanh Lon 320x24 Tray Lốc 6,NCC02,Nước giải khát,Lon,24,8.84,2990000002457,2980000002458,8600,9700,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0036,Pepsi Lon 235x24 Lốc 6 Tết,NCC02,Nước giải khát,Lon,24,6.57,2990000002464,2980000002465,5200,5900,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0037,TEA+ Trà Ô Long Xanh Chai Nhựa 1000x12 Lốc 6,NCC02,Nước giải khát,Chai,12,13.65,2990000002471,2980000002472,22900,26600,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0038,TEA+ Trà Ô Long Đào Chai Nhựa 1000x12 Lốc 6,NCC02,Nước giải khát,Chai,12,13.65,2990000002488,2980000002489,24900,28800,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0039,Sting Hương vị Việt Quất Lon 320x24 6P,NCC02,Nước giải khát,Lon,24,8.84,2990000002495,2980000002496,8300,9500,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0040,Pepsi Hương Vị Phúc Bồn Tử Lon 320x24 TRAY 6P,NCC02,Nước giải khát,Lon,24,8.84,2990000002501,2980000002502,8300,9700,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0041,7UP Chai nhựa 600x24 Lốc 6,NCC02,Nước giải khát,Chai,24,16.32,2990000002518,2980000002519,13000,15200,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0042,Pepsi Chai nhựa 1500 - 6 chai,NCC02,Nước giải khát,Chai,6,10.31,2990000002525,2980000002526,34600,38800,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC02-0043,7up chai nhựa 1500 - 6 chai,NCC02,Nước giải khát,Chai,6,10.31,2990000002532,2980000002533,33700,40100,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC02-0044,Mirinda Cam chai nhựa 1500 - 6 chai,NCC02,Nước giải khát,Chai,6,10.31,2990000002549,2980000002540,34400,39600,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC02-0045,Mirinda Xá xị chai nhựa 1500 - 6 chai,NCC02,Nước giải khát,Chai,6,10.31,2990000002556,2980000002557,35200,40100,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC02-0046,Mirinda Soda kem chai nhựa 1500 - 6 chai,NCC02,Nước giải khát,Chai,6,10.31,2990000002563,2980000002564,33900,38500,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC02-0047,Pepsi Chai nhựa 300x24 Lốc 6 Tray,NCC02,Nước giải khát,Chai,24,8.31,2990000002570,2980000002571,7100,8500,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0048,7up Chai nhựa 300x24 Lốc 6 Tray,NCC02,Nước giải khát,Chai,24,8.31,2990000002587,2980000002588,6600,7700,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0049,Pepsi Chai nhựa 2000x6 lốc 6,NCC02,Nước giải khát,Chai,6,13.65,2990000002594,2980000002595,45900,52900,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0050,7UP Chai nhựa 2000x6 lốc 6,NCC02,Nước giải khát,Chai,6,13.65,2990000002600,2980000002601,48600,57200,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0051,Tea+ Trà Ô Long Đào Nhiệt Đới Lon 320x24 Lốc 6,NCC02,Nước giải khát,Lon,24,8.84,2990000002617,2980000002618,7500,8600,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0052,Aquafina Chai nhựa 500x24,NCC02,Nước suối,Chai,24,13.65,2990000002624,2980000002625,4100,4700,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0053,Revive Thể thao chai nhựa 450x24 Lốc 6,NCC02,Nước giải khát,Chai,24,12.31,2990000002631,2980000002632,10800,12700,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0054,Pepsi Lon 320x28 Khay,NCC02,Nước giải khát,Lon,28,10.27,2990000002648,2980000002649,7400,8500,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0055,7up Lon 320x28 Khay,NCC02,Nước giải khát,Lon,28,10.27,2990000002655,2980000002656,7400,8400,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0056,Mirinda Cam Lon 320x28 Khay,NCC02,Nước giải khát,Lon,28,10.27,2990000002662,2980000002663,8800,9800,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0057,Mirinda Xá xị Lon 320x28 Khay,NCC02,Nước giải khát,Lon,28,10.27,2990000002679,2980000002670,8500,9700,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0058,Revive Chanh muối Chai nhựa 390x24 Lốc 6,NCC02,Nước giải khát,Chai,24,10.71,2990000002686,2980000002687,9100,10600,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0059,Revive Chai nhựa 500x24 Lốc 6,NCC02,Nước giải khát,Chai,24,13.65,2990000002693,2980000002694,12200,14300,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0060,Sting Dâu tây đỏ Lon 320x28 Khay - Mới,NCC02,Nước giải khát,Lon,28,10.27,2990000002709,2980000002700,8500,9600,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0061,Sting Dâu tây đỏ Chai nhựa 330x24 Lốc 6 Tray - Bao bì mới,NCC02,Nước giải khát,Chai,24,9.11,2990000002716,2980000002717,7300,8400,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0062,Sting Dâu tây đỏ Chai nhựa 500x24 Lốc 6 - Bao bì mới,NCC02,Nước giải khát,Chai,24,13.65,2990000002723,2980000002724,11300,12700,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0063,Trà Ô Long Tea+ CAN 320x24 Lốc 6,NCC02,Nước giải khát,Chai,24,8.84,2990000002730,2980000002731,7500,8500,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0064,Tea+ Trà Ô Long Chanh Yuzu Chai nhựa 450x24,NCC02,Nước giải khát,Chai,24,12.31,2990000002747,2980000002748,10100,11800,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0065,Tea+ Trà Ô Long Chanh Yuzu Chai nhựa 1000x12,NCC02,Nước giải khát,Chai,12,13.65,2990000002754,2980000002755,25800,29900,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0066,Nước tăng lực BOSS Coffee chai nhựa 325x24 Lốc 6,NCC02,Cà phê,Chai,24,8.98,2990000002761,2980000002762,19400,23000,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0067,Sting Vàng Pro chai nhựa 330x24 Khay lốc 6,NCC02,Nước giải khát,Chai,24,9.11,2990000002778,2980000002779,7700,9100,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0068,Sting Vàng Pro lon 320x24 Khay lốc 6,NCC02,Nước giải khát,Lon,24,8.84,2990000002785,2980000002786,8300,9400,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0069,Sting Vàng Pro lon 320x28 Khay,NCC02,Nước giải khát,Lon,28,10.27,2990000002792,2980000002793,8200,9300,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0070,Good mood Sữa chua Chai nhựa 450x24 Lốc 6,NCC02,"Sữa, thức uống cacao",Chai,24,12.31,2990000002808,2980000002809,16900,19400,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0071,Mirinda Vải Lon 320x24 Khay Lốc 6,NCC02,Nước giải khát,Lon,24,8.84,2990000002815,2980000002816,7100,8200,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0072,Revive Chai nhựa 300x24 Tray Lốc 6,NCC02,Nước giải khát,Chai,24,8.31,2990000002822,2980000002823,7200,8400,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0073,Sting Dâu tây đỏ Ít đường Chai nhựa 330x24 Lốc 6,NCC02,Nước giải khát,Chai,24,9.11,2990000002839,2980000002830,7700,8900,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0074,Mirinda Xá xị Chai nhựa 300x24 Lốc 6,NCC02,Nước giải khát,Chai,24,8.31,2990000002846,2980000002847,7100,7900,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0075,Sting Dâu tây đỏ Ít đường Lon 320x28 Khay,NCC02,Nước giải khát,Lon,28,10.27,2990000002853,2980000002854,8200,9600,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0076,Pepsi Vị Kem Dâu Lon 235X24 Khay Lốc 6,NCC02,Nước giải khát,Lon,24,8.08,2990000002860,2980000002861,23900,26600,8,9,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach vat_pct
+NCC02-0077,7up Chai nhựa 390x24 Lốc 6 Mới,NCC02,Nước giải khát,Chai,24,10.71,2990000002877,2980000002878,10200,11700,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC02-0078,7up chai nhựa 1500 - 6 chai Mới,NCC02,Nước giải khát,Chai,6,10.31,2990000002884,2980000002885,34700,41000,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC02-0079,Revive Chanh muối Chai nhựa 390x24 Lốc 6 Mới,NCC02,Nước giải khát,Chai,24,10.71,2990000002891,2980000002892,9600,11200,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0001,Bột Ngọt Aji no moto 400GL23 - Hạt To - (30 gói/ thùng),NCC03,Bột ngọt,Goi,30,13.26,2990000002907,2980000002908,24400,28600,8,24,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0002,Bột ngọt AJI-NO-MOTO 1KGR17 - Hạt Nhỏ - (15 gói/thùng),NCC03,Bột ngọt,Goi,15,16.5,2990000002914,2980000002915,62800,72100,8,24,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0003,Bột ngọt AJI-NO-MOTO 1.8KGL14 - Hạt To - (10 Gói/Thùng),NCC03,Bột ngọt,Goi,10,19.74,2990000002921,2980000002922,115400,130000,8,24,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0004,Bột ngọt AJI-NO-MOTO 5KGR15 - Hạt Nhỏ - (4 Gói/thùng),NCC03,Bột ngọt,Goi,4,21.9,2990000002938,2980000002939,306500,343500,8,24,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0005,Hạt nêm HEO Aji - ngon 2KGP21 - (6 Gói/Thùng),NCC03,"Hạt nêm, gia vị",Goi,6,13.26,2990000002945,2980000002946,165600,189600,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0006,Hạt nêm HEO Aji - Ngon 3KGP13 - (6 Gói/Thùng),NCC03,"Hạt nêm, gia vị",Goi,6,19.74,2990000002952,2980000002953,261600,304400,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0007,Hạt Nêm HEO AJI-NGON 5KGP4 - (4 Gói/Thùng),NCC03,"Hạt nêm, gia vị",Goi,4,21.9,2990000002969,2980000002960,450900,522200,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0008,Hạt NÊM AJI-NGON Gà 3KG - (6 Gói/Thùng),NCC03,"Hạt nêm, gia vị",Goi,6,19.74,2990000002976,2980000002977,254400,291600,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0009,Hạt Nêm Tôm Thịt 1.8KGP3 - (6 Gói/Thùng),NCC03,"Hạt nêm, gia vị",Goi,6,11.96,2990000002983,2980000002984,138900,159100,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0010,"Gia vị nêm sẵn Bún Riêu Cua AJI QUICK 54G - (12 Gói/Lốc, 10 Lốc/ Thùng)",NCC03,"Hạt nêm, gia vị",Lốc,10,0.88,2990000002990,2980000002991,4900,5600,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0011,Bột tẩm khô AJI-QUICK 210G9 - (24 gói/thùng),NCC03,"Hạt nêm, gia vị",Goi,24,5.74,2990000003003,2980000003004,16400,18500,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0012,Gia vị nêm sẵn Phở Bò AJI QUICK 57G - (120 Gói/Thùng),NCC03,"Hạt nêm, gia vị",Goi,120,7.69,2990000003010,2980000003011,4700,5600,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0013,Giấm gạo LÊN MEN 4.9L - (4 bình/thùng),NCC03,"Nước tương, nước chấm, giấm",Binh,4,22.1,2990000003027,2980000003028,149200,177200,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0014,Giấm gạo Lên Men 400ML7 - (20 Chai/thùng),NCC03,"Nước tương, nước chấm, giấm",Chai,20,9.2,2990000003034,2980000003035,13300,14800,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0015,Xốt Mè RANG AJI - Xốt 1.04KG5 - (8 Chai/thùng),NCC03,"Tương, xốt, sa tế",Chai,8,9.29,2990000003041,2980000003042,75000,87600,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0016,Xốt Mayonnaise cho Bánh Mì Aji - mayo 3KGBK2 - (4 Hộp/Thùng),NCC03,"Tương, xốt, sa tế",Hop,4,13.26,2990000003058,2980000003059,234500,272200,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0017,Xốt Mayonnaise Pro - Sauce AJI-MAYO 3KG - (4 Xô/thùng),NCC03,"Tương, xốt, sa tế",Xo,4,13.26,2990000003065,2980000003066,227900,267700,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0018,Nước Tương Phú Sĩ 500ML - (24 chai/thùng),NCC03,"Nước tương, nước chấm, giấm",Chai,24,13.65,2990000003072,2980000003073,13500,15900,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0019,Nước Tương Phú Sĩ 4.9L - (4 Bình/thùng),NCC03,"Nước tương, nước chấm, giấm",Binh,4,22.1,2990000003089,2980000003080,140200,159600,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0020,Dầu Hào 1.2KG5 - (8 chai/thùng),NCC03,"Tương, xốt, sa tế",Chai,8,10.67,2990000003096,2980000003097,94100,107800,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0021,Hỗn hợp tăng vị Bột ngọt AJI-NO-MOTO PLUS 1KGP4 - (12 gói/thùng),NCC03,Bột ngọt,Goi,12,13.26,2990000003102,2980000003103,55600,65200,8,24,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0022,Bột nêm thịt Gà 1KG - 1Kg/Hộp (6 Hộp/Thùng),NCC03,"Hạt nêm, gia vị",Hop,6,6.78,2990000003119,2980000003110,80600,92400,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0023,Bột Canh 190G4 - (50 Gói/thùng),NCC03,"Hạt nêm, gia vị",Goi,50,10.56,2990000003126,2980000003127,15800,17900,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0024,Bột Chanh 400G2 - (12 Gói/Thùng),NCC03,"Hạt nêm, gia vị",Goi,12,5.48,2990000003133,2980000003134,30400,35400,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0025,Gia vị Nền cho món nước 2KGP3 - (6 Gói/thùng),NCC03,"Hạt nêm, gia vị",Goi,6,13.26,2990000003140,2980000003141,167000,198200,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0026,Bột gia vị Thịt HEO PLUS 3KG - (6 Gói/Thùng),NCC03,"Hạt nêm, gia vị",Goi,6,19.74,2990000003157,2980000003158,217300,256900,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0027,Gia vị nêm sẵn Lẩu Thái Aji-Quick 1kgP4 (12 gói/thùng),NCC03,"Tương, xốt, sa tế",Goi,12,13.26,2990000003164,2980000003165,80700,91500,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0028,Gia vị nêm sẵn Lẩu Kim Chi Aji-Quick 44g3 (12 gói/thùng),NCC03,"Hạt nêm, gia vị",Goi,12,0.87,2990000003171,2980000003172,3800,4400,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0029,Cà Phê Đen Birdy 170ml9- 30 lon/ Thùng,NCC03,Cà phê,Lon,30,5.97,2990000003188,2980000003189,11400,13400,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC03-0030,Cà Phê Sữa Birdy 170ml9 - 30 lon/ Thùng,NCC03,"Sữa, thức uống cacao",Lon,30,5.97,2990000003195,2980000003196,6400,7200,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0001,BBM - PHAN THOM BIOGANIK 160G,NCC04,"Dầu gội, sữa tắm",Chai,48,8.59,2990000003201,2980000003202,25900,29900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0002,BBM - PHAN THOM SAKURA 160G,NCC04,"Dầu gội, sữa tắm",Chai,48,8.59,2990000003218,2980000003219,27500,32400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0003,BBM - PHAN THOM LAVENDER 160G,NCC04,"Dầu gội, sữa tắm",Chai,48,8.59,2990000003225,2980000003226,25800,28700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0004,BBM - PHAN THOM SAKURA 350G,NCC04,"Dầu gội, sữa tắm",Chai,24,9.37,2990000003232,2980000003233,53300,62700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0005,BBM - PHAN THOM LAVENDER 350G,NCC04,"Dầu gội, sữa tắm",Chai,24,9.37,2990000003249,2980000003240,63200,73000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0006,BBM - STG BIOGANIK 800ML + BIO 125ML,NCC04,"Dầu gội, sữa tắm",Bộ,24,21.66,2990000003256,2980000003257,133400,149700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0007,BBM - STG SAKURA 800ML + BIO 125ML,NCC04,"Dầu gội, sữa tắm",Bộ,24,21.66,2990000003263,2980000003264,142100,158200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0008,BBM - STG LAVENDER 800ML + BIO 125ML,NCC04,"Dầu gội, sữa tắm",Bộ,24,21.66,2990000003270,2980000003271,135100,155900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0009,BBM - STG LAVENDER 800ML + SAKURA 180ML,NCC04,"Dầu gội, sữa tắm",Bộ,24,21.66,2990000003287,2980000003288,145100,165600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0010,BBM - STG SAKURA 380ML + PHAN BIO 160G,NCC04,"Dầu gội, sữa tắm",Bộ,24,10.45,2990000003294,2980000003295,59300,66300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0011,BBM - STG BIOGANIK 380ML + PHAN BIO 160G,NCC04,"Dầu gội, sữa tắm",Bộ,24,10.45,2990000003300,2980000003301,64100,75700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0012,BBM - SUA TAM GOI LAVENDER 180ML,NCC04,"Sữa, thức uống cacao",Chai,48,9.91,2990000003317,2980000003318,6500,7400,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0013,BBM-STG BIOGANIK 800ML + LAVENDER 180ML,NCC04,"Dầu gội, sữa tắm",Bộ,24,21.66,2990000003324,2980000003325,132300,155700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0014,BBM - STG STRAWBERRY 380ML + SP190ML,NCC04,"Dầu gội, sữa tắm",Bộ,24,10.45,2990000003331,2980000003332,59300,67500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0015,BBM - STG LAVENDER 380ML + PHAN BIO 160G,NCC04,"Dầu gội, sữa tắm",Bộ,24,10.45,2990000003348,2980000003349,60700,67700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0016,BBM - STG SAKURA 800ML + PHAN BIO 160G,NCC04,"Dầu gội, sữa tắm",Bộ,24,21.66,2990000003355,2980000003356,140300,166700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0017,BBM - STG LAVENDER 800ML + PHAN BIO 160G,NCC04,"Dầu gội, sữa tắm",Bộ,24,21.66,2990000003362,2980000003363,146200,166300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0018,NUOC GIAT XA BABIMILD WHITESAKURA 2400ML,NCC04,"Tẩy rửa, giặt xả",Túi,6,16.32,2990000003379,2980000003370,87600,98700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0019,BBM- GIAT XA SAKURA 2.4L+0.53 LAVENDER,NCC04,"Tẩy rửa, giặt xả",Bộ,6,16.32,2990000003386,2980000003387,75200,87300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0020,BBM-Kem Duong Da Bioganik 50G,NCC04,Chăm sóc da,Hũ,48,2.89,2990000003393,2980000003394,74700,85700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0021,Kem Tri Ngua Bepanthen 20g,NCC04,Chăm sóc da,Tuýp,48,1.34,2990000003409,2980000003400,91100,102300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0022,KEM DUONG DA SWEETY PINK 50G,NCC04,Chăm sóc da,Hũ,48,2.89,2990000003416,2980000003417,80400,94800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0023,BBM - NUOC RUA BINH SUA - CHAI 590ML,NCC04,"Sữa, thức uống cacao",Chai,24,16.05,2990000003423,2980000003424,24500,28100,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0024,KEM CHONG HAM DUONG AM BEPANTHEN 30G NEW,NCC04,Chăm sóc da,Tuýp,48,1.86,2990000003430,2980000003431,90100,103900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0025,KEM DUONG DA DOUBLE MILK 50G,NCC04,Chăm sóc da,Hũ,48,2.89,2990000003447,2980000003448,85000,97100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0026,DDVS PHU NU AQUA FRESH ( mau xanh) 150ML,NCC04,Chăm sóc da,Chai,48,8.31,2990000003454,2980000003455,90800,103200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0027,DDVS PHU NU NGUYEN BAN ( hong nhat) 150ML,NCC04,Chăm sóc da,Chai,48,8.31,2990000003461,2980000003462,78400,91700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0028,DDVS PHU NU TENDER TOUCH ( do dam ) 280ML,NCC04,Chăm sóc da,Chai,48,15.25,2990000003478,2980000003479,85500,98500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0029,PLUS-ST HOA HONG NGOT NGAO 550ML,NCC04,"Dầu gội, sữa tắm",Chai,24,14.98,2990000003485,2980000003486,90100,101300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0030,PLUS-ST TAO XANH TUOI MAT 550ML,NCC04,"Dầu gội, sữa tắm",Chai,24,14.98,2990000003492,2980000003493,91500,105000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0031,KIDS - SUA TAM GOI JUICY BERRIES 190ML,NCC04,"Sữa, thức uống cacao",Chai,48,10.45,2990000003508,2980000003509,6800,7900,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0032,KIDS - SUA TAM GOI JUICY BERRIES 390ML,NCC04,"Sữa, thức uống cacao",Chai,24,10.71,2990000003515,2980000003516,13900,15900,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0033,KIDS- STG SODA POPZ 190ML,NCC04,Nước giải khát,Chai,48,10.45,2990000003522,2980000003523,4400,4900,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0034,KIDS - STG SODA POPZ 390ml,NCC04,Nước giải khát,Chai,24,10.71,2990000003539,2980000003530,9600,11100,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0035,EXIT- LAN NACH NAM NGAN MO HOI (COOL ACTIVE) 45ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,2.7,2990000003546,2980000003547,76500,87500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0036,EXIT- LAN NACH NAM THOM & MAT LANH (ULTRA BLUE) 45ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,2.7,2990000003553,2980000003554,73200,84300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0037,BB XIT CHONG NANG COOLZONE SPF50 170G - 01105 (THUNG 12C),NCC04,Chăm sóc da,Chai,12,2.5,2990000003560,2980000003561,76800,85900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0038,BB KEM CHONG NANG THE THAO SPF100 90ML - 45088 (THUNG 12 TUYP),NCC04,Chăm sóc da,Tuýp,12,1.5,2990000003577,2980000003578,74600,88100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0039,BB XIT CHONG NANG THE THAO SPF100 170G - 45089 (THUNG 12C),NCC04,Chăm sóc da,Chai,12,2.5,2990000003584,2980000003585,76000,87200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0040,BB AQUA SENSITIVE LTN SPF50+ 50ML,NCC04,Chăm sóc da,Tuýp,48,2.97,2990000003591,2980000003592,81100,90300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0041,BB XIT CHONG NANG THE THAO SPF65 170G,NCC04,Chăm sóc da,Chai,48,9.11,2990000003607,2980000003608,84200,99700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0042,JORDAN KEM DANH RANG TE DAU 0-5 TUOI 75G,NCC04,Chăm sóc da,Tuýp,48,4.19,2990000003614,2980000003615,82100,96900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0043,JORDAN KEM DANH RANG TE NHO 6-12TUOI 75G,NCC04,Chăm sóc da,Tuýp,48,4.19,2990000003621,2980000003622,92800,103800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0044,DARLIE - LO2 KDR DOUBLE ACTION 225G ( NEW),NCC04,Chăm sóc da,Hộp,48,11.96,2990000003638,2980000003639,85100,99100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0045,DARLIE - LO2 KDR T.SANG CHANH BAC HA 140G,NCC04,Chăm sóc da,Bộ,48,7.56,2990000003645,2980000003646,81100,94400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0046,DARLIE - LO2 KDR T.SANG CHARCOAL 140G(MOI),NCC04,Chăm sóc da,Hộp,48,7.56,2990000003652,2980000003653,90300,102500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0047,DARLE KEM DANH RANG DA MULTICARE 180G,NCC04,Chăm sóc da,Hộp,48,9.63,2990000003669,2980000003660,81100,93100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0048,DARLIE- KDR ALL SHINY WHITE 140G,NCC04,Chăm sóc da,Hộp,48,7.56,2990000003676,2980000003677,87900,101600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0049,DARLIE-KDR TRE EM STRAWBERRY 40G,NCC04,Chăm sóc da,Hộp,48,2.37,2990000003683,2980000003684,83000,94800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0050,DARLIE - KDR TRE EM ORANGE 40G,NCC04,Chăm sóc da,Hộp,48,2.37,2990000003690,2980000003691,83100,93800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0051,DARILE- KEM D.RANG TRE EM APPLE 40g,NCC04,Chăm sóc da,Hộp,48,2.37,2990000003706,2980000003707,84700,96700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0052,DARLIE- KDR D.ACTION FRESH PROTECT 180G-N,NCC04,Chăm sóc da,Hộp,48,9.63,2990000003713,2980000003714,79600,94700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0053,DARLIE - KDR DOUBLE ACTION 225G+ASW BS 40G,NCC04,Chăm sóc da,Bộ,48,11.96,2990000003720,2980000003721,89300,103500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0054,DARLIE-KDR ASW LIME MINT 140G+ASW BS40G,NCC04,Chăm sóc da,Hộp,48,7.56,2990000003737,2980000003738,74700,86100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0055,DARLIE - LO2 KDR DOUBLE ACTION 225G 2026,NCC04,Chăm sóc da,Hộp,48,11.96,2990000003744,2980000003745,75400,88200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0056,RAID- XIT CON TRUNG HUONG LAVENDER 24H (VOI XIT KEP),NCC04,Diệt côn trùng,Chai,24,11.96,2990000003751,2980000003752,64500,75300,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0057,RAID- XIT CON TRUNG HUONG CAM CHANH 24H (VOI XIT KEP),NCC04,Diệt côn trùng,Chai,24,11.96,2990000003768,2980000003769,65400,74000,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0058,RAID- XIT CON TRUNG KHONG MUI 24H (VOI XIT KEP),NCC04,Diệt côn trùng,Chai,24,11.96,2990000003775,2980000003776,59500,67900,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0059,RAID - XIT CON TRUNG H.LAVENDER 800ML,NCC04,Diệt côn trùng,Chai,24,21.66,2990000003782,2980000003783,67600,75300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0060,RAID - XIT CON TRUNG KHONG MUI 800ML,NCC04,Diệt côn trùng,Chai,24,21.66,2990000003799,2980000003790,59700,69300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0061,RAID - XIT CON TRUNG HUONG CAM CHANH300ML - DN (12chai/ thung),NCC04,Diệt côn trùng,Chai,12,4.3,2990000003805,2980000003806,59800,70800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0062,RAID - XIT CON TRUNG HUONG LAVENDER 300ML - New (TH12),NCC04,Diệt côn trùng,Chai,12,4.3,2990000003812,2980000003813,60600,70100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0063,SCJ_AO THUN RAID,NCC04,Diệt côn trùng,Cái,24,11.96,2990000003829,2980000003820,58600,69200,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0064,RAID - NHANG MUOI HUONG OAI HUONG 10KHOANH (72 Hop/ thung),NCC04,Diệt côn trùng,Hộp,72,35.29,2990000003836,2980000003837,71100,82300,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach vat_pct
+NCC04-0065,PLEDGE - XIT DANH BONG GO HUONG CHANH330ML,NCC04,"Tẩy rửa, giặt xả",Chai,24,9.11,2990000003843,2980000003844,9600,11300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0066,GLADE - XIT PHONG H.CHANH 280ML( 12chai/ thung),NCC04,"Xịt phòng, sáp thơm",Chai,12,4.04,2990000003850,2980000003851,55000,61900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0067,GLADE - XIT PHONG H.HOA HONG 280ML( 12chai/ thung),NCC04,"Xịt phòng, sáp thơm",Chai,12,4.04,2990000003867,2980000003868,58400,65300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0068,GLADE - XIT PHONG HUONG BIEN PHIEU BONG 280ML,NCC04,"Xịt phòng, sáp thơm",Chai,48,15.25,2990000003874,2980000003875,50700,59600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0069,GLADE - XIT PHONG H.TRAM HUONG 280ML( 12chai/ thùng),NCC04,"Xịt phòng, sáp thơm",Chai,12,4.04,2990000003881,2980000003882,60000,70300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0070,GLADE - XIT PHONG HOA ANH DAO LILY 280ML,NCC04,"Xịt phòng, sáp thơm",Chai,48,15.25,2990000003898,2980000003899,61600,69400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0071,GLADE_CHAI XIT TDONG H.BIEN P.BONG 252ml,NCC04,"Xịt phòng, sáp thơm",Chai,48,13.76,2990000003904,2980000003905,58800,65800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0072,GLADE_CHAI XIT TDONG OAI HUONG 252ml unpack,NCC04,"Xịt phòng, sáp thơm",Chai,48,13.76,2990000003911,2980000003912,55200,65600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0073,GLADE_CHAI XIT TDONG MAU DON & DAU 252ml,NCC04,"Xịt phòng, sáp thơm",Chai,48,13.76,2990000003928,2980000003929,63800,71000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0074,GLADE_CHAI XIT TDONG DINH HUONG TRANG 252ml,NCC04,"Xịt phòng, sáp thơm",Chai,48,13.76,2990000003935,2980000003936,60100,67500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0075,GLADE_CHAI XIT TDONG HUONG DAU TUOI 252ml,NCC04,"Xịt phòng, sáp thơm",Chai,48,13.76,2990000003942,2980000003943,58400,65200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0076,GLADE_CHAI XIT TDONG SOM MAI 252ml-unpack,NCC04,"Xịt phòng, sáp thơm",Chai,48,13.76,2990000003959,2980000003950,63400,70900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0077,GLADE_CHAI XIT TDONG ANH DAO LILY 252ml-unpack,NCC04,"Xịt phòng, sáp thơm",Chai,48,13.76,2990000003966,2980000003967,62500,71100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0078,GLADE - XIT PHONG H.LAVENDER 280MLx2 (6 Bo/ Thung),NCC04,"Xịt phòng, sáp thơm",Bộ,48,15.25,2990000003973,2980000003974,59900,71100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0079,GLADE - XIT PHONG HUONG CO HOA 280MLx2 (6 Bo/ Thung),NCC04,"Xịt phòng, sáp thơm",Bộ,48,15.25,2990000003980,2980000003981,52500,59700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0080,GLADE_BO(R+MAY) XIT TD BIEN P.BONG 252ml,NCC04,"Xịt phòng, sáp thơm",Bộ,48,13.76,2990000003997,2980000003998,52200,62100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0081,GLADE_BO(R+MAY) XIT TD OAI HUONG VANI 252ml,NCC04,"Xịt phòng, sáp thơm",Bộ,48,13.76,2990000004000,2980000004001,56000,66500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0082,GLADE_BO(R+MAY) XIT TD ANH DAO LILY 252ml,NCC04,"Xịt phòng, sáp thơm",Bộ,48,13.76,2990000004017,2980000004018,59500,70500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0083,GLADE_BO(R+MAY) XIT TD MAU DON&DAU 252ml,NCC04,"Xịt phòng, sáp thơm",Bộ,48,13.76,2990000004024,2980000004025,59000,67600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0084,GLADE - SAP THOM H.SOM MAI 180G,NCC04,"Xịt phòng, sáp thơm",Hộp,48,9.63,2990000004031,2980000004032,57100,65600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0085,GLADE - SAP THOM H.HOA TUOI MAT 180G,NCC04,"Xịt phòng, sáp thơm",Hộp,48,9.63,2990000004048,2980000004049,57000,65500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0086,GLADE - SAP THOM H.BIEN PHIEU BONG 180G,NCC04,"Xịt phòng, sáp thơm",Hộp,48,9.63,2990000004055,2980000004056,51000,59200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0087,GLADE - SAP THOM H.TRAM HUONG 180G,NCC04,"Xịt phòng, sáp thơm",Hộp,48,9.63,2990000004062,2980000004063,56800,65500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0088,GLADE - SAP THOM EE 180G H.TAO XANH & DAO,NCC04,"Xịt phòng, sáp thơm",Hộp,48,9.63,2990000004079,2980000004070,51800,61600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0089,GLADE - SAP THOM HELLO KITTY HUONG HOA 180G,NCC04,"Xịt phòng, sáp thơm",Hộp,48,9.63,2990000004086,2980000004087,53700,63500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0090,GLADE - SAP THOM HELLO KITTY OAI HUONG 180G,NCC04,"Xịt phòng, sáp thơm",Hộp,48,9.63,2990000004093,2980000004094,57300,67300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0091,GLADE - SAP THOM HELLO KITTY HUONG CHANH 180G,NCC04,"Xịt phòng, sáp thơm",Hộp,48,9.63,2990000004109,2980000004100,53800,61600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0092,GLADE - SAP THOM H.HOA LAVENDER 180Gx2 (6 bo/ thung),NCC04,"Xịt phòng, sáp thơm",Bộ,48,9.63,2990000004116,2980000004117,56000,65100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0093,GLADE - SAP THOM H.HOA LAI 180Gx2 (6 Bo/ Thung),NCC04,"Xịt phòng, sáp thơm",Bộ,48,9.63,2990000004123,2980000004124,54600,62100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0094,GLADE - SAP THOM TUYET TAC HUONG HOA 180GX2 (6 bo/ thung),NCC04,"Xịt phòng, sáp thơm",Bộ,48,9.63,2990000004130,2980000004131,51300,60700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0095,GLADE - SAP THOM HOA ANH DAO LILY 180Gx2 (6 bo/ thung),NCC04,"Xịt phòng, sáp thơm",Bộ,48,9.63,2990000004147,2980000004148,55700,63000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0096,GLADE - SAP THOM HUONG CHANH 180Gx2,NCC04,"Xịt phòng, sáp thơm",Bộ,48,9.63,2990000004154,2980000004155,54000,60200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0097,LUOI DAO CAO SCHICK EXACTA2 SYSTEM - SENTIVE 4S 3033,NCC04,Dao cạo,Vĩ,12,0.69,2990000004161,2980000004162,17100,19300,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0098,DAO CAO DUNG 1L SCHICK EXACTA2 BLUE 12S - 08748 (Mã cái 1 vĩ 12 cây lẻ),NCC04,Dao cạo,Cây,12,13.65,2990000004178,2980000004179,16700,19200,8,60,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0099,DC Exacta Sensitive pack 6 cai,NCC04,Dao cạo,Dây,12,0.69,2990000004185,2980000004186,16500,18700,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0100,RELOAD_DAO CAO THAY LUOI - KIT 4,NCC04,Dao cạo,Gói,12,0.69,2990000004192,2980000004193,15100,17400,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0101,BANANA BOAT - DC EXACTA 2 (2+1S),NCC04,Chăm sóc da,Cái,24,4.19,2990000004208,2980000004209,73700,87700,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0102,DUCK - TAY NHA TAM HUONG HOA HONG 900ML,NCC04,"Tẩy rửa, giặt xả",Chai,12,12.31,2990000004215,2980000004216,30000,33400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0103,DUCK - TAY NHA TAM SIEU TAY PRO1800ML,NCC04,"Tẩy rửa, giặt xả",Can,6,12.31,2990000004222,2980000004223,59200,68400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0104,MR MUSCLE - NUOC LAU KINH 500ML,NCC04,"Tẩy rửa, giặt xả",Chai,24,13.65,2990000004239,2980000004230,16800,19300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0105,MR MUSCLE - NUOC LAU NHA H.CO HOA 1000ML (12chai/ thung),NCC04,"Tẩy rửa, giặt xả",Chai,12,13.65,2990000004246,2980000004247,32600,36900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0106,MR MUSCLE - NUOC LAU NHA H.B.PHIEU BONG1L(12chai/ thung),NCC04,"Tẩy rửa, giặt xả",Chai,12,13.65,2990000004253,2980000004254,34000,38700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0107,DUCK - TAY RUA TDS OAI HUONG 500+250ML,NCC04,"Tẩy rửa, giặt xả",Chai,48,13.65,2990000004260,2980000004261,7800,9000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0108,DUCK - GEL TAY RUA TDS OAI HUONG 900ML,NCC04,"Tẩy rửa, giặt xả",Chai,12,12.31,2990000004277,2980000004278,27900,32500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0109,MR MUSCLE - TAY DA NANG H. CAM CHANH 500ML New,NCC04,"Tẩy rửa, giặt xả",Chai,24,13.65,2990000004284,2980000004285,17400,19700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0110,DUCK - TAY NHA TAM SIEU TAY PRO 900ML (GT),NCC04,"Tẩy rửa, giặt xả",Chai,12,12.31,2990000004291,2980000004292,29800,34700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0111,DUCK-ANTIBAC TAY NTAM HHOA 900ML+MRC(MT),NCC04,"Tẩy rửa, giặt xả",Chai,12,12.31,2990000004307,2980000004308,30900,34400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0112,NUOC MAM CA COM MY SON 520ML - 24990 (THUNG/6 CHAI),NCC04,"Nước mắm, mắm nêm",Chai,6,3.77,2990000004314,2980000004315,28900,32700,8,24,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0113,NUOC MAM CA COM MY SON 250ML - 24991 (THUNG/12 CHAI),NCC04,"Nước mắm, mắm nêm",Chai,12,3.64,2990000004321,2980000004322,14800,16900,8,24,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0114,OVALTINE-SUA CCLM DHA180MLX4-PRO2,NCC04,"Sữa, thức uống cacao",Lốc,48,9.91,2990000004338,2980000004339,6700,7700,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0115,OVALTINE SOCOLA X2 CANXI 180MLX4 (12 loc/ thung),NCC04,Bánh kẹo,Lốc,12,2.7,2990000004345,2980000004346,37800,43100,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0116,OVALTINE SOCOLA X2 CANXI 110ML X4 (12 loc/ thung),NCC04,Bánh kẹo,Lốc,12,1.77,2990000004352,2980000004353,21300,24200,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0117,Keo lollipop socola Ovaltine 180gr,NCC04,Bánh kẹo,Hộp,48,9.63,2990000004369,2980000004360,30900,36500,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0118,Keo marshmallow Ovaltine 500gr,NCC04,Bánh kẹo,Túi,24,13.26,2990000004376,2980000004377,96600,112500,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0119,BANH QUY OVALTINE QUE CHAM SOCOLA 50G,NCC04,Bánh kẹo,Bộ,48,2.89,2990000004383,2980000004384,9200,10800,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0120,OVALTINE Bot Hop 285gr (Thung /24 Hop),NCC04,"Sữa, thức uống cacao",Hộp,24,7.69,2990000004390,2980000004391,10900,12700,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0121,Keo marshmallow Ovaltine Matcha 25gr (Hộp 20 gói),NCC04,Bánh kẹo,Hộp,48,1.6,2990000004406,2980000004407,4500,5100,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0122,Keo Marshmallow Ovaltine Cacao 25gr (Hộp 20 gói),NCC04,Bánh kẹo,Hộp,48,1.6,2990000004413,2980000004414,4400,5000,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0123,Banh xop Indo Ovaltine 100gr,NCC04,Bánh kẹo,Túi,48,5.48,2990000004420,2980000004421,18000,20200,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0124,Banh quy Ovaltine 24gr - 365981 (Hộp 12 Gói),NCC04,Bánh kẹo,Hộp,48,1.54,2990000004437,2980000004438,4400,5200,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0125,SOCOLA HERSHEY'S NUGGETS SUA HANH NHAN 56G,NCC04,Bánh kẹo,Gói,48,3.2,2990000004444,2980000004445,10300,12000,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0126,KEO SOCOLA TRANG B.QUY HERSHEY'S NUGGETS 56G,NCC04,Bánh kẹo,Gói,48,3.2,2990000004451,2980000004452,11500,13000,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0127,KEO SOCOLA TRANG B.QUY HERSHEY 15G,NCC04,Bánh kẹo,Gói,48,1.08,2990000004468,2980000004469,3000,3500,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0128,KEO SOCOLA TRANG BQUY HERSHEY 40G,NCC04,Bánh kẹo,Gói,48,2.37,2990000004475,2980000004476,8000,9200,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0129,SOCOLA HERSHEY'S KEM SUA 40G,NCC04,Bánh kẹo,Gói,48,2.37,2990000004482,2980000004483,7200,8400,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0130,SOCOLA HERSHEY'S KEM SUA HANH NHAN 40G,NCC04,Bánh kẹo,Gói,48,2.37,2990000004499,2980000004490,7200,8200,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0131,HOP TET GERY BANH QUY PHO MAI 450G ( 12hop/thung),NCC04,"Mì, nui, bánh tráng",Hộp,12,6.13,2990000004505,2980000004506,20900,24500,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0132,SIRO SOCOLA HERSHEY'S 623G (TH12),NCC04,Bánh kẹo,Chai,12,8.37,2990000004512,2980000004513,125800,142500,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0133,SIRO DAU HERSHEY'S 623G (TH12),NCC04,Bánh kẹo,Chai,12,8.37,2990000004529,2980000004520,124600,144200,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0134,JORDAN BCDR JORDAN DOUBLE ACTION,NCC04,Chăm sóc răng miệng,Cái,24,4.19,2990000004536,2980000004537,30300,34400,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0135,JORDAN BCDR TRE EM BUDDY 5-10 TUOI,NCC04,Chăm sóc răng miệng,Cái,24,4.19,2990000004543,2980000004544,25300,29900,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0136,JORDAN BCDR TRE EM BUDDY 1- 5 TUOI - 31481 (New),NCC04,Chăm sóc răng miệng,Cái,24,4.19,2990000004550,2980000004551,27400,31300,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0137,JORDAN BCDR TRE EM 0-2TUOI STEP1,NCC04,Chăm sóc răng miệng,Cái,24,4.19,2990000004567,2980000004568,28400,32900,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0138,JORDAN BCDR TRE EM 3-5TUOI STEP2,NCC04,Chăm sóc răng miệng,Cái,24,4.19,2990000004574,2980000004575,28100,32700,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0139,JORDAN BCDR TRE EM 6-9TUOI STEP3,NCC04,Chăm sóc răng miệng,Cái,24,4.19,2990000004581,2980000004582,29000,32300,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0140,JORDAN BCDR CLEAN BETWEEN,NCC04,Chăm sóc răng miệng,Cái,24,4.19,2990000004598,2980000004599,28600,33200,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0141,JORDAN BCDR TARGET SENSITIVE,NCC04,Chăm sóc răng miệng,Cái,24,4.19,2990000004604,2980000004605,29700,34700,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0142,JORDAN BCDR TARGET WHITE,NCC04,Chăm sóc răng miệng,Cái,24,4.19,2990000004611,2980000004612,27000,32100,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0143,JORDAN BCDR JORDAN CLEAN SMILE,NCC04,Chăm sóc răng miệng,Cái,24,4.19,2990000004628,2980000004629,27900,32800,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0144,DARLIE - BCDR CHARCOAL SPIRAL,NCC04,Chăm sóc răng miệng,Cái,24,4.19,2990000004635,2980000004636,25900,29900,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0145,DARLIE - BCDR CHARCOAL CLEAN T27,NCC04,Chăm sóc răng miệng,Cái,24,4.19,2990000004642,2980000004643,28200,32500,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0146,DARLIE - BCDR SOFT & CLEAN (T28) (BC EXTRA FILE CLEAN),NCC04,Chăm sóc răng miệng,Cái,24,4.19,2990000004659,2980000004650,27100,31200,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0147,JORDAN BCDR JONDAL ULTIMATE YOU,NCC04,Chăm sóc răng miệng,Cái,24,4.19,2990000004666,2980000004667,25100,29200,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0148,PASEO - KHAN GIAY LAU MAT 250 TO 2 LOP,NCC04,Khăn giấy,Gói,12,4.19,2990000004673,2980000004674,22200,25400,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0149,PASEO - KHAN GIAY VE SINH 6 CUON 3 LOP - 08114 (6 CUON/BICH),NCC04,Khăn giấy,Bịch,12,4.19,2990000004680,2980000004681,23200,27100,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0150,PASEO - GIAY BEP DA NANG CO IN 2 CUON 2 LOP,NCC04,Khăn giấy,Bịch,12,4.19,2990000004697,2980000004698,24700,27500,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0151,PASEO - GIAY VE SINH 10 CUON 3 LOP KO LOI,NCC04,Khăn giấy,Bịch,12,4.19,2990000004703,2980000004704,25000,28700,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0152,PASEO - KHAN GIAY BO TUI LUX 8 TO 4 LOP,NCC04,Khăn giấy,Gói,12,4.19,2990000004710,2980000004711,26700,29800,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0153,PASEO - KHAN GIAY BABY 50 TO 3 LOP,NCC04,Khăn giấy,Gói,12,4.19,2990000004727,2980000004728,23600,26800,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0154,PASEO - KHAN GIAY LAU MAT 200T 2 LOP (THUNG/32 HOP),NCC04,Khăn giấy,Hộp,32,10.67,2990000004734,2980000004735,26600,30600,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach vat_pct
+NCC04-0155,PASEO - KHAN GIAY BABY 130T 3 LOP,NCC04,Khăn giấy,Gói,12,4.19,2990000004741,2980000004742,25700,29900,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0156,PASEO - KHAN GIAY MAT SIEU MEM 95T 3 LOP,NCC04,Khăn giấy,Hộp,12,4.19,2990000004758,2980000004759,23400,27400,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0157,PASEO - GIAY BEP DA NANG 3 CUON 2 LOP,NCC04,Khăn giấy,Bịch,12,4.19,2990000004765,2980000004766,23900,27600,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0158,PASEO - KHAN GIAY MAT NHA DAM 95T 3 LOP,NCC04,Khăn giấy,Hộp,12,4.19,2990000004772,2980000004773,25700,28700,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0159,PASEO - GIAY VE SINH CO IN 4 CUON 3 LOP,NCC04,Khăn giấy,Bịch,12,4.19,2990000004789,2980000004780,26600,30000,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0160,PASEO - KHAN GIAY MAT SIEU MEM 100T 3 LOP - 08125 ( THUNG/24 HOP),NCC04,Khăn giấy,Hộp,24,8.08,2990000004796,2980000004797,24400,28300,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach vat_pct
+NCC04-0161,PASEO - KHAN GIAY RUT T.TUONG 300T 4 LOP - 08126 (Thùng 4 Gói),NCC04,Khăn giấy,Gói,4,0.32,2990000004802,2980000004803,26800,30000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0162,PASEO - KHAN GIAY MAT CAO CAP 70 TO 4 LOP (THUNG 48 GOI),NCC04,Khăn giấy,Gói,48,2.79,2990000004819,2980000004810,21700,25400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0163,NICE - KHAN GIAY LAU MAT 220 TO 2 LOP,NCC04,Khăn giấy,Gói,12,4.19,2990000004826,2980000004827,23000,26200,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0164,NICE - KHAN AN 100 TO,NCC04,Khăn giấy,Gói,12,4.19,2990000004833,2980000004834,24700,27800,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0165,NICE - KHAN GIAY LAU MAT 100 TO 3 LOP,NCC04,Khăn giấy,Gói,12,4.19,2990000004840,2980000004841,23500,27600,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0166,Keo cay con tau KDG FF Bac Ha 25g,NCC04,Bánh kẹo,Gói,48,1.6,2990000004857,2980000004858,4200,5000,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0167,Keo cay con tau KDG FF Cam Chanh 25g,NCC04,Bánh kẹo,Gói,48,1.6,2990000004864,2980000004865,4400,5100,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0168,Keo cay con tau KDG FF Spearmint 25g,NCC04,Bánh kẹo,Gói,48,1.6,2990000004871,2980000004872,4500,5100,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0169,Keo cay con tau KDG FF Chanh mat ong 25g,NCC04,Bánh kẹo,Gói,48,1.6,2990000004888,2980000004889,5000,5600,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0170,Keo cay con tau KDG FF Ly chua den 25g,NCC04,Bánh kẹo,Gói,48,1.6,2990000004895,2980000004896,4800,5600,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0171,Keo FF Menthol & Khuynh diep 22g + HT THAP DHO BIGBEN,NCC04,Bánh kẹo,Bộ,48,1.44,2990000004901,2980000004902,4200,4700,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0172,Keo FF Cam Chanh 22g + HT THAP DHO BIGBEN,NCC04,Bánh kẹo,Bộ,48,1.44,2990000004918,2980000004919,3700,4400,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0173,Keo FF Tao que 22g + HT KY QUAN STONEHENGE,NCC04,Bánh kẹo,Bộ,48,1.44,2990000004925,2980000004926,4000,4700,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0174,Keo Chanh mat ong 22g + HT QUAN DOI ANH,NCC04,Bánh kẹo,Bộ,48,1.44,2990000004932,2980000004933,4200,5000,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0175,Keo FF Ly chua den 25g + HT QUAN DOI ANH,NCC04,Bánh kẹo,Bộ,48,1.6,2990000004949,2980000004940,4500,5100,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0176,Keo cay con tau KDG FF Bac ha 22g,NCC04,Bánh kẹo,Gói,48,1.44,2990000004956,2980000004957,4500,5200,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0177,Keo cay con tau KDG FF Cherry 22g,NCC04,Bánh kẹo,Gói,48,1.44,2990000004963,2980000004964,4200,4800,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0178,Keo cay con tau KDG FF Quyt 22g,NCC04,Bánh kẹo,Gói,48,1.44,2990000004970,2980000004971,3900,4500,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0179,Keo cay con tau KDG FF Spearmint 22g,NCC04,Bánh kẹo,Gói,48,1.44,2990000004987,2980000004988,3900,4500,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0180,Keo cay con tau FF Menthol & khuynh Diep 22g,NCC04,Bánh kẹo,Gói,48,1.44,2990000004994,2980000004995,4400,5200,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0181,Keo cay con tau KDG FF Tao que 22g,NCC04,Bánh kẹo,Gói,48,1.44,2990000005007,2980000005008,4700,5300,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0182,Keo cay con tau KDG FF Ly chua den 22g,NCC04,Bánh kẹo,Gói,48,1.44,2990000005014,2980000005015,4300,4800,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0183,Keo cay con tau KDG FF Cam Chanh 22g,NCC04,Bánh kẹo,Gói,48,1.44,2990000005021,2980000005022,3900,4400,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0184,MEKONG FOOD-NUI VANG ONG DAI 200G,NCC04,"Mì, nui, bánh tráng",Túi,48,10.67,2990000005038,2980000005039,10600,11800,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0185,MEKONG FOOD-NUI VANG ONG DAI 400G,NCC04,"Mì, nui, bánh tráng",Túi,24,10.67,2990000005045,2980000005046,20000,23700,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0186,MEKONG FOOD-NUI VANG ONG NGAN 200G,NCC04,"Mì, nui, bánh tráng",Túi,48,10.67,2990000005052,2980000005053,10500,11900,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0187,MEKONG FOOD-NUI VANG ONG NGAN 400G,NCC04,"Mì, nui, bánh tráng",Túi,24,10.67,2990000005069,2980000005060,22800,26400,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0188,MEKONG FOOD-NUI GAO ONG DAI 400G,NCC04,"Gạo, nếp",Túi,24,10.67,2990000005076,2980000005077,8000,9500,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0189,MEKONG FOOD-NUI GAO ONG NGAN 400G,NCC04,"Gạo, nếp",Túi,24,10.67,2990000005083,2980000005084,8700,10000,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0190,MEKONG FOOD-BUN GAO DA DUNG 200G,NCC04,"Gạo, nếp",Túi,48,10.67,2990000005090,2980000005091,4000,4700,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0191,MEKONG FOOD-NUI RAU CU ONG NGAN 200G,NCC04,"Mì, nui, bánh tráng",Túi,48,10.67,2990000005106,2980000005107,10000,11200,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0192,MEKONG FOOD-NUI RAU CU XOAN 300G,NCC04,"Mì, nui, bánh tráng",Túi,24,8.08,2990000005113,2980000005114,16300,18400,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0193,MEKONG FOOD-NUI GAO HUYET RONG 300G,NCC04,"Gạo, nếp",Túi,24,8.08,2990000005120,2980000005121,6100,6900,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0194,MEKONG FOOD-BUN TUOI HUYET RONG 200G,NCC04,"Mì, nui, bánh tráng",Túi,48,10.67,2990000005137,2980000005138,11200,12700,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0195,Sample Nuoc Mam Ca Com My Son 60ml,NCC04,"Nước mắm, mắm nêm",Chai,48,3.5,2990000005144,2980000005145,3400,3800,8,24,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0196,DUREX - BCS FETHER ULTIMA 12S,NCC04,Bao cao su,Hộp,24,1.6,2990000005151,2980000005152,56000,63800,5,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0197,DUREX - BCS PLEASUREMAX 12S,NCC04,Bao cao su,Hộp,24,1.6,2990000005168,2980000005169,57900,66000,5,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0198,Khay Durex 2021,NCC04,Bao cao su,Cái,24,1.6,2990000005175,2980000005176,55800,62600,5,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0199,NIVEA MEN LNM DEEP DARKWOOD 50ML (24Chai/Thùng),NCC04,"Khử mùi, tạo kiểu tóc",Chai,24,1.63,2990000005182,2980000005183,78300,91200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0200,NIVEA LNM NAM KHO THOANG 50ML (TH24),NCC04,"Khử mùi, tạo kiểu tóc",Chai,24,1.63,2990000005199,2980000005190,78100,89100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0201,NIVEA LNM DRY COMFORT 50ML (24 chai/ thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,24,1.63,2990000005205,2980000005206,68900,79600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0202,LNM NU KHO THOANG 72H 25ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,1.63,2990000005212,2980000005213,67600,77100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0203,NIVEA MEN LNM DRY IMPACT 72H 25ML (30Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,30,1.13,2990000005229,2980000005220,73300,85500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0204,NIVEA LNM EXTRA SANG MIN 50ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,2.97,2990000005236,2980000005237,79500,89100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0205,LNM SANG MIN SE LCL 25ML (30Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,30,1.13,2990000005243,2980000005244,71700,80000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0206,NIVEA NU LNM SANG MIN TOI UU 12ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,0.94,2990000005250,2980000005251,77000,88900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0207,NIVEA LNM NAM B&W ORIGINAL 50ML (24Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,24,1.63,2990000005267,2980000005268,71900,82600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0208,NIVEA MEN LNM B&W ORIGINAL 25ML (48Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,1.63,2990000005274,2980000005275,79600,92700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0209,NIVEA LNM B&W INVISIBLE PURE 25ML (30Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,30,1.13,2990000005281,2980000005282,78000,91300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0210,NIVEA LNM EXTRA SANG MIN 25ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,1.63,2990000005298,2980000005299,80700,92100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0211,NIVEA MEN LNM COOL KICK (BLUE) 50ML (24Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,24,1.63,2990000005304,2980000005305,70600,82200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0212,NIVEA MEN LNM COOL KICK (BLUE) 25ML (30Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,30,1.13,2990000005311,2980000005312,81000,92200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0213,NIVEA MEN LNM COOL KICK (GREEN) 50ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,2.97,2990000005328,2980000005329,75800,87700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0214,NIVEA LNM NU PEARL & BEAUTY 25ML (30Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,30,1.13,2990000005335,2980000005336,72600,83700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0215,NIVEA LNM PEARL & BEAUTY 50ML (24Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,24,1.63,2990000005342,2980000005343,70200,82900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0216,NIVEA LNM EXTRA SANG MIN 50ML (24Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,24,1.63,2990000005359,2980000005350,73600,82800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0217,NIVEA LNM NU TUOI MAT SUC SONG 50ML (24Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,24,1.63,2990000005366,2980000005367,73800,83800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0218,NIVEA MEN LNM SILVER PROTECT 50ML (24Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,24,1.63,2990000005373,2980000005374,75500,86400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0219,NIVEA MEN LNM SILVER PROTECT 25ML (30Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,30,1.13,2990000005380,2980000005381,73200,82600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0220,LNM SANG MIN LAM DIU DA 50ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,2.97,2990000005397,2980000005398,71600,83100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0221,NIVEA MEN LNM ESPRESSO 50ML (24Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,24,1.63,2990000005403,2980000005404,70200,80800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0222,NIVEA MEN LNM B&W ULTIMATE 50ML (24Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,24,1.63,2990000005410,2980000005411,71700,82600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0223,NIVEA LNM NU DERMA DEFEND 50ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,2.97,2990000005427,2980000005428,77400,86800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0224,NIVEA LNM NU DERMA DEFEND 25ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,1.63,2990000005434,2980000005435,73200,81500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0225,NIVEA LNM NU DERMA B.REPAIR 50ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,2.97,2990000005441,2980000005442,76200,90000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0226,NIVEA LNM NU DERMA RESTORE 50ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,2.97,2990000005458,2980000005459,70300,82100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0227,NIVEA LNM B&W AUTHENTIC 50ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,2.97,2990000005465,2980000005466,72800,81600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0228,NIVEA NAM LNM DEEP EXTREME 50ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,2.97,2990000005472,2980000005473,74400,88600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0229,NIVEA LNM P&B SHAVELESS 50ML (24Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,24,1.63,2990000005489,2980000005480,67700,80200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0230,LNM NTRAI MIN MUOT 25ML (30Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,30,1.13,2990000005496,2980000005497,70200,79500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0231,NIVEA LNM PEONY & VAILLA 50ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,2.97,2990000005502,2980000005503,82900,92400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0232,NIVEA MEN LNM B&W EPIC NIGHT 50ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,2.97,2990000005519,2980000005510,72500,85700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0233,NIVEA MEN XNM DEEP DARKWOOD 150ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,8.31,2990000005526,2980000005527,75700,86900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0234,NIVEA XNM NAM DRY IMPACT 150ML (24Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,24,4.3,2990000005533,2980000005534,74600,87000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0235,XNM NU GHT VET O VANG TM DN 150ML (24Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,24,4.3,2990000005540,2980000005541,67700,78300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0236,NIVEA MEN XNM B&W ORIGINAL 150ML (24Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,24,4.3,2990000005557,2980000005558,70600,78500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0237,NIVEA MEN XNM COOL KICK (BLUE) 150ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,8.31,2990000005564,2980000005565,81600,91900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0238,NIVEA MEN XNM SILVER PROTECT 150ML (12Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,12,2.3,2990000005571,2980000005572,68000,77700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0239,NIVEA XNM EXTRA SANG MIN 150ML (12Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,12,2.3,2990000005588,2980000005589,76800,89000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0240,NIVEA MEN XNM COOL KICK (GREEN) 150ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,8.31,2990000005595,2980000005596,70800,78800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0241,NIVEA XNM PEARL & BEAUTY 150ML (12Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,12,2.3,2990000005601,2980000005602,72400,86100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0242,NIVEA XNM P&B SHAVELESS 150ML (12Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,12,2.3,2990000005618,2980000005619,76800,89600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0243,XNM DEEP HUONG ESPRESSO 150ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,8.31,2990000005625,2980000005626,80500,92200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0244,XNM NAM NGAN O VANG VTROI 150ML (24Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,24,4.3,2990000005632,2980000005633,78600,90700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0245,NIVEA XNM NU DERMA DEFEND 150ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,8.31,2990000005649,2980000005640,79800,92300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0246,NIVEA XNM NU DERMA B.REPAIR 150ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,8.31,2990000005656,2980000005657,69400,79000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0247,XNM NU DERMA RESTORE 150ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,8.31,2990000005663,2980000005664,79200,93200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0248,NIVEA NU XNM B&W HUONG NGOT NGAO 150ML (TH24),NCC04,"Khử mùi, tạo kiểu tóc",Chai,24,4.3,2990000005670,2980000005671,70200,83300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0249,NIVEA NAM XNM DEEP EXTREME 150ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,8.31,2990000005687,2980000005688,73600,84200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0250,XNM DUONG SANG HUONG TUOI MAT 150ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,8.31,2990000005694,2980000005695,78400,90500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0251,XNM DUONG SANG HUONG NGOT NGAO 150ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,8.31,2990000005700,2980000005701,77400,87300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0252,NIVEA NAM XNM B&W EPIC NIGHT 150ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,8.31,2990000005717,2980000005718,72200,81400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0253,NIVEA SON DUONG DAO 4.8G,NCC04,Chăm sóc da,Cái,48,0.55,2990000005724,2980000005725,87100,100600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0254,NIVEA SON DUONG MOI CHUYEN SAU 4.8G,NCC04,Chăm sóc da,Cái,48,0.55,2990000005731,2980000005732,80100,90600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0255,SON D.AM NIVEA DAU4.8G,NCC04,Chăm sóc da,Cái,48,0.55,2990000005748,2980000005749,81100,95500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0256,SON TRANG DIEM DUONG MOI RED 4.8G,NCC04,Chăm sóc da,Cái,48,0.55,2990000005755,2980000005756,81100,91600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0257,SON TRANG DIEM DUONG MOI PINK 4.8G,NCC04,Chăm sóc da,Cái,48,0.55,2990000005762,2980000005763,83000,98600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0258,SON DUONG NIVEA COLOR ROSE 4.8G,NCC04,Chăm sóc da,Cái,48,0.55,2990000005779,2980000005770,75900,87500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0259,NUOC TAYTRG NIVEA NGUA MUN 400ML (24Chai/Thung),NCC04,Chăm sóc da,Chai,24,10.98,2990000005786,2980000005787,75100,87000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0260,NUOC TAYTRG NIVEA SDA D.AM 200ML (12Chai/Thung),NCC04,Chăm sóc da,Chai,12,2.97,2990000005793,2980000005794,78200,86900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0261,NTT NIVEA SDAD.AM 400ML,NCC04,Chăm sóc da,Chai,24,10.98,2990000005809,2980000005800,81400,92500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0262,NIVEA NUOC HOA HONG CAN BANG 200ML (12Chai/Thung),NCC04,Chăm sóc da,Chai,12,2.97,2990000005816,2980000005817,77500,90800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0263,NIVEA NTT SOOTHING DIU DA 400ML,NCC04,Chăm sóc da,Chai,24,10.98,2990000005823,2980000005824,77800,92000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0264,NTT NIVEA DERMA ACNE CARE 400ml,NCC04,Chăm sóc da,Chai,24,10.98,2990000005830,2980000005831,81000,95700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0265,NIVEA NTT SOOTHING DIU DA 125ML,NCC04,Chăm sóc da,Chai,48,6.97,2990000005847,2980000005848,84400,95800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0266,NIVEA NTT DERMA ACNE CARE DA MUN 125ML,NCC04,Chăm sóc da,Chai,48,6.97,2990000005854,2980000005855,81200,94300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0267,NIVEA NTT LUMINOUS SANG DA 400ML,NCC04,Chăm sóc da,Chai,24,10.98,2990000005861,2980000005862,85200,100400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0268,NIVEA NTT LUMINOUS SANG DA 125ML,NCC04,Chăm sóc da,Chai,48,6.97,2990000005878,2980000005879,77100,88300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0269,NIVEA KEM DUONG AM DA 30ML,NCC04,Chăm sóc da,Hũ,48,1.9,2990000005885,2980000005886,85000,98500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0270,NIVEA KEM DUONG AM DA 60ML,NCC04,Chăm sóc da,Hũ,48,3.5,2990000005892,2980000005893,84000,96700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0271,KEM Q10 POWER DEM 50ML,NCC04,Chăm sóc da,Hũ,48,2.97,2990000005908,2980000005909,78900,89100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0272,NIVEA SDT SANG DA CHONG NANG 200ML ( 24 chai/ thung),NCC04,Chăm sóc da,Chai,24,5.64,2990000005915,2980000005916,89700,103300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0273,NIVEA SDT SANG DA PHUC HOI 350ML,NCC04,Chăm sóc da,Chai,24,9.64,2990000005922,2980000005923,90000,102800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0274,NIVEA TC SANG DA CHONG NANG 180ML,NCC04,Chăm sóc da,Chai,48,9.91,2990000005939,2980000005930,83400,97300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0275,TC SANG DA BAN DEM 180ML,NCC04,Chăm sóc da,Chai,48,9.91,2990000005946,2980000005947,90800,104100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0276,KEM MDA 200ML,NCC04,Chăm sóc da,Hũ,48,10.98,2990000005953,2980000005954,89800,104300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0277,KEM MDA 50ML,NCC04,Chăm sóc da,Hũ,48,2.97,2990000005960,2980000005961,91200,103300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0278,SDT DT BAN DEM 350ML (12Chai/Thung),NCC04,Chăm sóc da,Chai,12,4.97,2990000005977,2980000005978,84600,94500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0279,SUA DUONG THE SANG MIN 350ML,NCC04,"Sữa, thức uống cacao",Chai,24,9.64,2990000005984,2980000005985,14500,17100,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0280,NIVEA SDT SANG DA BAN DEM 190ML,NCC04,Chăm sóc da,Chai,48,10.45,2990000005991,2980000005992,84100,94100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0281,TC D.SANG C&E VIT SERUM 170ML,NCC04,Chăm sóc da,Chai,48,9.38,2990000006004,2980000006005,91400,103500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0282,NIVEA TC DUONG THE C&A 170ML,NCC04,Chăm sóc da,Chai,48,9.38,2990000006011,2980000006012,75800,89400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0283,NIVEA SDT MILK DUONG AM 350ML,NCC04,Chăm sóc da,Chai,24,9.64,2990000006028,2980000006029,92400,103900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0284,SRM S.DA DAT SET NIVEA 100G (TH24),NCC04,Chăm sóc da,Tuýp,24,2.89,2990000006035,2980000006036,74600,86900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0285,NIVEA SRM SANG DA NGOC TRAI 100G (TH24),NCC04,Chăm sóc da,Tuýp,24,2.89,2990000006042,2980000006043,81900,91200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0286,NIVEA SRM NAM EXTRA BRIGHT MUD 100G,NCC04,Chăm sóc da,Tuýp,48,5.48,2990000006059,2980000006050,87900,98800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0287,NIVEA MEN SRM ACNE OIL CLEAR 100G (TH24),NCC04,Chăm sóc da,Tuýp,24,2.89,2990000006066,2980000006067,88400,103100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0288,NIVEA MEN SRM ACNE DETOX MUD 100G(TH24),NCC04,Chăm sóc da,Tuýp,24,2.89,2990000006073,2980000006074,83700,93800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0289,NIVEA MEN SRM DEEP SANG DA 100G,NCC04,Chăm sóc da,Tuýp,48,5.48,2990000006080,2980000006081,87700,97900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0290,NIVEA MEN SRM OIL CLEAR MUD 100G,NCC04,Chăm sóc da,Tuýp,48,5.48,2990000006097,2980000006098,77100,85700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0291,NIVEA MEN SRM DEEP TRI MUN 100G,NCC04,Chăm sóc da,Tuýp,48,5.48,2990000006103,2980000006104,78400,89300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0292,NIVEA MEN SRM EXTRA BRIGHT FOAM 100G,NCC04,Chăm sóc da,Tuýp,48,5.48,2990000006110,2980000006111,78200,91500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0293,NIVEA MEN SRM OIL CLEAR FOAM 100G (TH24),NCC04,Chăm sóc da,Tuýp,24,2.89,2990000006127,2980000006128,92700,104100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0294,NIVEA MEN SRM OIL CLEAR SCRUB 100G (TH24),NCC04,Chăm sóc da,Tuýp,24,2.89,2990000006134,2980000006135,85900,98500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0295,NIVEA SRM DERMA ACNE CARE 90ML,NCC04,Chăm sóc da,Tuýp,48,5.11,2990000006141,2980000006142,81900,97200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0296,NIVEA SRM SANG DA BOT MIN 100ml,NCC04,Bột,Tuýp,48,5.64,2990000006158,2980000006159,3000,3400,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0297,NIVEA SRM SANG DA BOT KHI 100ML,NCC04,Chăm sóc da,Tuýp,48,5.64,2990000006165,2980000006166,83600,94900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0298,NIVEA SRM LUMINOUS SANG DA 150ML,NCC04,Chăm sóc da,Tuýp,48,8.31,2990000006172,2980000006173,83200,98600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0299,SNM NAM COOL KICK 50ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,2.97,2990000006189,2980000006180,78200,87600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0300,SNM NAM SILVER 50ML,NCC04,"Khử mùi, tạo kiểu tóc",Chai,48,2.97,2990000006196,2980000006197,71600,79900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0301,NIVEA SNM PEARL & BEAUTY 50ML (15Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,15,1.13,2990000006202,2980000006203,74900,85900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0302,NIVEA SNM EXTRA SANG MIN 50ML (15Chai/Thung),NCC04,"Khử mùi, tạo kiểu tóc",Chai,15,1.13,2990000006219,2980000006210,78600,90100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC04-0303,NIVEA XIT CHONG NANG 200ML,NCC04,Chăm sóc da,Chai,48,10.98,2990000006226,2980000006227,87800,100000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0304,KCN SANG DA HOA HONG HOKKAIDO 40ML,NCC04,Chăm sóc da,Chai,48,2.44,2990000006233,2980000006234,90900,102400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0305,KCN N LHOA 40ML,NCC04,Chăm sóc da,Chai,48,2.44,2990000006240,2980000006241,84000,93700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0306,KCN DUONG AM MONG NHE SPF30 125ML,NCC04,Chăm sóc da,Tuýp,48,6.97,2990000006257,2980000006258,75800,86500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0307,NIVEA SERUM CHONG NANG TONE UP 30ML,NCC04,Chăm sóc da,Tuýp,48,1.9,2990000006264,2980000006265,84300,94500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0308,NIVEA SERUM CHONG NANG KIEM DAU 30ML,NCC04,Chăm sóc da,Tuýp,48,1.9,2990000006271,2980000006272,80100,94500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC04-0309,NIVEA SERUM CHONG NANG C&E 30ML,NCC04,Chăm sóc da,Tuýp,48,1.9,2990000006288,2980000006289,91800,102900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0001,SATE THUAN PHAT TOM NGON 250G x 24,NCC05,"Tương, xốt, sa tế",Hũ,24,6.78,2990000006295,2980000006296,21100,24600,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0002,SATE THUAN PHAT CAY 85g x 108 lo (6 lo / loc),NCC05,"Tương, xốt, sa tế",Lọ,108,10.21,2990000006301,2980000006302,6200,7300,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0003,SATE THUAN PHAT TOM NGON 85g x 108 lo (6 lo/ loc),NCC05,"Tương, xốt, sa tế",Lọ,108,10.21,2990000006318,2980000006319,6500,7200,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0004,Sate Thuan Phat Cay 250gx24,NCC05,"Tương, xốt, sa tế",Hũ,48,13.26,2990000006325,2980000006326,19600,22300,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0005,SATE TOM TOI PHI 85Gx108c/thung,NCC05,"Tương, xốt, sa tế",Chai,108,10.21,2990000006332,2980000006333,6300,7100,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0006,SATE TOM SO DIEP 85GX108c/thung,NCC05,"Tương, xốt, sa tế",Chai,108,10.21,2990000006349,2980000006340,6600,7700,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0007,TP MAM NEM NGON PHA SAN 175G x 48PET,NCC05,"Nước mắm, mắm nêm",Chai,48,9.37,2990000006356,2980000006357,9900,11100,8,24,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0008,TP MAM NEM NGON PHA SAN 290G x 36PET,NCC05,"Nước mắm, mắm nêm",Chai,36,11.58,2990000006363,2980000006364,17200,19400,8,24,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0009,TP MAM NEM NGON PHA SAN 1130G x 12PET,NCC05,"Nước mắm, mắm nêm",Chai,12,14.94,2990000006370,2980000006371,65600,76400,8,24,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0010,TP MAM NEM AN LIEN 270G x24,NCC05,"Nước mắm, mắm nêm",Chai,24,7.3,2990000006387,2980000006388,14600,16900,8,24,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0011,TP NUOC MAM CA COM 40N - 490MLx12,NCC05,"Nước mắm, mắm nêm",Chai,24,13.38,2990000006394,2980000006395,27200,31400,8,24,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0012,NM CA COM THAN RELAUNCH 490MLx18c/thùng,NCC05,"Nước mắm, mắm nêm",Chai,18,10.11,2990000006400,2980000006401,26500,31400,8,24,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0013,NM CA COM 40N RELAUNCH 610ML x12c/thung,NCC05,"Nước mắm, mắm nêm",Chai,12,8.44,2990000006417,2980000006418,33400,38700,8,24,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0014,THUAN PHAT XOT LAU THAI NGON 1.1KG X 12,NCC05,"Tương, xốt, sa tế",Chai,12,14.56,2990000006424,2980000006425,81500,93400,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0015,THUAN PHAT XOT LAU THAI NGON 250G X 24,NCC05,"Tương, xốt, sa tế",Chai,24,6.78,2990000006431,2980000006432,20300,22900,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0016,THUAN PHAT XOT LAU THAI CHAY 280G X 24,NCC05,"Tương, xốt, sa tế",Chai,24,7.56,2990000006448,2980000006449,23500,27500,8,18,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0017,Sữa Tắm Xmen for Boss Intense 650gx12,NCC05,"Sữa, thức uống cacao",Chai,24,17.15,2990000006455,2980000006456,24900,28200,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0018,Sữa Tắm Xmen for Boss Motion 650gx12,NCC05,"Sữa, thức uống cacao",Chai,24,17.15,2990000006462,2980000006463,27200,30600,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0019,ST XMEN FIRE 12H THOM LAU SACH SAU 650G x 12 chai,NCC05,"Dầu gội, sữa tắm",Chai,12,8.72,2990000006479,2980000006470,113700,132200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0020,ST XMEN WOOD THOM LAU SACH SAU 650G X 12,NCC05,"Dầu gội, sữa tắm",Chai,12,8.72,2990000006486,2980000006487,96500,113300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0021,DAU GOI XMEN LEGEND KERATIN 650G x 12,NCC05,"Dầu gội, sữa tắm",Chai,12,8.72,2990000006493,2980000006494,99500,117800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0022,SUA TAM BOSS LUXURY 650G TANG DAU GO LEGEND 150 x 7 BO,NCC05,"Sữa, thức uống cacao",Bộ,7,5.21,2990000006509,2980000006500,24200,27400,8,9,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0023,XMB TGM 3IN1 LUXURY 630G x12c,NCC05,"Dầu gội, sữa tắm",Chai,12,8.46,2990000006516,2980000006517,97100,113100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0024,DG XM WOOD 650G X12,NCC05,"Dầu gội, sữa tắm",Chai,12,8.72,2990000006523,2980000006524,107900,121200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0025,DG XM FIRE 650Gx12,NCC05,"Dầu gội, sữa tắm",Chai,24,17.15,2990000006530,2980000006531,96100,112200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0026,DG LUXURY 650G V25x12,NCC05,"Dầu gội, sữa tắm",Chai,12,8.72,2990000006547,2980000006548,120500,134900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0027,DG MOTION 650 V25x12,NCC05,"Dầu gội, sữa tắm",Chai,12,4.19,2990000006554,2980000006555,153900,182000,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach vat_pct
+NCC05-0028,TG 2IN1 XMEN INTENSE 650G x12,NCC05,"Dầu gội, sữa tắm",Chai,12,8.72,2990000006561,2980000006562,99900,112300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0029,DAU GOI XMEN WOOD 650G x12c,NCC05,"Dầu gội, sữa tắm",Chai,12,8.72,2990000006578,2980000006579,112200,130400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0030,XMB DG INTENSE 650G V26,NCC05,"Dầu gội, sữa tắm",Chai,24,17.15,2990000006585,2980000006586,116100,131100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0031,XBM DG LUXURY 650G V26,NCC05,"Dầu gội, sữa tắm",Chai,24,17.15,2990000006592,2980000006593,115900,133100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0032,SUA TAM XMEN FOR BOSS INTENSE 380g x 12 chai,NCC05,Cà phê,Chai,12,5.22,2990000006608,2980000006609,25900,29900,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0033,SUA TAM XMEN FIRE THOM LAU S.SAU 380g x 12chai,NCC05,"Dầu gội, sữa tắm",Chai,12,5.22,2990000006615,2980000006616,58800,66700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0034,SUA TAM XMEN WOOD THOM LAU S.SAU 380g x 12chai,NCC05,"Dầu gội, sữa tắm",Chai,12,5.22,2990000006622,2980000006623,56200,66700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0035,DG XMEN FIRE 12H THOM LAU SACH SAU 380G x 12 chai,NCC05,"Dầu gội, sữa tắm",Chai,12,5.22,2990000006639,2980000006630,66200,77500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0036,DAU GOI XMEN BOSS INTENSE KERATIN 380G x 12,NCC05,Cà phê,Chai,12,5.22,2990000006646,2980000006647,24100,27500,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0037,DG PROHAIR NGUA RAY RUNG 350Gx24,NCC05,"Dầu gội, sữa tắm",Chai,24,9.37,2990000006653,2980000006654,54700,64100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0038,DG PROHAIR SACH GAU 350GX24,NCC05,"Dầu gội, sữa tắm",Chai,24,9.37,2990000006660,2980000006661,58200,68000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0039,DG PROHAIR SGAU 350G TĂNG RO INTE 50MLx24b/thung,NCC05,"Dầu gội, sữa tắm",Bộ,24,9.37,2990000006677,2980000006678,61600,68900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0040,DG PROHAIR NNGAYRUNG 350G TANG RO INTEN50MLx 24b/thung,NCC05,"Dầu gội, sữa tắm",Bộ,24,9.37,2990000006684,2980000006685,57700,67400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0041,DG XM FIRE 380G,NCC05,"Dầu gội, sữa tắm",Chai,24,10.15,2990000006691,2980000006692,62400,71900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0042,DG XM WOOD 380Gx12,NCC05,"Dầu gội, sữa tắm",Chai,24,10.15,2990000006707,2980000006708,64000,72500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0043,XMEN DAU GOI FIRE 380G V26,NCC05,"Dầu gội, sữa tắm",Chai,24,10.15,2990000006714,2980000006715,67100,75700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0044,SUA TAM XMEN FOR BOSS INTENSE 180g x 24 chai,NCC05,Cà phê,Chai,24,4.97,2990000006721,2980000006722,11100,12500,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0045,XMEN DG WOOD SACH GAU 150G,NCC05,"Dầu gội, sữa tắm",Chai,48,8.08,2990000006738,2980000006739,23700,27900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0046,DG XMEN INTENSE 180G x24,NCC05,"Dầu gội, sữa tắm",Chai,24,4.97,2990000006745,2980000006746,32800,37400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0047,PURITE DAY ST PURITE HOA ANH DAO 6G,NCC05,"Dầu gội, sữa tắm",Dây,48,0.61,2990000006752,2980000006753,1700,2000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0048,OLIV DAY DG PHUC HOI HU TON 6G 12+2 x 100,NCC05,"Dầu gội, sữa tắm",Dây,100,0.95,2990000006769,2980000006760,1700,2000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0049,DAY DAU GOI NUOC HOA AMAZON HUNT 5G 14 goi x 90 day/ thung,NCC05,"Dầu gội, sữa tắm",Dây,90,0.79,2990000006776,2980000006777,1800,2000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0050,ST HOA HONG 6G 10K2 V25 x100,NCC05,"Dầu gội, sữa tắm",Dây,100,0.95,2990000006783,2980000006784,1700,2000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0051,ST ANH DAO 6G 10KM2 V25 X100,NCC05,"Dầu gội, sữa tắm",Dây,100,0.95,2990000006790,2980000006791,1700,2000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0052,XMEN DAY DAU GOI FIRE 5G 12 GOI,NCC05,"Dầu gội, sữa tắm",Dây,48,0.56,2990000006806,2980000006807,1700,2000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0053,XMEN DAY DAU GOI WOOD 5G 12 TANG 2 2026,NCC05,"Dầu gội, sữa tắm",Dây,48,0.56,2990000006813,2980000006814,1800,2000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0054,DAU GOI XA OLIV 2IN1 CHAC KHOE BONG BENH 6G 10KM2 x 100 day,NCC05,"Dầu gội, sữa tắm",Dây,100,0.95,2990000006820,2980000006821,1700,2000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0055,DAU GOI XA OLIV 2IN1 NGAN NGUA RAY RUNG 6G 10 KM2 x 100 DAY,NCC05,"Dầu gội, sữa tắm",Dây,100,0.95,2990000006837,2980000006838,1800,2000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0056,OLIV DG CK BONG BENH 1L x12,NCC05,"Dầu gội, sữa tắm",Chai,12,13.65,2990000006844,2980000006845,170400,189700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0057,OLIV DAU XA CK NGAN GAY RUNG 250ML x 24,NCC05,"Dầu gội, sữa tắm",Chai,24,6.97,2990000006851,2980000006852,37400,43100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0058,OLIV DT 3X DUONGAM 650KM DG250ML x12,NCC05,"Dầu gội, sữa tắm",Bộ,12,3.64,2990000006868,2980000006869,38300,44600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0059,OLIV DAU TAM SENSITIVECARE CHO DA N CAM 60ML,NCC05,"Dầu gội, sữa tắm",Chai,48,3.5,2990000006875,2980000006876,10900,12500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0060,OLIV DAU TAM BRIGHTENING SANG DA 60ML,NCC05,"Dầu gội, sữa tắm",Chai,48,3.5,2990000006882,2980000006883,10400,11800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0061,OLIV DX NGĂN NGUA RUNG TOC 650MLx12c/thung,NCC05,"Dầu gội, sữa tắm",Chai,12,8.98,2990000006899,2980000006890,98200,113500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0062,OLIV DG CKBONGBENH 1000MLx12,NCC05,"Dầu gội, sữa tắm",Chai,12,13.65,2990000006905,2980000006906,176500,198000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0063,OLIV DT BRIGHTENING SANG DA 1000ML x12,NCC05,"Dầu gội, sữa tắm",Chai,12,13.65,2990000006912,2980000006913,176000,205100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0064,XMEN DAY DG WOOD SACH GAU 5G 12 GOI,NCC05,"Dầu gội, sữa tắm",Dây,48,0.56,2990000006929,2980000006920,1700,2000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0065,XMEN DAY DAU GOI WOOD 5G 12 GOI,NCC05,"Dầu gội, sữa tắm",Dây,48,0.56,2990000006936,2980000006937,1700,2000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0066,XMB DG INTENSE 5G 12 GOI V26,NCC05,"Dầu gội, sữa tắm",Dây,48,0.56,2990000006943,2980000006944,1800,2000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0067,OLIV ST DUONG AM MEM MIN 1Lx12,NCC05,"Dầu gội, sữa tắm",Chai,24,8.08,2990000006950,2980000006951,148400,172900,8,36,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0068,LKM BOSS MOTION 48H 50ml x 24,NCC05,Cà phê,Chai,24,1.63,2990000006967,2980000006968,3200,3800,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0069,LKM XMEN BOSS LUXURY 48H 50ml x 24,NCC05,Cà phê,Chai,24,1.63,2990000006974,2980000006975,2900,3400,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0070,LKM BOSS INTENSE 48H 50ml x 24,NCC05,Cà phê,Chai,24,1.63,2990000006981,2980000006982,3000,3500,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0071,LKM BOSS LEGEND 48H 50ml x 24chai,NCC05,Cà phê,Chai,24,1.63,2990000006998,2980000006999,2900,3400,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0072,LKM XMEN INTENSE 25ml x 24C,NCC05,"Khử mùi, tạo kiểu tóc",Chai,24,0.97,2990000007001,2980000007002,70000,78200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0073,LKM XMEN WOOD 25ml x 24C,NCC05,"Khử mùi, tạo kiểu tóc",Chai,24,0.97,2990000007018,2980000007019,69600,79500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0074,LKM XMEN WOOD NEW 50ML x 24,NCC05,"Khử mùi, tạo kiểu tóc",Chai,24,1.63,2990000007025,2980000007026,77700,92000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0075,LKM XMEN FIRE 25ml x 24C,NCC05,"Khử mùi, tạo kiểu tóc",Chai,24,0.97,2990000007032,2980000007033,80900,93500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0076,LKM PURITE HOA ANH DAO 50ML x 24,NCC05,"Khử mùi, tạo kiểu tóc",Chai,24,1.63,2990000007049,2980000007040,68100,77200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0077,PURITE LKM DSANG HOA MAU DON 50MLX24,NCC05,"Khử mùi, tạo kiểu tóc",Chai,48,2.97,2990000007056,2980000007057,79600,89800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0078,PURITE LKM DSANG H N HOA CC HOA ANH DAO 25ML x 24 chai,NCC05,"Khử mùi, tạo kiểu tóc",Chai,24,0.97,2990000007063,2980000007064,79100,91200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0079,LKM XM AMAZON HUNT 50ML LM 10ML,NCC05,"Khử mùi, tạo kiểu tóc",Chai,48,2.97,2990000007070,2980000007071,66100,76800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0080,LKM XM ULTRA SPORT 50ML X24c,NCC05,"Khử mùi, tạo kiểu tóc",Chai,24,1.63,2990000007087,2980000007088,75100,85000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0081,LKM XM INVISIBLE FRESH 50MLx 24c,NCC05,"Khử mùi, tạo kiểu tóc",Chai,24,1.63,2990000007094,2980000007095,75800,86400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0082,LKM PURITE MAU DON 50ML UPFILL 20MLx24,NCC05,"Khử mùi, tạo kiểu tóc",Bộ,48,2.97,2990000007100,2980000007101,71300,80000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0083,LKM PURITE ANH DAO 50ML UPFILL 20ML x24,NCC05,"Khử mùi, tạo kiểu tóc",Bộ,24,1.63,2990000007117,2980000007118,69300,77600,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0084,LKM PURITE HONG 50ML UPFILL 20ML X24,NCC05,"Khử mùi, tạo kiểu tóc",Bộ,24,1.63,2990000007124,2980000007125,69300,79700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0085,XIT XMEN FOR BOSS INTENSE 150ml X 24chai,NCC05,Cà phê,Chai,24,4.3,2990000007131,2980000007132,10800,12000,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0086,XIT XMEN FOR BOSS LUXURY 150ml X 24chai,NCC05,Cà phê,Chai,24,4.3,2990000007148,2980000007149,9900,11700,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0087,XIT XMEN FOR BOSS MOTION 150ml X 24chai,NCC05,Cà phê,Chai,24,4.3,2990000007155,2980000007156,9600,11100,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0088,XIT XMEN FOR BOSS LEGEND 150ml x 24,NCC05,Cà phê,Chai,24,4.3,2990000007162,2980000007163,10300,12100,8,12,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0089,PURITE XKM HOA ANH DAO 140ML X24,NCC05,"Khử mùi, tạo kiểu tóc",Chai,24,4.04,2990000007179,2980000007170,77100,86400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0090,Purite XKM DSANG H N HOA CC H HONG 140ML,NCC05,"Khử mùi, tạo kiểu tóc",Chai,48,7.78,2990000007186,2980000007187,77600,86700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0091,PURITE XKM HOA MAU ĐƠN 140ML x24,NCC05,"Khử mùi, tạo kiểu tóc",Chai,24,4.04,2990000007193,2980000007194,83500,93200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0092,XMEN 3IN1 TAM GOI SACH GAU EVEREST COFFEE 610G x 12 CHAI/THUNG,NCC05,"Khử mùi, tạo kiểu tóc",Chai,12,8.21,2990000007209,2980000007200,76200,87800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0093,Gel X-Men Cung toc 150gx24,NCC05,"Khử mùi, tạo kiểu tóc",Tuýp,48,8.08,2990000007216,2980000007217,70400,82300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0094,XMEN GEL VUOT TOC MAXHOLD 150G x24,NCC05,"Khử mùi, tạo kiểu tóc",Tuýp,24,4.19,2990000007223,2980000007224,77500,91900,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0095,XMEN SVT SALON SOLUTION CLAY WAX 65G x 36 HU,NCC05,"Khử mùi, tạo kiểu tóc",Hũ,36,2.83,2990000007230,2980000007231,74700,83200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0096,SAP XMEN SVT SALON SOLUTIONS HARD WAX 65G x 36 HU,NCC05,"Khử mùi, tạo kiểu tóc",Hũ,36,2.83,2990000007247,2980000007248,76500,90400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0097,XMB GEL NATURAL LOOK 150G X 24,NCC05,"Khử mùi, tạo kiểu tóc",Hũ,24,4.19,2990000007254,2980000007255,75400,85000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0098,SKM XMEN LEGEND DEO 80Gx12,NCC05,"Khử mùi, tạo kiểu tóc",Chai,48,4.45,2990000007261,2980000007262,76700,85300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0099,XBC XMEN INTENSE 75G x 90,NCC05,"Dầu gội, sữa tắm",Cục,90,7.59,2990000007278,2980000007279,13200,15100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0100,XB XMEN FIRE SACH KHUAN 90G x 80,NCC05,"Dầu gội, sữa tắm",Cục,80,8.08,2990000007285,2980000007286,14100,16100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0101,XBC XMEN WOOD 90G x 80,NCC05,"Dầu gội, sữa tắm",Cục,80,8.08,2990000007292,2980000007293,13400,15700,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0102,XMEN SRM DETOX 100G x 24 tuyp,NCC05,Chăm sóc da,Tuýp,24,2.89,2990000007308,2980000007309,84600,94100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0103,SKM XMEN Luxury Trang AnTi-Deo 70Gx12,NCC05,"Khử mùi, tạo kiểu tóc",Chai,48,3.93,2990000007315,2980000007316,77600,88100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0104,SKM XMEN INTENSE TRANG ANTI-DEO 70G x 12,NCC05,"Khử mùi, tạo kiểu tóc",Chai,12,1.21,2990000007322,2980000007323,67800,79200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0105,XMB COMBO 3 EDP 9MLx7bộ/thùng,NCC05,"Khử mùi, tạo kiểu tóc",Bộ,48,0.78,2990000007339,2980000007330,79900,90300,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0106,ST PURITE HOA ANH DAO1100MLx12chai/thùng,NCC05,"Dầu gội, sữa tắm",Chai,12,14.98,2990000007346,2980000007347,182200,205100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0107,PURITE ST HOA ANH DAO 850MLx12,NCC05,"Dầu gội, sữa tắm",Chai,24,22.99,2990000007353,2980000007354,137700,162000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0108,ST PURITE HOA ANH DAO 250ML x24,NCC05,"Dầu gội, sữa tắm",Chai,24,6.97,2990000007360,2980000007361,37800,43000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0109,ST PURITE ANHDAO 500MLx12 v25,NCC05,"Dầu gội, sữa tắm",Chai,24,13.65,2990000007377,2980000007378,87300,97100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0110,ST PURITE ANH DAO 850ML UPFILL 250MLx12c,NCC05,"Dầu gội, sữa tắm",Chai,12,11.65,2990000007384,2980000007385,128900,145800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0111,PURITE ST HOA HONG 850ML UPFILL 250ML x12b/thung,NCC05,"Dầu gội, sữa tắm",Chai,24,22.99,2990000007391,2980000007392,142800,168400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0112,XMEN SUA RUA MAT BRIGHTENING 100G V26,NCC05,Chăm sóc da,Chai,48,5.48,2990000007407,2980000007408,84200,99200,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0113,XMEN SUA RUA MAT ANTI ACNE 100G V26,NCC05,Chăm sóc da,Chai,48,5.48,2990000007414,2980000007415,78200,88400,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0114,OLIV DAU GOI THAO DUOC SACH GAU 630ML,NCC05,"Dầu gội, sữa tắm",Chai,24,17.12,2990000007421,2980000007422,94300,111000,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0115,OLIV DAU GOI THAO DUOC NNRT 630ML,NCC05,"Dầu gội, sữa tắm",Chai,24,17.12,2990000007438,2980000007439,98200,113100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0116,OLIV DAU GOI THAO DUOC SACH GAU 60ML x34CHAI,NCC05,"Dầu gội, sữa tắm",Chai,34,2.57,2990000007445,2980000007446,11100,12500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0117,OLIV DAU GOI THAO DUOC NNRT 60ML x34CHAI (SAMPLING),NCC05,"Dầu gội, sữa tắm",Chai,34,2.57,2990000007452,2980000007453,10300,11800,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach vat_pct
+NCC05-0118,OLIV DAU GOI THAO DUOC SACH GAU 220ML,NCC05,"Dầu gội, sữa tắm",Chai,48,12.05,2990000007469,2980000007460,36700,43500,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC05-0119,OLIV DAU GOI THAO DUOC NNRT 220ML,NCC05,"Dầu gội, sữa tắm",Chai,48,12.05,2990000007476,2980000007477,34300,38100,8,36,gia_ban gia_nhap han_dung_thang kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0001,PIN SAC ENERGIZER AA 2000MAH NH15 PP RP2,NCC06,Pin,Vĩ,12,0.82,2990000007483,2980000007484,23300,25900,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0002,PIN SAC ENERGIZER AA 2300MAH NH15ERP2,NCC06,Pin,Vĩ,12,0.82,2990000007490,2980000007491,24900,28500,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0003,PIN SAC ENERGIZER POWERPLUS AAA700MAHBP2,NCC06,Pin,Vĩ,12,0.82,2990000007506,2980000007507,21400,25300,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0004,PIN SAC ENERGIZER AAA 800MAH NH12ERP2,NCC06,Pin,Vĩ,12,0.82,2990000007513,2980000007514,23200,25900,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0005,MAY SAC PIN ENERGIZER CHVCM4MAXI 4PINSAC (2000MAH) (09498) (VAT8%),NCC06,Pin,Cái,12,0.82,2990000007520,2980000007521,21600,25500,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0006,MAY SAC PIN CHVC5(4PIN SAC 1350),NCC06,Pin,Cái,12,0.82,2990000007537,2980000007538,23300,26500,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0007,PIN ENERGIZER PHOTO LITHIUM 123 BP1,NCC06,Pin,Vĩ,12,0.82,2990000007544,2980000007545,23100,27100,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0008,PIN ENERGIZER A76 TS2X5 (53997) (1 Vĩ 10 viên),NCC06,Pin,Vĩ,5,0.52,2990000007551,2980000007552,25500,28500,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach vat_pct
+NCC06-0009,PIN ENERGIZER MAX AAA E92 BP2+1,NCC06,Pin,Vĩ,12,0.82,2990000007568,2980000007569,24800,27600,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0010,PIN ENERGIZER LITHIUM CR2025 TS1x5,NCC06,Pin,Vĩ,5,0.52,2990000007575,2980000007576,26700,30700,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach vat_pct
+NCC06-0011,PIN ENERGIZER LITHIUM CR2032 TS1x5 (53998) (Vĩ 5),NCC06,Pin,Vĩ,5,0.52,2990000007582,2980000007583,27100,30500,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach vat_pct
+NCC06-0012,PIN ENERGIZER MAX AAA E92 BP2,NCC06,Pin,Vĩ,12,0.82,2990000007599,2980000007590,26200,30300,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0013,PIN ENERGIZER MAX E92 BP4 AAA,NCC06,Pin,Vĩ,12,0.82,2990000007605,2980000007606,22100,25400,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0014,PIN ENERGIZER LITHIUM AA L91 BP2,NCC06,Pin,Vĩ,12,0.82,2990000007612,2980000007613,22900,25700,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0015,PIN ENERGIZER MAX C E93 BP2,NCC06,Pin,Vĩ,12,0.82,2990000007629,2980000007620,23300,27500,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0016,PIN ENERGIZER MAX D E95 BP2,NCC06,Pin,Vĩ,12,0.82,2990000007636,2980000007637,22400,25700,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0017,PIN ENERGIZER MAX 9V 522 BP1,NCC06,Pin,Cái,12,0.82,2990000007643,2980000007644,22900,27100,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0018,PIN ENERGIZER SPECIALTY 2032 BP1,NCC06,Pin,Vĩ,12,0.82,2990000007650,2980000007651,21600,25400,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0019,PIN ENERGIZER A23 BP1,NCC06,Pin,Vĩ,12,0.82,2990000007667,2980000007668,22800,26400,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0020,PIN SAC VUONG 9V ENERGIZER NH22 BP1,NCC06,Pin,Cái,12,0.82,2990000007674,2980000007675,25800,29500,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0021,PIN ENERGIZER A27 BP1,NCC06,Pin,Vĩ,12,0.82,2990000007681,2980000007682,24600,28600,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0022,PIN ENERGIZER ALKALINE POWER AA BP2 (E91),NCC06,Pin,Vĩ,12,0.82,2990000007698,2980000007699,22600,26700,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0023,PIN ENERGIZER AAAA E96 BP2,NCC06,Pin,Vĩ,12,0.82,2990000007704,2980000007705,23200,26900,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0024,PIN ENERGIZER SPECIALTY 2025 BP1,NCC06,Pin,Vĩ,12,0.82,2990000007711,2980000007712,23200,27000,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0025,PIN ENERGIZER MAX AAA E92 BP4+2,NCC06,Pin,Vĩ,12,0.82,2990000007728,2980000007729,22800,25600,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0026,PIN ENERGIZER MAX AAA E92 BP8+4,NCC06,Pin,Vĩ,12,0.82,2990000007735,2980000007736,24900,29400,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0027,PIN ENERGIZER MAX AA E91 BP2,NCC06,Pin,Vĩ,12,0.82,2990000007742,2980000007743,26300,29300,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0028,PIN ENERGIZER MAX AA E91 BP4,NCC06,Pin,Vĩ,12,0.82,2990000007759,2980000007750,21700,25500,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0029,PIN ENERGIZER MAX AA E91 BP2+1,NCC06,Pin,Vĩ,12,0.82,2990000007766,2980000007767,26200,30100,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0030,PIN ENERGIZER MAX AA E91 BP4+2,NCC06,Pin,Vĩ,12,0.82,2990000007773,2980000007774,22600,25600,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0031,PIN ENERGIZER MAX AA E91 BP8+4,NCC06,Pin,Vĩ,12,0.82,2990000007780,2980000007781,26100,30100,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0032,PIN EVEREADY HEAVY DUTY AA 1015 SW4 (33583) (Vĩ 4 viên),NCC06,Pin,Vĩ,12,0.82,2990000007797,2980000007798,25900,30600,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0033,PIN EVEREADY HEAVY DUTY D 1050 SW2 (28873) (1vĩ 2 viên),NCC06,Pin,Vĩ,12,0.82,2990000007803,2980000007804,26300,29500,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0034,PIN EVEREADY SHD AAA 1212 BP4+2,NCC06,Pin,Vĩ,12,0.82,2990000007810,2980000007811,23300,26500,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0035,PIN EVEREADY HEAVY DUTY AAA 1012 SW4,NCC06,Pin,Vĩ,12,0.82,2990000007827,2980000007828,22000,25600,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0036,PIN EVEREADY SUPER HEAVY DUTY AA 1215 SW2,NCC06,Pin,Vĩ,12,0.82,2990000007834,2980000007835,23900,27300,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0037,PIN EVEREADY SUPER HEAVY DUTY AAA 1212 SW2,NCC06,Pin,Vĩ,12,0.82,2990000007841,2980000007842,24500,28300,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0038,PIN EVEREADY SUPER HEAVY DUTY 1250 BP2 D,NCC06,Pin,Vĩ,12,0.82,2990000007858,2980000007859,25100,28300,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0039,PIN EVEREADY HEAVY DUTY AA 1015 BP4,NCC06,Pin,Vĩ,12,0.82,2990000007865,2980000007866,23000,27000,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0040,PIN EVEREADY SHD AA 1215BP4+2,NCC06,Pin,Vĩ,12,0.82,2990000007872,2980000007873,23100,27400,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0041,EVEREADY SUPER HEAVY DUTY 1222 SW1 9V,NCC06,Pin,Cái,12,0.82,2990000007889,2980000007880,27100,30300,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0042,PIN EVEREADY HEAVY DUTY AAA 1012 BP4,NCC06,Pin,Vĩ,12,0.82,2990000007896,2980000007897,22400,26000,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0043,PIN EVEREADY HEAVY DUTY 1015 AA BP2,NCC06,Pin,Vĩ,12,0.82,2990000007902,2980000007903,22500,26100,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0044,PIN EVEREADY HEAVY DUTY 1012 AAA BP2,NCC06,Pin,Vĩ,12,0.82,2990000007919,2980000007910,22500,26100,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0045,PIN EVEREADY HEAVY DUTY 1015 AA SW2 (248600) (1vĩ 2 viên),NCC06,Pin,Vĩ,12,0.82,2990000007926,2980000007927,24700,29200,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0046,PIN EVEREADY HEAVY DUTY 1012 AAA SW2 (248700) (1vĩ 2 viên),NCC06,Pin,Vĩ,12,0.82,2990000007933,2980000007934,23900,28200,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0047,PIN EVEREADY SUPER HEAVY DUTY 1215 AA BP2,NCC06,Pin,Vĩ,12,0.82,2990000007940,2980000007941,25600,28800,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
+NCC06-0048,PIN EVR SUPER HEAVY DUTY 1212 AAA BP2,NCC06,Pin,Vĩ,12,0.82,2990000007957,2980000007958,26700,29700,8,60,gia_ban gia_nhap han_dung_thang kg kg_moi_thung ma_vach so_dvt_moi_thung vat_pct
