@@ -1,0 +1,537 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pl_delivery_route
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20260926\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-16 08:19+0000\n"
+"PO-Revision-Date: 2026-11-16 08:19+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid "A confirmed delivery plan cannot be deleted."
+msgstr "Không xóa được kế hoạch đã xác nhận."
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid "A confirmed delivery plan cannot be reset to draft."
+msgstr "Kế hoạch đã xác nhận, không về nháp được."
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_vehicle__active
+msgid "Active"
+msgstr "Đang hoạt động"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__address
+msgid "Address"
+msgstr "Địa chỉ"
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_vehicle_view_form
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_vehicle_view_search
+msgid "Archived"
+msgstr "Đã lưu trữ"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__total_weight
+msgid "Assigned Weight (kg)"
+msgstr "Tổng tải đã xếp (kg)"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__capacity_kg
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_vehicle__capacity_kg
+msgid "Capacity (kg)"
+msgstr "Tải trọng (kg)"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_vehicle__code
+msgid "Code"
+msgstr "Mã xe"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__company_id
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_vehicle__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_plan_view_form
+msgid "Compute Routes"
+msgstr "Lập tuyến"
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid "Compute the routes before confirming the plan."
+msgstr "Phải lập tuyến trước khi xác nhận."
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_plan_view_form
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields.selection,name:pl_delivery_route.selection__pl_delivery_plan__state__confirmed
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_plan_view_search
+msgid "Confirmed"
+msgstr "Đã xác nhận"
+
+#. module: pl_delivery_route
+#: model_terms:ir.actions.act_window,help:pl_delivery_route.pl_delivery_plan_action
+msgid "Create a delivery plan for a day"
+msgstr "Tạo kế hoạch giao hàng cho một ngày"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__create_uid
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__create_uid
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__create_uid
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_unassigned__create_uid
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_vehicle__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__create_date
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__create_date
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__create_date
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_unassigned__create_date
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_vehicle__create_date
+msgid "Created on"
+msgstr "Được tạo vào"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__partner_id
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_unassigned__partner_id
+msgid "Customer"
+msgstr "Khách hàng"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__date
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__date
+msgid "Delivery Date"
+msgstr "Ngày giao"
+
+#. module: pl_delivery_route
+#: model:ir.model,name:pl_delivery_route.model_pl_delivery_plan
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__plan_id
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__plan_id
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_unassigned__plan_id
+msgid "Delivery Plan"
+msgstr "Kế hoạch giao hàng"
+
+#. module: pl_delivery_route
+#: model:ir.ui.menu,name:pl_delivery_route.menu_pl_delivery_root
+msgid "Delivery Planning"
+msgstr "Giao hàng"
+
+#. module: pl_delivery_route
+#: model:ir.actions.act_window,name:pl_delivery_route.pl_delivery_plan_action
+#: model:ir.ui.menu,name:pl_delivery_route.menu_pl_delivery_plan
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_plan_view_form
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_plan_view_list
+msgid "Delivery Plans"
+msgstr "Kế hoạch giao hàng"
+
+#. module: pl_delivery_route
+#: model:ir.model,name:pl_delivery_route.model_pl_delivery_stop
+msgid "Delivery Stop"
+msgstr "Điểm dừng giao hàng"
+
+#. module: pl_delivery_route
+#: model:ir.model,name:pl_delivery_route.model_pl_delivery_trip
+#: model:ir.model.fields,field_description:pl_delivery_route.field_stock_picking__pl_trip_id
+msgid "Delivery Trip"
+msgstr "Chuyến giao hàng"
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_trip_view_form
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_trip_view_list
+msgid "Delivery Trips"
+msgstr "Chuyến giao hàng"
+
+#. module: pl_delivery_route
+#: model:ir.model,name:pl_delivery_route.model_pl_vehicle
+msgid "Delivery Vehicle"
+msgstr "Xe giao hàng"
+
+#. module: pl_delivery_route
+#: model:ir.actions.act_window,name:pl_delivery_route.pl_vehicle_action
+#: model:ir.ui.menu,name:pl_delivery_route.menu_pl_vehicle
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_vehicle_view_form
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_vehicle_view_list
+msgid "Delivery Vehicles"
+msgstr "Xe giao hàng"
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid "Delivery plan %s is confirmed; routes cannot be recomputed."
+msgstr "Kế hoạch %s đã xác nhận, không lập lại tuyến được."
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,help:pl_delivery_route.field_pl_delivery_trip__maps_url
+msgid ""
+"Directions link of the first segment; long trips have more segments below."
+msgstr "Link chỉ đường của đoạn đầu tiên; chuyến dài có thêm các đoạn bên dưới."
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_plan_view_form
+msgid "Discard the current routes and compute them again?"
+msgstr "Xóa kết quả hiện tại và lập lại tuyến?"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__display_name
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__display_name
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__display_name
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_unassigned__display_name
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_vehicle__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,help:pl_delivery_route.field_pl_delivery_trip__return_km
+msgid "Distance from the last stop back to the warehouse."
+msgstr "Quãng đường từ điểm cuối về kho."
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,help:pl_delivery_route.field_pl_delivery_stop__leg_km
+msgid "Distance from the previous stop (or the warehouse)."
+msgstr "Quãng đường từ điểm trước (hoặc kho) đến điểm này."
+
+#. module: pl_delivery_route
+#: model:ir.model.fields.selection,name:pl_delivery_route.selection__pl_delivery_plan__state__draft
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_plan_view_search
+msgid "Draft"
+msgstr "Nháp"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__maps_url
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_plan_view_form
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_trip_view_form
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_trip_view_list
+msgid "Google Maps"
+msgstr "Google Maps"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__maps_links
+msgid "Google Maps Links"
+msgstr "Link Google Maps"
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_plan_view_search
+msgid "Group By"
+msgstr "Nhóm theo"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields.selection,name:pl_delivery_route.selection__pl_delivery_unassigned__reason__overweight
+msgid "Heavier than the largest vehicle"
+msgstr "Vượt tải trọng xe lớn nhất"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_vehicle__warehouse_id
+msgid "Home Warehouse"
+msgstr "Kho xuất phát"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__id
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__id
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__id
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_unassigned__id
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_vehicle__id
+msgid "ID"
+msgstr "ID"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__write_uid
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__write_uid
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__write_uid
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_unassigned__write_uid
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_vehicle__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__write_date
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__write_date
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__write_date
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_unassigned__write_date
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_vehicle__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__latitude
+msgid "Latitude"
+msgstr "Vĩ độ"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__leg_km
+msgid "Leg km"
+msgstr "Km chặng"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__load_pct
+msgid "Load (%)"
+msgstr "% tải trọng"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__weight
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__weight
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_unassigned__weight
+msgid "Load (kg)"
+msgstr "Tải (kg)"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__longitude
+msgid "Longitude"
+msgstr "Kinh độ"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__maps_segment_count
+msgid "Map Segments"
+msgstr "Số đoạn Maps"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields.selection,name:pl_delivery_route.selection__pl_delivery_unassigned__reason__no_coordinates
+msgid "Missing coordinates"
+msgstr "Thiếu tọa độ"
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid "New"
+msgstr "Mới"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields.selection,name:pl_delivery_route.selection__pl_delivery_unassigned__reason__no_vehicle
+msgid "Not enough vehicles"
+msgstr "Không đủ xe"
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_trip_view_form
+msgid "Open Google Maps"
+msgstr "Mở Google Maps"
+
+#. module: pl_delivery_route
+#: model_terms:ir.actions.act_window,help:pl_delivery_route.pl_delivery_plan_action
+msgid ""
+"Pick the delivery date and warehouse, then click Compute Routes to assign "
+"the ready deliveries to vehicles."
+msgstr "Chọn ngày giao và kho, bấm Lập tuyến để xếp các phiếu xuất đang Ready lên xe."
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_unassigned__reason
+msgid "Reason"
+msgstr "Lý do"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__name
+msgid "Reference"
+msgstr "Số kế hoạch"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,help:pl_delivery_route.field_pl_delivery_unassigned__origin
+msgid "Reference of the document"
+msgstr "Số chứng từ"
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_plan_view_form
+msgid "Reset to Draft"
+msgstr "Về nháp"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__return_km
+msgid "Return km"
+msgstr "Km về kho"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__road_factor
+msgid "Road Factor"
+msgstr "Hệ số đường đi"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,help:pl_delivery_route.field_pl_delivery_plan__road_factor
+msgid "Road distance = straight-line (haversine) distance × this factor."
+msgstr "Quãng đường = khoảng cách chim bay (haversine) × hệ số này."
+
+#. module: pl_delivery_route
+#: model:ir.model.fields.selection,name:pl_delivery_route.selection__pl_delivery_plan__state__routed
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_plan_view_search
+msgid "Routed"
+msgstr "Đã lập tuyến"
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid "Segment %(no)s: %(start)s → %(end)s"
+msgstr "Đoạn %(no)s: %(start)s → %(end)s"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__sequence
+msgid "Sequence"
+msgstr "Thứ tự"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_unassigned__origin
+msgid "Source Document"
+msgstr "Chứng từ gốc"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__state
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__state
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_plan_view_search
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__stop_count
+msgid "Stop Count"
+msgstr "Số điểm"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_stock_picking__pl_stop_sequence
+msgid "Stop Sequence"
+msgstr "Thứ tự điểm dừng"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__stop_ids
+msgid "Stops"
+msgstr "Điểm dừng"
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid "The address of warehouse %s has no coordinates (latitude, longitude)."
+msgstr "Địa chỉ kho %s chưa có tọa độ (vĩ độ, kinh độ)."
+
+#. module: pl_delivery_route
+#: model:ir.model.constraint,message:pl_delivery_route.constraint_pl_vehicle_capacity_positive
+msgid "The capacity must be greater than 0."
+msgstr "Tải trọng phải lớn hơn 0."
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,help:pl_delivery_route.field_pl_vehicle__company_id
+msgid "The company is automatically set from your user preferences."
+msgstr "Công ty được tự động đặt theo thiết lập người dùng của bạn."
+
+#. module: pl_delivery_route
+#: model:ir.model.constraint,message:pl_delivery_route.constraint_pl_delivery_plan_road_factor_positive
+msgid "The road factor must be at least 1."
+msgstr "Hệ số đường đi phải từ 1 trở lên."
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid "The trip has no stops or the warehouse has no coordinates."
+msgstr "Chuyến chưa có điểm dừng hoặc kho chưa có tọa độ."
+
+#. module: pl_delivery_route
+#: model:ir.model.constraint,message:pl_delivery_route.constraint_pl_vehicle_code_uniq
+msgid "The vehicle code must be unique."
+msgstr "Mã xe đã tồn tại."
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid ""
+"These transfers already belong to another confirmed plan; compute the routes"
+" again: %s"
+msgstr "Các phiếu sau đã thuộc kế hoạch khác đã xác nhận, hãy lập tuyến lại: %s"
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_plan_view_form
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_trip_view_form
+msgid "Total"
+msgstr "Tổng"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__total_km
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__total_km
+msgid "Total km"
+msgstr "Tổng km"
+
+#. module: pl_delivery_route
+#: model:ir.model,name:pl_delivery_route.model_stock_picking
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_unassigned__picking_id
+msgid "Transfer"
+msgstr "Phiếu xuất"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__picking_ids
+msgid "Transfers"
+msgstr "Phiếu xuất"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__trip_id
+msgid "Trip"
+msgstr "Chuyến"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__trip_count
+msgid "Trip Count"
+msgstr "Số chuyến"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__trip_ids
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_plan_view_form
+msgid "Trips"
+msgstr "Chuyến"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__unassigned_count
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_plan_view_form
+msgid "Unassigned"
+msgstr "Chưa xếp"
+
+#. module: pl_delivery_route
+#: model:ir.model,name:pl_delivery_route.model_pl_delivery_unassigned
+msgid "Unassigned Delivery Transfer"
+msgstr "Phiếu xuất chưa xếp lên xe"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__unassigned_ids
+msgid "Unassigned Transfers"
+msgstr "Phiếu chưa xếp"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__vehicle_id
+msgid "Vehicle"
+msgstr "Xe"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_vehicle__name
+msgid "Vehicle Type"
+msgstr "Loại xe"
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__warehouse_id
+msgid "Warehouse"
+msgstr "Kho"
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid ""
+"Warehouse %s has no delivery vehicles (Inventory > Configuration > Delivery "
+"Vehicles)."
+msgstr "Kho %s chưa có xe giao hàng (Inventory > Configuration > Xe giao hàng)."
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid "stop %s"
+msgstr "điểm %s"
