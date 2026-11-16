@@ -556,6 +556,25 @@ def nap_don_ban(od, tk, don_ban, kh_ids, kho_id, sp):
     tk.them("Báo giá", len(moi), 0)
 
 
+def nap_xe(od, tk, xe):
+    """Xe giao hàng vào pl.vehicle khi module pl_delivery_route đã cài; chưa cài thì bỏ qua."""
+    if not od("ir.model", "search_count", [("model", "=", "pl.vehicle")]):
+        print(f"Bỏ qua xe.csv ({len(xe)} xe): chưa cài module pl_delivery_route")
+        return {}
+    print("Xe giao hàng")
+    ma_kho = sorted({r["ma_kho"] for r in xe})
+    kho = {w["code"]: w["id"] for w in od.search_read("stock.warehouse", [("code", "in", ma_kho)], ["code"])}
+    muc_tieu = {}
+    for r in xe:
+        if r["ma_kho"] not in kho:
+            tk.bao(f"xe.csv: {r['ma_xe']} thuộc kho {r['ma_kho']} không có trong Odoo, bỏ qua")
+            continue
+        muc_tieu[r["ma_xe"]] = {"code": r["ma_xe"], "name": r["loai_xe"], "capacity_kg": so(r["tai_trong_kg"]) or 0,
+                                "warehouse_id": kho[r["ma_kho"]], "active": True}
+    return dong_bo(od, tk, "Xe giao hàng", "pl.vehicle", muc_tieu, [("code", "in", list(muc_tieu))],
+                   lambda r: r["code"])
+
+
 def main():
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
@@ -594,7 +613,7 @@ def main():
     kh_ids = nap_khach_hang(od, tk, du_lieu["khach_hang"], han_tt, bang_gia_ids)
     if args.orders:
         nap_don_ban(od, tk, du_lieu["don_ban"], kh_ids, kho_id, sp)
-    print(f"Bỏ qua xe.csv ({len(du_lieu['xe'])} xe): chờ module giao hàng")
+    nap_xe(od, tk, du_lieu["xe"])
 
     print(f"\n{'Loại':<20} {'Tạo mới':>8} {'Cập nhật':>9}")
     for loai, (tao, sua) in tk.dem.items():
