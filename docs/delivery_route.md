@@ -30,24 +30,24 @@ docker compose run --rm odoo odoo -d pl_moc -i pl_delivery_route --stop-after-in
 python scripts/seed_import.py --db pl_moc
 ~~~
 
-Hoặc cài trên giao diện: Apps > Update Apps List, tìm *Phan Lam Delivery Route*. Chạy lại `seed_import.py` sau khi cài để nạp 4 xe trong `seed/demo/xe.csv` vào **Inventory > Configuration > Xe giao hàng**. Chưa cài module thì script bỏ qua `xe.csv` như trước.
+Hoặc cài trên giao diện: Apps > Update Apps List, tìm *Phan Lam Delivery Route*. Chạy lại `seed_import.py` sau khi cài để nạp 4 xe trong `seed/demo/xe.csv` vào **Inventory > Configuration > Delivery Vehicles**. Chưa cài module thì script bỏ qua `xe.csv` như trước.
 
 ## Dùng trên giao diện
 
 | Menu | Làm gì |
 | --- | --- |
-| Inventory > Configuration > Xe giao hàng | Mã xe, loại xe, tải trọng (kg), kho xuất phát. Lưu trữ (archive) xe nghỉ thì xe không được xếp chuyến |
-| Inventory > Giao hàng > Kế hoạch giao hàng | Tạo kế hoạch: chọn ngày giao, kho, hệ số đường đi (mặc định 1,3) |
+| Inventory > Configuration > Delivery Vehicles | Mã xe, loại xe, tải trọng (kg), kho xuất phát. Lưu trữ (archive) xe nghỉ thì xe không được xếp chuyến |
+| Inventory > Delivery Planning > Delivery Plans | Tạo kế hoạch: chọn ngày giao, kho, hệ số đường đi (mặc định 1,3) |
 
 Trên form kế hoạch:
 
-- **Lập tuyến**: lấy các phiếu xuất (loại *Delivery*) của kho, đang *Ready*, có *Scheduled Date* không sau ngày giao và chưa thuộc kế hoạch đã xác nhận nào; chạy thuật toán; ghi kết quả vào thẻ *Chuyến* và *Chưa xếp*. Bấm lại thì xóa kết quả cũ và tính lại.
-- **Xác nhận**: ghi chuyến và thứ tự điểm dừng vào từng phiếu xuất (thẻ *Additional Info* của phiếu, hoặc bật cột ở danh sách phiếu), rồi khóa kế hoạch. Phiếu đã thuộc kế hoạch đã xác nhận không được lấy vào kế hoạch khác.
-- **Về nháp**: khi đã lập tuyến nhưng chưa xác nhận; xóa kết quả để sửa ngày, kho hoặc hệ số.
+- **Compute Routes** (lập tuyến): lấy các phiếu xuất (loại *Delivery*) của kho, đang *Ready*, có *Scheduled Date* không sau ngày giao và chưa thuộc kế hoạch đã xác nhận nào; chạy thuật toán; ghi kết quả vào thẻ *Trips* và *Unassigned*. Bấm lại thì xóa kết quả cũ và tính lại.
+- **Confirm** (xác nhận): ghi chuyến và thứ tự điểm dừng vào từng phiếu xuất (thẻ *Additional Info* của phiếu, hoặc bật cột ở danh sách phiếu), rồi khóa kế hoạch. Phiếu đã thuộc kế hoạch đã xác nhận không được lấy vào kế hoạch khác.
+- **Reset to Draft** (về nháp): khi đã lập tuyến nhưng chưa xác nhận; xóa kết quả để sửa ngày, kho hoặc hệ số.
 
-Thẻ *Chuyến* có mỗi xe một dòng: số điểm, tải (kg), % tải trọng, tổng km và nút **Google Maps**. Bấm vào dòng để xem các điểm dừng theo thứ tự, km từng chặng, km về kho và tất cả link Maps của chuyến. Thẻ *Chưa xếp* liệt kê phiếu không lên xe được kèm lý do.
+Thẻ *Trips* có mỗi xe một dòng: số điểm, tải (kg), % tải trọng, tổng km và nút **Google Maps**. Bấm vào dòng để xem các điểm dừng theo thứ tự, km từng chặng, km về kho và tất cả link Maps của chuyến. Thẻ *Unassigned* liệt kê phiếu không lên xe được kèm lý do: *Heavier than the largest vehicle* (vượt tải trọng xe lớn nhất), *Not enough vehicles* (không đủ xe) hoặc *Missing coordinates* (thiếu tọa độ).
 
-Với bộ demo: các đơn được xác nhận ngày 29/10/2026 (ngày mốc), nên phiếu xuất có *Scheduled Date* là 29/10/2026. Tạo kế hoạch với ngày giao **29/10/2026** (hoặc sau đó) thì lấy được cả 81 phiếu. Database mới mà xác nhận đơn vào hôm nay thì phiếu mang ngày hôm nay, khi đó chọn ngày giao là hôm nay.
+Với bộ demo: các đơn được xác nhận ngày 29/10/2026 (ngày mốc), nên phiếu xuất có *Scheduled Date* là 29/10/2026. Tạo kế hoạch với ngày giao **29/10/2026** (hoặc sau đó) thì lấy được cả 81 phiếu. Số kế hoạch dạng `DP/2026/0001`. Database mới mà xác nhận đơn vào hôm nay thì phiếu mang ngày hôm nay, khi đó chọn ngày giao là hôm nay.
 
 ### Tải của phiếu
 
@@ -59,7 +59,7 @@ Link dạng [Maps URLs](https://developers.google.com/maps/documentation/urls/ge
 
 ## Thuật toán
 
-Mã ở `custom_addons/pl_delivery_route/services/vrp.py`, docstring giải thích từng bước. Tóm tắt:
+Mã ở `custom_addons/pl_delivery_route/services/vrp.py`, docstring giải thích từng bước (giao diện Odoo hiện lý do bằng tiếng Anh như ở trên). Tóm tắt:
 
 0. **Gộp theo khách**: mọi phiếu xuất của cùng một khách (cùng địa chỉ giao) thành một điểm giao, tải là tổng tải các phiếu.
 1. **Loại điểm không xếp được**: điểm thiếu tọa độ; điểm nặng hơn xe lớn nhất, lý do "vượt tải trọng xe lớn nhất".
@@ -113,4 +113,4 @@ Ngày 16/11/2026 trên macOS, Odoo 18.0-20260926, bản nhân bản của `pl_mo
 | XE03 | 2.500 | 35 | 2.479,7 | 99,2 | 21,5 | 4 |
 | XE04 | 2.500 | 29 | 2.254,1 | 90,2 | 16,5 | 3 |
 
-Tổng 5.939,3 kg, 48,3 km. Chưa xếp: `PL/OUT/00001` (`DB20261029-081`, 3.019,8 kg), vượt tải trọng xe lớn nhất. Link đoạn 2 của XE01 mở trên Google Maps ra đúng điểm 10 → 16 → kho theo thứ tự; Google tính đoạn đó 11,9 km theo đường thật.
+Tổng 5.939,3 kg, 48,3 km. Chưa xếp: `PL/OUT/00001` (`DB20261029-081`, 3.019,8 kg), *Heavier than the largest vehicle*. Link đoạn 2 của XE01 mở trên Google Maps ra đúng điểm 10 → 16 → kho theo thứ tự; Google tính đoạn đó 11,9 km theo đường thật.
