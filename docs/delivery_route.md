@@ -12,6 +12,9 @@ custom_addons/pl_delivery_route/
 ├── services/
 │   ├── vrp.py                  # thuật toán lập tuyến, Python thuần
 │   └── maps.py                 # link Google Maps, Python thuần
+├── i18n/
+│   ├── pl_delivery_route.pot   # mẫu: mọi chuỗi giao diện, Odoo xuất ra
+│   └── vi.po                   # bản dịch tiếng Việt
 ├── tests/                      # unit test chạy bằng Python thuần
 └── views/
 ~~~
@@ -56,6 +59,28 @@ Tải phiếu = tổng (số lượng × cân nặng sản phẩm) của các d�
 ### Google Maps
 
 Link dạng [Maps URLs](https://developers.google.com/maps/documentation/urls/get-started#directions-action) `https://www.google.com/maps/dir/?api=1&origin=...&destination=...&waypoints=...&travelmode=driving`, đi từ kho qua các điểm theo thứ tự rồi về kho, mỗi điểm ghi bằng tọa độ. Google cho tối đa 9 waypoint mỗi link (chỉ 3 khi mở trên trình duyệt điện thoại; mở bằng app Google Maps hoặc máy tính thì được 9). Chuyến có hơn 9 điểm thì chia thành nhiều đoạn liên tiếp, đoạn sau bắt đầu từ điểm cuối của đoạn trước, mỗi đoạn một link; ví dụ chuyến 20 điểm có 22 vị trí (kể cả kho đi và về) thành 3 đoạn: kho → điểm 10, điểm 10 → 20, điểm 20 → kho.
+
+## Ngôn ngữ giao diện
+
+Chữ trên giao diện viết bằng tiếng Anh trong code; bản dịch tiếng Việt nằm ở `i18n/vi.po`. Menu, nút, nhãn trường, trạng thái, lý do chưa xếp và thông báo lỗi đều đổi theo ngôn ngữ của người dùng. Dữ liệu nhập vào (tên xe, tên khách) giữ nguyên.
+
+| Ngôn ngữ | Menu |
+| --- | --- |
+| English | Inventory > Delivery Planning > Delivery Plans; Inventory > Configuration > Delivery Vehicles |
+| Tiếng Việt | Tồn kho > Giao hàng > Kế hoạch giao hàng; Tồn kho > Cấu hình > Xe giao hàng |
+
+**Đổi ngôn ngữ của một người dùng**: bấm avatar góc trên bên phải > *Preferences* (*Tùy chọn*) > *Language*, chọn *Vietnamese / Tiếng Việt* rồi lưu. Danh sách chưa có tiếng Việt thì thêm trước ở **Settings > General Settings > Languages > Add Languages**. Mỗi người dùng chọn ngôn ngữ riêng; database `pl_moc` đã có sẵn tiếng Việt.
+
+**Sửa một bản dịch**: sửa dòng `msgstr` trong `vi.po`, rồi nạp lại:
+
+~~~bash
+docker compose run --rm odoo odoo -d <database> -u pl_delivery_route --i18n-overwrite --stop-after-init
+docker compose restart odoo
+~~~
+
+Thiếu `--i18n-overwrite` thì Odoo giữ bản dịch cũ đã có trong database.
+
+**Thêm chuỗi mới trong code**: chuỗi trong Python phải bọc `_("...")`; chuỗi trong view XML và tên trường thì Odoo tự lấy. Sau khi cài code mới, xuất lại mẫu ở **Settings > Translations > Import / Export > Export Translation** (bật Developer Mode; chọn *New Language (Empty translation template)*, định dạng PO, module `pl_delivery_route`), lưu đè `i18n/pl_delivery_route.pot`, rồi thêm các mục `msgid` mới cùng `msgstr` tiếng Việt vào `vi.po`. Chuỗi chưa có bản dịch thì hiện tiếng Anh.
 
 ## Thuật toán
 
