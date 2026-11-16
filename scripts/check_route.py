@@ -177,7 +177,7 @@ def chay(od, ngay_moc, ds_so_don):
     so_081 = f"DB{ngay_moc:%Y%m%d}-081"
     dong_081 = [c for c in chua if chua_xep.get(c["picking_id"][0]) == so_081]
     kiem(dong_081, f"{so_081} không nằm trong danh sách chưa xếp")
-    kiem(dong_081[0]["reason"] == "vượt tải trọng xe lớn nhất", f"{so_081}: lý do {dong_081[0]['reason']}")
+    kiem(dong_081[0]["reason"] == "overweight", f"{so_081}: lý do {dong_081[0]['reason']}")
 
     goi(od, "pl.delivery.plan", "action_confirm", [plan_id])
     plan = od("pl.delivery.plan", "read", [plan_id], fields=["state"])[0]

@@ -1,7 +1,7 @@
 from datetime import datetime, time
 
 import pytz
-from markupsafe import Markup, escape
+from markupsafe import Markup
 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
@@ -10,32 +10,39 @@ from ..services import maps, vrp
 
 MUI_GIO_MAC_DINH = "Asia/Ho_Chi_Minh"
 
+# Lý do chưa xếp trả về từ vrp.py -> mã lưu trong Odoo.
+LY_DO = {
+    vrp.LY_DO_VUOT_TAI: "overweight",
+    vrp.LY_DO_THIEU_XE: "no_vehicle",
+    vrp.LY_DO_THIEU_TOA_DO: "no_coordinates",
+}
+
 
 class PlDeliveryPlan(models.Model):
     _name = "pl.delivery.plan"
-    _description = "Kế hoạch giao hàng"
+    _description = "Delivery Plan"
     _order = "date desc, id desc"
 
-    name = fields.Char("Số kế hoạch", required=True, readonly=True, copy=False, default=lambda self: _("Mới"))
-    date = fields.Date("Ngày giao", required=True, default=fields.Date.context_today)
-    warehouse_id = fields.Many2one("stock.warehouse", "Kho", required=True, check_company=True,
+    name = fields.Char("Reference", required=True, readonly=True, copy=False, default=lambda self: _("New"))
+    date = fields.Date("Delivery Date", required=True, default=fields.Date.context_today)
+    warehouse_id = fields.Many2one("stock.warehouse", "Warehouse", required=True, check_company=True,
                                    default=lambda self: self.env["stock.warehouse"].search(
                                        [("company_id", "=", self.env.company.id)], limit=1))
     company_id = fields.Many2one("res.company", required=True, default=lambda self: self.env.company)
-    state = fields.Selection([("draft", "Nháp"), ("routed", "Đã lập tuyến"), ("confirmed", "Đã xác nhận")],
-                             "Trạng thái", default="draft", required=True, readonly=True, copy=False)
-    road_factor = fields.Float("Hệ số đường đi", default=vrp.HE_SO_DUONG_MAC_DINH, digits=(4, 2),
-                               help="Quãng đường = khoảng cách chim bay (haversine) × hệ số này.")
-    trip_ids = fields.One2many("pl.delivery.trip", "plan_id", "Chuyến", readonly=True, copy=False)
-    unassigned_ids = fields.One2many("pl.delivery.unassigned", "plan_id", "Phiếu chưa xếp", readonly=True,
+    state = fields.Selection([("draft", "Draft"), ("routed", "Routed"), ("confirmed", "Confirmed")],
+                             "Status", default="draft", required=True, readonly=True, copy=False)
+    road_factor = fields.Float("Road Factor", default=vrp.HE_SO_DUONG_MAC_DINH, digits=(4, 2),
+                               help="Road distance = straight-line (haversine) distance × this factor.")
+    trip_ids = fields.One2many("pl.delivery.trip", "plan_id", "Trips", readonly=True, copy=False)
+    unassigned_ids = fields.One2many("pl.delivery.unassigned", "plan_id", "Unassigned Transfers", readonly=True,
                                      copy=False)
-    total_km = fields.Float("Tổng km", compute="_compute_totals", store=True, digits=(16, 1))
-    total_weight = fields.Float("Tổng tải đã xếp (kg)", compute="_compute_totals", store=True, digits=(16, 1))
-    trip_count = fields.Integer("Số chuyến", compute="_compute_totals", store=True)
-    unassigned_count = fields.Integer("Số phiếu chưa xếp", compute="_compute_unassigned_count", store=True)
+    total_km = fields.Float("Total km", compute="_compute_totals", store=True, digits=(16, 1))
+    total_weight = fields.Float("Assigned Weight (kg)", compute="_compute_totals", store=True, digits=(16, 1))
+    trip_count = fields.Integer("Trip Count", compute="_compute_totals", store=True)
+    unassigned_count = fields.Integer("Unassigned", compute="_compute_unassigned_count", store=True)
 
     _sql_constraints = [
-        ("road_factor_positive", "CHECK(road_factor >= 1)", "Hệ số đường đi phải từ 1 trở lên."),
+        ("road_factor_positive", "CHECK(road_factor >= 1)", "The road factor must be at least 1."),
     ]
 
     @api.depends("trip_ids.total_km", "trip_ids.weight")
@@ -53,13 +60,13 @@ class PlDeliveryPlan(models.Model):
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
-            if vals.get("name", _("Mới")) == _("Mới"):
-                vals["name"] = self.env["ir.sequence"].next_by_code("pl.delivery.plan") or _("Mới")
+            if vals.get("name", _("New")) == _("New"):
+                vals["name"] = self.env["ir.sequence"].next_by_code("pl.delivery.plan") or _("New")
         return super().create(vals_list)
 
     def unlink(self):
         if any(p.state == "confirmed" for p in self):
-            raise UserError(_("Không xóa được kế hoạch đã xác nhận."))
+            raise UserError(_("A confirmed delivery plan cannot be deleted."))
         return super().unlink()
 
     # ------------------------------------------------------------------ chọn phiếu
@@ -96,17 +103,18 @@ class PlDeliveryPlan(models.Model):
     # ------------------------------------------------------------------ nút
 
     def action_compute_routes(self):
-        """Nút Lập tuyến: xóa kết quả cũ, chọn phiếu, chạy vrp.lap_tuyen rồi ghi chuyến, điểm dừng, chưa xếp."""
+        """Nút Compute Routes: xóa kết quả cũ, chọn phiếu, chạy vrp.lap_tuyen rồi ghi chuyến, điểm dừng, chưa xếp."""
         for plan in self:
             if plan.state == "confirmed":
-                raise UserError(_("Kế hoạch %s đã xác nhận, không lập lại tuyến được.", plan.name))
+                raise UserError(_("Delivery plan %s is confirmed; routes cannot be recomputed.", plan.name))
             kho_lat, kho_lng = plan._toa_do(plan.warehouse_id.partner_id)
             if kho_lat is None:
-                raise UserError(_("Địa chỉ kho %s chưa có tọa độ (vĩ độ, kinh độ).", plan.warehouse_id.name))
+                raise UserError(_("The address of warehouse %s has no coordinates (latitude, longitude).",
+                                  plan.warehouse_id.name))
             xe = self.env["pl.vehicle"].search([("warehouse_id", "=", plan.warehouse_id.id)])
             if not xe:
-                raise UserError(_("Kho %s chưa có xe giao hàng (Inventory > Configuration > Xe giao hàng).",
-                                  plan.warehouse_id.name))
+                raise UserError(_("Warehouse %s has no delivery vehicles "
+                                  "(Inventory > Configuration > Delivery Vehicles).", plan.warehouse_id.name))
 
             plan.trip_ids.unlink()
             plan.unassigned_ids.unlink()
@@ -141,31 +149,31 @@ class PlDeliveryPlan(models.Model):
             self.env["pl.delivery.trip"].create(trip_vals)
             self.env["pl.delivery.unassigned"].create([
                 {"plan_id": plan.id, "partner_id": c.id, "picking_id": pk_id, "weight": tai[pk_id],
-                 "reason": c.ly_do}
+                 "reason": LY_DO[c.ly_do]}
                 for c in kq.chua_xep for pk_id in diem[c.id].phieu])
             plan.state = "routed"
         return True
 
     def action_confirm(self):
-        """Nút Xác nhận: ghi chuyến và thứ tự điểm dừng vào phiếu xuất, khóa kế hoạch."""
+        """Nút Confirm: ghi chuyến và thứ tự điểm dừng vào phiếu xuất, khóa kế hoạch."""
         for plan in self:
             if plan.state != "routed":
-                raise UserError(_("Phải lập tuyến trước khi xác nhận."))
+                raise UserError(_("Compute the routes before confirming the plan."))
             pickings = plan.trip_ids.stop_ids.picking_ids
             da_xep = pickings.filtered("pl_trip_id")
             if da_xep:
-                raise UserError(_("Các phiếu sau đã thuộc kế hoạch khác đã xác nhận, hãy lập tuyến lại: %s",
-                                  ", ".join(da_xep.mapped("name"))))
+                raise UserError(_("These transfers already belong to another confirmed plan; "
+                                  "compute the routes again: %s", ", ".join(da_xep.mapped("name"))))
             for stop in plan.trip_ids.stop_ids:
                 stop.picking_ids.write({"pl_trip_id": stop.trip_id.id, "pl_stop_sequence": stop.sequence})
             plan.state = "confirmed"
         return True
 
     def action_draft(self):
-        """Nút Về nháp: chỉ khi chưa xác nhận; xóa kết quả lập tuyến."""
+        """Nút Reset to Draft: chỉ khi chưa xác nhận; xóa kết quả lập tuyến."""
         for plan in self:
             if plan.state == "confirmed":
-                raise UserError(_("Kế hoạch đã xác nhận, không về nháp được."))
+                raise UserError(_("A confirmed delivery plan cannot be reset to draft."))
             plan.trip_ids.unlink()
             plan.unassigned_ids.unlink()
             plan.state = "draft"
@@ -174,24 +182,24 @@ class PlDeliveryPlan(models.Model):
 
 class PlDeliveryTrip(models.Model):
     _name = "pl.delivery.trip"
-    _description = "Chuyến giao hàng"
+    _description = "Delivery Trip"
     _order = "plan_id, vehicle_id"
 
-    plan_id = fields.Many2one("pl.delivery.plan", "Kế hoạch", required=True, ondelete="cascade", index=True)
+    plan_id = fields.Many2one("pl.delivery.plan", "Delivery Plan", required=True, ondelete="cascade", index=True)
     date = fields.Date(related="plan_id.date", store=True)
     state = fields.Selection(related="plan_id.state")
-    vehicle_id = fields.Many2one("pl.vehicle", "Xe", required=True, ondelete="restrict")
+    vehicle_id = fields.Many2one("pl.vehicle", "Vehicle", required=True, ondelete="restrict")
     capacity_kg = fields.Float(related="vehicle_id.capacity_kg")
-    stop_ids = fields.One2many("pl.delivery.stop", "trip_id", "Điểm dừng")
-    stop_count = fields.Integer("Số điểm", compute="_compute_stop_count", store=True)
-    weight = fields.Float("Tải (kg)", digits=(16, 1))
-    load_pct = fields.Float("% tải trọng", compute="_compute_load_pct", store=True, digits=(16, 1))
-    return_km = fields.Float("Km về kho", digits=(16, 2))
-    total_km = fields.Float("Tổng km", digits=(16, 1))
+    stop_ids = fields.One2many("pl.delivery.stop", "trip_id", "Stops")
+    stop_count = fields.Integer("Stop Count", compute="_compute_stop_count", store=True)
+    weight = fields.Float("Load (kg)", digits=(16, 1))
+    load_pct = fields.Float("Load (%)", compute="_compute_load_pct", store=True, digits=(16, 1))
+    return_km = fields.Float("Return km", digits=(16, 2), help="Distance from the last stop back to the warehouse.")
+    total_km = fields.Float("Total km", digits=(16, 1))
     maps_url = fields.Char("Google Maps", compute="_compute_maps",
-                           help="Link chỉ đường của đoạn đầu tiên; chuyến dài xem tất cả các đoạn bên dưới.")
-    maps_segment_count = fields.Integer("Số đoạn Maps", compute="_compute_maps")
-    maps_links = fields.Html("Link Google Maps", compute="_compute_maps", sanitize=False)
+                           help="Directions link of the first segment; long trips have more segments below.")
+    maps_segment_count = fields.Integer("Map Segments", compute="_compute_maps")
+    maps_links = fields.Html("Google Maps Links", compute="_compute_maps", sanitize=False)
 
     @api.depends("stop_ids")
     def _compute_stop_count(self):
@@ -214,10 +222,10 @@ class PlDeliveryTrip(models.Model):
             n = len(trip.stop_ids)
             dong = []
             for so, (dau, cuoi, url) in enumerate(doan, start=1):
-                tu = _("Kho") if dau == 0 else _("điểm %s", dau)
-                den = _("Kho") if cuoi == n + 1 else _("điểm %s", cuoi)
-                dong.append(Markup('<li><a href="%s" target="_blank" rel="noopener">%s %s: %s → %s</a></li>') % (
-                    url, escape(_("Đoạn")), so, tu, den))
+                tu = _("Warehouse") if dau == 0 else _("stop %s", dau)
+                den = _("Warehouse") if cuoi == n + 1 else _("stop %s", cuoi)
+                dong.append(Markup('<li><a href="%s" target="_blank" rel="noopener">%s</a></li>') % (
+                    url, _("Segment %(no)s: %(start)s → %(end)s", no=so, start=tu, end=den)))
             trip.maps_links = Markup("<ol>%s</ol>") % Markup("").join(dong) if dong else False
 
     def _maps_segments(self):
@@ -232,7 +240,7 @@ class PlDeliveryTrip(models.Model):
     def action_open_maps(self):
         self.ensure_one()
         if not self.maps_url:
-            raise UserError(_("Chuyến chưa có điểm dừng hoặc kho chưa có tọa độ."))
+            raise UserError(_("The trip has no stops or the warehouse has no coordinates."))
         return {"type": "ir.actions.act_url", "url": self.maps_url, "target": "new"}
 
     @api.depends("vehicle_id", "plan_id")
@@ -243,29 +251,33 @@ class PlDeliveryTrip(models.Model):
 
 class PlDeliveryStop(models.Model):
     _name = "pl.delivery.stop"
-    _description = "Điểm dừng giao hàng"
+    _description = "Delivery Stop"
     _order = "trip_id, sequence"
 
-    trip_id = fields.Many2one("pl.delivery.trip", "Chuyến", required=True, ondelete="cascade", index=True)
+    trip_id = fields.Many2one("pl.delivery.trip", "Trip", required=True, ondelete="cascade", index=True)
     plan_id = fields.Many2one(related="trip_id.plan_id", store=True)
-    sequence = fields.Integer("Thứ tự", required=True)
-    partner_id = fields.Many2one("res.partner", "Khách hàng", required=True)
-    picking_ids = fields.Many2many("stock.picking", string="Phiếu xuất")
-    weight = fields.Float("Tải (kg)", digits=(16, 1))
-    leg_km = fields.Float("Km chặng", digits=(16, 2), help="Quãng đường từ điểm trước (hoặc kho) đến điểm này.")
-    latitude = fields.Float("Vĩ độ", digits=(10, 7))
-    longitude = fields.Float("Kinh độ", digits=(10, 7))
-    address = fields.Char(related="partner_id.contact_address_inline", string="Địa chỉ")
+    sequence = fields.Integer("Sequence", required=True)
+    partner_id = fields.Many2one("res.partner", "Customer", required=True)
+    picking_ids = fields.Many2many("stock.picking", string="Transfers")
+    weight = fields.Float("Load (kg)", digits=(16, 1))
+    leg_km = fields.Float("Leg km", digits=(16, 2), help="Distance from the previous stop (or the warehouse).")
+    latitude = fields.Float("Latitude", digits=(10, 7))
+    longitude = fields.Float("Longitude", digits=(10, 7))
+    address = fields.Char(related="partner_id.contact_address_inline", string="Address")
 
 
 class PlDeliveryUnassigned(models.Model):
     _name = "pl.delivery.unassigned"
-    _description = "Phiếu xuất chưa xếp lên xe"
+    _description = "Unassigned Delivery Transfer"
     _order = "plan_id, partner_id, picking_id"
 
-    plan_id = fields.Many2one("pl.delivery.plan", "Kế hoạch", required=True, ondelete="cascade", index=True)
-    picking_id = fields.Many2one("stock.picking", "Phiếu xuất", required=True, ondelete="cascade")
+    plan_id = fields.Many2one("pl.delivery.plan", "Delivery Plan", required=True, ondelete="cascade", index=True)
+    picking_id = fields.Many2one("stock.picking", "Transfer", required=True, ondelete="cascade")
     origin = fields.Char(related="picking_id.origin")
-    partner_id = fields.Many2one("res.partner", "Khách hàng")
-    weight = fields.Float("Tải (kg)", digits=(16, 1))
-    reason = fields.Char("Lý do")
+    partner_id = fields.Many2one("res.partner", "Customer")
+    weight = fields.Float("Load (kg)", digits=(16, 1))
+    reason = fields.Selection([
+        ("overweight", "Heavier than the largest vehicle"),
+        ("no_vehicle", "Not enough vehicles"),
+        ("no_coordinates", "Missing coordinates"),
+    ], "Reason", required=True)

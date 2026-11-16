@@ -4,8 +4,8 @@ from odoo import fields, models
 class StockPicking(models.Model):
     _inherit = "stock.picking"
 
-    pl_trip_id = fields.Many2one("pl.delivery.trip", "Chuyến giao hàng", readonly=True, copy=False, index=True)
-    pl_stop_sequence = fields.Integer("Thứ tự điểm dừng", readonly=True, copy=False)
+    pl_trip_id = fields.Many2one("pl.delivery.trip", "Delivery Trip", readonly=True, copy=False, index=True)
+    pl_stop_sequence = fields.Integer("Stop Sequence", readonly=True, copy=False)
 
     def _pl_weight_kg(self):
         """Tải của từng phiếu (kg): tổng số lượng × cân nặng sản phẩm của các move.

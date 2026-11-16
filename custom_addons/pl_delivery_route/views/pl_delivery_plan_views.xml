@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Chuyến -->
+    <!-- Trip -->
     <record id="pl_delivery_trip_view_form" model="ir.ui.view">
         <field name="name">pl.delivery.trip.form</field>
         <field name="model">pl.delivery.trip</field>
         <field name="arch" type="xml">
-            <form string="Chuyến giao hàng" create="false" edit="false">
+            <form string="Delivery Trips" create="false" edit="false">
                 <header>
-                    <button name="action_open_maps" type="object" string="Mở Google Maps" class="btn-primary"
+                    <button name="action_open_maps" type="object" string="Open Google Maps" class="btn-primary"
                             icon="fa-map-marker" invisible="not maps_url"/>
                 </header>
                 <sheet>
@@ -37,8 +37,8 @@
                             <field name="partner_id"/>
                             <field name="address" optional="show"/>
                             <field name="picking_ids" widget="many2many_tags"/>
-                            <field name="weight" sum="Tổng"/>
-                            <field name="leg_km" sum="Tổng"/>
+                            <field name="weight" sum="Total"/>
+                            <field name="leg_km" sum="Total"/>
                         </list>
                     </field>
                     <group class="oe_subtotal_footer">
@@ -53,7 +53,7 @@
         <field name="name">pl.delivery.trip.list</field>
         <field name="model">pl.delivery.trip</field>
         <field name="arch" type="xml">
-            <list string="Chuyến giao hàng" create="false">
+            <list string="Delivery Trips" create="false">
                 <field name="plan_id"/>
                 <field name="date"/>
                 <field name="vehicle_id"/>
@@ -68,12 +68,12 @@
         </field>
     </record>
 
-    <!-- Kế hoạch -->
+    <!-- Plan -->
     <record id="pl_delivery_plan_view_list" model="ir.ui.view">
         <field name="name">pl.delivery.plan.list</field>
         <field name="model">pl.delivery.plan</field>
         <field name="arch" type="xml">
-            <list string="Kế hoạch giao hàng">
+            <list string="Delivery Plans">
                 <field name="name"/>
                 <field name="date"/>
                 <field name="warehouse_id"/>
@@ -91,16 +91,16 @@
         <field name="name">pl.delivery.plan.form</field>
         <field name="model">pl.delivery.plan</field>
         <field name="arch" type="xml">
-            <form string="Kế hoạch giao hàng">
+            <form string="Delivery Plans">
                 <header>
-                    <button name="action_compute_routes" type="object" string="Lập tuyến" class="btn-primary"
+                    <button name="action_compute_routes" type="object" string="Compute Routes" class="btn-primary"
                             invisible="state != 'draft'"/>
-                    <button name="action_compute_routes" type="object" string="Lập tuyến"
+                    <button name="action_compute_routes" type="object" string="Compute Routes"
                             invisible="state != 'routed'"
-                            confirm="Xóa kết quả hiện tại và lập lại tuyến?"/>
-                    <button name="action_confirm" type="object" string="Xác nhận" class="btn-primary"
+                            confirm="Discard the current routes and compute them again?"/>
+                    <button name="action_confirm" type="object" string="Confirm" class="btn-primary"
                             invisible="state != 'routed'"/>
-                    <button name="action_draft" type="object" string="Về nháp" invisible="state != 'routed'"/>
+                    <button name="action_draft" type="object" string="Reset to Draft" invisible="state != 'routed'"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
@@ -122,15 +122,15 @@
                         </group>
                     </group>
                     <notebook>
-                        <page string="Chuyến" name="trips">
+                        <page string="Trips" name="trips">
                             <field name="trip_ids" readonly="1">
                                 <list>
                                     <field name="vehicle_id"/>
                                     <field name="stop_count"/>
-                                    <field name="weight" sum="Tổng"/>
+                                    <field name="weight" sum="Total"/>
                                     <field name="capacity_kg"/>
                                     <field name="load_pct" widget="progressbar"/>
-                                    <field name="total_km" sum="Tổng"/>
+                                    <field name="total_km" sum="Total"/>
                                     <field name="maps_segment_count" optional="show"/>
                                     <field name="maps_url" column_invisible="True"/>
                                     <button name="action_open_maps" type="object" string="Google Maps"
@@ -138,13 +138,13 @@
                                 </list>
                             </field>
                         </page>
-                        <page string="Chưa xếp" name="unassigned">
+                        <page string="Unassigned" name="unassigned">
                             <field name="unassigned_ids" readonly="1">
                                 <list>
                                     <field name="picking_id"/>
                                     <field name="origin"/>
                                     <field name="partner_id"/>
-                                    <field name="weight" sum="Tổng"/>
+                                    <field name="weight" sum="Total"/>
                                     <field name="reason"/>
                                 </list>
                             </field>
@@ -163,23 +163,23 @@
                 <field name="name"/>
                 <field name="date"/>
                 <field name="warehouse_id"/>
-                <filter name="draft" string="Nháp" domain="[('state', '=', 'draft')]"/>
-                <filter name="routed" string="Đã lập tuyến" domain="[('state', '=', 'routed')]"/>
-                <filter name="confirmed" string="Đã xác nhận" domain="[('state', '=', 'confirmed')]"/>
-                <group expand="0" string="Nhóm theo">
-                    <filter name="group_state" string="Trạng thái" context="{'group_by': 'state'}"/>
+                <filter name="draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="routed" string="Routed" domain="[('state', '=', 'routed')]"/>
+                <filter name="confirmed" string="Confirmed" domain="[('state', '=', 'confirmed')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
                 </group>
             </search>
         </field>
     </record>
 
     <record id="pl_delivery_plan_action" model="ir.actions.act_window">
-        <field name="name">Kế hoạch giao hàng</field>
+        <field name="name">Delivery Plans</field>
         <field name="res_model">pl.delivery.plan</field>
         <field name="view_mode">list,form</field>
         <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">Tạo kế hoạch giao hàng cho một ngày</p>
-            <p>Chọn ngày giao và kho, bấm Lập tuyến để xếp các phiếu xuất đang Ready lên xe.</p>
+            <p class="o_view_nocontent_smiling_face">Create a delivery plan for a day</p>
+            <p>Pick the delivery date and warehouse, then click Compute Routes to assign the ready deliveries to vehicles.</p>
         </field>
     </record>
 </odoo>
