@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_pl_delivery_root" name="Giao hàng" parent="stock.menu_stock_root" sequence="3"/>
+    <menuitem id="menu_pl_delivery_plan" name="Kế hoạch giao hàng" parent="menu_pl_delivery_root"
+              action="pl_delivery_plan_action" sequence="1"/>
+    <menuitem id="menu_pl_vehicle" name="Xe giao hàng" parent="stock.menu_stock_config_settings"
+              action="pl_vehicle_action" sequence="2"/>
+</odoo>

@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pl_vehicle_user,pl.vehicle user,model_pl_vehicle,stock.group_stock_user,1,0,0,0
+access_pl_vehicle_manager,pl.vehicle manager,model_pl_vehicle,stock.group_stock_manager,1,1,1,1
+access_pl_delivery_plan_user,pl.delivery.plan user,model_pl_delivery_plan,stock.group_stock_user,1,1,1,1
+access_pl_delivery_trip_user,pl.delivery.trip user,model_pl_delivery_trip,stock.group_stock_user,1,1,1,1
+access_pl_delivery_stop_user,pl.delivery.stop user,model_pl_delivery_stop,stock.group_stock_user,1,1,1,1
+access_pl_delivery_unassigned_user,pl.delivery.unassigned user,model_pl_delivery_unassigned,stock.group_stock_user,1,1,1,1
