@@ -9,6 +9,7 @@
                 <header>
                     <button name="action_open_maps" type="object" string="Open Google Maps" class="btn-primary"
                             icon="fa-map-marker" invisible="not maps_url"/>
+                    <button name="%(action_report_loading_sheet)d" type="action" string="Print" icon="fa-print"/>
                 </header>
                 <sheet>
                     <div class="oe_title">

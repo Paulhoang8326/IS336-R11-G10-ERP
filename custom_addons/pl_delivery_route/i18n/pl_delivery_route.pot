@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0-20260926\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-17 06:36+0000\n"
-"PO-Revision-Date: 2026-11-17 06:36+0000\n"
+"POT-Creation-Date: 2026-11-17 06:38+0000\n"
+"PO-Revision-Date: 2026-11-17 06:38+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,41 @@ msgstr ""
 #. odoo-python
 #: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
 msgid "%(vehicle)s - %(date)s"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model:ir.actions.report,print_report_name:pl_delivery_route.action_report_loading_sheet
+msgid "'Loading Sheet - %s' % object.display_name.replace('/', '-')"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Capacity:</strong>"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Delivery Date:</strong>"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Stops:</strong>"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Total Distance:</strong>"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Total Load:</strong>"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Vehicle:</strong>"
 msgstr ""
 
 #. module: pl_delivery_route
@@ -132,6 +167,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__partner_id
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_unassigned__partner_id
 msgid "Customer"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Delivery #"
 msgstr ""
 
 #. module: pl_delivery_route
@@ -299,6 +339,11 @@ msgid "Leg km"
 msgstr ""
 
 #. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Load #"
+msgstr ""
+
+#. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__load_pct
 msgid "Load (%)"
 msgstr ""
@@ -311,8 +356,25 @@ msgid "Load (kg)"
 msgstr ""
 
 #. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid ""
+"Load from top to bottom; the first delivery stop ends up next to the door."
+msgstr ""
+
+#. module: pl_delivery_route
+#: model:ir.actions.report,name:pl_delivery_route.action_report_loading_sheet
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Loading Sheet"
+msgstr ""
+
+#. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__longitude
 msgid "Longitude"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Lot"
 msgstr ""
 
 #. module: pl_delivery_route
@@ -358,6 +420,21 @@ msgstr ""
 msgid ""
 "Pick the delivery date and warehouse, then click Compute Routes to assign "
 "the ready deliveries to vehicles."
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_trip_view_form
+msgid "Print"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Product"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Quantity"
 msgstr ""
 
 #. module: pl_delivery_route
@@ -516,6 +593,11 @@ msgid "Transfers"
 msgstr ""
 
 #. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Transfers:"
+msgstr ""
+
+#. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__trip_id
 msgid "Trip"
 msgstr ""
@@ -556,6 +638,11 @@ msgid "Unassigned Transfers"
 msgstr ""
 
 #. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Unit"
+msgstr ""
+
+#. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__vehicle_id
 msgid "Vehicle"
 msgstr ""
@@ -578,6 +665,21 @@ msgstr ""
 msgid ""
 "Warehouse %s has no delivery vehicles (Inventory > Configuration > Delivery "
 "Vehicles)."
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "kg"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "kg ("
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "km"
 msgstr ""
 
 #. module: pl_delivery_route

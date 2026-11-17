@@ -8,6 +8,7 @@
     "data": [
         "security/ir.model.access.csv",
         "data/ir_sequence.xml",
+        "report/loading_sheet.xml",
         "views/pl_vehicle_views.xml",
         "views/pl_delivery_plan_views.xml",
         "views/stock_picking_views.xml",

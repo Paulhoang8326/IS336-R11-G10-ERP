@@ -298,7 +298,13 @@ class PlDeliveryStop(models.Model):
     leg_km = fields.Float("Leg km", digits=(16, 2), help="Distance from the previous stop (or the warehouse).")
     latitude = fields.Float("Latitude", digits=(10, 7))
     longitude = fields.Float("Longitude", digits=(10, 7))
-    address = fields.Char(related="partner_id.contact_address_inline", string="Address")
+    address = fields.Char("Address", compute="_compute_address")
+
+    @api.depends("partner_id.street", "partner_id.street2", "partner_id.city")
+    def _compute_address(self):
+        for stop in self:
+            p = stop.partner_id
+            stop.address = ", ".join(x for x in (p.street, p.street2, p.city) if x)
 
 
 class PlDeliveryUnassigned(models.Model):
