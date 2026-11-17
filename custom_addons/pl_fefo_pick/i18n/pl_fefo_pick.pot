@@ -1,0 +1,99 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pl_fefo_pick
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20260926\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-17 15:21+0000\n"
+"PO-Revision-Date: 2026-11-17 15:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pl_fefo_pick
+#. odoo-python
+#: code:addons/pl_fefo_pick/models/stock_picking.py:0
+msgid ""
+"%(product)s, lot %(lot)s: %(remaining)s%% shelf life left on %(date)s, "
+"customer requires %(required)s%%"
+msgstr ""
+
+#. module: pl_fefo_pick
+#: model:ir.model,name:pl_fefo_pick.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: pl_fefo_pick
+#: model:ir.model,name:pl_fefo_pick.model_stock_lot
+msgid "Lot/Serial"
+msgstr ""
+
+#. module: pl_fefo_pick
+#: model:ir.model.fields,help:pl_fefo_pick.field_res_partner__pl_min_shelf_life_pct
+#: model:ir.model.fields,help:pl_fefo_pick.field_res_users__pl_min_shelf_life_pct
+#: model:ir.model.fields,help:pl_fefo_pick.field_sale_order__pl_min_shelf_life_pct
+#: model:ir.model.fields,help:pl_fefo_pick.field_stock_picking__pl_min_shelf_life_pct
+msgid ""
+"Lots delivered to this customer must still have at least this share of the "
+"product's expiration time left on the scheduled delivery date. 0 means no "
+"requirement. Delivery addresses use the value of their company."
+msgstr ""
+
+#. module: pl_fefo_pick
+#: model:ir.model.fields,field_description:pl_fefo_pick.field_res_partner__pl_min_shelf_life_pct
+#: model:ir.model.fields,field_description:pl_fefo_pick.field_res_users__pl_min_shelf_life_pct
+#: model:ir.model.fields,field_description:pl_fefo_pick.field_sale_order__pl_min_shelf_life_pct
+#: model:ir.model.fields,field_description:pl_fefo_pick.field_stock_picking__pl_min_shelf_life_pct
+msgid "Min. Shelf Life at Delivery (%)"
+msgstr ""
+
+#. module: pl_fefo_pick
+#. odoo-python
+#: code:addons/pl_fefo_pick/models/res_partner.py:0
+msgid "Min. Shelf Life at Delivery must be between 0 and 100%."
+msgstr ""
+
+#. module: pl_fefo_pick
+#: model:ir.model,name:pl_fefo_pick.model_stock_quant
+msgid "Quants"
+msgstr ""
+
+#. module: pl_fefo_pick
+#: model:ir.model.fields,field_description:pl_fefo_pick.field_stock_lot__pl_remaining_shelf_life_pct
+msgid "Remaining Shelf Life (%)"
+msgstr ""
+
+#. module: pl_fefo_pick
+#: model:ir.model,name:pl_fefo_pick.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: pl_fefo_pick
+#: model:ir.model.fields,help:pl_fefo_pick.field_stock_lot__pl_remaining_shelf_life_pct
+msgid ""
+"Share of the product's expiration time left today, negative once expired. "
+"Only shown when the lot has an expiration date."
+msgstr ""
+
+#. module: pl_fefo_pick
+#: model:ir.model,name:pl_fefo_pick.model_stock_move
+msgid "Stock Move"
+msgstr ""
+
+#. module: pl_fefo_pick
+#. odoo-python
+#: code:addons/pl_fefo_pick/models/stock_picking.py:0
+msgid ""
+"These lots do not meet the customer's minimum shelf life at delivery. Pick other lots or unreserve and check availability again:\n"
+"%s"
+msgstr ""
+
+#. module: pl_fefo_pick
+#: model:ir.model,name:pl_fefo_pick.model_stock_picking
+msgid "Transfer"
+msgstr ""
