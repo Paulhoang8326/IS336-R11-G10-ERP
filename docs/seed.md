@@ -16,7 +16,7 @@ python3 scripts/gen_seed.py --ngay-moc 2026-11-05
 python scripts/gen_seed.py --ngay-moc 2026-11-05
 ~~~
 
-Bỏ `--ngay-moc` thì ngày mốc là hôm nay. Không nạp bộ ngày mốc mới vào database cũ: số đơn và số lô đổi theo ngày mốc, nên database sẽ có thêm 81 báo giá và các lô mới bên cạnh dữ liệu cũ.
+Bỏ `--ngay-moc` thì ngày mốc là hôm nay. Không nạp bộ ngày mốc mới vào database cũ: số đơn và số lô đổi theo ngày mốc, nên database sẽ có thêm 81 báo giá và các lô mới bên cạnh dữ liệu cũ. Với database chính `pl_moc`, làm theo mục [Dựng lại database chính](#dựng-lại-database-chính): script làm hết 4 bước dưới đây rồi đưa database mới lên thay.
 
 ## Bước 1. Tạo database
 
@@ -98,6 +98,59 @@ Script bật Storage Locations, Multi-Step Routes, Lots & Serial Numbers, Expira
 | Inventory > Configuration > Products > Product Categories | Từng nhóm có Force Removal Strategy FEFO, Costing Method FIFO, Inventory Valuation Automated |
 
 Lần đầu chạy, Odoo xuất rồi nhập lại tồn hiện có để đổi định giá nên sinh mỗi sản phẩm một bút toán tồn đầu kỳ (bộ 150 mã: Nợ 1560 / Có 1510, tổng 1.833.616.300 đ, tổng giá trị tồn không đổi).
+
+## Dựng lại database chính
+
+Database chính `pl_moc` phải khớp đúng bộ seed đang có trong `seed/demo/`, vì `check_fefo.py`, `check_route.py`, `check_o2c.py` nhân bản `pl_moc` rồi kiểm theo số lô, số đơn của seed. Cần dựng lại khi:
+
+- sinh lại seed, nhất là đổi ngày mốc trước buổi demo ([Trước buổi demo](#trước-buổi-demo));
+- `pl_moc` lệch seed: lô không khớp `ton_kho.csv`, thiếu module của nhóm, có dữ liệu thử còn sót.
+
+Không chạy `seed_import.py` lên `pl_moc` cũ cho khớp: lô đã có thì script không nhập lại tồn, lô mới thì cộng thêm, nên tồn bị chồng.
+
+`scripts/rebuild_main_db.py` dựng database mới `pl_moc_new` từ đầu theo Bước 1–4 ở trên (cài thêm `sale_management`, `pl_fefo_pick`, `pl_delivery_route`, `stock_barcodes`, `pl_barcode_camera`, `pl_product_barcode`; gán *Barcode option group* cho Receipts, Delivery Orders, Internal Transfers như [barcode.md](barcode.md#cấu-hình-trong-database)), kiểm tra, rà soát `pl_moc` cũ, rồi mới đưa lên thay:
+
+~~~bash
+export ODOO_PASSWORD='<mật khẩu admin Odoo>'
+python3 scripts/gen_seed.py --ngay-moc 2026-12-10     # chỉ khi cần đổi ngày mốc
+python3 scripts/rebuild_main_db.py --skip-swap        # dựng và kiểm tra pl_moc_new, chưa thay
+python3 scripts/rebuild_main_db.py                    # dựng lại, rà soát, hỏi rồi mới thay pl_moc
+~~~
+
+~~~powershell
+$env:ODOO_PASSWORD = '<mật khẩu admin Odoo>'
+python scripts/gen_seed.py --ngay-moc 2026-12-10
+python scripts/rebuild_main_db.py --skip-swap
+python scripts/rebuild_main_db.py
+~~~
+
+Mật khẩu như [scripts/seminar3/README.md](../scripts/seminar3/README.md#tạo-lại): admin lấy từ `ODOO_PASSWORD`, master từ `ODOO_MASTER_PASSWORD` hoặc `config/odoo.conf`. Mỗi lần chạy mất khoảng 40 giây.
+
+| Bước | Script làm gì | Dừng khi |
+| --- | --- | --- |
+| 1. Dựng | Tạo `pl_moc_new`: base, công ty ở Việt Nam và VND, rồi cài các module | Module cài không được |
+| 2. Seed | `seed_import.py --orders` | Có cảnh báo |
+| 3. Kho | `setup_warehouse.py` | Script lỗi |
+| 4. Barcode | Gán *Picking IN/OUT/Internal options* cho 3 loại thao tác, chạy lại không đổi gì thêm | Thiếu `stock_barcodes` |
+| 5. Kiểm tra | 1 kho `PL`, 6 dãy, 240 ô; 150 sản phẩm *Invoicing Policy* = *Delivered quantities*; lô và tồn từng lô đúng ô, đúng số lượng trong `ton_kho.csv`; 300 khách đều có hạn dùng tối thiểu; 81 báo giá chưa xác nhận; 4 xe; Sales Settings *Invoice what is delivered* | Sai điều nào |
+| 6. Rà soát | Đọc `pl_moc` cũ (không ghi gì), in những gì không đến từ seed: module, user, đơn bán/mua, phiếu kho, hóa đơn, bút toán, kho, loại thao tác, vị trí, route, quy tắc, và Settings khác giữa hai database | Danh sách khác rỗng: in ra rồi hỏi |
+| 7. Thay | Backup `pl_moc` bằng `scripts/backup.sh` (Windows: `backup.ps1`) vào `backups/`, đổi tên `pl_moc` thành `pl_moc_old_<yyyymmdd_hhmm>`, đổi tên `pl_moc_new` thành `pl_moc` | Hỏi xác nhận, trả lời khác `y` |
+
+Sai ở bước 1–6 thì `pl_moc` không bị đụng. Đổi tên làm qua database manager của Odoo nên filestore đổi theo. Script không xóa database chính nào: `pl_moc` cũ còn nguyên dưới tên `pl_moc_old_*`. Chỉ `pl_moc_new` do chính script dựng (có dấu `pl_rebuild.build_db` trong *System Parameters*, xóa đi lúc đổi tên) mới bị xóa để dựng lại khi chạy lần sau; trùng tên với database khác thì script dừng.
+
+Tham số: `--target` (mặc định `pl_moc`), `--build-name` (mặc định `<target>_new`), `--skip-swap` (dừng sau bước 6), `--yes` (không hỏi), `--keep-old` (mặc định; `--no-keep-old` bị từ chối vì script không xóa database).
+
+**Khôi phục `pl_moc` cũ.** Cách nhanh: ở http://localhost:8069/web/database/manager đổi tên `pl_moc` (bản mới) thành tên khác, rồi đổi `pl_moc_old_<yyyymmdd_hhmm>` về `pl_moc`. Database cũ đã bị xóa thì khôi phục từ backup (hỏi trước khi ghi đè nếu `pl_moc` đang có):
+
+~~~bash
+scripts/restore.sh backups/pl_moc_<yyyymmdd_hhmmss> pl_moc
+~~~
+
+~~~powershell
+.\scripts\restore.ps1 backups\pl_moc_<yyyymmdd_hhmmss> pl_moc
+~~~
+
+**Database seminar.** `phanlam_seminar3` và `phanlam_seminar3_clean` được nhân bản từ `pl_moc` cũ, nên không đổi khi dựng lại `pl_moc`. Muốn chúng theo seed mới thì chạy lại `scripts/seminar3/make_seminar_db.py --force` (xóa và tạo lại `phanlam_seminar3`), xem [scripts/seminar3/README.md](../scripts/seminar3/README.md#tạo-lại).
 
 ## Database tạo từ trước
 
