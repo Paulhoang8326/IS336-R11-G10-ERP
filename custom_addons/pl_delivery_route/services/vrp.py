@@ -24,6 +24,9 @@ Các bước (hàm `lap_tuyen`)
    - Duyệt mọi cặp theo s giảm dần (bằng nhau thì theo id). Với mỗi cặp, chỉ gộp hai tuyến khi i và j
      thuộc hai tuyến khác nhau, và mỗi điểm đang nằm ở đầu hoặc cuối tuyến của nó (điểm ở giữa tuyến đã có
      hai hàng xóm, nối thêm sẽ phá tuyến). Tuyến mới là tuyến của i nối với tuyến của j qua cạnh i–j.
+   - Điều kiện số điểm (`so_diem_toi_da`, None hoặc 0 là không giới hạn): nếu tổng số điểm của hai tuyến
+     vượt giới hạn thì không gộp. Một tài xế chỉ giao được số điểm có hạn trong ngày; giới hạn số điểm
+     dùng thay cho giới hạn thời gian làm việc. Điều kiện này xét trước điều kiện tải vì rẻ hơn.
    - Điều kiện tải: đội xe không đồng nhất, nên không chỉ so với một tải trọng chung. Sau khi gộp, xếp
      thử tập tải các tuyến lên đội xe bằng first-fit decreasing (`xep_xe`): tuyến nặng nhất vào xe lớn
      nhất. Nếu có tuyến không vừa xe nào trong khi vẫn còn xe trống thì gộp này làm hỏng khả năng xếp xe,
@@ -185,10 +188,11 @@ def hai_opt(tuyen, kc):
     return di[1:-1]
 
 
-def clarke_wright(n_diem, tai, kc, ds_xe, khoa_diem):
+def clarke_wright(n_diem, tai, kc, ds_xe, khoa_diem, so_diem_toi_da=None):
     """Bước 3. Clarke-Wright savings song song.
 
     Điểm đánh số 1..n_diem (0 là kho); tai[i] là tải điểm i; khoa_diem[i] là id gốc để phá hòa.
+    so_diem_toi_da: số điểm tối đa mỗi tuyến; None hoặc 0 là không giới hạn.
     Trả về list tuyến, mỗi tuyến là list chỉ số điểm.
     """
     tuyen_cua = {i: i for i in range(1, n_diem + 1)}   # điểm -> khóa tuyến chứa nó
@@ -210,6 +214,8 @@ def clarke_wright(n_diem, tai, kc, ds_xe, khoa_diem):
         ti, tj = tuyen[ri], tuyen[rj]
         if i not in (ti[0], ti[-1]) or j not in (tj[0], tj[-1]):
             continue
+        if so_diem_toi_da and len(ti) + len(tj) > so_diem_toi_da:
+            continue
         tai_moi = tai_tuyen[ri] + tai_tuyen[rj]
         thu = [(k, v) for k, v in tai_tuyen.items() if k not in (ri, rj)] + [(ri, tai_moi)]
         if xep_xe(thu, ds_xe)[2]:
@@ -227,10 +233,11 @@ def clarke_wright(n_diem, tai, kc, ds_xe, khoa_diem):
     return [tuyen[k] for k in sorted(tuyen)]
 
 
-def lap_tuyen(kho, ds_diem, ds_xe, he_so_duong=HE_SO_DUONG_MAC_DINH):
+def lap_tuyen(kho, ds_diem, ds_xe, he_so_duong=HE_SO_DUONG_MAC_DINH, so_diem_toi_da=None):
     """Lập tuyến cho một ngày giao. Xem các bước ở đầu file.
 
     kho: (vĩ độ, kinh độ). ds_diem: list[Diem] (đã gộp theo khách). ds_xe: list[Xe].
+    so_diem_toi_da: số điểm dừng tối đa mỗi chuyến; None hoặc 0 là không giới hạn.
     Trả về KetQua: tuyen sắp theo id xe, chua_xep sắp theo id điểm.
     """
     ds_diem = sorted(ds_diem, key=lambda d: d.id)
@@ -262,7 +269,7 @@ def lap_tuyen(kho, ds_diem, ds_xe, he_so_duong=HE_SO_DUONG_MAC_DINH):
     khoa_diem = [None] + [d.id for d in hop_le]
 
     # Bước 3: Clarke-Wright.
-    cac_tuyen = clarke_wright(n, tai, kc, ds_xe, khoa_diem) if n else []
+    cac_tuyen = clarke_wright(n, tai, kc, ds_xe, khoa_diem, so_diem_toi_da) if n else []
 
     # Bước 4: gán xe bằng first-fit decreasing.
     khoa = {min(khoa_diem[p] for p in t): t for t in cac_tuyen}

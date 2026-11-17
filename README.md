@@ -38,7 +38,7 @@ IS336-R11-G10-ERP/
 ├── custom_addons/               # module nhóm, bind mount read-only
 │   ├── pl_base/                 # module nền Phan Lam Base
 │   ├── pl_barcode_camera/       # quét mã vạch bằng camera trong app Barcodes
-│   ├── pl_delivery_route/       # kế hoạch giao hàng: xếp phiếu xuất lên xe, sắp tuyến, link Google Maps
+│   ├── pl_delivery_route/       # kế hoạch giao hàng: xếp phiếu xuất lên xe, sắp tuyến, Maps, lô phiếu, phiếu xếp hàng
 │   └── pl_product_barcode/      # nút Generate Barcode sinh EAN-13 nội bộ
 ├── oca/                         # submodule OCA nhánh 18.0, bind mount read-only
 │   ├── account-financial-reporting/

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_loading_sheet" model="ir.actions.report">
+        <field name="name">Loading Sheet</field>
+        <field name="model">pl.delivery.trip</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">pl_delivery_route.report_loading_sheet</field>
+        <field name="report_file">pl_delivery_route.report_loading_sheet</field>
+        <field name="print_report_name">'Loading Sheet - %s' % object.display_name.replace('/', '-')</field>
+        <field name="binding_model_id" ref="model_pl_delivery_trip"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- Phiếu xếp hàng lên xe: điểm dừng liệt kê NGƯỢC thứ tự giao. Điểm giao cuối xếp vào trước, nằm trong
+         cùng thùng xe; điểm giao đầu tiên xếp sau cùng, nằm sát cửa xe. -->
+    <template id="report_loading_sheet">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.internal_layout">
+                    <div class="page">
+                        <h2>Loading Sheet <span t-field="doc.display_name"/></h2>
+                        <table class="table table-sm table-borderless mb-2">
+                            <tr>
+                                <td><strong>Vehicle:</strong> <span t-field="doc.vehicle_id"/></td>
+                                <td><strong>Capacity:</strong> <span t-field="doc.capacity_kg"/> kg</td>
+                                <td><strong>Delivery Date:</strong> <span t-field="doc.date"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total Load:</strong> <span t-field="doc.weight"/> kg (<span t-field="doc.load_pct"/>%)</td>
+                                <td><strong>Total Distance:</strong> <span t-field="doc.total_km"/> km</td>
+                                <td><strong>Stops:</strong> <span t-field="doc.stop_count"/></td>
+                            </tr>
+                        </table>
+                        <p class="fst-italic">Load from top to bottom; the first delivery stop ends up next to the door.</p>
+
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Load #</th>
+                                    <th class="text-center">Delivery #</th>
+                                    <th>Product</th>
+                                    <th class="text-end">Quantity</th>
+                                    <th>Unit</th>
+                                    <th>Lot</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.stop_ids.sorted('sequence', reverse=True)" t-as="stop">
+                                    <tr class="table-light">
+                                        <td class="text-center"><strong t-esc="stop_index + 1"/></td>
+                                        <td class="text-center"><strong t-field="stop.sequence"/></td>
+                                        <td colspan="4">
+                                            <strong t-field="stop.partner_id.name"/>
+                                            <span class="text-muted"> - <span t-field="stop.address"/></span>
+                                            <div>Transfers: <span t-esc="', '.join(stop.picking_ids.mapped('name'))"/></div>
+                                            <span class="float-end"><span t-field="stop.weight"/> kg</span>
+                                        </td>
+                                    </tr>
+                                    <t t-foreach="stop.picking_ids.move_line_ids.sorted(lambda l: (l.picking_id.name, l.product_id.default_code or '', l.lot_id.name or ''))" t-as="line">
+                                        <tr>
+                                            <td/>
+                                            <td/>
+                                            <td>
+                                                <span t-if="line.product_id.default_code">[<span t-field="line.product_id.default_code"/>]</span>
+                                                <span t-field="line.product_id.name"/>
+                                            </td>
+                                            <td class="text-end"><span t-field="line.quantity"/></td>
+                                            <td><span t-field="line.product_uom_id.name"/></td>
+                                            <td><span t-field="line.lot_id.name"/></td>
+                                        </tr>
+                                    </t>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

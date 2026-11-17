@@ -149,6 +149,34 @@ class TestVrp(unittest.TestCase, KiemTraChung):
         self.assertEqual((khong, qua_tai), (["e"], False))
 
 
+class TestSoDiemToiDa(unittest.TestCase, KiemTraChung):
+    def test_khong_tuyen_nao_vuot_gioi_han(self):
+        for seed in range(10):
+            ds = diem_ngau_nhien(60, seed, tai_min=5, tai_max=60)
+            for gioi_han in (3, 7, 15, 25):
+                kq = vrp.lap_tuyen(KHO, ds, DOI_XE, so_diem_toi_da=gioi_han)
+                self.kiem_bat_bien(ds, DOI_XE, kq)
+                self.assertTrue(all(len(t.diem) <= gioi_han for t in kq.tuyen), f"seed={seed}, giới hạn {gioi_han}")
+
+    def test_khong_gioi_han_giong_code_cu(self):
+        # None, 0 và một giới hạn không bao giờ chạm tới (bằng số điểm) phải cho cùng một kết quả.
+        for seed in range(10):
+            ds = diem_ngau_nhien(50, seed)
+            goc = vrp.lap_tuyen(KHO, ds, DOI_XE)
+            self.assertEqual(vrp.lap_tuyen(KHO, ds, DOI_XE, so_diem_toi_da=None), goc)
+            self.assertEqual(vrp.lap_tuyen(KHO, ds, DOI_XE, so_diem_toi_da=0), goc)
+            self.assertEqual(vrp.lap_tuyen(KHO, ds, DOI_XE, so_diem_toi_da=len(ds)), goc)
+
+    def test_gioi_han_qua_nho(self):
+        ds = [vrp.Diem(i, KHO[0] + 0.005 * i, KHO[1], 10.0) for i in range(1, 11)]
+        kq = vrp.lap_tuyen(KHO, ds, DOI_XE, so_diem_toi_da=1)
+        self.kiem_bat_bien(ds, DOI_XE, kq)
+        self.assertEqual(len(kq.tuyen), 4)
+        self.assertTrue(all(len(t.diem) == 1 for t in kq.tuyen))
+        self.assertEqual(len(kq.chua_xep), 6)
+        self.assertEqual({c.ly_do for c in kq.chua_xep}, {vrp.LY_DO_THIEU_XE})
+
+
 @unittest.skipUnless((SEED / "don_ban.csv").exists(), "không có seed/demo")
 class TestSeed(unittest.TestCase, KiemTraChung):
     def test_bo_demo(self):
@@ -159,6 +187,17 @@ class TestSeed(unittest.TestCase, KiemTraChung):
         self.assertEqual(len(don_081), 1)
         self.assertIn(vrp.ChuaXep(don_081[0], vrp.LY_DO_VUOT_TAI), kq.chua_xep)
         self.assertEqual(kq, vrp.lap_tuyen(KHO, ds, xe))
+        # Kết quả trước khi có giới hạn số điểm (PR #6): 3 xe, 16/35/29 điểm, 48,3 km.
+        self.assertEqual([(t.xe, len(t.diem)) for t in kq.tuyen], [("XE01", 16), ("XE03", 35), ("XE04", 29)])
+        self.assertAlmostEqual(kq.tong_km, 48.3, delta=0.05)
+
+    def test_bo_demo_gioi_han_25_diem(self):
+        ds, xe = doc_seed()
+        kq = vrp.lap_tuyen(KHO, ds, xe, so_diem_toi_da=25)
+        self.kiem_bat_bien(ds, xe, kq)
+        self.assertEqual(sorted(t.xe for t in kq.tuyen), ["XE01", "XE02", "XE03", "XE04"])
+        self.assertTrue(all(len(t.diem) <= 25 for t in kq.tuyen))
+        self.assertEqual([c.ly_do for c in kq.chua_xep], [vrp.LY_DO_VUOT_TAI])
 
 
 if __name__ == "__main__":

@@ -6,14 +6,55 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0-20260926\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-16 08:19+0000\n"
-"PO-Revision-Date: 2026-11-16 08:19+0000\n"
+"POT-Creation-Date: 2026-11-17 06:38+0000\n"
+"PO-Revision-Date: 2026-11-17 06:38+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid "%(vehicle)s - %(date)s"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model:ir.actions.report,print_report_name:pl_delivery_route.action_report_loading_sheet
+msgid "'Loading Sheet - %s' % object.display_name.replace('/', '-')"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Capacity:</strong>"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Delivery Date:</strong>"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Stops:</strong>"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Total Distance:</strong>"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Total Load:</strong>"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Vehicle:</strong>"
+msgstr ""
 
 #. module: pl_delivery_route
 #. odoo-python
@@ -46,6 +87,18 @@ msgstr ""
 #. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__total_weight
 msgid "Assigned Weight (kg)"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__batch_id
+msgid "Batch Transfer"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,help:pl_delivery_route.field_pl_delivery_trip__batch_id
+msgid ""
+"Batch transfer grouping the deliveries of this trip, created on "
+"confirmation."
 msgstr ""
 
 #. module: pl_delivery_route
@@ -114,6 +167,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__partner_id
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_unassigned__partner_id
 msgid "Customer"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Delivery #"
 msgstr ""
 
 #. module: pl_delivery_route
@@ -281,6 +339,11 @@ msgid "Leg km"
 msgstr ""
 
 #. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Load #"
+msgstr ""
+
+#. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__load_pct
 msgid "Load (%)"
 msgstr ""
@@ -293,13 +356,42 @@ msgid "Load (kg)"
 msgstr ""
 
 #. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid ""
+"Load from top to bottom; the first delivery stop ends up next to the door."
+msgstr ""
+
+#. module: pl_delivery_route
+#: model:ir.actions.report,name:pl_delivery_route.action_report_loading_sheet
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Loading Sheet"
+msgstr ""
+
+#. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__longitude
 msgid "Longitude"
 msgstr ""
 
 #. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Lot"
+msgstr ""
+
+#. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__maps_segment_count
 msgid "Map Segments"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__max_stops
+msgid "Max Stops per Trip"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,help:pl_delivery_route.field_pl_delivery_plan__max_stops
+msgid ""
+"Maximum number of customers one driver delivers to in a day. 0 means no "
+"limit."
 msgstr ""
 
 #. module: pl_delivery_route
@@ -328,6 +420,21 @@ msgstr ""
 msgid ""
 "Pick the delivery date and warehouse, then click Compute Routes to assign "
 "the ready deliveries to vehicles."
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_trip_view_form
+msgid "Print"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Product"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Quantity"
 msgstr ""
 
 #. module: pl_delivery_route
@@ -426,6 +533,11 @@ msgid "The company is automatically set from your user preferences."
 msgstr ""
 
 #. module: pl_delivery_route
+#: model:ir.model.constraint,message:pl_delivery_route.constraint_pl_delivery_plan_max_stops_positive
+msgid "The maximum number of stops cannot be negative."
+msgstr ""
+
+#. module: pl_delivery_route
 #: model:ir.model.constraint,message:pl_delivery_route.constraint_pl_delivery_plan_road_factor_positive
 msgid "The road factor must be at least 1."
 msgstr ""
@@ -447,6 +559,14 @@ msgstr ""
 msgid ""
 "These transfers already belong to another confirmed plan; compute the routes"
 " again: %s"
+msgstr ""
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid ""
+"These transfers are already in a batch transfer; remove them from it or "
+"compute the routes again: %s"
 msgstr ""
 
 #. module: pl_delivery_route
@@ -473,8 +593,21 @@ msgid "Transfers"
 msgstr ""
 
 #. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Transfers:"
+msgstr ""
+
+#. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__trip_id
 msgid "Trip"
+msgstr ""
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid ""
+"Trip %s has transfers of different operation types and cannot be grouped in "
+"one batch transfer."
 msgstr ""
 
 #. module: pl_delivery_route
@@ -505,6 +638,11 @@ msgid "Unassigned Transfers"
 msgstr ""
 
 #. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Unit"
+msgstr ""
+
+#. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__vehicle_id
 msgid "Vehicle"
 msgstr ""
@@ -527,6 +665,21 @@ msgstr ""
 msgid ""
 "Warehouse %s has no delivery vehicles (Inventory > Configuration > Delivery "
 "Vehicles)."
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "kg"
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "kg ("
+msgstr ""
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "km"
 msgstr ""
 
 #. module: pl_delivery_route

@@ -6,11 +6,13 @@ Nhân bản pl_moc thành pl_route_check > cài pl_delivery_route > nạp xe t�
 phải ra cùng kết quả) > in bảng theo xe và danh sách chưa xếp > Xác nhận kế hoạch.
 
 Kiểm tra: không xe nào quá tải, mỗi phiếu xuất Ready của ngày mốc nằm đúng 1 lần (trong một chuyến hoặc
-trong danh sách chưa xếp), đơn DB<ngày mốc>-081 nằm trong danh sách chưa xếp, xác nhận xong phiếu có chuyến
-và thứ tự điểm dừng. Sai điều nào thì dừng, mã thoát khác 0.
+trong danh sách chưa xếp), không chuyến nào vượt số điểm tối đa, cả 4 xe đều có chuyến, chỉ đơn
+DB<ngày mốc>-081 nằm trong danh sách chưa xếp, xác nhận xong phiếu có chuyến và thứ tự điểm dừng. Sai điều
+nào thì dừng, mã thoát khác 0.
 
     python scripts/check_route.py
-    python scripts/check_route.py --keep   # giữ database check để xem trên giao diện
+    python scripts/check_route.py --keep            # giữ database check để xem trên giao diện
+    python scripts/check_route.py --max-stops 20    # số điểm tối đa mỗi chuyến (mặc định theo kế hoạch)
 
 Mật khẩu như scripts/seminar3: admin lấy từ ODOO_PASSWORD, master từ ODOO_MASTER_PASSWORD hoặc
 config/odoo.conf.
@@ -89,7 +91,8 @@ def chuan_bi_don(od, ngay_moc, ds_so_don):
 
 def doc_ket_qua(od, plan_id):
     plan = od("pl.delivery.plan", "read", [plan_id],
-              fields=["name", "state", "total_km", "total_weight", "trip_count", "unassigned_count"])[0]
+              fields=["name", "state", "max_stops", "total_km", "total_weight", "trip_count",
+                      "unassigned_count"])[0]
     trips = od.search_read("pl.delivery.trip", [("plan_id", "=", plan_id)],
                            ["vehicle_id", "stop_count", "weight", "capacity_kg", "load_pct", "total_km", "maps_url",
                             "maps_segment_count", "maps_links"], order="vehicle_id")
@@ -110,7 +113,8 @@ def tom_tat(trips, stops, chua):
 
 def in_bang(od, plan, trips, chua, xe):
     print(f"\n=== {plan['name']}: {plan['trip_count']} chuyến, {plan['total_weight']:,.1f} kg, "
-          f"{plan['total_km']:,.1f} km, {plan['unassigned_count']} phiếu chưa xếp")
+          f"{plan['total_km']:,.1f} km, {plan['unassigned_count']} phiếu chưa xếp, "
+          f"tối đa {plan['max_stops'] or 'không giới hạn'} điểm mỗi chuyến")
     theo_xe = {t["vehicle_id"][0]: t for t in trips}
     print(f"{'Xe':<6} {'Tải trọng':>9} {'Số điểm':>7} {'Tải kg':>9} {'% tải':>6} {'Km':>7} {'Đoạn Maps':>9}")
     for x in xe:
@@ -141,7 +145,7 @@ def in_bang(od, plan, trips, chua, xe):
             if don[c["picking_id"][0]]["sale_id"]}
 
 
-def chay(od, ngay_moc, ds_so_don):
+def chay(od, ngay_moc, ds_so_don, max_stops=None):
     cai_module(od)
     tk = ThongKe()
     nap_xe(od, tk, doc_csv(SEED / "xe.csv"))
@@ -152,7 +156,10 @@ def chay(od, ngay_moc, ds_so_don):
     ready = chuan_bi_don(od, ngay_moc, ds_so_don)
     kho = od.search_read("stock.warehouse", [("code", "=", "PL")], ["id"])
     kiem(kho, "không có kho PL")
-    plan_id = od("pl.delivery.plan", "create", {"date": ngay_moc.isoformat(), "warehouse_id": kho[0]["id"]})
+    vals = {"date": ngay_moc.isoformat(), "warehouse_id": kho[0]["id"]}
+    if max_stops is not None:
+        vals["max_stops"] = max_stops
+    plan_id = od("pl.delivery.plan", "create", vals)
 
     goi(od, "pl.delivery.plan", "action_compute_routes", [plan_id])
     lan_1 = doc_ket_qua(od, plan_id)
@@ -173,11 +180,21 @@ def chay(od, ngay_moc, ds_so_don):
         kiem(t["weight"] <= t["capacity_kg"] + 1e-6, f"{t['vehicle_id'][1]} quá tải: {t['weight']:,.1f} kg")
         kiem(t["maps_url"] and t["maps_url"].startswith("https://www.google.com/maps/dir/?api=1"),
              f"{t['vehicle_id'][1]} thiếu link Maps")
-    # Đơn quá tải nằm trong danh sách chưa xếp, đúng lý do.
+    # Số điểm mỗi chuyến không vượt giới hạn; cả đội xe đều có chuyến.
+    if plan["max_stops"]:
+        for t in trips:
+            kiem(t["stop_count"] <= plan["max_stops"],
+                 f"{t['vehicle_id'][1]} có {t['stop_count']} điểm, vượt {plan['max_stops']}")
+    co_chuyen = {t["vehicle_id"][0] for t in trips}
+    thieu_xe = [x["code"] for x in xe if x["id"] not in co_chuyen]
+    kiem(not thieu_xe, f"xe không có chuyến: {', '.join(thieu_xe)}")
+    # Đơn quá tải nằm trong danh sách chưa xếp, đúng lý do, và là phiếu chưa xếp duy nhất.
     so_081 = f"DB{ngay_moc:%Y%m%d}-081"
     dong_081 = [c for c in chua if chua_xep.get(c["picking_id"][0]) == so_081]
     kiem(dong_081, f"{so_081} không nằm trong danh sách chưa xếp")
     kiem(dong_081[0]["reason"] == "overweight", f"{so_081}: lý do {dong_081[0]['reason']}")
+    khac = sorted(chua_xep.get(c["picking_id"][0]) or c["picking_id"][1] for c in chua if c not in dong_081)
+    kiem(not khac, f"ngoài {so_081} còn {len(khac)} phiếu chưa xếp: {', '.join(khac)}")
 
     goi(od, "pl.delivery.plan", "action_confirm", [plan_id])
     plan = od("pl.delivery.plan", "read", [plan_id], fields=["state"])[0]
@@ -185,6 +202,23 @@ def chay(od, ngay_moc, ds_so_don):
     ghi = od.search_read("stock.picking", [("id", "in", da_xep)], ["pl_trip_id", "pl_stop_sequence"])
     kiem(all(p["pl_trip_id"] and p["pl_stop_sequence"] for p in ghi), "phiếu chưa có chuyến sau khi xác nhận")
     print(f"\nXác nhận {plan_id}: {len(ghi)} phiếu đã ghi chuyến và thứ tự điểm dừng")
+
+    # Mỗi chuyến một Batch Transfer, mỗi phiếu nằm đúng batch của chuyến mình.
+    trips = od.search_read("pl.delivery.trip", [("plan_id", "=", plan_id)], ["vehicle_id", "batch_id"],
+                           order="vehicle_id")
+    batch_ids = {t["batch_id"][0] for t in trips if t["batch_id"]}
+    kiem(len(batch_ids) == len(trips), f"{len(batch_ids)} batch cho {len(trips)} chuyến")
+    batches = {b["id"]: b for b in od.search_read("stock.picking.batch", [("id", "in", list(batch_ids))],
+                                                  ["name", "description", "state", "picking_ids"])}
+    phieu = {p["id"]: p for p in od.search_read("stock.picking", [("id", "in", da_xep)],
+                                                ["pl_trip_id", "batch_id", "batch_sequence", "pl_stop_sequence"])}
+    for t in trips:
+        b = batches[t["batch_id"][0]]
+        cua_chuyen = {pid for pid, p in phieu.items() if p["pl_trip_id"][0] == t["id"]}
+        kiem(set(b["picking_ids"]) == cua_chuyen, f"batch {b['name']} không khớp phiếu của chuyến {t['vehicle_id'][1]}")
+        kiem(all(phieu[pid]["batch_sequence"] == phieu[pid]["pl_stop_sequence"] for pid in cua_chuyen),
+             f"batch {b['name']}: thứ tự phiếu khác thứ tự giao")
+        print(f"  {b['name']} [{b['state']}] {b['description']}: {len(b['picking_ids'])} phiếu")
 
 
 def main():
@@ -195,6 +229,8 @@ def main():
     p.add_argument("--src", default=DB_CHINH)
     p.add_argument("--db", default=DB_CHECK)
     p.add_argument("--keep", action="store_true", help="không xóa database check")
+    p.add_argument("--max-stops", type=int, help="số điểm tối đa mỗi chuyến, 0 = không giới hạn "
+                                                  "(mặc định theo kế hoạch)")
     args = p.parse_args()
 
     don_ban = doc_csv(SEED / "don_ban.csv")
@@ -208,14 +244,14 @@ def main():
     ql.nhan_ban(args.src, args.db)
     print(f"Đã nhân bản {args.src} thành {args.db}")
     try:
-        chay(ket_noi(url, args.db), ngay_moc, ds_so_don)
+        chay(ket_noi(url, args.db), ngay_moc, ds_so_don, args.max_stops)
     finally:
         if args.keep:
             print(f"\nGiữ database {args.db}")
         else:
             ql.xoa(args.db)
             print(f"\nĐã xóa {args.db}")
-    print("PASS: không xe nào quá tải, đơn quá tải nằm trong danh sách chưa xếp")
+    print("PASS: không xe nào quá tải hay vượt số điểm, cả đội xe có chuyến, chỉ đơn quá tải chưa xếp")
 
 
 if __name__ == "__main__":

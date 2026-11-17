@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0-20260926\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-16 08:19+0000\n"
-"PO-Revision-Date: 2026-11-16 08:19+0000\n"
+"POT-Creation-Date: 2026-11-17 06:38+0000\n"
+"PO-Revision-Date: 2026-11-17 06:38+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -15,6 +15,47 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid "%(vehicle)s - %(date)s"
+msgstr "%(vehicle)s - %(date)s"
+
+#. module: pl_delivery_route
+#: model:ir.actions.report,print_report_name:pl_delivery_route.action_report_loading_sheet
+msgid "'Loading Sheet - %s' % object.display_name.replace('/', '-')"
+msgstr "'Phiếu xếp hàng - %s' % object.display_name.replace('/', '-')"
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Capacity:</strong>"
+msgstr "<strong>Tải trọng:</strong>"
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Delivery Date:</strong>"
+msgstr "<strong>Ngày giao:</strong>"
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Stops:</strong>"
+msgstr "<strong>Số điểm:</strong>"
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Total Distance:</strong>"
+msgstr "<strong>Tổng quãng đường:</strong>"
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Total Load:</strong>"
+msgstr "<strong>Tổng tải:</strong>"
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "<strong>Vehicle:</strong>"
+msgstr "<strong>Xe:</strong>"
 
 #. module: pl_delivery_route
 #. odoo-python
@@ -48,6 +89,18 @@ msgstr "Đã lưu trữ"
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__total_weight
 msgid "Assigned Weight (kg)"
 msgstr "Tổng tải đã xếp (kg)"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__batch_id
+msgid "Batch Transfer"
+msgstr "Lệnh chuyển hàng theo lô"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,help:pl_delivery_route.field_pl_delivery_trip__batch_id
+msgid ""
+"Batch transfer grouping the deliveries of this trip, created on "
+"confirmation."
+msgstr "Lệnh chuyển hàng theo lô gom các phiếu giao của chuyến này, tạo khi xác nhận kế hoạch."
 
 #. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__capacity_kg
@@ -116,6 +169,11 @@ msgstr "Được tạo vào"
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_unassigned__partner_id
 msgid "Customer"
 msgstr "Khách hàng"
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Delivery #"
+msgstr "Thứ tự giao"
 
 #. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__date
@@ -282,6 +340,11 @@ msgid "Leg km"
 msgstr "Km chặng"
 
 #. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Load #"
+msgstr "Thứ tự xếp"
+
+#. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__load_pct
 msgid "Load (%)"
 msgstr "% tải trọng"
@@ -294,14 +357,43 @@ msgid "Load (kg)"
 msgstr "Tải (kg)"
 
 #. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid ""
+"Load from top to bottom; the first delivery stop ends up next to the door."
+msgstr "Xếp theo thứ tự từ trên xuống; điểm giao đầu tiên nằm sát cửa xe."
+
+#. module: pl_delivery_route
+#: model:ir.actions.report,name:pl_delivery_route.action_report_loading_sheet
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Loading Sheet"
+msgstr "Phiếu xếp hàng"
+
+#. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__longitude
 msgid "Longitude"
 msgstr "Kinh độ"
 
 #. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Lot"
+msgstr "Lô"
+
+#. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__maps_segment_count
 msgid "Map Segments"
 msgstr "Số đoạn Maps"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__max_stops
+msgid "Max Stops per Trip"
+msgstr "Số điểm tối đa mỗi chuyến"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,help:pl_delivery_route.field_pl_delivery_plan__max_stops
+msgid ""
+"Maximum number of customers one driver delivers to in a day. 0 means no "
+"limit."
+msgstr "Số khách tối đa một tài xế giao được trong ngày. 0 là không giới hạn."
 
 #. module: pl_delivery_route
 #: model:ir.model.fields.selection,name:pl_delivery_route.selection__pl_delivery_unassigned__reason__no_coordinates
@@ -330,6 +422,21 @@ msgid ""
 "Pick the delivery date and warehouse, then click Compute Routes to assign "
 "the ready deliveries to vehicles."
 msgstr "Chọn ngày giao và kho, bấm Lập tuyến để xếp các phiếu xuất đang Ready lên xe."
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_trip_view_form
+msgid "Print"
+msgstr "In"
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Quantity"
+msgstr "Số lượng"
 
 #. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_unassigned__reason
@@ -427,6 +534,11 @@ msgid "The company is automatically set from your user preferences."
 msgstr "Công ty được tự động đặt theo thiết lập người dùng của bạn."
 
 #. module: pl_delivery_route
+#: model:ir.model.constraint,message:pl_delivery_route.constraint_pl_delivery_plan_max_stops_positive
+msgid "The maximum number of stops cannot be negative."
+msgstr "Số điểm tối đa không được âm."
+
+#. module: pl_delivery_route
 #: model:ir.model.constraint,message:pl_delivery_route.constraint_pl_delivery_plan_road_factor_positive
 msgid "The road factor must be at least 1."
 msgstr "Hệ số đường đi phải từ 1 trở lên."
@@ -449,6 +561,14 @@ msgid ""
 "These transfers already belong to another confirmed plan; compute the routes"
 " again: %s"
 msgstr "Các phiếu sau đã thuộc kế hoạch khác đã xác nhận, hãy lập tuyến lại: %s"
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid ""
+"These transfers are already in a batch transfer; remove them from it or "
+"compute the routes again: %s"
+msgstr "Các phiếu sau đã nằm trong một lệnh chuyển hàng theo lô khác; hãy gỡ khỏi lệnh đó hoặc lập tuyến lại: %s"
 
 #. module: pl_delivery_route
 #: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_plan_view_form
@@ -474,9 +594,22 @@ msgid "Transfers"
 msgstr "Phiếu xuất"
 
 #. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Transfers:"
+msgstr "Phiếu xuất:"
+
+#. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__trip_id
 msgid "Trip"
 msgstr "Chuyến"
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid ""
+"Trip %s has transfers of different operation types and cannot be grouped in "
+"one batch transfer."
+msgstr "Chuyến %s có phiếu thuộc nhiều loại phiếu khác nhau, không gom được vào một lệnh chuyển hàng theo lô."
 
 #. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__trip_count
@@ -506,6 +639,11 @@ msgid "Unassigned Transfers"
 msgstr "Phiếu chưa xếp"
 
 #. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "Unit"
+msgstr "Đơn vị"
+
+#. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__vehicle_id
 msgid "Vehicle"
 msgstr "Xe"
@@ -529,6 +667,21 @@ msgid ""
 "Warehouse %s has no delivery vehicles (Inventory > Configuration > Delivery "
 "Vehicles)."
 msgstr "Kho %s chưa có xe giao hàng (Inventory > Configuration > Xe giao hàng)."
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "kg"
+msgstr "kg"
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "kg ("
+msgstr "kg ("
+
+#. module: pl_delivery_route
+#: model_terms:ir.ui.view,arch_db:pl_delivery_route.report_loading_sheet
+msgid "km"
+msgstr "km"
 
 #. module: pl_delivery_route
 #. odoo-python
