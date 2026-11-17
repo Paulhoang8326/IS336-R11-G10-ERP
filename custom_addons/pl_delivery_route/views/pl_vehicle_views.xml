@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pl_vehicle_view_list" model="ir.ui.view">
+        <field name="name">pl.vehicle.list</field>
+        <field name="model">pl.vehicle</field>
+        <field name="arch" type="xml">
+            <list string="Delivery Vehicles">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="capacity_kg"/>
+                <field name="warehouse_id"/>
+                <field name="company_id" column_invisible="True"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="pl_vehicle_view_form" model="ir.ui.view">
+        <field name="name">pl.vehicle.form</field>
+        <field name="model">pl.vehicle</field>
+        <field name="arch" type="xml">
+            <form string="Delivery Vehicles">
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="name"/>
+                            <field name="capacity_kg"/>
+                        </group>
+                        <group>
+                            <field name="warehouse_id"/>
+                            <field name="company_id" invisible="1"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="pl_vehicle_view_search" model="ir.ui.view">
+        <field name="name">pl.vehicle.search</field>
+        <field name="model">pl.vehicle</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="warehouse_id"/>
+                <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="pl_vehicle_action" model="ir.actions.act_window">
+        <field name="name">Delivery Vehicles</field>
+        <field name="res_model">pl.vehicle</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>
