@@ -150,6 +150,8 @@ scripts/restore.sh backups/pl_moc_<yyyymmdd_hhmmss> pl_moc
 .\scripts\restore.ps1 backups\pl_moc_<yyyymmdd_hhmmss> pl_moc
 ~~~
 
+**Đã chạy.** Ngày 18/11/2026 trên macOS, Odoo 18.0-20260926, seed ngày mốc 29/10/2026. Chạy `--skip-swap` hai lần liên tiếp đều pass bước 5. Lần chạy thật, `seed_import.py` ra 0 cảnh báo và 16/16 điều kiện của bước 5 pass. Bước 6 thấy `pl_moc` cũ lệch seed một mục: Settings *Invoicing Policy* là `order`, vì database được nạp trước khi seed đặt `delivery`. Ngoài ra `pl_moc` cũ thiếu 6 module của nhóm, có 81 đơn seed đã xác nhận kèm 81 phiếu xuất, và 150 bút toán tồn đầu kỳ khớp DB mới. Không có user, đơn, phiếu, hóa đơn hay cấu hình kho nào ngoài seed. Sau khi thay, bản cũ là `pl_moc_old_20261118_0028`, backup ở `backups/pl_moc_20261118_002859`. Trên `pl_moc` mới, `check_o2c.py`, `check_route.py`, `check_fefo.py` và `scripts/seminar3/check_flow.py` đều pass, mã thoát 0. Lệnh PowerShell chưa chạy thử trên Windows.
+
 **Database seminar.** `phanlam_seminar3` và `phanlam_seminar3_clean` được nhân bản từ `pl_moc` cũ, nên không đổi khi dựng lại `pl_moc`. Muốn chúng theo seed mới thì chạy lại `scripts/seminar3/make_seminar_db.py --force` (xóa và tạo lại `phanlam_seminar3`), xem [scripts/seminar3/README.md](../scripts/seminar3/README.md#tạo-lại).
 
 ## Database tạo từ trước
