@@ -60,6 +60,8 @@ Script hỏi mật khẩu (`admin`), hoặc lấy từ biến môi trường `OD
 
 Chạy lại bao nhiêu lần cũng được: thứ đã có thì không tạo thêm. Bỏ `--orders` nếu chưa muốn tạo báo giá.
 
+Script đặt hóa đơn lập theo số lượng đã giao: bật *Invoice what is delivered* trong Sales Settings và ghi *Invoicing Policy* = *Delivered quantities* cho từng sản phẩm của seed (đổi setting không sửa sản phẩm đã có). Database nạp trước khi có phần này thì chạy lại script một lần: dòng *Cài đặt* cập nhật 1, dòng *Sản phẩm* cập nhật 150; lần sau không đổi gì nữa. Xem [seed_data.md](seed_data.md#dữ-liệu-vào-odoo-ở-đâu) và [o2c_check.md](o2c_check.md).
+
 ## Bước 3. Kiểm tra
 
 | Menu | Thấy gì |
@@ -68,7 +70,8 @@ Chạy lại bao nhiêu lần cũng được: thứ đã có thì không tạo t
 | Inventory > Configuration > Locations | 6 dãy kệ `PL/Stock/Dãy A - Wilmar` đến `Dãy F`, mỗi nhãn một dãy; 240 ô `A-01-1`... trong các dãy. `PL/Stock` có *Removal Strategy* FEFO |
 | Inventory > Configuration > Putaway Rules | 150 quy tắc, mỗi sản phẩm vào dãy của nhà cung cấp |
 | Inventory > Reporting > Stock | 150 mã, 377 lô có hạn dùng, nằm trong ô của dãy đúng nhãn |
-| Sales > Products > Products | 150 sản phẩm, mã dạng `NCC01-0005` |
+| Sales > Products > Products | 150 sản phẩm, mã dạng `NCC01-0005`, tab *Sales* có *Invoicing Policy* = *Delivered quantities* |
+| Sales > Configuration > Settings > Invoicing | *Invoicing Policy* chọn *Invoice what is delivered* |
 | Sales > Orders > Customers | 300 khách, gắn nhãn theo nhóm (Tạp hóa, Minimart...) |
 | Sales > Products > Pricelists | 5 bảng giá "Giá sỉ - ..." |
 | Sales > Orders > Quotations | 81 báo giá ngày mốc, số đơn dạng `DB20261029-001` |
