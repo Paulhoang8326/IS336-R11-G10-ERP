@@ -57,6 +57,7 @@ IS336-R11-G10-ERP/
 │   ├── gen_seed.py              # sinh bộ dữ liệu demo từ seed/danh_muc/
 │   ├── seed_import.py           # nạp bộ demo vào Odoo qua XML-RPC
 │   ├── setup_warehouse.py       # cấu hình kho, chạy sau seed_import.py
+│   ├── rebuild_main_db.py       # dựng lại pl_moc từ seed hiện tại, giữ bản cũ và backup
 │   ├── check_route.py           # chạy thử pl_delivery_route trên bản nhân bản của pl_moc
 │   ├── check_fefo.py            # chạy thử pl_fefo_pick trên bản nhân bản của pl_moc
 │   ├── check_o2c.py             # chạy thử Order-to-Cash từ mua hàng đến thu tiền trên bản nhân bản của pl_moc
