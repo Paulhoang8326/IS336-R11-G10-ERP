@@ -43,24 +43,25 @@ Mỗi dãy chia thành các ô, tổng cộng 240 ô. Mã ô là `dãy-kệ-tầ
 
 Tồn đầu ngày mốc, theo lô và hạn dùng, nằm trong ô của dãy đúng nhãn; không có tồn ở cấp dãy hay `PL/Stock`. Ngày sản xuất và hạn dùng tính lùi, tiến từ ngày mốc (`--ngay-moc`, xem [seed.md](seed.md)), nên đổi ngày mốc thì mọi khoảng cách dưới đây giữ nguyên. Ngày sản xuất của mọi lô đều trước ngày mốc, và hạn dùng trừ ngày sản xuất đúng bằng hạn dùng của mã (số tháng × 30 ngày).
 
-- Mỗi mã có 2 hoặc 3 lô thường, hạn dùng khác nhau. Hai lô: lô cũ còn 30–60% hạn dùng, lô mới còn 70–95%. Ba lô: còn 25–45%, 50–70%, 75–95%. Lô cũ có thể dưới mức hạn dùng tối thiểu của minimart (50%) hay khách sạn, căn tin (60%), để thử chọn lô khi giao.
-- Riêng các lô thường đã đủ hàng cho mọi đơn trong ngày (kể cả đơn quá tải), dư thêm 3–12 thùng mỗi mã.
+- Mỗi mã có 2 hoặc 3 lô thường, hạn dùng khác nhau. Hai lô: lô cũ còn 36–60% hạn dùng, lô mới còn 70–95%. Ba lô: còn 36–48%, 52–70%, 75–95%. Lô thường nào cũng còn trên 35%, đạt mức thấp nhất của khách (tạp hóa, quán ăn 30%); lô mới nhất đạt mọi mức. Lô cũ có thể dưới mức của minimart (50%) hay khách sạn, căn tin (60%), để thử chọn lô khi giao.
+- Riêng các lô thường đã đủ hàng cho mọi đơn trong ngày (kể cả đơn quá tải), dư thêm 3–12 thùng mỗi mã. Đủ tính theo từng mức khách: mỗi đơn lấy đủ được từ các lô đạt mức của khách đó, dù đơn nào được giữ hàng trước. Mã nào thiếu thì `gen_seed.py` chuyển bớt thùng từ lô cũ sang lô mới nhất.
 - Thêm 5 lô cận date (còn 5–30 ngày tới hạn) và 2 lô đã hết hạn 3–30 ngày, mỗi lô 1–3 thùng, ở 7 mã khác nhau. Mã có lô thêm thì chỉ có 2 lô thường, nên vẫn tối đa 3 lô.
-- Aquafina 1500 ml (`NCC02-0002`, mã PepsiCo hạn dùng dài nhất, 18 tháng) có đúng 3 lô, hết hạn sau ngày mốc 5, 11 và 17 tháng (150, 330, 510 ngày), tức còn khoảng 28%, 61% và 94% hạn dùng. Với ngày mốc 29/10/2026 là các hạn 28/03/2027, 24/09/2027 và 22/03/2028. Kịch bản demo: khách minimart cần hàng còn ít nhất 50% hạn dùng, nên lô hết hạn gần nhất không đạt và phải lấy lô thứ hai.
+- Lô cận date và lô hết hạn không giao cho khách nào: dưới mức thấp nhất (30%) nên `pl_fefo_pick` không giữ cho đơn bán. Xử lý bằng cảnh báo hạn dùng của Odoo hoặc hủy hàng (scrap).
+- Aquafina 1500 ml (`NCC02-0002`, mã PepsiCo hạn dùng dài nhất, 18 tháng) có đúng 3 lô, hết hạn sau ngày mốc 7, 11 và 17 tháng (210, 330, 510 ngày), tức còn khoảng 39%, 61% và 94% hạn dùng. Với ngày mốc 29/10/2026 là các hạn 27/05/2027, 24/09/2027 và 22/03/2028. Kịch bản demo: tạp hóa (30%) lấy lô gần hạn nhất; minimart (50%), khách sạn, căn tin (60%) không lấy được lô đó mà phải lấy lô thứ hai.
 - Số lô là `L` + ngày sản xuất dạng `yymmdd`. Cột `ngay_sx` trong `ton_kho.csv` chưa nạp vào Odoo vì Odoo chưa có trường ngày sản xuất; sẽ nạp khi có module `pl_stock_lot`.
-- Kho xuất theo FEFO: lô hết hạn sớm nhất được lấy trước. Odoo chuẩn (`product_expiry`) không giữ lô có hạn dùng trước ngày của phiếu xuất. Ngày đó là lúc xác nhận đơn, không phải ngày mốc, nên muốn lô cận date và lô hết hạn đúng như trên thì ngày mốc phải là ngày demo. Giữ hạn dùng tối thiểu theo nhóm khách là việc của module `pl_fefo_pick`.
+- Kho xuất theo FEFO: lô hết hạn sớm nhất được lấy trước. Odoo chuẩn (`product_expiry`) không giữ lô có hạn dùng trước ngày của phiếu xuất. Ngày đó là lúc xác nhận đơn, không phải ngày mốc, nên muốn lô cận date và lô hết hạn đúng như trên thì ngày mốc phải là ngày demo. Giữ hạn dùng tối thiểu theo nhóm khách là việc của module `pl_fefo_pick` ([fefo_pick.md](fefo_pick.md)): chỉ giữ lô còn đủ hạn dùng tính đến ngày giao dự kiến của phiếu.
 
 ## Khách hàng
 
 | Nhóm | Số khách | Hạn thanh toán | Hạn mức nợ | Hạn dùng còn lại khi giao | Giá riêng |
 | --- | --- | --- | --- | --- | --- |
-| Tạp hóa | 180 | trả ngay hoặc 7 ngày | 5–20 triệu | – | – |
+| Tạp hóa | 180 | trả ngay hoặc 7 ngày | 5–20 triệu | ít nhất 30% | – |
 | Minimart | 60 | 15 ngày | 30–80 triệu | ít nhất 50% | −3% mọi mã |
-| Quán ăn | 30 | trả ngay hoặc 7 ngày | 5–15 triệu | – | – |
+| Quán ăn | 30 | trả ngay hoặc 7 ngày | 5–15 triệu | ít nhất 30% | – |
 | Khách sạn | 15 | 30 ngày | 50–150 triệu | ít nhất 60% | −5% nước giải khát, nước suối khi mua từ 1 thùng |
 | Căn tin KCN | 15 | 30 ngày | 50–200 triệu | ít nhất 60% | −7% nước giải khát, nước suối khi mua từ 5 thùng |
 
-Khách trả ngay thì không có hạn mức nợ. Nhóm không có giá riêng thì mua theo giá bán.
+Khách trả ngay thì không có hạn mức nợ. Nhóm không có giá riêng thì mua theo giá bán. Hạn dùng còn lại tính theo hạn dùng của mã, vào ngày giao dự kiến; module `pl_fefo_pick` hiểu 0 là không yêu cầu, nhưng seed không có nhóm nào để 0.
 
 ## Đơn hàng
 
@@ -101,7 +102,7 @@ File CSV mã UTF-8, dòng đầu là tên cột. Sửa bằng Excel thì lưu d�
 | --- | --- | --- |
 | `san_pham.csv` | `ma_sp`, `ten`, `ma_ncc`, `nhom_hang`, `dvt`, `so_dvt_moi_thung`, `kg_moi_thung`, `ma_vach_le`, `ma_vach_thung`, `gia_nhap`, `gia_ban`, `vat_pct`, `han_dung_thang`, `uoc_luong` | Giữ nguyên cột của danh mục. `so_dvt_moi_thung` là N. Cân nặng tính cho một thùng, giá tính cho một đơn vị lẻ. `uoc_luong` liệt kê các cột là số ước lượng |
 | `nha_cung_cap.csv` | `ma_ncc`, `ten`, `han_thanh_toan_ngay` | Chép nguyên từ danh mục |
-| `khach_hang.csv` | `ma_kh`, `ten`, `nhom_khach`, `dia_chi`, `phuong`, `thanh_pho`, `vi_do`, `kinh_do`, `han_thanh_toan_ngay`, `han_muc_no`, `han_dung_toi_thieu_pct` | Hạn thanh toán 0 là trả ngay. Ô trống nghĩa là không có hạn mức nợ, không yêu cầu hạn dùng |
+| `khach_hang.csv` | `ma_kh`, `ten`, `nhom_khach`, `dia_chi`, `phuong`, `thanh_pho`, `vi_do`, `kinh_do`, `han_thanh_toan_ngay`, `han_muc_no`, `han_dung_toi_thieu_pct` | Hạn thanh toán 0 là trả ngay. Ô trống nghĩa là không có hạn mức nợ, không yêu cầu hạn dùng (bộ hiện tại mọi khách đều có hạn dùng tối thiểu) |
 | `bang_gia.csv` | `nhom_khach`, `ma_sp`, `gia_ban`, `so_luong_toi_thieu` | Số lượng tính bằng đơn vị lẻ: thùng 12 chai, mua từ 1 thùng thì ghi 12 |
 | `kho.csv` | `ma_kho`, `ten`, `dia_chi`, `thanh_pho`, `vi_do`, `kinh_do` | Đúng một dòng |
 | `vi_tri.csv` | `ma_vi_tri`, `ten`, `ma_cha`, `ma_ncc`, `day`, `ke`, `tang` | Dòng dãy có `ma_cha` trống; dòng ô có `ma_cha` là mã dãy. `day`, `ke`, `tang` là số thứ tự |
@@ -121,7 +122,7 @@ python3 scripts/gen_seed.py --ngay-moc 2026-11-02 --xe 1500,1500,2500,2500,2500
 python scripts/gen_seed.py --ngay-moc 2026-11-02 --xe 1500,1500,2500,2500,2500
 ~~~
 
-Cùng ngày mốc và cùng tham số thì máy nào chạy cũng ra file giống hệt. Đổi ngày mốc thì chỉ các ngày (và số đơn, số lô vốn ghép từ ngày) dời theo; khách, mặt hàng, số lượng và vị trí giữ nguyên. Cuối lệnh script in tóm tắt để kiểm tra: số mã và dãy kệ của mỗi nhà cung cấp, số khách mỗi nhóm, số đơn và tổng tải, cân nặng đơn quá tải, số lô tồn kho, lô cận date và hết hạn, 3 lô Aquafina, và tồn có đủ cho mọi đơn không.
+Cùng ngày mốc và cùng tham số thì máy nào chạy cũng ra file giống hệt. Đổi ngày mốc thì chỉ các ngày (và số đơn, số lô vốn ghép từ ngày) dời theo; khách, mặt hàng, số lượng và vị trí giữ nguyên. Cuối lệnh script in tóm tắt để kiểm tra: số mã và dãy kệ của mỗi nhà cung cấp, số khách mỗi nhóm, số đơn và tổng tải, cân nặng đơn quá tải, số lô tồn kho, lô cận date và hết hạn, 3 lô Aquafina, và tồn các lô thường có đủ cho mọi đơn theo mức hạn dùng của từng khách không.
 
 | Tham số | Mặc định | Ý nghĩa |
 | --- | --- | --- |
@@ -132,7 +133,7 @@ Cùng ngày mốc và cùng tham số thì máy nào chạy cũng ra file giốn
 | `--vuot-tai` | `120` | Cân nặng đơn quá tải, % xe lớn nhất |
 | `--seed` | `336` | Đổi số này là ra một bộ khác |
 
-Đổi thông số một nhóm khách bằng `--nhom`, ví dụ `--nhom "Minimart.giam=4"` hay `--nhom "Tạp hóa.han_tt=0|7|15"`. Các thông số: `ty_le` (% số khách), `han_tt` (hạn thanh toán), `han_muc` (hạn mức nợ), `hsd` (% hạn dùng tối thiểu), `so_dong` (số mặt hàng mỗi đơn), `so_thung` (số thùng mỗi mặt hàng), `ty_le_le` (% dòng mua lẻ), `giam` (% giảm giá), `thung_gia` (mua từ bao nhiêu thùng thì được giảm). Xem thêm bằng `--help`.
+Đổi thông số một nhóm khách bằng `--nhom`, ví dụ `--nhom "Minimart.giam=4"` hay `--nhom "Tạp hóa.han_tt=0|7|15"`. Các thông số: `ty_le` (% số khách), `han_tt` (hạn thanh toán), `han_muc` (hạn mức nợ), `hsd` (% hạn dùng còn lại tối thiểu khi giao, 0 là không yêu cầu), `so_dong` (số mặt hàng mỗi đơn), `so_thung` (số thùng mỗi mặt hàng), `ty_le_le` (% dòng mua lẻ), `giam` (% giảm giá), `thung_gia` (mua từ bao nhiêu thùng thì được giảm). Xem thêm bằng `--help`.
 
 ## Dữ liệu vào Odoo ở đâu
 
@@ -147,7 +148,7 @@ Dành cho ai sửa `scripts/seed_import.py` hoặc viết module dùng dữ li�
 | `nha_cung_cap.csv` | Đối tác `res.partner`, ô *Reference* là mã NCC, kèm hạn thanh toán |
 | `san_pham.csv` | Sản phẩm `product.template` theo dõi theo lô và hạn dùng, có thuế theo `vat_pct`, cân nặng một đơn vị lẻ. Thêm quy cách "Thùng N" (`product.packaging`) và giá nhập theo nhà cung cấp (`product.supplierinfo`) |
 | `bang_gia.csv` | Bảng giá `product.pricelist` "Giá sỉ - <nhóm>", mỗi dòng CSV là một dòng giá cố định |
-| `khach_hang.csv` | Đối tác `res.partner`, ô *Reference* là mã KH, nhãn theo nhóm, hạn thanh toán, bảng giá, hạn mức nợ. Hạn dùng tối thiểu chờ module có trường `pl_min_shelf_life_pct` |
+| `khach_hang.csv` | Đối tác `res.partner`, ô *Reference* là mã KH, nhãn theo nhóm, hạn thanh toán, bảng giá, hạn mức nợ. Hạn dùng tối thiểu vào trường `pl_min_shelf_life_pct` khi đã cài `pl_fefo_pick`, chưa cài thì bỏ qua |
 | `don_ban.csv` | Báo giá `sale.order` chưa xác nhận, xuất từ Kho Phan Lâm, ô *Customer Reference* là số đơn. Dòng mua theo thùng đổi ra số đơn vị lẻ và gắn quy cách thùng |
 | `xe.csv` | Xe giao hàng `pl.vehicle`, mã xe là `ma_xe`, kho xuất phát theo `ma_kho`. Chỉ nạp khi đã cài module `pl_delivery_route` ([delivery_route.md](delivery_route.md)), chưa cài thì bỏ qua |
 

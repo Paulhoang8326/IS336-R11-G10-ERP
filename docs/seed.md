@@ -56,7 +56,7 @@ python3 scripts/seed_import.py --db demo --orders
 python scripts/seed_import.py --db demo --orders
 ~~~
 
-Script hỏi mật khẩu (`admin`), hoặc lấy từ biến môi trường `ODOO_PASSWORD` nếu đã đặt. Chạy mất vài giây. Có một cảnh báo về `pl_min_shelf_life_pct` là bình thường, vì module đó chưa làm.
+Script hỏi mật khẩu (`admin`), hoặc lấy từ biến môi trường `ODOO_PASSWORD` nếu đã đặt. Chạy mất vài giây. Hạn dùng tối thiểu của khách chỉ ghi được khi đã cài module `pl_fefo_pick`; chưa cài thì script cảnh báo một dòng về `pl_min_shelf_life_pct` và bỏ qua trường này. Cài module rồi chạy lại script theo [fefo_pick.md](fefo_pick.md#cài).
 
 Chạy lại bao nhiêu lần cũng được: thứ đã có thì không tạo thêm. Bỏ `--orders` nếu chưa muốn tạo báo giá.
 
@@ -137,4 +137,4 @@ Không ghi chú kiểu (giả lập), (demo), (test) vào giá trị dữ liệu
 
 ## Đã kiểm tra
 
-Ngày 29/10/2026 trên macOS, Odoo 18.0-20260926: làm đúng 3 bước trên với database mới, lần nạp đầu mất 7 giây, lần nạp thứ hai không tạo thêm bản ghi nào. Trong Odoo chỉ có 1 kho `PL`, 6 dãy, 240 ô; 377 lô có hạn dùng đều nằm trong ô của dãy đúng nhãn, không lô nào ở cấp dãy hay `PL/Stock`; 300 khách, 81 báo giá. Xác nhận cả 81 báo giá thì ra 81 phiếu xuất, đều Ready, lô được giữ theo đúng thứ tự FEFO và không giữ lô hết hạn. Đơn mua 1 mã Wilmar khi nhận hàng được gợi ý vào ô của mã đó trong dãy Wilmar. Lệnh PowerShell chưa chạy thử trên Windows.
+Ngày 29/10/2026 trên macOS, Odoo 18.0-20260926: làm đúng 3 bước trên với database mới, lần nạp đầu mất 7 giây, lần nạp thứ hai không tạo thêm bản ghi nào. Trong Odoo chỉ có 1 kho `PL`, 6 dãy, 240 ô; 377 lô có hạn dùng đều nằm trong ô của dãy đúng nhãn, không lô nào ở cấp dãy hay `PL/Stock`; 300 khách, 81 báo giá. Xác nhận cả 81 báo giá thì ra 81 phiếu xuất, đều Ready, lô được giữ theo đúng thứ tự FEFO và không giữ lô hết hạn. Ngày 17/11/2026 nạp lại bộ đã đổi mức hạn dùng tối thiểu (ngày mốc vẫn 29/10/2026) vào database mới `pl_seed_fefo`: cùng số bản ghi, 1 cảnh báo `pl_min_shelf_life_pct` khi chưa cài `pl_fefo_pick`, 0 cảnh báo sau khi cài. Đơn mua 1 mã Wilmar khi nhận hàng được gợi ý vào ô của mã đó trong dãy Wilmar. Lệnh PowerShell chưa chạy thử trên Windows.
