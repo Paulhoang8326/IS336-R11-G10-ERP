@@ -59,6 +59,7 @@ IS336-R11-G10-ERP/
 │   ├── setup_warehouse.py       # cấu hình kho, chạy sau seed_import.py
 │   ├── check_route.py           # chạy thử pl_delivery_route trên bản nhân bản của pl_moc
 │   ├── check_fefo.py            # chạy thử pl_fefo_pick trên bản nhân bản của pl_moc
+│   ├── check_o2c.py             # chạy thử Order-to-Cash từ mua hàng đến thu tiền trên bản nhân bản của pl_moc
 │   └── seminar3/                # database và kịch bản kiểm tra cho seminar 03
 ├── seed/
 │   ├── danh_muc/                # danh mục sản phẩm, nhà cung cấp (đầu vào)
@@ -73,8 +74,9 @@ IS336-R11-G10-ERP/
 │   ├── seed.md                  # cách nạp dữ liệu demo vào Odoo
 │   ├── seed_data.md             # bộ dữ liệu demo gồm gì, các file CSV
 │   ├── delivery_route.md        # lập kế hoạch giao hàng: cài, dùng, thuật toán
-│   └── fefo_pick.md             # giữ hàng theo hạn dùng tối thiểu của khách
+│   ├── fefo_pick.md             # giữ hàng theo hạn dùng tối thiểu của khách
+│   └── o2c_check.md             # kiểm tra Order-to-Cash: các bước, kết quả, giới hạn
 └── README.md
 ~~~
 
-Compose chỉ bind HTTP vào `127.0.0.1:8069` và dùng hai named volumes cho PostgreSQL và dữ liệu Odoo. `docker compose down` giữ volumes; không dùng `down -v` khi cần giữ dữ liệu. **Database tạo bằng Odoo 19 không mở được bằng Odoo 18, vì Odoo không hạ cấp database.** Ai đã tạo database thử bằng 19 thì xóa đi; nếu có dữ liệu cần giữ thì báo nhóm trước. Phát triển module Odoo 18 trong `custom_addons/`, không sửa Odoo core hay code trong `oca/`. Sao lưu database kèm filestore bằng `scripts/backup.sh <db>`, khôi phục bằng `scripts/restore.sh <thư mục backup> <db đích>`; trên Windows dùng bản `.ps1` cùng tham số. Xem [hướng dẫn Docker](docs/docker_setup.md), [quy tắc cộng tác](docs/contributing.md), [phiên bản image và OCA](docs/odoo_version.md), [quét mã vạch](docs/barcode.md), [nạp dữ liệu demo](docs/seed.md), [bộ dữ liệu demo](docs/seed_data.md), [lập kế hoạch giao hàng](docs/delivery_route.md) và [giữ hàng theo hạn dùng tối thiểu](docs/fefo_pick.md).
+Compose chỉ bind HTTP vào `127.0.0.1:8069` và dùng hai named volumes cho PostgreSQL và dữ liệu Odoo. `docker compose down` giữ volumes; không dùng `down -v` khi cần giữ dữ liệu. **Database tạo bằng Odoo 19 không mở được bằng Odoo 18, vì Odoo không hạ cấp database.** Ai đã tạo database thử bằng 19 thì xóa đi; nếu có dữ liệu cần giữ thì báo nhóm trước. Phát triển module Odoo 18 trong `custom_addons/`, không sửa Odoo core hay code trong `oca/`. Sao lưu database kèm filestore bằng `scripts/backup.sh <db>`, khôi phục bằng `scripts/restore.sh <thư mục backup> <db đích>`; trên Windows dùng bản `.ps1` cùng tham số. Xem [hướng dẫn Docker](docs/docker_setup.md), [quy tắc cộng tác](docs/contributing.md), [phiên bản image và OCA](docs/odoo_version.md), [quét mã vạch](docs/barcode.md), [nạp dữ liệu demo](docs/seed.md), [bộ dữ liệu demo](docs/seed_data.md), [lập kế hoạch giao hàng](docs/delivery_route.md), [giữ hàng theo hạn dùng tối thiểu](docs/fefo_pick.md) và [kiểm tra Order-to-Cash](docs/o2c_check.md).
