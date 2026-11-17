@@ -33,6 +33,10 @@ CAI_DAT = [
     "group_stock_multi_locations",
     "account_use_credit_limit",
 ]
+# Cài đặt dạng lựa chọn. Sales > Invoicing Policy: lập hóa đơn theo số lượng đã giao (Delivered quantities).
+# Chỉ là giá trị mặc định cho sản phẩm tạo sau; sản phẩm đã có được ghi invoice_policy trong nap_san_pham.
+CAI_DAT_CHON = {"default_invoice_policy": "delivery"}
+HOA_DON_THEO = "delivery"
 DO_CHINH_XAC_KG = 4
 
 
@@ -175,31 +179,34 @@ def chi_giu_truong_co(od, tk, model, vals_list):
             del vals[f]
 
 
-def bat_tuy_chon(od, tk, ds):
-    """Bật các trường boolean của res.config.settings đang tắt."""
+def bat_tuy_chon(od, tk, ds, chon=None):
+    """Bật các trường boolean `ds` của res.config.settings đang tắt, đặt các trường lựa chọn `chon`
+    ({trường: giá trị}) đang khác giá trị muốn."""
+    muon = {f: True for f in ds}
+    muon.update(chon or {})
     co = od.fields("res.config.settings")
-    for f in ds:
+    for f in muon:
         if f not in co:
             print(f"  Bỏ qua {f}: không có trường này")
-    can = [f for f in ds if f in co]
+    can = [f for f in muon if f in co]
     # default_get bỏ sót trường related (account_use_credit_limit): đọc từ bản ghi tạm.
     sid = od("res.config.settings", "create", {})
     hien_tai = od("res.config.settings", "read", [sid], fields=can)[0]
-    thieu = [f for f in can if not hien_tai.get(f)]
+    thieu = [f for f in can if hien_tai.get(f) != muon[f]]
     if thieu:
-        od("res.config.settings", "write", [sid], {f: True for f in thieu})
+        od("res.config.settings", "write", [sid], {f: muon[f] for f in thieu})
         try:
             od("res.config.settings", "execute", [sid])
         except xmlrpc.client.Fault as e:
             if "cannot marshal None" not in e.faultString:
                 raise
-        print(f"  Đã bật: {', '.join(thieu)}")
+        print(f"  Đã bật: {', '.join(f if muon[f] is True else f'{f} = {muon[f]}' for f in thieu)}")
     tk.them("Cài đặt", 0, len(thieu))
 
 
 def bat_cai_dat(od, tk):
     print("Cài đặt")
-    bat_tuy_chon(od, tk, CAI_DAT)
+    bat_tuy_chon(od, tk, CAI_DAT, CAI_DAT_CHON)
 
     # Khối lượng mỗi đơn vị lẻ rất nhỏ (vd 0,0567 kg); 2 chữ số mặc định làm sai tải xe.
     dp = od.search_read("decimal.precision", [("name", "=", "Stock Weight")], ["digits"])
@@ -375,6 +382,7 @@ def nap_san_pham(od, tk, san_pham, ncc_ids, digits_kg):
             "categ_id": nhom_ids[r["nhom_hang"]],
             "taxes_id": ma_thue("sale", vat),
             "supplier_taxes_id": ma_thue("purchase", vat),
+            "invoice_policy": HOA_DON_THEO,
         }
         if han_dung:
             vals["expiration_time"] = han_dung * 30
