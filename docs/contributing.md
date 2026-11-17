@@ -46,4 +46,4 @@ Khi đồng bộ branch đang làm, bảo toàn thay đổi local trước; dùn
 
 ## Cấu hình local
 
-Chỉ commit `.env.example` và `config/odoo.example.conf` không chứa secrets. Bản `.env` và `config/odoo.conf` mỗi máy nằm ngoài Git. Xem [docker_setup.md](docker_setup.md) để cấu hình và quản lý volumes. Hiện mới có module khung `pl_base`; chưa có module nghiệp vụ hoặc bộ kiểm thử nghiệp vụ trong repository.
+Chỉ commit `.env.example` và `config/odoo.example.conf` không chứa secrets. Bản `.env` và `config/odoo.conf` mỗi máy nằm ngoài Git. Xem [docker_setup.md](docker_setup.md) để cấu hình và quản lý volumes. Module nghiệp vụ hiện có: `pl_delivery_route` ([delivery_route.md](delivery_route.md)) và `pl_fefo_pick` ([fefo_pick.md](fefo_pick.md)), cùng các module `pl_base`, `pl_barcode_camera`, `pl_product_barcode`. Phần tính toán của module nghiệp vụ nằm trong `services/`, viết bằng Python thuần, có unit test chạy không cần Odoo (`python3 -m unittest discover -s custom_addons/<module>/tests -v`); chạy thử trên Odoo bằng `scripts/check_route.py`, `scripts/check_fefo.py` trên bản nhân bản của `pl_moc`.
