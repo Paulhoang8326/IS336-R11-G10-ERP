@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0-20260926\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-17 06:34+0000\n"
-"PO-Revision-Date: 2026-11-17 06:34+0000\n"
+"POT-Creation-Date: 2026-11-17 06:36+0000\n"
+"PO-Revision-Date: 2026-11-17 06:36+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -15,6 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid "%(vehicle)s - %(date)s"
+msgstr "%(vehicle)s - %(date)s"
 
 #. module: pl_delivery_route
 #. odoo-python
@@ -48,6 +54,18 @@ msgstr "Đã lưu trữ"
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__total_weight
 msgid "Assigned Weight (kg)"
 msgstr "Tổng tải đã xếp (kg)"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__batch_id
+msgid "Batch Transfer"
+msgstr "Lệnh chuyển hàng theo lô"
+
+#. module: pl_delivery_route
+#: model:ir.model.fields,help:pl_delivery_route.field_pl_delivery_trip__batch_id
+msgid ""
+"Batch transfer grouping the deliveries of this trip, created on "
+"confirmation."
+msgstr "Lệnh chuyển hàng theo lô gom các phiếu giao của chuyến này, tạo khi xác nhận kế hoạch."
 
 #. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_trip__capacity_kg
@@ -468,6 +486,14 @@ msgid ""
 msgstr "Các phiếu sau đã thuộc kế hoạch khác đã xác nhận, hãy lập tuyến lại: %s"
 
 #. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid ""
+"These transfers are already in a batch transfer; remove them from it or "
+"compute the routes again: %s"
+msgstr "Các phiếu sau đã nằm trong một lệnh chuyển hàng theo lô khác; hãy gỡ khỏi lệnh đó hoặc lập tuyến lại: %s"
+
+#. module: pl_delivery_route
 #: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_plan_view_form
 #: model_terms:ir.ui.view,arch_db:pl_delivery_route.pl_delivery_trip_view_form
 msgid "Total"
@@ -494,6 +520,14 @@ msgstr "Phiếu xuất"
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_stop__trip_id
 msgid "Trip"
 msgstr "Chuyến"
+
+#. module: pl_delivery_route
+#. odoo-python
+#: code:addons/pl_delivery_route/models/pl_delivery_plan.py:0
+msgid ""
+"Trip %s has transfers of different operation types and cannot be grouped in "
+"one batch transfer."
+msgstr "Chuyến %s có phiếu thuộc nhiều loại phiếu khác nhau, không gom được vào một lệnh chuyển hàng theo lô."
 
 #. module: pl_delivery_route
 #: model:ir.model.fields,field_description:pl_delivery_route.field_pl_delivery_plan__trip_count

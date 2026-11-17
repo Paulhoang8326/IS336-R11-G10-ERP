@@ -203,6 +203,23 @@ def chay(od, ngay_moc, ds_so_don, max_stops=None):
     kiem(all(p["pl_trip_id"] and p["pl_stop_sequence"] for p in ghi), "phiếu chưa có chuyến sau khi xác nhận")
     print(f"\nXác nhận {plan_id}: {len(ghi)} phiếu đã ghi chuyến và thứ tự điểm dừng")
 
+    # Mỗi chuyến một Batch Transfer, mỗi phiếu nằm đúng batch của chuyến mình.
+    trips = od.search_read("pl.delivery.trip", [("plan_id", "=", plan_id)], ["vehicle_id", "batch_id"],
+                           order="vehicle_id")
+    batch_ids = {t["batch_id"][0] for t in trips if t["batch_id"]}
+    kiem(len(batch_ids) == len(trips), f"{len(batch_ids)} batch cho {len(trips)} chuyến")
+    batches = {b["id"]: b for b in od.search_read("stock.picking.batch", [("id", "in", list(batch_ids))],
+                                                  ["name", "description", "state", "picking_ids"])}
+    phieu = {p["id"]: p for p in od.search_read("stock.picking", [("id", "in", da_xep)],
+                                                ["pl_trip_id", "batch_id", "batch_sequence", "pl_stop_sequence"])}
+    for t in trips:
+        b = batches[t["batch_id"][0]]
+        cua_chuyen = {pid for pid, p in phieu.items() if p["pl_trip_id"][0] == t["id"]}
+        kiem(set(b["picking_ids"]) == cua_chuyen, f"batch {b['name']} không khớp phiếu của chuyến {t['vehicle_id'][1]}")
+        kiem(all(phieu[pid]["batch_sequence"] == phieu[pid]["pl_stop_sequence"] for pid in cua_chuyen),
+             f"batch {b['name']}: thứ tự phiếu khác thứ tự giao")
+        print(f"  {b['name']} [{b['state']}] {b['description']}: {len(b['picking_ids'])} phiếu")
+
 
 def main():
     if hasattr(sys.stdout, "reconfigure"):

@@ -19,6 +19,7 @@
                             <field name="plan_id" readonly="1"/>
                             <field name="date"/>
                             <field name="stop_count"/>
+                            <field name="batch_id" invisible="not batch_id"/>
                         </group>
                         <group>
                             <field name="weight" readonly="1"/>
@@ -61,6 +62,7 @@
                 <field name="weight"/>
                 <field name="load_pct" widget="progressbar"/>
                 <field name="total_km"/>
+                <field name="batch_id" optional="show"/>
                 <field name="maps_url" column_invisible="True"/>
                 <button name="action_open_maps" type="object" string="Google Maps" icon="fa-map-marker"
                         invisible="not maps_url"/>
@@ -133,6 +135,7 @@
                                     <field name="load_pct" widget="progressbar"/>
                                     <field name="total_km" sum="Total"/>
                                     <field name="maps_segment_count" optional="show"/>
+                                    <field name="batch_id" optional="show"/>
                                     <field name="maps_url" column_invisible="True"/>
                                     <button name="action_open_maps" type="object" string="Google Maps"
                                             icon="fa-map-marker" invisible="not maps_url"/>

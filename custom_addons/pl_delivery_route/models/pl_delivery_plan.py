@@ -5,6 +5,7 @@ from markupsafe import Markup
 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
+from odoo.tools import format_date
 
 from ..services import maps, vrp
 
@@ -160,7 +161,12 @@ class PlDeliveryPlan(models.Model):
         return True
 
     def action_confirm(self):
-        """Nút Confirm: ghi chuyến và thứ tự điểm dừng vào phiếu xuất, khóa kế hoạch."""
+        """Nút Confirm: ghi chuyến và thứ tự điểm dừng vào phiếu xuất, gom phiếu của mỗi chuyến thành một
+        Batch Transfer (stock.picking.batch), rồi khóa kế hoạch.
+
+        Kiểm tra hết trước khi ghi: phiếu đã thuộc kế hoạch khác, phiếu đã nằm trong batch khác, hay một chuyến
+        có phiếu thuộc nhiều loại phiếu (batch chỉ nhận phiếu cùng loại) thì báo lỗi, không tạo batch nào.
+        """
         for plan in self:
             if plan.state != "routed":
                 raise UserError(_("Compute the routes before confirming the plan."))
@@ -169,8 +175,30 @@ class PlDeliveryPlan(models.Model):
             if da_xep:
                 raise UserError(_("These transfers already belong to another confirmed plan; "
                                   "compute the routes again: %s", ", ".join(da_xep.mapped("name"))))
-            for stop in plan.trip_ids.stop_ids:
-                stop.picking_ids.write({"pl_trip_id": stop.trip_id.id, "pl_stop_sequence": stop.sequence})
+            trong_batch = pickings.filtered("batch_id")
+            if trong_batch:
+                raise UserError(_("These transfers are already in a batch transfer; remove them from it or "
+                                  "compute the routes again: %s",
+                                  ", ".join(f"{p.name} ({p.batch_id.name})" for p in trong_batch)))
+            for trip in plan.trip_ids:
+                if len(trip.stop_ids.picking_ids.picking_type_id) > 1:
+                    raise UserError(_("Trip %s has transfers of different operation types and cannot be "
+                                      "grouped in one batch transfer.", trip.display_name))
+
+            ngay = format_date(self.env, plan.date)
+            for trip in plan.trip_ids:
+                for stop in trip.stop_ids:
+                    stop.picking_ids.write({"pl_trip_id": trip.id, "pl_stop_sequence": stop.sequence,
+                                            "batch_sequence": stop.sequence})
+                pk = trip.stop_ids.picking_ids
+                batch = self.env["stock.picking.batch"].create({
+                    "description": _("%(vehicle)s - %(date)s", vehicle=trip.vehicle_id.code, date=ngay),
+                    "company_id": plan.company_id.id,
+                    "picking_type_id": pk.picking_type_id.id,
+                    "picking_ids": [(6, 0, pk.ids)],
+                })
+                batch.action_confirm()
+                trip.batch_id = batch
             plan.state = "confirmed"
         return True
 
@@ -201,6 +229,8 @@ class PlDeliveryTrip(models.Model):
     load_pct = fields.Float("Load (%)", compute="_compute_load_pct", store=True, digits=(16, 1))
     return_km = fields.Float("Return km", digits=(16, 2), help="Distance from the last stop back to the warehouse.")
     total_km = fields.Float("Total km", digits=(16, 1))
+    batch_id = fields.Many2one("stock.picking.batch", "Batch Transfer", readonly=True, copy=False,
+                               help="Batch transfer grouping the deliveries of this trip, created on confirmation.")
     maps_url = fields.Char("Google Maps", compute="_compute_maps",
                            help="Directions link of the first segment; long trips have more segments below.")
     maps_segment_count = fields.Integer("Map Segments", compute="_compute_maps")
