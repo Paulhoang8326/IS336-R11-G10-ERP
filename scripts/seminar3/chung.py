@@ -5,6 +5,7 @@ database): ODOO_MASTER_PASSWORD, không có thì đọc admin_passwd trong confi
 """
 
 import configparser
+import datetime as dt
 import getpass
 import os
 import sys
@@ -14,7 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from seed_import import Odoo  # noqa: E402,F401
+from seed_import import GIO_VN, Odoo  # noqa: E402,F401
 
 URL = "http://localhost:8069"
 DB_CHINH = "pl_moc"
@@ -72,3 +73,28 @@ def goi(od, model, method, *args, **kw):
         if "cannot marshal" in e.faultString:
             return None
         raise
+
+
+def kiem(dung, thong_diep):
+    if not dung:
+        raise AssertionError(thong_diep)
+
+
+def utc(ngay, gio):
+    """Giờ Việt Nam của ngày `ngay` đổi sang chuỗi UTC như Odoo lưu."""
+    return (dt.datetime.combine(ngay, dt.time(gio)) - dt.timedelta(hours=GIO_VN)).strftime("%Y-%m-%d %H:%M:%S")
+
+
+def cai_module(od, *ten):
+    """Cài các module chưa cài (sau khi cập nhật danh sách module). Trả về danh sách vừa cài."""
+    goi(od, "ir.module.module", "update_list")
+    vua_cai = []
+    for module in ten:
+        m = od.search_read("ir.module.module", [("name", "=", module)], ["state"])
+        kiem(m, f"Odoo không thấy module {module}: kiểm tra addons_path")
+        if m[0]["state"] != "installed":
+            goi(od, "ir.module.module", "button_immediate_install", [m[0]["id"]])
+            vua_cai.append(module)
+        m = od.search_read("ir.module.module", [("name", "=", module)], ["state"])[0]
+        kiem(m["state"] == "installed", f"{module} đang {m['state']}")
+    return vua_cai
