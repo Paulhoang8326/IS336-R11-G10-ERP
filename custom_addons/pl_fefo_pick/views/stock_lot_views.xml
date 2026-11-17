@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_production_lot_form_pl_fefo_pick" model="ir.ui.view">
+        <field name="name">stock.lot.form.pl_fefo_pick</field>
+        <field name="model">stock.lot</field>
+        <field name="inherit_id" ref="product_expiry.view_move_form_expiry"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='removal_date']" position="after">
+                <field name="pl_remaining_shelf_life_pct" invisible="not expiration_date"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_production_lot_list_pl_fefo_pick" model="ir.ui.view">
+        <field name="name">stock.lot.list.pl_fefo_pick</field>
+        <field name="model">stock.lot</field>
+        <field name="inherit_id" ref="product_expiry.view_production_lot_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='expiration_date']" position="after">
+                <field name="pl_remaining_shelf_life_pct" optional="show" invisible="not expiration_date"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

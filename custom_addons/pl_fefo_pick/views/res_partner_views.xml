@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_pl_fefo_pick" model="ir.ui.view">
+        <field name="name">res.partner.form.pl_fefo_pick</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='sales_purchases']//group[@name='sale']" position="inside">
+                <field name="pl_min_shelf_life_pct" readonly="parent_id and not is_company"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
