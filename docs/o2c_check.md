@@ -81,6 +81,8 @@ FAIL: INV/2026/00003 (Y) lập 4 thùng, đã giao 3 thùng (đặt 4): hóa đ�
 
 Cùng ngày: `check_route.py` và `scripts/seminar3/check_flow.py` pass. `check_fefo.py` trên `pl_moc` FAIL ("Khách sạn (60%) không giữ lô 11 tháng"), bản trên `main` cũng FAIL y như vậy nên không do thay đổi này; với `--src pl_seed_fefo` (database đã dùng khi ghi kết quả trong [fefo_pick.md](fefo_pick.md#kiểm-tra)) thì pass. Nguyên nhân nằm ở dữ liệu `pl_moc` (81 đơn đã xác nhận, lô của bộ seed cũ), chưa tra cụ thể.
 
+Ngày 18/11/2026 `pl_moc` được dựng lại từ seed hiện tại bằng `scripts/rebuild_main_db.py` ([seed.md](seed.md#dựng-lại-database-chính)): đủ module, 81 đơn ngày mốc còn là báo giá, lô khớp `ton_kho.csv`. Trên `pl_moc` mới cả `check_o2c.py`, `check_route.py`, `check_fefo.py` đều pass, mã thoát 0. Hai giới hạn về `pl_moc` dưới đây chỉ đúng với bản cũ, nay là `pl_moc_old_20261118_0028`.
+
 ## Giới hạn
 
 - Kiểm tra chạy qua XML-RPC bằng tài khoản admin, không qua giao diện. Nút trên giao diện gọi cùng phương thức (`button_validate`, `stock.backorder.confirmation`, `sale.advance.payment.inv`, `account.payment.register`), nhưng quyền của người dùng thật (nhân viên kho, kế toán) chưa được thử.
