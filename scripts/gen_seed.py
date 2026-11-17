@@ -30,18 +30,18 @@ NHOM_KHACH = ["Tạp hóa", "Minimart", "Quán ăn", "Khách sạn", "Căn tin K
 #   ty_le     tỉ lệ số khách (%)
 #   han_tt    hạn thanh toán (ngày), chọn ngẫu nhiên trong các giá trị
 #   han_muc   hạn mức nợ min-max, chỉ đặt khi hạn thanh toán > 0
-#   hsd       hạn dùng tối thiểu (%), 0 = để trống
+#   hsd       hạn dùng còn lại tối thiểu khi giao (%), 0 = để trống (không yêu cầu)
 #   so_dong   số dòng mỗi đơn min-max
 #   so_thung  số thùng mỗi dòng min-max
 #   ty_le_le  tỉ lệ dòng mua lẻ (%)
 #   giam      mức giảm giá trong bảng giá (%), 0 = không có dòng giá riêng
 #   thung_gia số thùng tối thiểu để được giá giảm
 THONG_SO_NHOM = {
-    "Tạp hóa": dict(ty_le=(60,), han_tt=(0, 7), han_muc=(5_000_000, 20_000_000), hsd=(0,),
+    "Tạp hóa": dict(ty_le=(60,), han_tt=(0, 7), han_muc=(5_000_000, 20_000_000), hsd=(30,),
                     so_dong=(2, 5), so_thung=(1, 3), ty_le_le=(25,), giam=(0,), thung_gia=(0,)),
     "Minimart": dict(ty_le=(20,), han_tt=(15,), han_muc=(30_000_000, 80_000_000), hsd=(50,),
                      so_dong=(5, 10), so_thung=(2, 5), ty_le_le=(0,), giam=(3,), thung_gia=(0,)),
-    "Quán ăn": dict(ty_le=(10,), han_tt=(0, 7), han_muc=(5_000_000, 15_000_000), hsd=(0,),
+    "Quán ăn": dict(ty_le=(10,), han_tt=(0, 7), han_muc=(5_000_000, 15_000_000), hsd=(30,),
                     so_dong=(2, 4), so_thung=(1, 3), ty_le_le=(25,), giam=(0,), thung_gia=(0,)),
     "Khách sạn": dict(ty_le=(5,), han_tt=(30,), han_muc=(50_000_000, 150_000_000), hsd=(60,),
                       so_dong=(3, 6), so_thung=(1, 4), ty_le_le=(0,), giam=(5,), thung_gia=(1,)),
@@ -69,19 +69,25 @@ SO_TANG = 4
 HANG_NANG = ("Dầu ăn", "Nước giải khát", "Nước suối")
 
 # Tồn đầu ngày: các lô thường đủ cho mọi đơn, dư thêm vài thùng mỗi mã. Mỗi mã 2 hoặc 3 lô thường,
-# phần hạn dùng còn lại của từng lô theo các khoảng dưới đây, lô cũ trước.
+# phần hạn dùng còn lại của từng lô theo các khoảng dưới đây, lô cũ trước. Lô cũ nhất còn ít nhất 36%,
+# trên mức thấp nhất của khách (30%) nên lô thường nào cũng giao được cho tạp hóa, quán ăn. Lô mới nhất
+# còn ít nhất 70%, đạt mọi mức khách. Đủ hàng tính riêng cho từng mức: mỗi đơn lấy được đủ từ các lô
+# đạt mức của khách đó (xem du_theo_muc).
 DU_TON_THUNG = (3, 12)
-CON_HAN_LO = {2: ((0.30, 0.60), (0.70, 0.95)), 3: ((0.25, 0.45), (0.50, 0.70), (0.75, 0.95))}
+CON_HAN_LO = {2: ((0.36, 0.60), (0.70, 0.95)), 3: ((0.36, 0.48), (0.52, 0.70), (0.75, 0.95))}
+# Giờ giao trong ngày mốc (giờ Việt Nam). Hạn dùng của lô là 00:00 ngày hết hạn, nên lô hết hạn đúng
+# ngày tối thiểu đã quá hạn lúc giao: lô đạt mức p% khi còn ít nhất ceil(p% × hạn dùng) + 1 ngày.
+GIO_GIAO = 8
 # Lô thêm, không tính vào phần đủ cho đơn: cận date (còn 5-30 ngày) và đã hết hạn 3-30 ngày.
 SO_LO_CAN_DATE = 5
 SO_LO_HET_HAN = 2
 CAN_DATE_NGAY = 30
 THUNG_LO_THEM = (1, 3)
-# Một mã của nhãn này (mã có hạn dùng dài nhất) có đúng 3 lô, hết hạn sau ngày mốc 5, 11 và 17 tháng
-# (tháng = 30 ngày). Với hạn dùng 18 tháng, lô gần nhất còn dưới 50% hạn dùng: khách cần còn ≥ 50%
-# (minimart) phải lấy lô thứ hai.
+# Một mã của nhãn này (mã có hạn dùng dài nhất) có đúng 3 lô, hết hạn sau ngày mốc 7, 11 và 17 tháng
+# (tháng = 30 ngày). Với hạn dùng 18 tháng là còn khoảng 39%, 61%, 94%: tạp hóa, quán ăn (≥ 30%) lấy lô
+# gần nhất, minimart (≥ 50%), khách sạn, căn tin (≥ 60%) phải lấy lô thứ hai.
 NCC_3_LO = "NCC02"
-THANG_3_LO = (5, 11, 17)
+THANG_3_LO = (7, 11, 17)
 
 TEN_RIENG = ["An Khang", "Bảo Trân", "Bích Ngọc", "Bình An", "Diễm My", "Đại Lợi", "Gia Huy", "Hiệp Thành",
              "Hòa Bình", "Hoàng Long", "Hồng Nhung", "Hồng Phúc", "Hữu Nghĩa", "Khánh Vy", "Kim Cúc",
@@ -416,11 +422,41 @@ def sinh_vi_tri(ncc, san_pham):
     return rows, o_cua_sp
 
 
-def sinh_ton_kho(san_pham, don, o_cua_sp, ngay, rng):
-    can = Counter()
+def ngay_toi_thieu(han_sp, pct):
+    """Số ngày hạn dùng tối thiểu còn lại khi giao, cùng công thức với module pl_fefo_pick."""
+    return math.ceil(pct * han_sp / 100) if pct and han_sp else 0
+
+
+def dat_muc(ngay, han, han_sp, pct):
+    """Lô hết hạn ngày `han` giao được cho khách cần còn `pct`% không, giao lúc GIO_GIAO ngày `ngay`."""
+    if not han or not pct or not han_sp:
+        return han is None or han >= ngay + dt.timedelta(days=1)
+    return (han - ngay).days >= ngay_toi_thieu(han_sp, pct) + 1
+
+
+def can_theo_muc(don):
+    """{mã sp: {mức %: số đơn vị lẻ khách ở mức đó cần}}"""
+    can = defaultdict(Counter)
     for d in don:
+        muc = so(str(d["kh"]["han_dung_toi_thieu_pct"]), nguyen=True) or 0
         for x in d["dong"]:
-            can[x["sp"]["ma_sp"]] += x["so_luong"] * (so_dvt(x["sp"]) if x["dvt"] == "thung" else 1)
+            can[x["sp"]["ma_sp"]][muc] += x["so_luong"] * (so_dvt(x["sp"]) if x["dvt"] == "thung" else 1)
+    return can
+
+
+def du_theo_muc(lo, can, ngay, han_sp):
+    """Các lô (hạn, số đơn vị) có đủ cho mọi mức khách không, dù đơn được giữ hàng theo thứ tự nào.
+
+    Mỗi đơn lấy lô đạt mức của mình, lô hết hạn sớm trước (FEFO). Các tập lô đạt lồng nhau (đạt 60% thì
+    đạt 50%), nên đủ khi với mọi mức m: tổng cần của khách có mức ≥ m không quá tồn các lô đạt m.
+    """
+    return all(sum(q for p, q in can.items() if p >= m) <=
+               sum(sl for han, sl in lo if dat_muc(ngay, han, han_sp, m)) for m in set(can) | {0})
+
+
+def sinh_ton_kho(san_pham, don, o_cua_sp, ngay, rng):
+    can_muc = can_theo_muc(don)
+    can = Counter({m: sum(c.values()) for m, c in can_muc.items()})
 
     def ngay_han(sp):
         return (so(sp["han_dung_thang"], nguyen=True) or 0) * 30
@@ -460,6 +496,13 @@ def sinh_ton_kho(san_pham, don, o_cua_sp, ngay, rng):
                 lo.append((ds_nsx[i], ds_han[i], thung))
                 con_lai -= thung
             lo.append((ds_nsx[-1], ds_han[-1], con_lai))
+            # Khách mức cao không lấy được lô cũ: chuyển dần thùng từ lô cũ sang lô mới nhất (mỗi lô giữ
+            # ít nhất 1 thùng), hết thì thêm thùng vào lô mới nhất.
+            while not du_theo_muc([(h, t * n) for _, h, t in lo], can_muc[sp["ma_sp"]], ngay, han_sp):
+                cu = next((i for i in range(len(lo) - 1) if lo[i][2] > 1), None)
+                if cu is not None:
+                    lo[cu] = (lo[cu][0], lo[cu][1], lo[cu][2] - 1)
+                lo[-1] = (lo[-1][0], lo[-1][1], lo[-1][2] + 1)
             loai = lo_them.get(sp["ma_sp"])
             if loai:
                 han = ngay + dt.timedelta(days=rng.randint(5, CAN_DATE_NGAY)) if loai == "can_date" \
@@ -617,25 +660,30 @@ def in_tom_tat(args, ncc, san_pham, khach, bang_gia, don, vi_tri, ton_kho, xe):
     nang = [sp["ma_sp"] for sp in san_pham if sp["nhom_hang"] in HANG_NANG]
     print(f"  Hàng nặng ở tầng 1: {sum(tang_cua_o[o_cua_sp[m]] == 1 for m in nang)}/{len(nang)} mã")
 
-    ton = Counter()
-    for r in con_han:
-        ton[r["ma_sp"]] += r["so_luong"]
-    can = Counter()
-    for d in don:
-        for x in d["dong"]:
-            can[x["sp"]["ma_sp"]] += x["so_luong"] * (so_dvt(x["sp"]) if x["dvt"] == "thung" else 1)
-    du_hang = all(ton[m] >= q for m, q in can.items())
+    thang_cua_sp = {sp["ma_sp"]: so(sp["han_dung_thang"], nguyen=True) or 0 for sp in san_pham}
+    can_muc = can_theo_muc(don)
+    thuong = [r for r in con_han if r not in can_date]
+    lo_cua_sp = defaultdict(list)
+    for r in thuong:
+        lo_cua_sp[r["ma_sp"]].append((ngay_(r["han_dung"]) if r["han_dung"] else None, r["so_luong"]))
+    du_hang = all(du_theo_muc(lo_cua_sp[m], c, moc, thang_cua_sp[m] * 30) for m, c in can_muc.items())
+    muc_thap = min(int(so(str(kh["han_dung_toi_thieu_pct"]), nguyen=True) or 0) for kh in khach)
+    duoi_muc = [r for r in thuong if r["han_dung"] and
+                not dat_muc(moc, ngay_(r["han_dung"]), thang_cua_sp[r["ma_sp"]] * 30, muc_thap)]
+    can_date_dat = [r for r in can_date + het_han
+                    if dat_muc(moc, ngay_(r["han_dung"]), thang_cua_sp[r["ma_sp"]] * 30, muc_thap)]
     ncc_cua_o = {r["ma_vi_tri"]: r["ma_ncc"] for r in o}
     ncc_cua_sp = {sp["ma_sp"]: sp["ma_ncc"] for sp in san_pham}
     dung_day = all(ncc_cua_o.get(r["ma_vi_tri"]) == ncc_cua_sp[r["ma_sp"]] for r in ton_kho)
     lo_trung = len({(r["ma_sp"], r["so_lo"]) for r in ton_kho}) != len(ton_kho)
     nsx_sau_moc = [r for r in ton_kho if ngay_(r["ngay_sx"]) > moc]
-    thang_cua_sp = {sp["ma_sp"]: so(sp["han_dung_thang"], nguyen=True) or 0 for sp in san_pham}
     qua_han_dung = [r for r in ton_kho if r["han_dung"] and
                     (ngay_(r["han_dung"]) - ngay_(r["ngay_sx"])).days > thang_cua_sp[r["ma_sp"]] * 30]
     so_don_kh = Counter(d["kh"]["ma_kh"] for d in don)
     print(f"\nKiểm tra: mỗi khách tối đa 1 đơn {'OK' if max(so_don_kh.values()) == 1 else 'LỖI'}; "
-          f"tồn còn hạn đủ cho mọi đơn {'OK' if du_hang else 'LỖI'}; "
+          f"lô thường đủ cho mọi đơn theo mức hạn dùng của khách {'OK' if du_hang else 'LỖI'}; "
+          f"lô thường đạt mức thấp nhất ({muc_thap}%) {'LỖI' if duoi_muc else 'OK'}; "
+          f"lô cận date, hết hạn không đạt mức nào {'LỖI' if can_date_dat else 'OK'}; "
           f"tồn nằm trong ô của dãy đúng nhãn {'OK' if dung_day else 'LỖI'}; "
           f"số lô không trùng {'LỖI' if lo_trung else 'OK'}; "
           f"NSX không sau ngày mốc {'LỖI' if nsx_sau_moc else 'OK'}; "
