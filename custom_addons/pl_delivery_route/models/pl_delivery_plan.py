@@ -9,6 +9,7 @@ from odoo.exceptions import UserError
 from ..services import maps, vrp
 
 MUI_GIO_MAC_DINH = "Asia/Ho_Chi_Minh"
+SO_DIEM_TOI_DA_MAC_DINH = 25
 
 # Lý do chưa xếp trả về từ vrp.py -> mã lưu trong Odoo.
 LY_DO = {
@@ -33,6 +34,8 @@ class PlDeliveryPlan(models.Model):
                              "Status", default="draft", required=True, readonly=True, copy=False)
     road_factor = fields.Float("Road Factor", default=vrp.HE_SO_DUONG_MAC_DINH, digits=(4, 2),
                                help="Road distance = straight-line (haversine) distance × this factor.")
+    max_stops = fields.Integer("Max Stops per Trip", default=SO_DIEM_TOI_DA_MAC_DINH,
+                               help="Maximum number of customers one driver delivers to in a day. 0 means no limit.")
     trip_ids = fields.One2many("pl.delivery.trip", "plan_id", "Trips", readonly=True, copy=False)
     unassigned_ids = fields.One2many("pl.delivery.unassigned", "plan_id", "Unassigned Transfers", readonly=True,
                                      copy=False)
@@ -43,6 +46,7 @@ class PlDeliveryPlan(models.Model):
 
     _sql_constraints = [
         ("road_factor_positive", "CHECK(road_factor >= 1)", "The road factor must be at least 1."),
+        ("max_stops_positive", "CHECK(max_stops >= 0)", "The maximum number of stops cannot be negative."),
     ]
 
     @api.depends("trip_ids.total_km", "trip_ids.weight")
@@ -128,7 +132,8 @@ class PlDeliveryPlan(models.Model):
                               "phieu": pk.id})
             diem = {d.id: d for d in vrp.gop_theo_khach(phieu)}
             kq = vrp.lap_tuyen((kho_lat, kho_lng), list(diem.values()),
-                               [vrp.Xe(x.id, x.capacity_kg) for x in xe], plan.road_factor)
+                               [vrp.Xe(x.id, x.capacity_kg) for x in xe], plan.road_factor,
+                               so_diem_toi_da=plan.max_stops or None)
 
             trip_vals = []
             for t in kq.tuyen:
