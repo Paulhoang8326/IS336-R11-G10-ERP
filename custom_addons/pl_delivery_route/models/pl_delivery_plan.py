@@ -83,7 +83,8 @@ class PlDeliveryPlan(models.Model):
         return cuoi.astimezone(pytz.utc).replace(tzinfo=None)
 
     def _get_candidate_pickings(self):
-        """Phiếu xuất của kho, đang Ready, ngày dự kiến không sau ngày giao, chưa thuộc kế hoạch đã xác nhận.
+        """Phiếu xuất giao khách của kho, đang Ready, ngày dự kiến không sau ngày giao, chưa thuộc kế hoạch
+        đã xác nhận. Phiếu trả nhà cung cấp cũng là loại outgoing nhưng đi tới vị trí Vendors, không lấy.
 
         Chuyến chỉ được ghi vào phiếu khi xác nhận kế hoạch, nên "chưa thuộc kế hoạch đã xác nhận" là
         pl_trip_id trống.
@@ -92,6 +93,7 @@ class PlDeliveryPlan(models.Model):
         return self.env["stock.picking"].search([
             ("picking_type_id.code", "=", "outgoing"),
             ("picking_type_id.warehouse_id", "=", self.warehouse_id.id),
+            ("location_dest_id.usage", "=", "customer"),
             ("state", "=", "assigned"),
             ("scheduled_date", "<=", self._cuoi_ngay_utc()),
             ("pl_trip_id", "=", False),
