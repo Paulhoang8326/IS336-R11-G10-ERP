@@ -34,9 +34,12 @@ CAI_DAT = [
     "account_use_credit_limit",
 ]
 # Cài đặt dạng lựa chọn. Sales > Invoicing Policy: lập hóa đơn theo số lượng đã giao (Delivered quantities).
-# Chỉ là giá trị mặc định cho sản phẩm tạo sau; sản phẩm đã có được ghi invoice_policy trong nap_san_pham.
-CAI_DAT_CHON = {"default_invoice_policy": "delivery"}
+# Purchase > Bill Control: lập hóa đơn nhà cung cấp theo số lượng thực nhận (Received quantities).
+# Chỉ là giá trị mặc định cho sản phẩm tạo sau; sản phẩm đã có được ghi invoice_policy, purchase_method trong
+# nap_san_pham.
+CAI_DAT_CHON = {"default_invoice_policy": "delivery", "default_purchase_method": "receive"}
 HOA_DON_THEO = "delivery"
+HOA_DON_MUA_THEO = "receive"
 DO_CHINH_XAC_KG = 4
 
 
@@ -383,6 +386,7 @@ def nap_san_pham(od, tk, san_pham, ncc_ids, digits_kg):
             "taxes_id": ma_thue("sale", vat),
             "supplier_taxes_id": ma_thue("purchase", vat),
             "invoice_policy": HOA_DON_THEO,
+            "purchase_method": HOA_DON_MUA_THEO,
         }
         if han_dung:
             vals["expiration_time"] = han_dung * 30
