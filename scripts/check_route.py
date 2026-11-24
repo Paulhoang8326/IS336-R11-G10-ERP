@@ -2,12 +2,13 @@
 """Chạy thử module pl_delivery_route trên bản nhân bản của database chính, xong thì xóa bản đó.
 
 Nhân bản pl_moc thành pl_route_check > cài pl_delivery_route > nạp xe từ seed/demo/xe.csv > xác nhận đủ
-đơn bán của ngày mốc và giữ hàng cho phiếu xuất > tạo kế hoạch giao hàng cho ngày mốc > Lập tuyến (2 lần,
+đơn bán của ngày mốc và giữ hàng cho phiếu xuất > nhận hàng của một nhà cung cấp rồi tạo phiếu trả, để
+Ready > tạo kế hoạch giao hàng cho ngày mốc > Lập tuyến (2 lần,
 phải ra cùng kết quả) > in bảng theo xe và danh sách chưa xếp > Xác nhận kế hoạch.
 
 Kiểm tra: không xe nào quá tải, mỗi phiếu xuất Ready của ngày mốc nằm đúng 1 lần (trong một chuyến hoặc
 trong danh sách chưa xếp), không chuyến nào vượt số điểm tối đa, cả 4 xe đều có chuyến, chỉ đơn
-DB<ngày mốc>-081 nằm trong danh sách chưa xếp, xác nhận xong phiếu có chuyến và thứ tự điểm dừng. Sai điều
+DB<ngày mốc>-081 nằm trong danh sách chưa xếp, phiếu trả nhà cung cấp không có mặt trong kế hoạch, xác nhận xong phiếu có chuyến và thứ tự điểm dừng. Sai điều
 nào thì dừng, mã thoát khác 0.
 
     python scripts/check_route.py
@@ -28,12 +29,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts" / "seminar3"))
 
+import chung  # noqa: E402
 from chung import DB_CHINH, URL, QuanLyDb, goi, ket_noi  # noqa: E402
 from seed_import import GIO_DAT_HANG, GIO_VN, ThongKe, doc_csv, nap_xe  # noqa: E402
 
 DB_CHECK = "pl_route_check"
 MODULE = "pl_delivery_route"
 SEED = ROOT / "seed" / "demo"
+NCC = "NCC01"
+LO_TRA = "LTRANCC"
 
 
 def kiem(dung, thong_diep):
@@ -87,6 +91,49 @@ def chuan_bi_don(od, ngay_moc, ds_so_don):
     print(f"Phiếu xuất: {len(phieu)}, Ready {len(ready)}")
     kiem(len(ready) == len(phieu), f"còn {len(phieu) - len(ready)} phiếu chưa Ready (thiếu tồn?)")
     return set(ready)
+
+
+def tao_phieu_tra_ncc(od, ngay_moc, kho_id):
+    """Nhận 1 thùng hàng của NCC rồi Return cả thùng, chưa validate phiếu trả. Trả về phiếu trả, đang Ready.
+
+    Phiếu trả dùng chung loại Delivery Orders (PL/OUT) với phiếu giao khách. Để nó chỉ có thể bị loại nhờ
+    điểm đến là Vendors: ngày dự kiến đưa về ngày mốc, NCC được cho tọa độ của kho lệch đi một chút.
+    """
+    chung.cai_module(od, "purchase_stock")
+    ncc = od.search_read("res.partner", [("ref", "=", NCC), ("parent_id", "=", False)], ["name"])
+    sp = od.search_read("product.product", [("default_code", "=like", f"{NCC}-%")], ["expiration_time"],
+                        order="default_code")
+    thung = od.search_read("product.packaging", [("product_id", "in", [x["id"] for x in sp])],
+                           ["qty", "product_id"], order="product_id")
+    kiem(ncc and thung, f"seed không có {NCC} hoặc quy cách thùng")
+    sl, pid = thung[0]["qty"], thung[0]["product_id"][0]
+    kho = od("stock.warehouse", "read", [kho_id], fields=["partner_id"])[0]["partner_id"][0]
+    td = od("res.partner", "read", [kho], fields=["partner_latitude", "partner_longitude"])[0]
+    od("res.partner", "write", [ncc[0]["id"]], {"partner_latitude": td["partner_latitude"] + 0.01,
+                                                "partner_longitude": td["partner_longitude"] + 0.01})
+
+    po = od("purchase.order", "create", {"partner_id": ncc[0]["id"], "order_line": [
+        (0, 0, {"product_id": pid, "product_qty": sl})]})
+    goi(od, "purchase.order", "button_confirm", [po])
+    nhap = od("purchase.order", "read", [po], fields=["picking_ids"])[0]["picking_ids"][0]
+    ml = od("stock.move.line", "search", [("picking_id", "=", nhap)])
+    han = next(x["expiration_time"] for x in sp if x["id"] == pid)
+    od("stock.move.line", "write", ml, {"lot_name": LO_TRA, "quantity": sl, "picked": True,
+                                        "expiration_date": utc(ngay_moc + dt.timedelta(days=han), 0)})
+    goi(od, "stock.picking", "button_validate", [nhap])
+
+    ctx = {"active_model": "stock.picking", "active_id": nhap, "active_ids": [nhap]}
+    wiz = od("stock.return.picking", "create", {}, context=ctx)
+    dong = od("stock.return.picking.line", "search", [("wizard_id", "=", wiz)])
+    od("stock.return.picking.line", "write", dong, {"quantity": sl})
+    tra = goi(od, "stock.return.picking", "action_create_returns", [wiz], context=ctx)["res_id"]
+    od("stock.picking", "write", [tra], {"scheduled_date": utc(ngay_moc, GIO_DAT_HANG)})
+    p = od.search_read("stock.picking", [("id", "=", tra)],
+                       ["name", "state", "picking_type_code", "scheduled_date", "location_dest_id"])[0]
+    kiem(p["state"] == "assigned" and p["picking_type_code"] == "outgoing"
+         and p["scheduled_date"] == utc(ngay_moc, GIO_DAT_HANG), f"phiếu trả NCC: {p}")
+    print(f"Phiếu trả {ncc[0]['name']}: {p['name']} Ready, đến {p['location_dest_id'][1]}")
+    return p
 
 
 def doc_ket_qua(od, plan_id):
@@ -156,6 +203,7 @@ def chay(od, ngay_moc, ds_so_don, max_stops=None):
     ready = chuan_bi_don(od, ngay_moc, ds_so_don)
     kho = od.search_read("stock.warehouse", [("code", "=", "PL")], ["id"])
     kiem(kho, "không có kho PL")
+    tra = tao_phieu_tra_ncc(od, ngay_moc, kho[0]["id"])
     vals = {"date": ngay_moc.isoformat(), "warehouse_id": kho[0]["id"]}
     if max_stops is not None:
         vals["max_stops"] = max_stops
@@ -174,6 +222,9 @@ def chay(od, ngay_moc, ds_so_don, max_stops=None):
     tat_ca = da_xep + [c["picking_id"][0] for c in chua]
     kiem(len(tat_ca) == len(set(tat_ca)), "có phiếu xuất xuất hiện hơn 1 lần")
     kiem(ready <= set(tat_ca), f"thiếu phiếu: {sorted(ready - set(tat_ca))}")
+    # Phiếu trả NCC đang Ready không được vào chuyến, cũng không được vào danh sách chưa xếp.
+    kiem(tra["id"] not in tat_ca, f"phiếu trả NCC {tra['name']} bị lấy vào kế hoạch giao hàng "
+         f"({'trong chuyến' if tra['id'] in da_xep else 'chưa xếp'})")
     # Không xe nào quá tải; mỗi xe tối đa 1 chuyến.
     kiem(len({t["vehicle_id"][0] for t in trips}) == len(trips), "có xe chạy 2 chuyến")
     for t in trips:
@@ -251,7 +302,8 @@ def main():
         else:
             ql.xoa(args.db)
             print(f"\nĐã xóa {args.db}")
-    print("PASS: không xe nào quá tải hay vượt số điểm, cả đội xe có chuyến, chỉ đơn quá tải chưa xếp")
+    print("PASS: không xe nào quá tải hay vượt số điểm, cả đội xe có chuyến, chỉ đơn quá tải chưa xếp, "
+          "phiếu trả NCC không vào kế hoạch")
 
 
 if __name__ == "__main__":
