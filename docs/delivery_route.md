@@ -47,7 +47,7 @@ Hoặc cài trên giao diện: Apps > Update Apps List, tìm *Phan Lam Delivery 
 
 Trên form kế hoạch:
 
-- **Compute Routes** (lập tuyến): lấy các phiếu xuất (loại *Delivery*) của kho, đang *Ready*, có *Scheduled Date* không sau ngày giao và chưa thuộc kế hoạch đã xác nhận nào; chạy thuật toán; ghi kết quả vào thẻ *Trips* và *Unassigned*. Bấm lại thì xóa kết quả cũ và tính lại.
+- **Compute Routes** (lập tuyến): lấy các phiếu xuất (loại *Delivery*) của kho giao tới khách (điểm đến có *Location Type* là *Customer Location*), đang *Ready*, có *Scheduled Date* không sau ngày giao và chưa thuộc kế hoạch đã xác nhận nào; chạy thuật toán; ghi kết quả vào thẻ *Trips* và *Unassigned*. Bấm lại thì xóa kết quả cũ và tính lại. Phiếu trả hàng cho nhà cung cấp cũng mang số `PL/OUT` (cùng loại *Delivery Orders*) nhưng điểm đến là *Vendors*, nên không được lấy vào kế hoạch.
 - **Confirm** (xác nhận): ghi chuyến và thứ tự điểm dừng vào từng phiếu xuất (thẻ *Additional Info* của phiếu, hoặc bật cột ở danh sách phiếu); mỗi chuyến tạo một Batch Transfer (`stock.picking.batch`) chứa các phiếu của chuyến, mô tả là mã xe và ngày giao (vd `XE01 - 29/10/2026`, ngày định dạng theo ngôn ngữ người xác nhận), phiếu trong lô sắp theo thứ tự giao, lô ở trạng thái *In progress*; rồi khóa kế hoạch. Phiếu đã thuộc kế hoạch đã xác nhận không được lấy vào kế hoạch khác. Có phiếu đã nằm trong một lô khác thì báo lỗi kèm số phiếu và số lô, không tạo lô nào; gỡ phiếu khỏi lô đó rồi xác nhận lại.
 - **Reset to Draft** (về nháp): khi đã lập tuyến nhưng chưa xác nhận; xóa kết quả để sửa ngày, kho, hệ số hoặc số điểm tối đa.
 
@@ -154,7 +154,7 @@ python3 scripts/check_route.py --keep   # giữ pl_route_check để xem trên g
 python3 scripts/check_route.py --max-stops 20   # số điểm tối đa mỗi chuyến, mặc định theo kế hoạch (25)
 ~~~
 
-Script nhân bản `pl_moc` thành `pl_route_check` (không sửa `pl_moc`), cài module, nạp xe, xác nhận các đơn bán của ngày mốc và giữ hàng cho phiếu xuất, tạo kế hoạch cho ngày mốc, lập tuyến hai lần (phải ra cùng kết quả), in bảng theo xe (số điểm, tải, % tải, km, link Maps) và danh sách chưa xếp, rồi xác nhận kế hoạch. Dừng với `FAIL` nếu có xe quá tải, chuyến vượt số điểm tối đa, xe không có chuyến, phiếu bị thiếu hoặc trùng, phiếu chưa xếp ngoài đơn 081, hay sau khi xác nhận số Batch Transfer khác số chuyến hoặc phiếu nằm sai lô.
+Script nhân bản `pl_moc` thành `pl_route_check` (không sửa `pl_moc`), cài module, nạp xe, xác nhận các đơn bán của ngày mốc và giữ hàng cho phiếu xuất, nhận rồi tạo phiếu trả một thùng hàng của nhà cung cấp `NCC01` (để *Ready*, ngày mốc, nhà cung cấp có tọa độ), tạo kế hoạch cho ngày mốc, lập tuyến hai lần (phải ra cùng kết quả), in bảng theo xe (số điểm, tải, % tải, km, link Maps) và danh sách chưa xếp, rồi xác nhận kế hoạch. Dừng với `FAIL` nếu có xe quá tải, chuyến vượt số điểm tối đa, xe không có chuyến, phiếu bị thiếu hoặc trùng, phiếu chưa xếp ngoài đơn 081, phiếu trả nhà cung cấp có mặt trong chuyến hay danh sách chưa xếp, hay sau khi xác nhận số Batch Transfer khác số chuyến hoặc phiếu nằm sai lô.
 
 ## Đã kiểm tra
 
@@ -170,3 +170,5 @@ Ngày 17/11/2026 trên macOS, Odoo 18.0-20260926, bản nhân bản của `pl_mo
 Tổng 5.939,3 kg, 58,4 km. Chưa xếp: `PL/OUT/00001` (`DB20261029-081`, 3.019,8 kg), *Heavier than the largest vehicle*. So với khi chưa giới hạn số điểm (ngày 16/11/2026: XE01 16 điểm 10,3 km, XE02 không chạy, XE03 35 điểm 21,5 km, XE04 29 điểm 16,5 km, tổng 48,3 km), tổng quãng đường tăng 10,1 km (khoảng 21%), đổi lại cả 4 xe đều chạy và không tài xế nào giao quá 25 điểm.
 
 Batch Transfer mở ở Inventory > Operations > Jobs > Batch Transfers thấy đủ phiếu của chuyến (BATCH/00001 có 25 phiếu Ready). Phiếu xếp hàng của XE02 in ra PDF đúng thứ tự ngược (điểm xếp 1 là điểm giao 5), mỗi dòng hàng có lô; bản tiếng Việt in đúng câu chú thích.
+
+Ngày 24/11/2026, thêm điều kiện điểm đến là khách cho phiếu được lấy vào kế hoạch. Trước khi sửa, `check_route.py` FAIL: "phiếu trả NCC PL/OUT/00082 bị lấy vào kế hoạch giao hàng (trong chuyến)". Sau khi sửa, pass hai lần liên tiếp, bảng theo xe giống bảng trên. `check_o2c.py`, `check_fefo.py`, `check_p2p.py`, `scripts/seminar3/check_flow.py` và unit test vẫn pass. Sửa Python, không đổi trường hay view: chỉ cần `docker compose restart odoo`, không cần nâng cấp module.
